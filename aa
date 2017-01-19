@@ -1,0 +1,8 @@
+cc -Werror -emit-llvm -g       -o .c
+clang -c -Werror -emit-llvm -g .c -o .bc
+llvm-dis .bc
+make -C ~/cfg/llvm/lib/Transforms/buildCFG/ 
+opt -load ~/cfg/llvm/Release+Asserts/lib/buildCFG.so -buildCFG  <.bc >buildCFG.bc
+llvm-dis buildCFG.bc
+clang buildCFG.bc   -o _final
+

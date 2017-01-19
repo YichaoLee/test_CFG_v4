@@ -1,0 +1,410 @@
+[runlim] version:		1.7
+[runlim] time limit:		3000 seconds
+[runlim] real time limit:	311040000 seconds
+[runlim] space limit:		2000 MB
+[runlim] argv[0]:		make
+[runlim] start:			Wed May 25 13:56:39 2016
+[runlim] main pid:		2576
+clang -c -emit-llvm -g example.c -o example.bc
+llvm-dis example.bc
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="main" -name=example -bound=50 -pre=0.01 -mode=0 -expression="" <example.bc>   examplebuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckMode: 0
+Check assertions, div-0 and domain error
+#BUILDCFG Time: 	1.518ms
+MainFunc: main
+#Num_input: 0
+#Num_var: 7
+#Loc: 11
+#Calllevel: 0
+#nonlinearOp: 0 
+	# tan : 0
+	# atan : 0
+	# atan2 : 0
+	# sin : 1
+	# asin : 1
+	# cos : 0
+	# acos : 0
+	# sqrt : 0
+	# pow : 2
+	# log : 0
+	# log10 : 0
+	# abs : 0
+	# exp : 0
+	# sinh : 0
+	# cosh : 0
+	# tanh : 0
+#targetsize:	3
+target[0]:q0(1)
+target[1]:q1(4)
+target[2]:q2(12)
+
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is sat
+
+
+target[0]:from s0(0) to q0(1)
+at line 10 in state q0 is reachable
+
+Number of path checked:2
+Witness:
+	s0:	LocLine:8;9;10;
+	e0
+	q0:	LocLine:10;
+Dreal Time: 	0.875ms
+
+target[1]:q1(4)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is sat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.01
+s0:
+e1:
+s1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4(6)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5(7)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6(8)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7(9)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e10->s9(11)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e10:
+s9:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e10->s9->e13->q2(12)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e10:
+s9:
+e13:
+q2:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e11->s8(10)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e11:
+s8:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e11->s8->e12->s10(13)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e11:
+s8:
+e12:
+s10:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2(3)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e4->q1(4)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e4:
+q1:
+dreal_result is sat
+
+
+target[1]:from s0(0) to q1(4)
+at line 12 in state q1 is reachable
+
+Number of path checked:15
+Witness:
+	s0:	LocLine:8;9;10;
+	e1
+	s1:	LocLine:10;11;
+	e3
+	s2:	LocLine:12;
+	e4
+	q1:	LocLine:12;
+Dreal Time: 	71.435ms
+
+target[2]:q2(12)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is sat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.01
+s0:
+e1:
+s1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4(6)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5(7)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6(8)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7(9)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e10->s9(11)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e10:
+s9:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s4->e7->s5->e8->s6->e9->s7->e10->s9->e13->q2(12)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+s4:
+e7:
+s5:
+e8:
+s6:
+e9:
+s7:
+e10:
+s9:
+e13:
+q2:
+dreal_result is sat
+
+
+target[2]:from s0(0) to q2(12)
+at line 15 in state q2 is reachable
+
+Number of path checked:24
+Witness:
+	s0:	LocLine:8;9;10;
+	e1
+	s1:	LocLine:10;11;
+	e2
+	s4:	LocLine:14;
+	e7
+	s5:	LocLine:3;4;
+	e8
+	s6:	LocLine:14;
+	e9
+	s7:	LocLine:15;
+	e10
+	s9:	LocLine:15;
+	e13
+	q2:	LocLine:15;
+Dreal Time: 	105.869ms
+
+bound:	50	precision:	1.000000e-02	functionName:	main	check:	
+#Dreal Time: 	0.105869s
+#CPU Time: 0.124 s
+#Memory used: 117.00 MB
+llvm-dis examplebuildCFG.bc
+clang examplebuildCFG.bc   -o example_final
+/tmp/examplebuildCFG-e9af98.o: In function `foo':
+/home/lich/Documents/test_CFG_v4/example.c:4: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/example.c:4: undefined reference to `pow'
+/tmp/examplebuildCFG-e9af98.o: In function `main':
+/home/lich/Documents/test_CFG_v4/example.c:10: undefined reference to `asin'
+/home/lich/Documents/test_CFG_v4/example.c:12: undefined reference to `pow'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [example_final.bc] Error 1
+[runlim] end:			Wed May 25 13:56:39 2016
+[runlim] status:		ok
+[runlim] result:		2
+[runlim] children:		4
+[runlim] real:			0.99 seconds
+[runlim] time:			0.05 seconds
+[runlim] space:			45.3 MB
+[runlim] samples:		2

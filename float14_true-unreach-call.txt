@@ -1,0 +1,370 @@
+clang -c -emit-llvm -g float14_true-unreach-call.c -o float14_true-unreach-call.bc
+float14_true-unreach-call.c:7:10: warning: magnitude of floating-point constant too large for type 'float'; maximum is 3.40282347E+38 [-Wliteral-range]
+  temp = 1.8e307f + 1.5e50f;    // should produce overflow -> +infinity (according to standard)
+         ^
+float14_true-unreach-call.c:7:21: warning: magnitude of floating-point constant too large for type 'float'; maximum is 3.40282347E+38 [-Wliteral-range]
+  temp = 1.8e307f + 1.5e50f;    // should produce overflow -> +infinity (according to standard)
+                    ^
+2 warnings generated.
+llvm-dis float14_true-unreach-call.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=float14_true-unreach-call -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <float14_true-unreach-call.bc>   float14_true-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_temp, 2  PTR 
+variable:main_temp_0, 3  FP 
+variable:main_x, 4  PTR 
+variable:main_x_0, 5  FP 
+variable:main_retval/0, 6  INT 
+variable:main_temp/7, 7  FP 
+variable:main_%0, 8  FP 
+variable:main_call, 9  INT 
+variable:main_tobool, 10  INT 
+variable:main_%1, 11  FP 
+variable:main_conv, 12  FP 
+variable:main_call2, 13  INT 
+variable:main_tobool3, 14  INT 
+variable:main_%2, 15  FP 
+variable:main_conv5, 16  FP 
+variable:main_call6, 17  INT 
+variable:main_tobool7, 18  INT 
+variable:main_%3, 19  FP 
+variable:main_%4, 20  FP 
+variable:main_sub, 21  FP 
+variable:main_%5, 22  FP 
+variable:main_call9, 23  INT 
+variable:main_tobool10, 24  INT 
+variable:main_%6, 25  FP 
+variable:main_conv13, 26  FP 
+variable:main_call14, 27  INT 
+variable:main_tobool15, 28  INT 
+variable:main_%7, 29  FP 
+variable:main_conv17, 30  FP 
+variable:main_call18, 31  INT 
+variable:main_tobool19, 32  INT 
+variable:main_%8, 33  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_temp =  alloca  constraint: main_temp =  store main_temp_0 constraint: main_x =  alloca  constraint: main_x =  store main_x_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_temp/7 =  <badref> constraint: main_temp =  store main_temp/7 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:5	LineNum:7	LineNum:8
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main_%0 =  load main_temp constraint: main_tobool = main_call != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:8
+
+Location Name:main s2 ID:2 nextS:-1
+Level:1
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:8
+
+Location Name:main s3 ID:3 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main_%1 =  load main_temp constraint: main_conv =  main_%1 constraint: main_tobool3 = main_call2 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:8
+
+Location Name:main s4 ID:4 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main_%2 =  load main_temp constraint: main_conv5 =  main_%2 constraint: main_tobool7 = main_call6 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:8
+
+Location Name:main s5 ID:5 nextS:-1
+Level:3
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:8
+
+Location Name:main q0 ID:6 nextS:-1
+Level:4
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s6 ID:7 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: main_%3 =  load main_temp constraint: main_%4 =  load main_temp constraint: main_sub = main_%3 - main_%4 constraint: main_x =  store main_sub 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:10	LineNum:12	LineNum:15
+
+Location Name:main s7 ID:8 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: main_%5 =  load main_temp constraint: main_tobool10 = main_call9 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:15
+
+Location Name:main s8 ID:9 nextS:-1
+Level:4
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:15
+
+Location Name:main s9 ID:10 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: main_%6 =  load main_temp constraint: main_conv13 =  main_%6 constraint: main_tobool15 = main_call14 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:15
+
+Location Name:main s10 ID:11 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: main_%7 =  load main_temp constraint: main_conv17 =  main_%7 constraint: main_tobool19 = main_call18 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:15
+
+Location Name:main s11 ID:12 nextS:-1
+Level:6
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:15
+
+Location Name:main q1 ID:13 nextS:-1
+Level:7
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s12 ID:14 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: main_%8 =  load main_retval 
+Content:/home/lich/Documents/test_CFG_v4/float14_true-unreach-call.c	LineNum:16
+
+Transition Name:e0 ID:15
+Level:1
+ToLabel:main_cond.false
+from:s0 to:s2
+Guard:
+constraint: 1 !=  1 
+
+Transition Name:e1 ID:16
+Level:1
+ToLabel:main_cond.true
+from:s0 to:s1
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e2 ID:17
+Level:2
+ToLabel:main_if.then
+from:s1 to:s5
+Guard:
+constraint: main_tobool !=  1 
+
+Transition Name:e3 ID:18
+Level:2
+ToLabel:main_if.end
+from:s1 to:s6
+Guard:
+constraint: main_tobool ==  1 
+
+Transition Name:e4 ID:19
+Level:2
+ToLabel:main_cond.false4
+from:s2 to:s4
+Guard:
+constraint: 0 !=  1 
+
+Transition Name:e5 ID:20
+Level:2
+ToLabel:main_cond.true1
+from:s2 to:s3
+Guard:
+constraint: 0 ==  1 
+
+Transition Name:e6 ID:21
+Level:3
+ToLabel:main_if.then
+from:s3 to:s5
+Guard:
+constraint: main_tobool3 !=  1 
+
+Transition Name:e7 ID:22
+Level:3
+ToLabel:main_if.end
+from:s3 to:s6
+Guard:
+constraint: main_tobool3 ==  1 
+
+Transition Name:e8 ID:23
+Level:3
+ToLabel:main_if.then
+from:s4 to:s5
+Guard:
+constraint: main_tobool7 !=  1 
+
+Transition Name:e9 ID:24
+Level:3
+ToLabel:main_if.end
+from:s4 to:s6
+Guard:
+constraint: main_tobool7 ==  1 
+
+Transition Name:e10 ID:25
+Level:4
+ToLabel:
+from:s5 to:q0
+Guard:
+null
+
+Transition Name:e12 ID:26
+Level:4
+ToLabel:main_cond.false11
+from:s6 to:s8
+Guard:
+constraint: 1 !=  1 
+
+Transition Name:e13 ID:27
+Level:4
+ToLabel:main_cond.true8
+from:s6 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e14 ID:28
+Level:5
+ToLabel:main_if.then20
+from:s7 to:s11
+Guard:
+constraint: main_tobool10 !=  1 
+
+Transition Name:e15 ID:29
+Level:5
+ToLabel:main_if.end21
+from:s7 to:s12
+Guard:
+constraint: main_tobool10 ==  1 
+
+Transition Name:e16 ID:30
+Level:5
+ToLabel:main_cond.false16
+from:s8 to:s10
+Guard:
+constraint: 0 !=  1 
+
+Transition Name:e17 ID:31
+Level:5
+ToLabel:main_cond.true12
+from:s8 to:s9
+Guard:
+constraint: 0 ==  1 
+
+Transition Name:e18 ID:32
+Level:6
+ToLabel:main_if.then20
+from:s9 to:s11
+Guard:
+constraint: main_tobool15 !=  1 
+
+Transition Name:e19 ID:33
+Level:6
+ToLabel:main_if.end21
+from:s9 to:s12
+Guard:
+constraint: main_tobool15 ==  1 
+
+Transition Name:e20 ID:34
+Level:6
+ToLabel:main_if.then20
+from:s10 to:s11
+Guard:
+constraint: main_tobool19 !=  1 
+
+Transition Name:e21 ID:35
+Level:6
+ToLabel:main_if.end21
+from:s10 to:s12
+Guard:
+constraint: main_tobool19 ==  1 
+
+Transition Name:e22 ID:36
+Level:7
+ToLabel:
+from:s11 to:q1
+Guard:
+null
+
+#BUILDCFG Time: 	3.108ms
+MainFunc: main
+#CallDepth: 0
+#Loc: 12
+#targetsize:	2
+target[0]:q0( Assert Error )
+target[1]:q1( Assert Error )
+
+target[0]:q0(6)
+Path route: s0->e1->s1->e2->s5->e10->q0(6)
+s0:
+(= main_retval/0_6 0)
+0  opt             0x00000000016128d2 llvm::sys::PrintStackTrace(_IO_FILE*) + 34
+1  opt             0x00000000016124f4
+2  libpthread.so.0 0x00002b84693df330
+3  libz3.so        0x00002b846ce9ffdf
+4  libz3.so        0x00002b846ceb1395
+5  libz3.so        0x00002b846cead89b
+6  libz3.so        0x00002b846c29dfcd Z3_mk_eq + 109
+7  buildCFG.so     0x00002b846a436a27
+8  buildCFG.so     0x00002b846a43d65a
+9  buildCFG.so     0x00002b846a43d9a9
+10 buildCFG.so     0x00002b846a44e862
+11 buildCFG.so     0x00002b846a44ef77
+12 buildCFG.so     0x00002b846a455955
+13 buildCFG.so     0x00002b846a450421
+14 opt             0x0000000001599ed7 llvm::FPPassManager::doInitialization(llvm::Module&) + 87
+15 opt             0x00000000015a33c7 llvm::legacy::PassManagerImpl::run(llvm::Module&) + 375
+16 opt             0x00000000005df45c main + 3548
+17 libc.so.6       0x00002b846a041f45 __libc_start_main + 245
+18 opt             0x000000000060256a
+Stack dump:
+0.	Program arguments: opt -load /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func=main -name=float14_true-unreach-call -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression= 
+Segmentation fault (core dumped)
+make: *** [float14_true-unreach-callbuildCFG.bc] Error 139

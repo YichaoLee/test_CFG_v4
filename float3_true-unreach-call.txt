@@ -1,0 +1,280 @@
+clang -c -emit-llvm -g float3_true-unreach-call.c -o float3_true-unreach-call.bc
+llvm-dis float3_true-unreach-call.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=float3_true-unreach-call -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <float3_true-unreach-call.bc>   float3_true-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_x, 2  PTR 
+variable:main_x_0, 3  INT 
+variable:main_retval/0, 4  INT 
+variable:main_x/13, 5  INT 
+variable:main_call, 6  INT 
+variable:main_tobool, 7  INT 
+variable:main_x/16, 8  INT 
+variable:f1_d/8, 9  FP 
+variable:d, 10  PTR 
+variable:d_0, 11  FP 
+variable:main_%0, 12  INT 
+variable:main_cmp, 13  INT 
+variable:main_conv, 14  INT 
+variable:main_conv1, 15  FP 
+variable:main_%1, 16  FP 
+variable:main_add, 17  FP 
+variable:main_%2, 18  INT 
+variable:main_cmp2, 19  INT 
+variable:main_conv3, 20  INT 
+variable:main_conv4, 21  FP 
+variable:main_%3, 22  FP 
+variable:main_add5, 23  FP 
+variable:main_%4, 24  FP 
+variable:main_cmp6, 25  INT 
+variable:main_%5, 26  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_x =  alloca  constraint: main_x =  store main_x_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_x/13 =  2 constraint: main_x =  store main_x/13 constraint: main_tobool = main_call != 0 constraint: d =  alloca  constraint: d_0 =  0 constraint: d =  store d_0 
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:13	LineNum:15
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main_x/16 =  4 constraint: main_x =  store main_x/16 
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:16
+
+Location Name:main s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:18
+
+Location Name:f1 s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: f1_d/8 =  1 constraint: d =  store f1_d/8 
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:8	LineNum:9
+
+Location Name:main s4 ID:4 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: main_%0 =  load main_x constraint: main_cmp = main_%0 == 2 constraint: main_conv =  main_cmp constraint: main_conv1 =  main_conv constraint: main_%1 =  load d constraint: main_add = main_%1 + main_conv1 constraint: d =  store main_add constraint: main_%2 =  load main_x constraint: main_cmp2 = main_%2 > 3 constraint: main_conv3 =  main_cmp2 constraint: main_conv4 =  main_conv3 constraint: main_%3 =  load d constraint: main_add5 = main_%3 + main_conv4 constraint: d =  store main_add5 constraint: main_%4 =  load d constraint: main_cmp6 = main_%4 == 2 
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:20	LineNum:22	LineNum:24
+
+Location Name:main s5 ID:5 nextS:-1
+Level:5
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:24
+
+Location Name:main q0 ID:6 nextS:-1
+Level:6
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s6 ID:7 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: main_%5 =  load main_retval 
+Content:/home/lich/Documents/test_CFG_v4/float3_true-unreach-call.c	LineNum:25
+
+Transition Name:e0 ID:8
+Level:1
+ToLabel:main_if.end
+from:s0 to:s2
+Guard:
+constraint: main_call ==  0 
+
+Transition Name:e1 ID:9
+Level:1
+ToLabel:main_if.then
+from:s0 to:s1
+Guard:
+constraint: main_call !=  0 
+
+Transition Name:e2 ID:10
+Level:2
+ToLabel:main_if.end
+from:s1 to:s2
+Guard:
+null
+
+Transition Name:e3 ID:11
+Level:3
+ToLabel:f1_entry
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e4 ID:12
+Level:4
+ToLabel:f1_ret
+from:s3 to:s4
+Guard:
+null
+
+Transition Name:e5 ID:13
+Level:5
+ToLabel:main_if.then8
+from:s4 to:s5
+Guard:
+constraint: main_%4 !=  2 
+
+Transition Name:e6 ID:14
+Level:5
+ToLabel:main_if.end9
+from:s4 to:s6
+Guard:
+constraint: main_%4 ==  2 
+
+Transition Name:e7 ID:15
+Level:6
+ToLabel:
+from:s5 to:q0
+Guard:
+null
+
+Transition Name:e8 ID:16
+Level:6
+ToLabel:main_if.end9
+from:s5 to:s6
+Guard:
+null
+
+#BUILDCFG Time: 	2.041ms
+MainFunc: main
+#CallDepth: 1
+#Loc: 14
+#targetsize:	1
+target[0]:q0( Assert Error )
+
+target[0]:q0(6)
+Path route: s0->e0->s2->e3->s3->e4->s4->e5->s5->e7->q0(6)
+s0:
+(= main_retval/0_4 0)
+(= main_x/13_6 2)
+(= main_tobool_8 (ite (distinct main_call 0) 1 0))
+(= d_0_10 0.0)
+e0:
+(= main_call 0)
+s2:
+e3:
+s3:
+(= f1_d/8 1.0)
+e4:
+s4:
+(= main_%0 main_x/13_6)
+(= main_cmp (ite (= main_%0 2) 1 0))
+(= main_conv_2 main_cmp)
+(= main_conv1_3 (to_real main_conv_2))
+(= main_%1_4 f1_d/8)
+(= main_add_5 (+ main_%1_4 main_conv1_3))
+(= main_%2_7 main_x/13_6)
+(= main_cmp2_8 (ite (> main_%2_7 3) 1 0))
+(= main_conv3_9 main_cmp2_8)
+(= main_conv4_10 (to_real main_conv3_9))
+(= main_%3_11 main_add_5)
+(= main_add5_12 (+ main_%3_11 main_conv4_10))
+(= main_%4_14 main_add5_12)
+(= main_cmp6_15 (ite (= main_%4_14 2.0) 1 0))
+e5:
+(distinct main_%4_14 2.0)
+s5:
+e7:
+q0:
+z3_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e4->s4->e5->s5->e7->q0(6)
+s0:
+(= main_retval/0_4 0)
+(= main_x/13_6 2)
+(= main_tobool_8 (ite (distinct main_call 0) 1 0))
+(= d_0_10 0.0)
+e1:
+(distinct main_call 0)
+s1:
+(= main_x/16 4)
+e2:
+s2:
+e3:
+s3:
+(= f1_d/8 1.0)
+e4:
+s4:
+(= main_%0 main_x/16)
+(= main_cmp (ite (= main_%0 2) 1 0))
+(= main_conv_2 main_cmp)
+(= main_conv1_3 (to_real main_conv_2))
+(= main_%1_4 f1_d/8)
+(= main_add_5 (+ main_%1_4 main_conv1_3))
+(= main_%2_7 main_x/16)
+(= main_cmp2_8 (ite (> main_%2_7 3) 1 0))
+(= main_conv3_9 main_cmp2_8)
+(= main_conv4_10 (to_real main_conv3_9))
+(= main_%3_11 main_add_5)
+(= main_add5_12 (+ main_%3_11 main_conv4_10))
+(= main_%4_14 main_add5_12)
+(= main_cmp6_15 (ite (= main_%4_14 2.0) 1 0))
+e5:
+(distinct main_%4_14 2.0)
+s5:
+e7:
+q0:
+z3_result is unsat
+
+
+target[0]:from s0(0) to q0(6)
+ Assert Error at line 24 is unreachable under bound 25
+Number of path checked:2
+#Avg_var: 3.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	14.161ms
+
+opt: symbol lookup error: /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so: undefined symbol: _ZN6VerifyD2Ev
+make: *** [float3_true-unreach-callbuildCFG.bc] Error 127

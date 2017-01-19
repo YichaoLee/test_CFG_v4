@@ -1,0 +1,269 @@
+clang -c -emit-llvm -g nan_double_range_true-unreach-call.c -o nan_double_range_true-unreach-call.bc
+llvm-dis nan_double_range_true-unreach-call.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=nan_double_range_true-unreach-call -bound=20 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <nan_double_range_true-unreach-call.bc>   nan_double_range_true-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_x, 2  PTR 
+variable:main_x_0, 3  FP 
+variable:main_retval/0, 4  INT 
+variable:main_call, 5  FP 
+variable:main_%0, 6  FP 
+variable:main_cmp, 7  INT 
+variable:main_%1, 8  FP 
+variable:main_cmp1, 9  INT 
+variable:main_%2, 10  FP 
+variable:main_%3, 11  FP 
+variable:main_cmp2, 12  INT 
+variable:main_conv, 13  INT 
+variable:__VERIFIER_assert_cond, 14  INT 
+variable:__VERIFIER_assert_cond.addr, 15  PTR 
+variable:__VERIFIER_assert_cond.addr_0, 16  INT 
+variable:__VERIFIER_assert_%0, 17  INT 
+variable:__VERIFIER_assert_tobool, 18  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_x =  alloca  constraint: main_x =  store main_x_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_x =  store main_call constraint: main_%0 =  load main_x constraint: main_cmp = main_%0 >= -1e+307 
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:10	LineNum:11	LineNum:13
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main_%1 =  load main_x constraint: main_cmp1 = main_%1 <= 1e+307 
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:13
+
+Location Name:main s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main_%2 =  load main_x constraint: main_%3 =  load main_x constraint: main_cmp2 = main_%2 == main_%3 constraint: main_conv =  main_cmp2 
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:14
+
+Location Name:__VERIFIER_assert s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: __VERIFIER_assert_cond =  main_conv constraint: __VERIFIER_assert_cond.addr =  alloca  constraint: __VERIFIER_assert_cond.addr =  store __VERIFIER_assert_cond.addr_0 constraint: __VERIFIER_assert_cond.addr =  store __VERIFIER_assert_cond constraint: __VERIFIER_assert_%0 =  load __VERIFIER_assert_cond.addr constraint: __VERIFIER_assert_tobool = __VERIFIER_assert_%0 != 0 
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert s4 ID:4 nextS:-1
+Level:4
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert s5 ID:5 nextS:-1
+Level:5
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert q0 ID:6 nextS:-1
+Level:6
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:__VERIFIER_assert s6 ID:7 nextS:-1
+Level:4
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:6
+
+Location Name:main s7 ID:8 nextS:-1
+Level:5
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:15
+
+Location Name:main s8 ID:9 nextS:-1
+Level:6
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/nan_double_range_true-unreach-call.c	LineNum:16
+
+Transition Name:e0 ID:10
+Level:1
+ToLabel:main_if.end
+from:s0 to:s8
+Guard:
+constraint: main_%0 <  -1e+307 
+
+Transition Name:e1 ID:11
+Level:1
+ToLabel:main_land.lhs.true
+from:s0 to:s1
+Guard:
+constraint: main_%0 >=  -1e+307 
+
+Transition Name:e2 ID:12
+Level:2
+ToLabel:main_if.end
+from:s1 to:s8
+Guard:
+constraint: main_%1 >  1e+307 
+
+Transition Name:e3 ID:13
+Level:2
+ToLabel:main_if.then
+from:s1 to:s2
+Guard:
+constraint: main_%1 <=  1e+307 
+
+Transition Name:e4 ID:14
+Level:3
+ToLabel:__VERIFIER_assert_entry
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e5 ID:15
+Level:4
+ToLabel:__VERIFIER_assert_if.then
+from:s3 to:s4
+Guard:
+constraint: __VERIFIER_assert_%0 ==  0 
+
+Transition Name:e6 ID:16
+Level:4
+ToLabel:__VERIFIER_assert_if.end
+from:s3 to:s6
+Guard:
+constraint: __VERIFIER_assert_%0 !=  0 
+
+Transition Name:e7 ID:17
+Level:5
+ToLabel:__VERIFIER_assert_ERROR
+from:s4 to:s5
+Guard:
+null
+
+Transition Name:e8 ID:18
+Level:6
+ToLabel:
+from:s5 to:q0
+Guard:
+null
+
+Transition Name:e9 ID:19
+Level:5
+ToLabel:__VERIFIER_assert_ret
+from:s6 to:s7
+Guard:
+null
+
+Transition Name:e10 ID:20
+Level:6
+ToLabel:main_if.end
+from:s7 to:s8
+Guard:
+null
+
+#BUILDCFG Time: 	3.308ms
+MainFunc: main
+#CallDepth: 1
+#Loc: 8
+#targetsize:	1
+target[0]:q0( Assert Error )
+
+target[0]:q0(6)
+Path route: s0->e1->s1->e3->s2->e4->s3->e5->s4->e7->s5->e8->q0(6)
+s0:
+(= (to_real main_retval/0_4) 0.0)
+(= main_%0_7 main_call)
+(= main_cmp_8
+   (ite (>= main_%0_7
+            (- 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0))
+        1
+        0))
+e1:
+(>= main_%0_7
+    (- 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0))
+s1:
+(= main_%1 main_call)
+(= main_cmp1
+   (ite (<= main_%1
+            10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0)
+        1
+        0))
+e3:
+(<= main_%1
+    10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0)
+s2:
+(= main_%2 main_call)
+(= main_%3 main_call)
+(= main_cmp2_2 (ite (= main_%2 main_%3) 1 0))
+(= main_conv_3 main_cmp2_2)
+e4:
+s3:
+(= __VERIFIER_assert_cond main_conv_3)
+(= __VERIFIER_assert_%0_4 __VERIFIER_assert_cond)
+(let ((a!1 (ite (distinct (to_real __VERIFIER_assert_%0_4)
+                          (to_real (to_int 0.0)))
+                1
+                0)))
+  (= __VERIFIER_assert_tobool_5 a!1))
+e5:
+(= (to_real __VERIFIER_assert_%0_4) 0.0)
+s4:
+e7:
+s5:
+e8:
+q0:
+z3_result is unsat
+
+
+target[0]:from s0(0) to q0(6)
+ Assert Error at line 6 is unreachable under bound 20
+Number of path checked:1
+#Avg_var: 3.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	21.88ms
+
+opt: symbol lookup error: /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so: undefined symbol: _ZN6VerifyD2Ev
+make: *** [nan_double_range_true-unreach-callbuildCFG.bc] Error 127

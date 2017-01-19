@@ -1,0 +1,2370 @@
+clang -c -emit-llvm -g arctan_Pade.c -o arctan_Pade.bc
+llvm-dis arctan_Pade.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=arctan_Pade -bound=20 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <arctan_Pade.bc>   arctan_PadebuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+__VERIFIER_assume
+constraint: 1 ==  main_land.ext
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Unlinear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_a, 2  PTR 
+variable:main_a_0, 3  FP 
+variable:main_r, 4  PTR 
+variable:main_r_0, 5  FP 
+variable:main_retval/0, 6  INT 
+variable:main_call, 7  FP 
+variable:main_%0, 8  FP 
+variable:main_cmp, 9  INT 
+variable:main_%1, 10  FP 
+variable:main_cmp1, 11  INT 
+variable:main_%2, 12  INT 
+variable:main_land.ext, 13  INT 
+variable:main_%3, 14  FP 
+variable:main_call2, 15  FP 
+variable:ARCTAN_x, 16  FP 
+variable:ARCTAN_retval, 17  PTR 
+variable:ARCTAN_retval_0, 18  FP 
+variable:ARCTAN_x.addr, 19  PTR 
+variable:ARCTAN_x.addr_0, 20  FP 
+variable:ARCTAN_%0, 21  FP 
+variable:ARCTAN_cmp, 22  INT 
+variable:ARCTAN_%1, 23  FP 
+variable:ARCTAN_sub, 24  FP 
+variable:ARCTAN_call, 25  FP 
+variable:ARCTAN_POS_x, 26  FP 
+variable:ARCTAN_POS_retval, 27  PTR 
+variable:ARCTAN_POS_retval_0, 28  FP 
+variable:ARCTAN_POS_x.addr, 29  PTR 
+variable:ARCTAN_POS_x.addr_0, 30  FP 
+variable:ARCTAN_POS_%0, 31  FP 
+variable:ARCTAN_POS_cmp, 32  INT 
+variable:ARCTAN_POS_%1, 33  FP 
+variable:ARCTAN_POS_%1_t, 34  FP 
+variable:ARCTAN_POS_div, 35  FP 
+variable:ARCTAN_POS_call, 36  FP 
+variable:ARCTAN_0_1_x, 37  FP 
+variable:ARCTAN_0_1_x.addr, 38  PTR 
+variable:ARCTAN_0_1_x.addr_0, 39  FP 
+variable:ARCTAN_0_1_%0, 40  FP 
+variable:ARCTAN_0_1_%1, 41  FP 
+variable:ARCTAN_0_1_call, 42  FP 
+variable:PADE_2_2_x, 43  FP 
+variable:PADE_2_2_x.addr, 44  PTR 
+variable:PADE_2_2_x.addr_0, 45  FP 
+variable:PADE_2_2_x_2, 46  PTR 
+variable:PADE_2_2_x_2_0, 47  FP 
+variable:PADE_2_2_%0, 48  FP 
+variable:PADE_2_2_%1, 49  FP 
+variable:PADE_2_2_mul, 50  FP 
+variable:PADE_2_2_%2, 51  FP 
+variable:PADE_2_2_%3, 52  FP 
+variable:PADE_2_2_mul1, 53  FP 
+variable:PADE_2_2_add, 54  FP 
+variable:PADE_2_2_add_t, 55  FP 
+variable:PADE_2_2_div, 56  FP 
+variable:PADE_2_2_sub, 57  FP 
+variable:ARCTAN_0_1_mul, 58  FP 
+variable:ARCTAN_POS_sub, 59  FP 
+variable:ARCTAN_POS_%2, 60  FP 
+variable:ARCTAN_POS_call1, 61  FP 
+variable:ARCTAN_0_11_x, 62  FP 
+variable:ARCTAN_0_11_x.addr, 63  PTR 
+variable:ARCTAN_0_11_x.addr_0, 64  FP 
+variable:ARCTAN_0_11_%0, 65  FP 
+variable:ARCTAN_0_11_%1, 66  FP 
+variable:ARCTAN_0_11_call, 67  FP 
+variable:PADE_2_21_x, 68  FP 
+variable:PADE_2_21_x.addr, 69  PTR 
+variable:PADE_2_21_x.addr_0, 70  FP 
+variable:PADE_2_21_x_2, 71  PTR 
+variable:PADE_2_21_x_2_0, 72  FP 
+variable:PADE_2_21_%0, 73  FP 
+variable:PADE_2_21_%1, 74  FP 
+variable:PADE_2_21_mul, 75  FP 
+variable:PADE_2_21_%2, 76  FP 
+variable:PADE_2_21_%3, 77  FP 
+variable:PADE_2_21_mul1, 78  FP 
+variable:PADE_2_21_add, 79  FP 
+variable:PADE_2_21_add_t, 80  FP 
+variable:PADE_2_21_div, 81  FP 
+variable:PADE_2_21_sub, 82  FP 
+variable:ARCTAN_0_11_mul, 83  FP 
+variable:ARCTAN_POS_%3, 84  FP 
+variable:ARCTAN_sub1, 85  FP 
+variable:ARCTAN_%2, 86  FP 
+variable:ARCTAN_call2, 87  FP 
+variable:ARCTAN_POS1_x, 88  FP 
+variable:ARCTAN_POS1_retval, 89  PTR 
+variable:ARCTAN_POS1_retval_0, 90  FP 
+variable:ARCTAN_POS1_x.addr, 91  PTR 
+variable:ARCTAN_POS1_x.addr_0, 92  FP 
+variable:ARCTAN_POS1_%0, 93  FP 
+variable:ARCTAN_POS1_cmp, 94  INT 
+variable:ARCTAN_POS1_%1, 95  FP 
+variable:ARCTAN_POS1_%1_t, 96  FP 
+variable:ARCTAN_POS1_div, 97  FP 
+variable:ARCTAN_POS1_call, 98  FP 
+variable:ARCTAN_0_12_x, 99  FP 
+variable:ARCTAN_0_12_x.addr, 100  PTR 
+variable:ARCTAN_0_12_x.addr_0, 101  FP 
+variable:ARCTAN_0_12_%0, 102  FP 
+variable:ARCTAN_0_12_%1, 103  FP 
+variable:ARCTAN_0_12_call, 104  FP 
+variable:PADE_2_22_x, 105  FP 
+variable:PADE_2_22_x.addr, 106  PTR 
+variable:PADE_2_22_x.addr_0, 107  FP 
+variable:PADE_2_22_x_2, 108  PTR 
+variable:PADE_2_22_x_2_0, 109  FP 
+variable:PADE_2_22_%0, 110  FP 
+variable:PADE_2_22_%1, 111  FP 
+variable:PADE_2_22_mul, 112  FP 
+variable:PADE_2_22_%2, 113  FP 
+variable:PADE_2_22_%3, 114  FP 
+variable:PADE_2_22_mul1, 115  FP 
+variable:PADE_2_22_add, 116  FP 
+variable:PADE_2_22_add_t, 117  FP 
+variable:PADE_2_22_div, 118  FP 
+variable:PADE_2_22_sub, 119  FP 
+variable:ARCTAN_0_12_mul, 120  FP 
+variable:ARCTAN_POS1_sub, 121  FP 
+variable:ARCTAN_POS1_%2, 122  FP 
+variable:ARCTAN_POS1_call1, 123  FP 
+variable:ARCTAN_0_13_x, 124  FP 
+variable:ARCTAN_0_13_x.addr, 125  PTR 
+variable:ARCTAN_0_13_x.addr_0, 126  FP 
+variable:ARCTAN_0_13_%0, 127  FP 
+variable:ARCTAN_0_13_%1, 128  FP 
+variable:ARCTAN_0_13_call, 129  FP 
+variable:PADE_2_23_x, 130  FP 
+variable:PADE_2_23_x.addr, 131  PTR 
+variable:PADE_2_23_x.addr_0, 132  FP 
+variable:PADE_2_23_x_2, 133  PTR 
+variable:PADE_2_23_x_2_0, 134  FP 
+variable:PADE_2_23_%0, 135  FP 
+variable:PADE_2_23_%1, 136  FP 
+variable:PADE_2_23_mul, 137  FP 
+variable:PADE_2_23_%2, 138  FP 
+variable:PADE_2_23_%3, 139  FP 
+variable:PADE_2_23_mul1, 140  FP 
+variable:PADE_2_23_add, 141  FP 
+variable:PADE_2_23_add_t, 142  FP 
+variable:PADE_2_23_div, 143  FP 
+variable:PADE_2_23_sub, 144  FP 
+variable:ARCTAN_0_13_mul, 145  FP 
+variable:ARCTAN_POS1_%3, 146  FP 
+variable:ARCTAN_%3, 147  FP 
+variable:main_%4, 148  FP 
+variable:main_cmp3, 149  INT 
+variable:main_%5, 150  FP 
+variable:main_cmp5, 151  INT 
+variable:main_%6, 152  INT 
+variable:main_land.ext7, 153  INT 
+variable:__VERIFIER_assert_cond, 154  INT 
+variable:__VERIFIER_assert_cond.addr, 155  PTR 
+variable:__VERIFIER_assert_cond.addr_0, 156  INT 
+variable:__VERIFIER_assert_%0, 157  INT 
+variable:__VERIFIER_assert_tobool, 158  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_a =  alloca  constraint: main_a =  store main_a_0 constraint: main_r =  alloca  constraint: main_r =  store main_r_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_a =  store main_call constraint: main_%0 =  load main_a constraint: main_cmp = main_%0 >= -1.79e+308 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:42	LineNum:44	LineNum:45
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main_%1 =  load main_a constraint: main_cmp1 = main_%1 <= 1.79e+308 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:45
+
+Location Name:main s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main_land.ext =  main_%2 constraint: 1 ==  main_land.ext constraint: main_%3 =  load main_a 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:45	LineNum:47
+
+Location Name:ARCTAN s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: ARCTAN_x =  main_%3 constraint: ARCTAN_retval =  alloca  constraint: ARCTAN_retval =  store ARCTAN_retval_0 constraint: ARCTAN_x.addr =  alloca  constraint: ARCTAN_x.addr =  store ARCTAN_x.addr_0 constraint: ARCTAN_x.addr =  store ARCTAN_x constraint: ARCTAN_%0 =  load ARCTAN_x.addr constraint: ARCTAN_cmp = ARCTAN_%0 < 0 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:34	LineNum:36
+
+Location Name:ARCTAN s4 ID:4 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: ARCTAN_%1 =  load ARCTAN_x.addr constraint: ARCTAN_sub = -0 - ARCTAN_%1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:36
+
+Location Name:ARCTAN_POS s5 ID:5 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: ARCTAN_POS_x =  ARCTAN_sub constraint: ARCTAN_POS_retval =  alloca  constraint: ARCTAN_POS_retval =  store ARCTAN_POS_retval_0 constraint: ARCTAN_POS_x.addr =  alloca  constraint: ARCTAN_POS_x.addr =  store ARCTAN_POS_x.addr_0 constraint: ARCTAN_POS_x.addr =  store ARCTAN_POS_x constraint: ARCTAN_POS_%0 =  load ARCTAN_POS_x.addr constraint: ARCTAN_POS_cmp = ARCTAN_POS_%0 > 1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:28	LineNum:30
+
+Location Name:ARCTAN_POS s6 ID:6 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: ARCTAN_POS_%1 =  load ARCTAN_POS_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_POS q0 ID:7 nextS:-1
+Level:7
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:ARCTAN_POS s7 ID:8 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: ARCTAN_POS_div = 1 / ARCTAN_POS_%1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_0_1 s8 ID:9 nextS:-1
+Level:8
+ErrorType: No Error 
+constraint: ARCTAN_0_1_x =  ARCTAN_POS_div constraint: ARCTAN_0_1_x.addr =  alloca  constraint: ARCTAN_0_1_x.addr =  store ARCTAN_0_1_x.addr_0 constraint: ARCTAN_0_1_x.addr =  store ARCTAN_0_1_x constraint: ARCTAN_0_1_%0 =  load ARCTAN_0_1_x.addr constraint: ARCTAN_0_1_%1 =  load ARCTAN_0_1_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:23	LineNum:25
+
+Location Name:PADE_2_2 s9 ID:10 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: PADE_2_2_x =  ARCTAN_0_1_%1 constraint: PADE_2_2_x.addr =  alloca  constraint: PADE_2_2_x.addr =  store PADE_2_2_x.addr_0 constraint: PADE_2_2_x_2 =  alloca  constraint: PADE_2_2_x_2 =  store PADE_2_2_x_2_0 constraint: PADE_2_2_x.addr =  store PADE_2_2_x constraint: PADE_2_2_%0 =  load PADE_2_2_x.addr constraint: PADE_2_2_%1 =  load PADE_2_2_x.addr constraint: PADE_2_2_mul = PADE_2_2_%0 * PADE_2_2_%1 constraint: PADE_2_2_x_2 =  store PADE_2_2_mul constraint: PADE_2_2_%2 =  load PADE_2_2_x_2 constraint: PADE_2_2_%3 =  load PADE_2_2_x_2 constraint: PADE_2_2_mul1 = 1.8 * PADE_2_2_%3 constraint: PADE_2_2_add = 3 + PADE_2_2_mul1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:17	LineNum:19	LineNum:20
+
+Location Name:PADE_2_2 q1 ID:11 nextS:-1
+Level:10
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:PADE_2_2 s10 ID:12 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: PADE_2_2_div = PADE_2_2_%2 / PADE_2_2_add constraint: PADE_2_2_sub = 1 - PADE_2_2_div 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:20
+
+Location Name:ARCTAN_0_1 s11 ID:13 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: ARCTAN_0_1_mul = ARCTAN_0_1_%0 * ARCTAN_0_1_call 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:25
+
+Location Name:ARCTAN_POS s12 ID:14 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: ARCTAN_POS_sub = 1.5708 - ARCTAN_POS_call constraint: ARCTAN_POS_retval =  store ARCTAN_POS_sub 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_POS s13 ID:15 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: ARCTAN_POS_%2 =  load ARCTAN_POS_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:31
+
+Location Name:ARCTAN_0_11 s14 ID:16 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: ARCTAN_0_11_x =  ARCTAN_POS_%2 constraint: ARCTAN_0_11_x.addr =  alloca  constraint: ARCTAN_0_11_x.addr =  store ARCTAN_0_11_x.addr_0 constraint: ARCTAN_0_11_x.addr =  store ARCTAN_0_11_x constraint: ARCTAN_0_11_%0 =  load ARCTAN_0_11_x.addr constraint: ARCTAN_0_11_%1 =  load ARCTAN_0_11_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:23	LineNum:25
+
+Location Name:PADE_2_21 s15 ID:17 nextS:-1
+Level:8
+ErrorType: No Error 
+constraint: PADE_2_21_x =  ARCTAN_0_11_%1 constraint: PADE_2_21_x.addr =  alloca  constraint: PADE_2_21_x.addr =  store PADE_2_21_x.addr_0 constraint: PADE_2_21_x_2 =  alloca  constraint: PADE_2_21_x_2 =  store PADE_2_21_x_2_0 constraint: PADE_2_21_x.addr =  store PADE_2_21_x constraint: PADE_2_21_%0 =  load PADE_2_21_x.addr constraint: PADE_2_21_%1 =  load PADE_2_21_x.addr constraint: PADE_2_21_mul = PADE_2_21_%0 * PADE_2_21_%1 constraint: PADE_2_21_x_2 =  store PADE_2_21_mul constraint: PADE_2_21_%2 =  load PADE_2_21_x_2 constraint: PADE_2_21_%3 =  load PADE_2_21_x_2 constraint: PADE_2_21_mul1 = 1.8 * PADE_2_21_%3 constraint: PADE_2_21_add = 3 + PADE_2_21_mul1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:17	LineNum:19	LineNum:20
+
+Location Name:PADE_2_21 q2 ID:18 nextS:-1
+Level:9
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:PADE_2_21 s16 ID:19 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: PADE_2_21_div = PADE_2_21_%2 / PADE_2_21_add constraint: PADE_2_21_sub = 1 - PADE_2_21_div 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:20
+
+Location Name:ARCTAN_0_11 s17 ID:20 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: ARCTAN_0_11_mul = ARCTAN_0_11_%0 * ARCTAN_0_11_call 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:25
+
+Location Name:ARCTAN_POS s18 ID:21 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: ARCTAN_POS_retval =  store ARCTAN_POS_call1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:31
+
+Location Name:ARCTAN_POS s19 ID:22 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: ARCTAN_POS_%3 =  load ARCTAN_POS_retval 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:32
+
+Location Name:ARCTAN s20 ID:23 nextS:-1
+Level:13
+ErrorType: No Error 
+constraint: ARCTAN_sub1 = -0 - ARCTAN_call constraint: ARCTAN_retval =  store ARCTAN_sub1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:36
+
+Location Name:ARCTAN s21 ID:24 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: ARCTAN_%2 =  load ARCTAN_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:37
+
+Location Name:ARCTAN_POS1 s22 ID:25 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: ARCTAN_POS1_x =  ARCTAN_%2 constraint: ARCTAN_POS1_retval =  alloca  constraint: ARCTAN_POS1_retval =  store ARCTAN_POS1_retval_0 constraint: ARCTAN_POS1_x.addr =  alloca  constraint: ARCTAN_POS1_x.addr =  store ARCTAN_POS1_x.addr_0 constraint: ARCTAN_POS1_x.addr =  store ARCTAN_POS1_x constraint: ARCTAN_POS1_%0 =  load ARCTAN_POS1_x.addr constraint: ARCTAN_POS1_cmp = ARCTAN_POS1_%0 > 1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:28	LineNum:30
+
+Location Name:ARCTAN_POS1 s23 ID:26 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: ARCTAN_POS1_%1 =  load ARCTAN_POS1_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_POS1 q3 ID:27 nextS:-1
+Level:7
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:ARCTAN_POS1 s24 ID:28 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: ARCTAN_POS1_div = 1 / ARCTAN_POS1_%1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_0_12 s25 ID:29 nextS:-1
+Level:8
+ErrorType: No Error 
+constraint: ARCTAN_0_12_x =  ARCTAN_POS1_div constraint: ARCTAN_0_12_x.addr =  alloca  constraint: ARCTAN_0_12_x.addr =  store ARCTAN_0_12_x.addr_0 constraint: ARCTAN_0_12_x.addr =  store ARCTAN_0_12_x constraint: ARCTAN_0_12_%0 =  load ARCTAN_0_12_x.addr constraint: ARCTAN_0_12_%1 =  load ARCTAN_0_12_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:23	LineNum:25
+
+Location Name:PADE_2_22 s26 ID:30 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: PADE_2_22_x =  ARCTAN_0_12_%1 constraint: PADE_2_22_x.addr =  alloca  constraint: PADE_2_22_x.addr =  store PADE_2_22_x.addr_0 constraint: PADE_2_22_x_2 =  alloca  constraint: PADE_2_22_x_2 =  store PADE_2_22_x_2_0 constraint: PADE_2_22_x.addr =  store PADE_2_22_x constraint: PADE_2_22_%0 =  load PADE_2_22_x.addr constraint: PADE_2_22_%1 =  load PADE_2_22_x.addr constraint: PADE_2_22_mul = PADE_2_22_%0 * PADE_2_22_%1 constraint: PADE_2_22_x_2 =  store PADE_2_22_mul constraint: PADE_2_22_%2 =  load PADE_2_22_x_2 constraint: PADE_2_22_%3 =  load PADE_2_22_x_2 constraint: PADE_2_22_mul1 = 1.8 * PADE_2_22_%3 constraint: PADE_2_22_add = 3 + PADE_2_22_mul1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:17	LineNum:19	LineNum:20
+
+Location Name:PADE_2_22 q4 ID:31 nextS:-1
+Level:10
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:PADE_2_22 s27 ID:32 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: PADE_2_22_div = PADE_2_22_%2 / PADE_2_22_add constraint: PADE_2_22_sub = 1 - PADE_2_22_div 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:20
+
+Location Name:ARCTAN_0_12 s28 ID:33 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: ARCTAN_0_12_mul = ARCTAN_0_12_%0 * ARCTAN_0_12_call 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:25
+
+Location Name:ARCTAN_POS1 s29 ID:34 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: ARCTAN_POS1_sub = 1.5708 - ARCTAN_POS1_call constraint: ARCTAN_POS1_retval =  store ARCTAN_POS1_sub 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:30
+
+Location Name:ARCTAN_POS1 s30 ID:35 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: ARCTAN_POS1_%2 =  load ARCTAN_POS1_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:31
+
+Location Name:ARCTAN_0_13 s31 ID:36 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: ARCTAN_0_13_x =  ARCTAN_POS1_%2 constraint: ARCTAN_0_13_x.addr =  alloca  constraint: ARCTAN_0_13_x.addr =  store ARCTAN_0_13_x.addr_0 constraint: ARCTAN_0_13_x.addr =  store ARCTAN_0_13_x constraint: ARCTAN_0_13_%0 =  load ARCTAN_0_13_x.addr constraint: ARCTAN_0_13_%1 =  load ARCTAN_0_13_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:23	LineNum:25
+
+Location Name:PADE_2_23 s32 ID:37 nextS:-1
+Level:8
+ErrorType: No Error 
+constraint: PADE_2_23_x =  ARCTAN_0_13_%1 constraint: PADE_2_23_x.addr =  alloca  constraint: PADE_2_23_x.addr =  store PADE_2_23_x.addr_0 constraint: PADE_2_23_x_2 =  alloca  constraint: PADE_2_23_x_2 =  store PADE_2_23_x_2_0 constraint: PADE_2_23_x.addr =  store PADE_2_23_x constraint: PADE_2_23_%0 =  load PADE_2_23_x.addr constraint: PADE_2_23_%1 =  load PADE_2_23_x.addr constraint: PADE_2_23_mul = PADE_2_23_%0 * PADE_2_23_%1 constraint: PADE_2_23_x_2 =  store PADE_2_23_mul constraint: PADE_2_23_%2 =  load PADE_2_23_x_2 constraint: PADE_2_23_%3 =  load PADE_2_23_x_2 constraint: PADE_2_23_mul1 = 1.8 * PADE_2_23_%3 constraint: PADE_2_23_add = 3 + PADE_2_23_mul1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:17	LineNum:19	LineNum:20
+
+Location Name:PADE_2_23 q5 ID:38 nextS:-1
+Level:9
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:PADE_2_23 s33 ID:39 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: PADE_2_23_div = PADE_2_23_%2 / PADE_2_23_add constraint: PADE_2_23_sub = 1 - PADE_2_23_div 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:20
+
+Location Name:ARCTAN_0_13 s34 ID:40 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: ARCTAN_0_13_mul = ARCTAN_0_13_%0 * ARCTAN_0_13_call 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:25
+
+Location Name:ARCTAN_POS1 s35 ID:41 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: ARCTAN_POS1_retval =  store ARCTAN_POS1_call1 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:31
+
+Location Name:ARCTAN_POS1 s36 ID:42 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: ARCTAN_POS1_%3 =  load ARCTAN_POS1_retval 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:32
+
+Location Name:ARCTAN s37 ID:43 nextS:-1
+Level:13
+ErrorType: No Error 
+constraint: ARCTAN_retval =  store ARCTAN_call2 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:37
+
+Location Name:ARCTAN s38 ID:44 nextS:-1
+Level:14
+ErrorType: No Error 
+constraint: ARCTAN_%3 =  load ARCTAN_retval 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:38
+
+Location Name:main s39 ID:45 nextS:-1
+Level:15
+ErrorType: No Error 
+constraint: main_r =  store main_call2 constraint: main_%4 =  load main_r constraint: main_cmp3 = main_%4 >= -1.571 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:47	LineNum:49
+
+Location Name:main s40 ID:46 nextS:-1
+Level:16
+ErrorType: No Error 
+constraint: main_%5 =  load main_r constraint: main_cmp5 = main_%5 <= 1.571 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:49
+
+Location Name:main s41 ID:47 nextS:-1
+Level:17
+ErrorType: No Error 
+constraint: main_land.ext7 =  main_%6 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:49
+
+Location Name:__VERIFIER_assert s42 ID:48 nextS:-1
+Level:18
+ErrorType: No Error 
+constraint: __VERIFIER_assert_cond =  main_land.ext7 constraint: __VERIFIER_assert_cond.addr =  alloca  constraint: __VERIFIER_assert_cond.addr =  store __VERIFIER_assert_cond.addr_0 constraint: __VERIFIER_assert_cond.addr =  store __VERIFIER_assert_cond constraint: __VERIFIER_assert_%0 =  load __VERIFIER_assert_cond.addr constraint: __VERIFIER_assert_tobool = __VERIFIER_assert_%0 != 0 
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:12
+
+Location Name:__VERIFIER_assert s43 ID:49 nextS:-1
+Level:19
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:12
+
+Location Name:__VERIFIER_assert s44 ID:50 nextS:-1
+Level:20
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:12
+
+Location Name:__VERIFIER_assert q6 ID:51 nextS:-1
+Level:21
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:__VERIFIER_assert s45 ID:52 nextS:-1
+Level:19
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:12
+
+Location Name:main s46 ID:53 nextS:-1
+Level:20
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/arctan_Pade.c	LineNum:50
+
+Transition Name:e0 ID:54
+Level:1
+ToLabel:main_land.end
+from:s0 to:s2
+Guard:
+constraint: main_%0 <  -1.79e+308 constraint: main_%2 =  0 
+
+Transition Name:e1 ID:55
+Level:1
+ToLabel:main_land.rhs
+from:s0 to:s1
+Guard:
+constraint: main_%0 >=  -1.79e+308 
+
+Transition Name:e2 ID:56
+Level:2
+ToLabel:main_land.end
+from:s1 to:s2
+Guard:
+constraint: main_%2 =  main_cmp1 
+
+Transition Name:e3 ID:57
+Level:3
+ToLabel:ARCTAN_entry
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e4 ID:58
+Level:4
+ToLabel:ARCTAN_if.else
+from:s3 to:s21
+Guard:
+constraint: ARCTAN_%0 >=  0 
+
+Transition Name:e5 ID:59
+Level:4
+ToLabel:ARCTAN_if.then
+from:s3 to:s4
+Guard:
+constraint: ARCTAN_%0 <  0 
+
+Transition Name:e6 ID:60
+Level:5
+ToLabel:ARCTAN_POS_entry
+from:s4 to:s5
+Guard:
+null
+
+Transition Name:e7 ID:61
+Level:6
+ToLabel:ARCTAN_POS_if.else
+from:s5 to:s13
+Guard:
+constraint: ARCTAN_POS_%0 <=  1 
+
+Transition Name:e8 ID:62
+Level:6
+ToLabel:ARCTAN_POS_if.then
+from:s5 to:s6
+Guard:
+constraint: ARCTAN_POS_%0 >  1 
+
+Transition Name:e9 ID:63
+Level:7
+ToLabel:
+from:s6 to:q0
+Guard:
+constraint: ARCTAN_POS_%1_t =  abs ARCTAN_POS_%1 constraint: ARCTAN_POS_%1_t <  abs 0.01 
+
+Transition Name:e10 ID:64
+Level:7
+ToLabel:
+from:s6 to:s7
+Guard:
+null
+
+Transition Name:e11 ID:65
+Level:8
+ToLabel:ARCTAN_0_1_entry
+from:s7 to:s8
+Guard:
+null
+
+Transition Name:e12 ID:66
+Level:9
+ToLabel:PADE_2_2_entry
+from:s8 to:s9
+Guard:
+null
+
+Transition Name:e13 ID:67
+Level:10
+ToLabel:
+from:s9 to:q1
+Guard:
+constraint: PADE_2_2_add_t =  abs PADE_2_2_add constraint: PADE_2_2_add_t <  abs 0.01 
+
+Transition Name:e14 ID:68
+Level:10
+ToLabel:
+from:s9 to:s10
+Guard:
+null
+
+Transition Name:e15 ID:69
+Level:11
+ToLabel:PADE_2_2_ret
+from:s10 to:s11
+Guard:
+constraint: ARCTAN_0_1_call =  PADE_2_2_sub 
+
+Transition Name:e16 ID:70
+Level:12
+ToLabel:ARCTAN_0_1_ret
+from:s11 to:s12
+Guard:
+constraint: ARCTAN_POS_call =  ARCTAN_0_1_mul 
+
+Transition Name:e17 ID:71
+Level:13
+ToLabel:ARCTAN_POS_return
+from:s12 to:s19
+Guard:
+null
+
+Transition Name:e18 ID:72
+Level:7
+ToLabel:ARCTAN_0_11_entry
+from:s13 to:s14
+Guard:
+null
+
+Transition Name:e19 ID:73
+Level:8
+ToLabel:PADE_2_21_entry
+from:s14 to:s15
+Guard:
+null
+
+Transition Name:e20 ID:74
+Level:9
+ToLabel:
+from:s15 to:q2
+Guard:
+constraint: PADE_2_21_add_t =  abs PADE_2_21_add constraint: PADE_2_21_add_t <  abs 0.01 
+
+Transition Name:e21 ID:75
+Level:9
+ToLabel:
+from:s15 to:s16
+Guard:
+null
+
+Transition Name:e22 ID:76
+Level:10
+ToLabel:PADE_2_21_ret
+from:s16 to:s17
+Guard:
+constraint: ARCTAN_0_11_call =  PADE_2_21_sub 
+
+Transition Name:e23 ID:77
+Level:11
+ToLabel:ARCTAN_0_11_ret
+from:s17 to:s18
+Guard:
+constraint: ARCTAN_POS_call1 =  ARCTAN_0_11_mul 
+
+Transition Name:e24 ID:78
+Level:12
+ToLabel:ARCTAN_POS_return
+from:s18 to:s19
+Guard:
+null
+
+Transition Name:e25 ID:79
+Level:13
+ToLabel:ARCTAN_POS_ret
+from:s19 to:s20
+Guard:
+constraint: ARCTAN_call =  ARCTAN_POS_%3 
+
+Transition Name:e26 ID:80
+Level:14
+ToLabel:ARCTAN_return
+from:s20 to:s38
+Guard:
+null
+
+Transition Name:e27 ID:81
+Level:5
+ToLabel:ARCTAN_POS1_entry
+from:s21 to:s22
+Guard:
+null
+
+Transition Name:e28 ID:82
+Level:6
+ToLabel:ARCTAN_POS1_if.else
+from:s22 to:s30
+Guard:
+constraint: ARCTAN_POS1_%0 <=  1 
+
+Transition Name:e29 ID:83
+Level:6
+ToLabel:ARCTAN_POS1_if.then
+from:s22 to:s23
+Guard:
+constraint: ARCTAN_POS1_%0 >  1 
+
+Transition Name:e30 ID:84
+Level:7
+ToLabel:
+from:s23 to:q3
+Guard:
+constraint: ARCTAN_POS1_%1_t =  abs ARCTAN_POS1_%1 constraint: ARCTAN_POS1_%1_t <  abs 0.01 
+
+Transition Name:e31 ID:85
+Level:7
+ToLabel:
+from:s23 to:s24
+Guard:
+null
+
+Transition Name:e32 ID:86
+Level:8
+ToLabel:ARCTAN_0_12_entry
+from:s24 to:s25
+Guard:
+null
+
+Transition Name:e33 ID:87
+Level:9
+ToLabel:PADE_2_22_entry
+from:s25 to:s26
+Guard:
+null
+
+Transition Name:e34 ID:88
+Level:10
+ToLabel:
+from:s26 to:q4
+Guard:
+constraint: PADE_2_22_add_t =  abs PADE_2_22_add constraint: PADE_2_22_add_t <  abs 0.01 
+
+Transition Name:e35 ID:89
+Level:10
+ToLabel:
+from:s26 to:s27
+Guard:
+null
+
+Transition Name:e36 ID:90
+Level:11
+ToLabel:PADE_2_22_ret
+from:s27 to:s28
+Guard:
+constraint: ARCTAN_0_12_call =  PADE_2_22_sub 
+
+Transition Name:e37 ID:91
+Level:12
+ToLabel:ARCTAN_0_12_ret
+from:s28 to:s29
+Guard:
+constraint: ARCTAN_POS1_call =  ARCTAN_0_12_mul 
+
+Transition Name:e38 ID:92
+Level:13
+ToLabel:ARCTAN_POS1_return
+from:s29 to:s36
+Guard:
+null
+
+Transition Name:e39 ID:93
+Level:7
+ToLabel:ARCTAN_0_13_entry
+from:s30 to:s31
+Guard:
+null
+
+Transition Name:e40 ID:94
+Level:8
+ToLabel:PADE_2_23_entry
+from:s31 to:s32
+Guard:
+null
+
+Transition Name:e41 ID:95
+Level:9
+ToLabel:
+from:s32 to:q5
+Guard:
+constraint: PADE_2_23_add_t =  abs PADE_2_23_add constraint: PADE_2_23_add_t <  abs 0.01 
+
+Transition Name:e42 ID:96
+Level:9
+ToLabel:
+from:s32 to:s33
+Guard:
+null
+
+Transition Name:e43 ID:97
+Level:10
+ToLabel:PADE_2_23_ret
+from:s33 to:s34
+Guard:
+constraint: ARCTAN_0_13_call =  PADE_2_23_sub 
+
+Transition Name:e44 ID:98
+Level:11
+ToLabel:ARCTAN_0_13_ret
+from:s34 to:s35
+Guard:
+constraint: ARCTAN_POS1_call1 =  ARCTAN_0_13_mul 
+
+Transition Name:e45 ID:99
+Level:12
+ToLabel:ARCTAN_POS1_return
+from:s35 to:s36
+Guard:
+null
+
+Transition Name:e46 ID:100
+Level:13
+ToLabel:ARCTAN_POS1_ret
+from:s36 to:s37
+Guard:
+constraint: ARCTAN_call2 =  ARCTAN_POS1_%3 
+
+Transition Name:e47 ID:101
+Level:14
+ToLabel:ARCTAN_return
+from:s37 to:s38
+Guard:
+null
+
+Transition Name:e48 ID:102
+Level:15
+ToLabel:ARCTAN_ret
+from:s38 to:s39
+Guard:
+constraint: main_call2 =  ARCTAN_%3 
+
+Transition Name:e49 ID:103
+Level:16
+ToLabel:main_land.end6
+from:s39 to:s41
+Guard:
+constraint: main_%4 <  -1.571 constraint: main_%6 =  0 
+
+Transition Name:e50 ID:104
+Level:16
+ToLabel:main_land.rhs4
+from:s39 to:s40
+Guard:
+constraint: main_%4 >=  -1.571 
+
+Transition Name:e51 ID:105
+Level:17
+ToLabel:main_land.end6
+from:s40 to:s41
+Guard:
+constraint: main_%6 =  main_cmp5 
+
+Transition Name:e52 ID:106
+Level:18
+ToLabel:__VERIFIER_assert_entry
+from:s41 to:s42
+Guard:
+null
+
+Transition Name:e53 ID:107
+Level:19
+ToLabel:__VERIFIER_assert_if.then
+from:s42 to:s43
+Guard:
+constraint: __VERIFIER_assert_%0 ==  0 
+
+Transition Name:e54 ID:108
+Level:19
+ToLabel:__VERIFIER_assert_if.end
+from:s42 to:s45
+Guard:
+constraint: __VERIFIER_assert_%0 !=  0 
+
+Transition Name:e55 ID:109
+Level:20
+ToLabel:__VERIFIER_assert_ERROR
+from:s43 to:s44
+Guard:
+null
+
+Transition Name:e56 ID:110
+Level:21
+ToLabel:
+from:s44 to:q6
+Guard:
+null
+
+Transition Name:e57 ID:111
+Level:20
+ToLabel:__VERIFIER_assert_ret
+from:s45 to:s46
+Guard:
+null
+
+#BUILDCFG Time: 	20.995ms
+MainFunc: main
+#CallDepth: 12
+#Loc: 27
+#targetsize:	7
+target[0]:q0( Div0 Error )
+target[1]:q1( Div0 Error )
+target[2]:q2( Div0 Error )
+target[3]:q3( Div0 Error )
+target[4]:q4( Div0 Error )
+target[5]:q5( Div0 Error )
+target[6]:q6( Assert Error )
+
+target[0]:q0(7)
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e8->s6->e9->q0(7)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e8:
+(not (<= ARCTAN_POS_%0 1))
+s6:
+(= ARCTAN_POS_x ARCTAN_POS_%1)
+e9:
+(= ARCTAN_POS_%1_t (abs ARCTAN_POS_%1))
+(not (<= 0.01 ARCTAN_POS_%1_t))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e5->s4->e6->s5->e8->s6->e9->q0(7)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e8:
+(not (<= ARCTAN_POS_%0 1))
+s6:
+(= ARCTAN_POS_x ARCTAN_POS_%1)
+e9:
+(= ARCTAN_POS_%1_t (abs ARCTAN_POS_%1))
+(not (<= 0.01 ARCTAN_POS_%1_t))
+q0:
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(7)
+ Div0 Error at line 30 is unreachable under bound 20
+Number of path checked:2
+#Avg_var: 7.000000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	5ms
+
+target[1]:q1(11)
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e8->s6->e10->s7->e11->s8->e12->s9->e13->q1(11)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e8:
+(not (<= ARCTAN_POS_%0 1))
+s6:
+(= ARCTAN_POS_x ARCTAN_POS_%1)
+e10:
+s7:
+(= ARCTAN_POS_div (/ 1 ARCTAN_POS_%1))
+e11:
+s8:
+(= ARCTAN_POS_div ARCTAN_0_1_x)
+(= ARCTAN_0_1_x ARCTAN_0_1_%0)
+(= ARCTAN_0_1_x ARCTAN_0_1_%1)
+e12:
+s9:
+(= ARCTAN_0_1_%1 PADE_2_2_x)
+(= PADE_2_2_x PADE_2_2_%0)
+(= PADE_2_2_x PADE_2_2_%1)
+(= PADE_2_2_mul (* PADE_2_2_%1 PADE_2_2_%0))
+(= PADE_2_2_mul PADE_2_2_%2)
+(= PADE_2_2_mul PADE_2_2_%3)
+(= PADE_2_2_mul1 (* PADE_2_2_%3 1.8))
+(= PADE_2_2_add (+ PADE_2_2_mul1 3))
+e13:
+(= PADE_2_2_add_t (abs PADE_2_2_add))
+(not (<= 0.01 PADE_2_2_add_t))
+q1:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e5->s4->e6->s5->e8->s6->e10->s7->e11->s8->e12->s9->e13->q1(11)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e8:
+(not (<= ARCTAN_POS_%0 1))
+s6:
+(= ARCTAN_POS_x ARCTAN_POS_%1)
+e10:
+s7:
+(= ARCTAN_POS_div (/ 1 ARCTAN_POS_%1))
+e11:
+s8:
+(= ARCTAN_POS_div ARCTAN_0_1_x)
+(= ARCTAN_0_1_x ARCTAN_0_1_%0)
+(= ARCTAN_0_1_x ARCTAN_0_1_%1)
+e12:
+s9:
+(= ARCTAN_0_1_%1 PADE_2_2_x)
+(= PADE_2_2_x PADE_2_2_%0)
+(= PADE_2_2_x PADE_2_2_%1)
+(= PADE_2_2_mul (* PADE_2_2_%1 PADE_2_2_%0))
+(= PADE_2_2_mul PADE_2_2_%2)
+(= PADE_2_2_mul PADE_2_2_%3)
+(= PADE_2_2_mul1 (* PADE_2_2_%3 1.8))
+(= PADE_2_2_add (+ PADE_2_2_mul1 3))
+e13:
+(= PADE_2_2_add_t (abs PADE_2_2_add))
+(not (<= 0.01 PADE_2_2_add_t))
+q1:
+dreal_result is unsat
+
+
+target[1]:from s0(0) to q1(11)
+ Div0 Error at line 20 is unreachable under bound 20
+Number of path checked:4
+#Avg_var: 8.500000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	7.19ms
+
+target[2]:q2(18)
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e7->s13->e18->s14->e19->s15->e20->q2(18)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e7:
+(<= ARCTAN_POS_%0 1)
+s13:
+(= ARCTAN_POS_x ARCTAN_POS_%2)
+e18:
+s14:
+(= ARCTAN_POS_%2 ARCTAN_0_11_x)
+(= ARCTAN_0_11_x ARCTAN_0_11_%0)
+(= ARCTAN_0_11_x ARCTAN_0_11_%1)
+e19:
+s15:
+(= ARCTAN_0_11_%1 PADE_2_21_x)
+(= PADE_2_21_x PADE_2_21_%0)
+(= PADE_2_21_x PADE_2_21_%1)
+(= PADE_2_21_mul (* PADE_2_21_%1 PADE_2_21_%0))
+(= PADE_2_21_mul PADE_2_21_%2)
+(= PADE_2_21_mul PADE_2_21_%3)
+(= PADE_2_21_mul1 (* PADE_2_21_%3 1.8))
+(= PADE_2_21_add (+ PADE_2_21_mul1 3))
+e20:
+(= PADE_2_21_add_t (abs PADE_2_21_add))
+(not (<= 0.01 PADE_2_21_add_t))
+q2:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e5->s4->e6->s5->e7->s13->e18->s14->e19->s15->e20->q2(18)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e7:
+(<= ARCTAN_POS_%0 1)
+s13:
+(= ARCTAN_POS_x ARCTAN_POS_%2)
+e18:
+s14:
+(= ARCTAN_POS_%2 ARCTAN_0_11_x)
+(= ARCTAN_0_11_x ARCTAN_0_11_%0)
+(= ARCTAN_0_11_x ARCTAN_0_11_%1)
+e19:
+s15:
+(= ARCTAN_0_11_%1 PADE_2_21_x)
+(= PADE_2_21_x PADE_2_21_%0)
+(= PADE_2_21_x PADE_2_21_%1)
+(= PADE_2_21_mul (* PADE_2_21_%1 PADE_2_21_%0))
+(= PADE_2_21_mul PADE_2_21_%2)
+(= PADE_2_21_mul PADE_2_21_%3)
+(= PADE_2_21_mul1 (* PADE_2_21_%3 1.8))
+(= PADE_2_21_add (+ PADE_2_21_mul1 3))
+e20:
+(= PADE_2_21_add_t (abs PADE_2_21_add))
+(not (<= 0.01 PADE_2_21_add_t))
+q2:
+dreal_result is unsat
+
+
+target[2]:from s0(0) to q2(18)
+ Div0 Error at line 20 is unreachable under bound 20
+Number of path checked:6
+#Avg_var: 9.000000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	6.225ms
+
+target[3]:q3(27)
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e29->s23->e30->q3(27)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e29:
+(not (<= ARCTAN_POS1_%0 1))
+s23:
+(= ARCTAN_POS1_x ARCTAN_POS1_%1)
+e30:
+(= ARCTAN_POS1_%1_t (abs ARCTAN_POS1_%1))
+(not (<= 0.01 ARCTAN_POS1_%1_t))
+q3:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e4->s21->e27->s22->e29->s23->e30->q3(27)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e29:
+(not (<= ARCTAN_POS1_%0 1))
+s23:
+(= ARCTAN_POS1_x ARCTAN_POS1_%1)
+e30:
+(= ARCTAN_POS1_%1_t (abs ARCTAN_POS1_%1))
+(not (<= 0.01 ARCTAN_POS1_%1_t))
+q3:
+dreal_result is unsat
+
+
+target[3]:from s0(0) to q3(27)
+ Div0 Error at line 30 is unreachable under bound 20
+Number of path checked:8
+#Avg_var: 8.500000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	3.164ms
+
+target[4]:q4(31)
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e29->s23->e31->s24->e32->s25->e33->s26->e34->q4(31)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e29:
+(not (<= ARCTAN_POS1_%0 1))
+s23:
+(= ARCTAN_POS1_x ARCTAN_POS1_%1)
+e31:
+s24:
+(= ARCTAN_POS1_div (/ 1 ARCTAN_POS1_%1))
+e32:
+s25:
+(= ARCTAN_POS1_div ARCTAN_0_12_x)
+(= ARCTAN_0_12_x ARCTAN_0_12_%0)
+(= ARCTAN_0_12_x ARCTAN_0_12_%1)
+e33:
+s26:
+(= ARCTAN_0_12_%1 PADE_2_22_x)
+(= PADE_2_22_x PADE_2_22_%0)
+(= PADE_2_22_x PADE_2_22_%1)
+(= PADE_2_22_mul (* PADE_2_22_%1 PADE_2_22_%0))
+(= PADE_2_22_mul PADE_2_22_%2)
+(= PADE_2_22_mul PADE_2_22_%3)
+(= PADE_2_22_mul1 (* PADE_2_22_%3 1.8))
+(= PADE_2_22_add (+ PADE_2_22_mul1 3))
+e34:
+(= PADE_2_22_add_t (abs PADE_2_22_add))
+(not (<= 0.01 PADE_2_22_add_t))
+q4:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e4->s21->e27->s22->e29->s23->e31->s24->e32->s25->e33->s26->e34->q4(31)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e29:
+(not (<= ARCTAN_POS1_%0 1))
+s23:
+(= ARCTAN_POS1_x ARCTAN_POS1_%1)
+e31:
+s24:
+(= ARCTAN_POS1_div (/ 1 ARCTAN_POS1_%1))
+e32:
+s25:
+(= ARCTAN_POS1_div ARCTAN_0_12_x)
+(= ARCTAN_0_12_x ARCTAN_0_12_%0)
+(= ARCTAN_0_12_x ARCTAN_0_12_%1)
+e33:
+s26:
+(= ARCTAN_0_12_%1 PADE_2_22_x)
+(= PADE_2_22_x PADE_2_22_%0)
+(= PADE_2_22_x PADE_2_22_%1)
+(= PADE_2_22_mul (* PADE_2_22_%1 PADE_2_22_%0))
+(= PADE_2_22_mul PADE_2_22_%2)
+(= PADE_2_22_mul PADE_2_22_%3)
+(= PADE_2_22_mul1 (* PADE_2_22_%3 1.8))
+(= PADE_2_22_add (+ PADE_2_22_mul1 3))
+e34:
+(= PADE_2_22_add_t (abs PADE_2_22_add))
+(not (<= 0.01 PADE_2_22_add_t))
+q4:
+dreal_result is unsat
+
+
+target[4]:from s0(0) to q4(31)
+ Div0 Error at line 20 is unreachable under bound 20
+Number of path checked:10
+#Avg_var: 8.800000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	5.641ms
+
+target[5]:q5(38)
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e28->s30->e39->s31->e40->s32->e41->q5(38)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e28:
+(<= ARCTAN_POS1_%0 1)
+s30:
+(= ARCTAN_POS1_x ARCTAN_POS1_%2)
+e39:
+s31:
+(= ARCTAN_POS1_%2 ARCTAN_0_13_x)
+(= ARCTAN_0_13_x ARCTAN_0_13_%0)
+(= ARCTAN_0_13_x ARCTAN_0_13_%1)
+e40:
+s32:
+(= ARCTAN_0_13_%1 PADE_2_23_x)
+(= PADE_2_23_x PADE_2_23_%0)
+(= PADE_2_23_x PADE_2_23_%1)
+(= PADE_2_23_mul (* PADE_2_23_%1 PADE_2_23_%0))
+(= PADE_2_23_mul PADE_2_23_%2)
+(= PADE_2_23_mul PADE_2_23_%3)
+(= PADE_2_23_mul1 (* PADE_2_23_%3 1.8))
+(= PADE_2_23_add (+ PADE_2_23_mul1 3))
+e41:
+(= PADE_2_23_add_t (abs PADE_2_23_add))
+(not (<= 0.01 PADE_2_23_add_t))
+q5:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e4->s21->e27->s22->e28->s30->e39->s31->e40->s32->e41->q5(38)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e28:
+(<= ARCTAN_POS1_%0 1)
+s30:
+(= ARCTAN_POS1_x ARCTAN_POS1_%2)
+e39:
+s31:
+(= ARCTAN_POS1_%2 ARCTAN_0_13_x)
+(= ARCTAN_0_13_x ARCTAN_0_13_%0)
+(= ARCTAN_0_13_x ARCTAN_0_13_%1)
+e40:
+s32:
+(= ARCTAN_0_13_%1 PADE_2_23_x)
+(= PADE_2_23_x PADE_2_23_%0)
+(= PADE_2_23_x PADE_2_23_%1)
+(= PADE_2_23_mul (* PADE_2_23_%1 PADE_2_23_%0))
+(= PADE_2_23_mul PADE_2_23_%2)
+(= PADE_2_23_mul PADE_2_23_%3)
+(= PADE_2_23_mul1 (* PADE_2_23_%3 1.8))
+(= PADE_2_23_add (+ PADE_2_23_mul1 3))
+e41:
+(= PADE_2_23_add_t (abs PADE_2_23_add))
+(not (<= 0.01 PADE_2_23_add_t))
+q5:
+dreal_result is unsat
+
+
+target[5]:from s0(0) to q5(38)
+ Div0 Error at line 20 is unreachable under bound 20
+Number of path checked:12
+#Avg_var: 9.000000e+00
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	5.038ms
+
+target[6]:q6(51)
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e7->s13->e18->s14->e19->s15->e21->s16->e22->s17->e23->s18->e24->s19->e25->s20->e26->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e7:
+(<= ARCTAN_POS_%0 1)
+s13:
+(= ARCTAN_POS_x ARCTAN_POS_%2)
+e18:
+s14:
+(= ARCTAN_POS_%2 ARCTAN_0_11_x)
+(= ARCTAN_0_11_x ARCTAN_0_11_%0)
+(= ARCTAN_0_11_x ARCTAN_0_11_%1)
+e19:
+s15:
+(= ARCTAN_0_11_%1 PADE_2_21_x)
+(= PADE_2_21_x PADE_2_21_%0)
+(= PADE_2_21_x PADE_2_21_%1)
+(= PADE_2_21_mul (* PADE_2_21_%1 PADE_2_21_%0))
+(= PADE_2_21_mul PADE_2_21_%2)
+(= PADE_2_21_mul PADE_2_21_%3)
+(= PADE_2_21_mul1 (* PADE_2_21_%3 1.8))
+(= PADE_2_21_add (+ PADE_2_21_mul1 3))
+e21:
+s16:
+(= PADE_2_21_div (/ PADE_2_21_%2 PADE_2_21_add))
+(= PADE_2_21_sub (+ 1 (* -1 PADE_2_21_div)))
+e22:
+(= ARCTAN_0_11_call PADE_2_21_sub)
+s17:
+(= ARCTAN_0_11_mul (* ARCTAN_0_11_call ARCTAN_0_11_%0))
+e23:
+(= ARCTAN_POS_call1 ARCTAN_0_11_mul)
+s18:
+e24:
+s19:
+(= ARCTAN_POS_call1 ARCTAN_POS_%3)
+e25:
+(= ARCTAN_call ARCTAN_POS_%3)
+s20:
+(= ARCTAN_sub1 (+ -0 (* -1 ARCTAN_call)))
+e26:
+s38:
+(= ARCTAN_sub1 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e28->s30->e39->s31->e40->s32->e42->s33->e43->s34->e44->s35->e45->s36->e46->s37->e47->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e28:
+(<= ARCTAN_POS1_%0 1)
+s30:
+(= ARCTAN_POS1_x ARCTAN_POS1_%2)
+e39:
+s31:
+(= ARCTAN_POS1_%2 ARCTAN_0_13_x)
+(= ARCTAN_0_13_x ARCTAN_0_13_%0)
+(= ARCTAN_0_13_x ARCTAN_0_13_%1)
+e40:
+s32:
+(= ARCTAN_0_13_%1 PADE_2_23_x)
+(= PADE_2_23_x PADE_2_23_%0)
+(= PADE_2_23_x PADE_2_23_%1)
+(= PADE_2_23_mul (* PADE_2_23_%1 PADE_2_23_%0))
+(= PADE_2_23_mul PADE_2_23_%2)
+(= PADE_2_23_mul PADE_2_23_%3)
+(= PADE_2_23_mul1 (* PADE_2_23_%3 1.8))
+(= PADE_2_23_add (+ PADE_2_23_mul1 3))
+e42:
+s33:
+(= PADE_2_23_div (/ PADE_2_23_%2 PADE_2_23_add))
+(= PADE_2_23_sub (+ 1 (* -1 PADE_2_23_div)))
+e43:
+(= ARCTAN_0_13_call PADE_2_23_sub)
+s34:
+(= ARCTAN_0_13_mul (* ARCTAN_0_13_call ARCTAN_0_13_%0))
+e44:
+(= ARCTAN_POS1_call1 ARCTAN_0_13_mul)
+s35:
+e45:
+s36:
+(= ARCTAN_POS1_call1 ARCTAN_POS1_%3)
+e46:
+(= ARCTAN_call2 ARCTAN_POS1_%3)
+s37:
+e47:
+s38:
+(= ARCTAN_call2 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e28->s30->e39->s31->e40->s32->e42->s33->e43->s34->e44->s35->e45->s36->e46->s37->e47->s38->e48->s39->e50->s40->e51->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e28:
+(<= ARCTAN_POS1_%0 1)
+s30:
+(= ARCTAN_POS1_x ARCTAN_POS1_%2)
+e39:
+s31:
+(= ARCTAN_POS1_%2 ARCTAN_0_13_x)
+(= ARCTAN_0_13_x ARCTAN_0_13_%0)
+(= ARCTAN_0_13_x ARCTAN_0_13_%1)
+e40:
+s32:
+(= ARCTAN_0_13_%1 PADE_2_23_x)
+(= PADE_2_23_x PADE_2_23_%0)
+(= PADE_2_23_x PADE_2_23_%1)
+(= PADE_2_23_mul (* PADE_2_23_%1 PADE_2_23_%0))
+(= PADE_2_23_mul PADE_2_23_%2)
+(= PADE_2_23_mul PADE_2_23_%3)
+(= PADE_2_23_mul1 (* PADE_2_23_%3 1.8))
+(= PADE_2_23_add (+ PADE_2_23_mul1 3))
+e42:
+s33:
+(= PADE_2_23_div (/ PADE_2_23_%2 PADE_2_23_add))
+(= PADE_2_23_sub (+ 1 (* -1 PADE_2_23_div)))
+e43:
+(= ARCTAN_0_13_call PADE_2_23_sub)
+s34:
+(= ARCTAN_0_13_mul (* ARCTAN_0_13_call ARCTAN_0_13_%0))
+e44:
+(= ARCTAN_POS1_call1 ARCTAN_0_13_mul)
+s35:
+e45:
+s36:
+(= ARCTAN_POS1_call1 ARCTAN_POS1_%3)
+e46:
+(= ARCTAN_call2 ARCTAN_POS1_%3)
+s37:
+e47:
+s38:
+(= ARCTAN_call2 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e50:
+(<= -1.571 main_%4)
+s40:
+(= main_call2 main_%5)
+(= main_cmp5 (ite (<= main_%5 1.571) 1 0))
+e51:
+(= main_cmp5 main_%6)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e5->s4->e6->s5->e7->s13->e18->s14->e19->s15->e21->s16->e22->s17->e23->s18->e24->s19->e25->s20->e26->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e7:
+(<= ARCTAN_POS_%0 1)
+s13:
+(= ARCTAN_POS_x ARCTAN_POS_%2)
+e18:
+s14:
+(= ARCTAN_POS_%2 ARCTAN_0_11_x)
+(= ARCTAN_0_11_x ARCTAN_0_11_%0)
+(= ARCTAN_0_11_x ARCTAN_0_11_%1)
+e19:
+s15:
+(= ARCTAN_0_11_%1 PADE_2_21_x)
+(= PADE_2_21_x PADE_2_21_%0)
+(= PADE_2_21_x PADE_2_21_%1)
+(= PADE_2_21_mul (* PADE_2_21_%1 PADE_2_21_%0))
+(= PADE_2_21_mul PADE_2_21_%2)
+(= PADE_2_21_mul PADE_2_21_%3)
+(= PADE_2_21_mul1 (* PADE_2_21_%3 1.8))
+(= PADE_2_21_add (+ PADE_2_21_mul1 3))
+e21:
+s16:
+(= PADE_2_21_div (/ PADE_2_21_%2 PADE_2_21_add))
+(= PADE_2_21_sub (+ 1 (* -1 PADE_2_21_div)))
+e22:
+(= ARCTAN_0_11_call PADE_2_21_sub)
+s17:
+(= ARCTAN_0_11_mul (* ARCTAN_0_11_call ARCTAN_0_11_%0))
+e23:
+(= ARCTAN_POS_call1 ARCTAN_0_11_mul)
+s18:
+e24:
+s19:
+(= ARCTAN_POS_call1 ARCTAN_POS_%3)
+e25:
+(= ARCTAN_call ARCTAN_POS_%3)
+s20:
+(= ARCTAN_sub1 (+ -0 (* -1 ARCTAN_call)))
+e26:
+s38:
+(= ARCTAN_sub1 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e8->s6->e10->s7->e11->s8->e12->s9->e14->s10->e15->s11->e16->s12->e17->s19->e25->s20->e26->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e8:
+(not (<= ARCTAN_POS_%0 1))
+s6:
+(= ARCTAN_POS_x ARCTAN_POS_%1)
+e10:
+s7:
+(= ARCTAN_POS_div (/ 1 ARCTAN_POS_%1))
+e11:
+s8:
+(= ARCTAN_POS_div ARCTAN_0_1_x)
+(= ARCTAN_0_1_x ARCTAN_0_1_%0)
+(= ARCTAN_0_1_x ARCTAN_0_1_%1)
+e12:
+s9:
+(= ARCTAN_0_1_%1 PADE_2_2_x)
+(= PADE_2_2_x PADE_2_2_%0)
+(= PADE_2_2_x PADE_2_2_%1)
+(= PADE_2_2_mul (* PADE_2_2_%1 PADE_2_2_%0))
+(= PADE_2_2_mul PADE_2_2_%2)
+(= PADE_2_2_mul PADE_2_2_%3)
+(= PADE_2_2_mul1 (* PADE_2_2_%3 1.8))
+(= PADE_2_2_add (+ PADE_2_2_mul1 3))
+e14:
+s10:
+(= PADE_2_2_div (/ PADE_2_2_%2 PADE_2_2_add))
+(= PADE_2_2_sub (+ 1 (* -1 PADE_2_2_div)))
+e15:
+(= ARCTAN_0_1_call PADE_2_2_sub)
+s11:
+(= ARCTAN_0_1_mul (* ARCTAN_0_1_call ARCTAN_0_1_%0))
+e16:
+(= ARCTAN_POS_call ARCTAN_0_1_mul)
+s12:
+(= ARCTAN_POS_sub (+ 1.5708 (* -1 ARCTAN_POS_call)))
+e17:
+s19:
+(= ARCTAN_POS_sub ARCTAN_POS_%3)
+e25:
+(= ARCTAN_call ARCTAN_POS_%3)
+s20:
+(= ARCTAN_sub1 (+ -0 (* -1 ARCTAN_call)))
+e26:
+s38:
+(= ARCTAN_sub1 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e0->s2->e3->s3->e4->s21->e27->s22->e29->s23->e31->s24->e32->s25->e33->s26->e35->s27->e36->s28->e37->s29->e38->s36->e46->s37->e47->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e29:
+(not (<= ARCTAN_POS1_%0 1))
+s23:
+(= ARCTAN_POS1_x ARCTAN_POS1_%1)
+e31:
+s24:
+(= ARCTAN_POS1_div (/ 1 ARCTAN_POS1_%1))
+e32:
+s25:
+(= ARCTAN_POS1_div ARCTAN_0_12_x)
+(= ARCTAN_0_12_x ARCTAN_0_12_%0)
+(= ARCTAN_0_12_x ARCTAN_0_12_%1)
+e33:
+s26:
+(= ARCTAN_0_12_%1 PADE_2_22_x)
+(= PADE_2_22_x PADE_2_22_%0)
+(= PADE_2_22_x PADE_2_22_%1)
+(= PADE_2_22_mul (* PADE_2_22_%1 PADE_2_22_%0))
+(= PADE_2_22_mul PADE_2_22_%2)
+(= PADE_2_22_mul PADE_2_22_%3)
+(= PADE_2_22_mul1 (* PADE_2_22_%3 1.8))
+(= PADE_2_22_add (+ PADE_2_22_mul1 3))
+e35:
+s27:
+(= PADE_2_22_div (/ PADE_2_22_%2 PADE_2_22_add))
+(= PADE_2_22_sub (+ 1 (* -1 PADE_2_22_div)))
+e36:
+(= ARCTAN_0_12_call PADE_2_22_sub)
+s28:
+(= ARCTAN_0_12_mul (* ARCTAN_0_12_call ARCTAN_0_12_%0))
+e37:
+(= ARCTAN_POS1_call ARCTAN_0_12_mul)
+s29:
+(= ARCTAN_POS1_sub (+ 1.5708 (* -1 ARCTAN_POS1_call)))
+e38:
+s36:
+(= ARCTAN_POS1_sub ARCTAN_POS1_%3)
+e46:
+(= ARCTAN_call2 ARCTAN_POS1_%3)
+s37:
+e47:
+s38:
+(= ARCTAN_call2 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e2->s2->e3->s3->e4->s21->e27->s22->e28->s30->e39->s31->e40->s32->e42->s33->e43->s34->e44->s35->e45->s36->e46->s37->e47->s38->e48->s39->e49->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e1:
+(<= -1.79e+308 main_%0)
+s1:
+(= main_call main_%1)
+(= main_cmp1 (ite (<= main_%1 1.79e+308) 1 0))
+e2:
+(= main_cmp1 main_%2)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e4:
+(<= 0 ARCTAN_%0)
+s21:
+(= ARCTAN_x ARCTAN_%2)
+e27:
+s22:
+(= ARCTAN_%2 ARCTAN_POS1_x)
+(= ARCTAN_POS1_x ARCTAN_POS1_%0)
+(= ARCTAN_POS1_cmp (ite (not (<= ARCTAN_POS1_%0 1)) 1 0))
+e28:
+(<= ARCTAN_POS1_%0 1)
+s30:
+(= ARCTAN_POS1_x ARCTAN_POS1_%2)
+e39:
+s31:
+(= ARCTAN_POS1_%2 ARCTAN_0_13_x)
+(= ARCTAN_0_13_x ARCTAN_0_13_%0)
+(= ARCTAN_0_13_x ARCTAN_0_13_%1)
+e40:
+s32:
+(= ARCTAN_0_13_%1 PADE_2_23_x)
+(= PADE_2_23_x PADE_2_23_%0)
+(= PADE_2_23_x PADE_2_23_%1)
+(= PADE_2_23_mul (* PADE_2_23_%1 PADE_2_23_%0))
+(= PADE_2_23_mul PADE_2_23_%2)
+(= PADE_2_23_mul PADE_2_23_%3)
+(= PADE_2_23_mul1 (* PADE_2_23_%3 1.8))
+(= PADE_2_23_add (+ PADE_2_23_mul1 3))
+e42:
+s33:
+(= PADE_2_23_div (/ PADE_2_23_%2 PADE_2_23_add))
+(= PADE_2_23_sub (+ 1 (* -1 PADE_2_23_div)))
+e43:
+(= ARCTAN_0_13_call PADE_2_23_sub)
+s34:
+(= ARCTAN_0_13_mul (* ARCTAN_0_13_call ARCTAN_0_13_%0))
+e44:
+(= ARCTAN_POS1_call1 ARCTAN_0_13_mul)
+s35:
+e45:
+s36:
+(= ARCTAN_POS1_call1 ARCTAN_POS1_%3)
+e46:
+(= ARCTAN_call2 ARCTAN_POS1_%3)
+s37:
+e47:
+s38:
+(= ARCTAN_call2 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e49:
+(not (<= -1.571 main_%4))
+(= main_%6 0)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+Path route: s0->e0->s2->e3->s3->e5->s4->e6->s5->e7->s13->e18->s14->e19->s15->e21->s16->e22->s17->e23->s18->e24->s19->e25->s20->e26->s38->e48->s39->e50->s40->e51->s41->e52->s42->e53->s43->e55->s44->e56->q6(51)
+s0:
+(= main_retval/0 0)
+(= main_call main_%0)
+(= main_cmp (ite (<= -1.79e+308 main_%0) 1 0))
+e0:
+(not (<= -1.79e+308 main_%0))
+(= main_%2 0)
+s2:
+(= main_%2 main_land.ext)
+(= main_land.ext 1)
+(= main_call main_%3)
+e3:
+s3:
+(= main_%3 ARCTAN_x)
+(= ARCTAN_x ARCTAN_%0)
+(= ARCTAN_cmp (ite (not (<= 0 ARCTAN_%0)) 1 0))
+e5:
+(not (<= 0 ARCTAN_%0))
+s4:
+(= ARCTAN_x ARCTAN_%1)
+(= ARCTAN_sub (+ -0 (* -1 ARCTAN_%1)))
+e6:
+s5:
+(= ARCTAN_sub ARCTAN_POS_x)
+(= ARCTAN_POS_x ARCTAN_POS_%0)
+(= ARCTAN_POS_cmp (ite (not (<= ARCTAN_POS_%0 1)) 1 0))
+e7:
+(<= ARCTAN_POS_%0 1)
+s13:
+(= ARCTAN_POS_x ARCTAN_POS_%2)
+e18:
+s14:
+(= ARCTAN_POS_%2 ARCTAN_0_11_x)
+(= ARCTAN_0_11_x ARCTAN_0_11_%0)
+(= ARCTAN_0_11_x ARCTAN_0_11_%1)
+e19:
+s15:
+(= ARCTAN_0_11_%1 PADE_2_21_x)
+(= PADE_2_21_x PADE_2_21_%0)
+(= PADE_2_21_x PADE_2_21_%1)
+(= PADE_2_21_mul (* PADE_2_21_%1 PADE_2_21_%0))
+(= PADE_2_21_mul PADE_2_21_%2)
+(= PADE_2_21_mul PADE_2_21_%3)
+(= PADE_2_21_mul1 (* PADE_2_21_%3 1.8))
+(= PADE_2_21_add (+ PADE_2_21_mul1 3))
+e21:
+s16:
+(= PADE_2_21_div (/ PADE_2_21_%2 PADE_2_21_add))
+(= PADE_2_21_sub (+ 1 (* -1 PADE_2_21_div)))
+e22:
+(= ARCTAN_0_11_call PADE_2_21_sub)
+s17:
+(= ARCTAN_0_11_mul (* ARCTAN_0_11_call ARCTAN_0_11_%0))
+e23:
+(= ARCTAN_POS_call1 ARCTAN_0_11_mul)
+s18:
+e24:
+s19:
+(= ARCTAN_POS_call1 ARCTAN_POS_%3)
+e25:
+(= ARCTAN_call ARCTAN_POS_%3)
+s20:
+(= ARCTAN_sub1 (+ -0 (* -1 ARCTAN_call)))
+e26:
+s38:
+(= ARCTAN_sub1 ARCTAN_%3)
+e48:
+(= main_call2 ARCTAN_%3)
+s39:
+(= main_call2 main_%4)
+(= main_cmp3 (ite (<= -1.571 main_%4) 1 0))
+e50:
+(<= -1.571 main_%4)
+s40:
+(= main_call2 main_%5)
+(= main_cmp5 (ite (<= main_%5 1.571) 1 0))
+e51:
+(= main_cmp5 main_%6)
+s41:
+(= main_%6 main_land.ext7)
+e52:
+s42:
+(= main_land.ext7 __VERIFIER_assert_cond)
+(= __VERIFIER_assert_cond __VERIFIER_assert_%0)
+(= __VERIFIER_assert_tobool (ite (not (= __VERIFIER_assert_%0 0)) 1 0))
+e53:
+(= __VERIFIER_assert_%0 0)
+s43:
+e55:
+s44:
+e56:
+q6:
+dreal_result is unsat
+
+
+target[6]:from s0(0) to q6(51)
+ Assert Error at line 12 is unreachable under bound 20
+Number of path checked:20
+#Avg_var: 9.800000e+00
+#Avg_nolinearop: 1.200000e+00
+Solver Time: 	8.053ms
+
+opt: symbol lookup error: /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so: undefined symbol: _ZN6VerifyD2Ev
+make: *** [arctan_PadebuildCFG.bc] Error 127

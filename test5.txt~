@@ -1,0 +1,2340 @@
+clang -c -emit-llvm -g 5.c -o 5.bc
+5.c:24094:54: warning: taking the absolute value of unsigned type 'unsigned int' has no effect [-Wabsolute-value]
+        result->err = 2.0 * GSL_DBL_EPSILON * prod * fabs(n-m);
+                                                     ^
+5.c:24094:54: note: remove the call to 'fabs' since unsigned values cannot be negative
+        result->err = 2.0 * GSL_DBL_EPSILON * prod * fabs(n-m);
+                                                     ^~~~
+5.c:26149:44: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err = 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ma/Mn);
+                                           ^
+5.c:26149:44: note: use function 'abs' instead
+    result->err = 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ma/Mn);
+                                           ^~~~
+                                           abs
+5.c:26180:45: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err += 4.0 * GSL_DBL_EPSILON * (fabs(b-a)+1.0) * fabs(result->val);
+                                            ^
+5.c:26180:45: note: use function 'abs' instead
+    result->err += 4.0 * GSL_DBL_EPSILON * (fabs(b-a)+1.0) * fabs(result->val);
+                                            ^~~~
+                                            abs
+5.c:26203:24: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        result->err *= fabs(a-b)+1.0;
+                       ^
+5.c:26203:24: note: use function 'abs' instead
+        result->err *= fabs(a-b)+1.0;
+                       ^~~~
+                       abs
+5.c:26232:40: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err  = fabs(Mn) * (1.0 + fabs(a)) * fabs(r_Mn.err / r_Mn.val);
+                                       ^
+5.c:26232:40: note: use function 'abs' instead
+      result->err  = fabs(Mn) * (1.0 + fabs(a)) * fabs(r_Mn.err / r_Mn.val);
+                                       ^~~~
+                                       abs
+5.c:26259:22: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err *= fabs(b-a)+1.0;
+                     ^
+5.c:26259:22: note: use function 'abs' instead
+      result->err *= fabs(b-a)+1.0;
+                     ^~~~
+                     abs
+5.c:26315:22: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err *= fabs(b-a)+1.0;
+                     ^
+5.c:26315:22: note: use function 'abs' instead
+      result->err *= fabs(b-a)+1.0;
+                     ^~~~
+                     abs
+5.c:26959:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:41: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:41: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:68: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:68: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^~~~
+                                                                   abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:68: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:68: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^~~~
+                                                                   abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:41: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:41: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:66: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:66: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^~~~
+                                                                 abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:66: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:66: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^~~~
+                                                                 abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:28752:38: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err += fabs(poch.val) * (fabs(N) + 2.0) * GSL_DBL_EPSILON * fabs(sum_val);
+                                     ^
+5.c:28752:38: note: use function 'abs' instead
+    result->err += fabs(poch.val) * (fabs(N) + 2.0) * GSL_DBL_EPSILON * fabs(sum_val);
+                                     ^~~~
+                                     abs
+5.c:29166:45: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err  = 2.0 * GSL_DBL_EPSILON * (fabs(b) + fabs(x));
+                                            ^
+5.c:29166:45: note: use function 'abs' instead
+    result->err  = 2.0 * GSL_DBL_EPSILON * (fabs(b) + fabs(x));
+                                            ^~~~
+                                            abs
+5.c:29176:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(ASYMP_EVAL_OK(a,b,x)) {
+          ^
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:24: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                       ^
+5.c:29176:11: note: use function 'abs' instead
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:24: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                       ^
+5.c:29176:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(ASYMP_EVAL_OK(a,b,x)) {
+          ^
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:36: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                   ^
+5.c:29176:11: note: use function 'abs' instead
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:36: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                   ^
+5.c:29186:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(SERIES_EVAL_OK(a,b,x)) {
+          ^
+5.c:28504:33: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                ^
+5.c:29186:11: note: use function 'abs' instead
+5.c:28504:33: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                ^
+5.c:29186:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(SERIES_EVAL_OK(a,b,x)) {
+          ^
+5.c:28504:70: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                                                     ^
+5.c:29186:11: note: use function 'abs' instead
+5.c:28504:70: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                                                     ^
+5.c:29218:38: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    y.err = 4.0 * GSL_DBL_EPSILON * (fabs(a)+1.0) * fabs(Ua);
+                                     ^
+5.c:29218:38: note: use function 'abs' instead
+    y.err = 4.0 * GSL_DBL_EPSILON * (fabs(a)+1.0) * fabs(Ua);
+                                     ^~~~
+                                     abs
+5.c:29252:39: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    y.err += 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ua);
+                                      ^
+5.c:29252:39: note: use function 'abs' instead
+    y.err += 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ua);
+                                      ^~~~
+                                      abs
+5.c:29303:35: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        double oUa_err   = 2.0 * (fabs(a_target-a) + CF1_count + 1.0) * GSL_DBL_EPSILON * fabs(1.0/Ua);
+                                  ^
+5.c:29303:35: note: use function 'abs' instead
+        double oUa_err   = 2.0 * (fabs(a_target-a) + CF1_count + 1.0) * GSL_DBL_EPSILON * fabs(1.0/Ua);
+                                  ^~~~
+                                  abs
+5.c:29347:48: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        Ua1_bck_err = 2.0 * GSL_DBL_EPSILON * (fabs(a1-a)+CF1_count+1.0) * fabs(Ua);
+                                               ^
+5.c:29347:48: note: use function 'abs' instead
+        Ua1_bck_err = 2.0 * GSL_DBL_EPSILON * (fabs(a1-a)+CF1_count+1.0) * fabs(Ua);
+                                               ^~~~
+                                               abs
+5.c:29413:49: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        Ua1_for_err += 2.0 * GSL_DBL_EPSILON * (fabs(a1-a0)+1.0) * fabs(Ua1_for_val);
+                                                ^
+5.c:29413:49: note: use function 'abs' instead
+        Ua1_for_err += 2.0 * GSL_DBL_EPSILON * (fabs(a1-a0)+1.0) * fabs(Ua1_for_val);
+                                                ^~~~
+                                                abs
+5.c:29744:57: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      lnm.err = 2.0 * GSL_DBL_EPSILON * (fabs(lm_for) + fabs(scale_count_for - scale_count_bck)*fabs(lnscale));
+                                                        ^
+5.c:29744:57: note: use function 'abs' instead
+      lnm.err = 2.0 * GSL_DBL_EPSILON * (fabs(lm_for) + fabs(scale_count_for - scale_count_bck)*fabs(lnscale));
+                                                        ^~~~
+                                                        abs
+5.c:29781:52: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      double ln_pre_err = 2.0 * GSL_DBL_EPSILON * (fabs(b)+1.0) * fabs(ln_x);
+                                                   ^
+5.c:29781:52: note: use function 'abs' instead
+      double ln_pre_err = 2.0 * GSL_DBL_EPSILON * (fabs(b)+1.0) * fabs(ln_x);
+                                                   ^~~~
+                                                   abs
+5.c:32897:67: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    lnpre_err = 0.25*M_LNPI*GSL_DBL_EPSILON + 0.5 * (lnpoch.err + fabs(m)*lncirc.err);
+                                                                  ^
+5.c:32897:67: note: use function 'abs' instead
+    lnpre_err = 0.25*M_LNPI*GSL_DBL_EPSILON + 0.5 * (lnpoch.err + fabs(m)*lncirc.err);
+                                                                  ^~~~
+                                                                  abs
+5.c:33926:46: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err = 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                             ^
+5.c:33926:46: note: use function 'abs' instead
+      result->err = 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                             ^~~~
+                                             abs
+5.c:33941:47: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err += 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                              ^
+5.c:33941:47: note: use function 'abs' instead
+      result->err += 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                              ^~~~
+                                              abs
+31 warnings generated.
+llvm-dis 5.bc
+make -C ~/Documents/llvm/lib/Transforms/Checker/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/Checker'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:53:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:51:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:55:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:82:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:79:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:84:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:143:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:141:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:163:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+CFG.cpp: In function ‘std::string get_m_Operator_str(Op_m)’:
+CFG.cpp:287:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+CFG.cpp: In function ‘Operator getEnumOperator(std::string)’:
+CFG.cpp:396:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+In file included from InstParser.h:25:0,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:53:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:51:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:55:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:82:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:79:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:84:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from InstParser.h:25:0,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:143:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:141:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:163:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+InstParser.cpp: In function ‘std::string llvm::getVariableName(llvm::raw_ostream&, const llvm::Value*, llvm::TypePrinting*, llvm::SlotTracker*, const llvm::Module*)’:
+InstParser.cpp:1245:23: warning: unused variable ‘ignored’ [-Wunused-variable]
+                  bool ignored;
+                       ^
+InstParser.cpp: In member function ‘void llvm::InstParser::setConstraint(CFG*, State*&, llvm::BasicBlock::iterator&, std::string, std::vector<int>&)’:
+InstParser.cpp:3110:19: warning: unused variable ‘CI’ [-Wunused-variable]
+   const LoadInst *CI = dyn_cast<LoadInst>(I);
+                   ^
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:53:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:51:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:55:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:82:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:79:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:84:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:143:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:141:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:163:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from Verification.cpp:1:0:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:51:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+                                   ^
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:53:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:51:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:55:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:82:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:79:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:84:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:143:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:141:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:163:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from programCFG.h:17:0,
+                 from buildCFG.cpp:4:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:51:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+                                   ^
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:53:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:51:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:55:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:82:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:79:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:84:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:143:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:141:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:163:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from programCFG.h:17:0,
+                 from programCFG.cpp:1:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:51:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+                                   ^
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+programCFG.cpp: In function ‘CFG* Add_target(CFG*, int, std::string)’:
+programCFG.cpp:240:15: warning: ISO C++ forbids variable length array ‘x’ [-Wvla]
+     char x[len];
+               ^
+programCFG.cpp:258:21: warning: ISO C++ forbids variable length array ‘a’ [-Wvla]
+     int a[numCheck+1];
+                     ^
+programCFG.cpp:265:22: warning: ISO C++ forbids variable length array ‘b’ [-Wvla]
+     string b[numCheck];
+                      ^
+programCFG.cpp: In constructor ‘ProgramCFG::ProgramCFG(llvm::Module&)’:
+programCFG.cpp:308:13: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+             ^
+programCFG.cpp:308:19: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+                   ^
+programCFG.cpp:323:13: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+             ^
+programCFG.cpp:323:19: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+                   ^
+llvm[1]: Compiling verify.cpp for Release+Asserts build (PIC)
+verify.cpp: In function ‘std::string split(std::string)’:
+verify.cpp:74:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(i = 0; i < filename.length(); i ++){
+                                    ^
+verify.cpp: In function ‘void compile(std::string)’:
+verify.cpp:56:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+verify.cpp: In function ‘void opt(std::string, int, char*, char*)’:
+verify.cpp:70:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/Checker'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="lngamma_sgn_0" -name=5 -bound=50 -check="" <5.bc>   5buildCFG.bc
+START CHECK FUNCTION <lngamma_sgn_0>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: There is no main function in the Module!
+BUILDCFG Time: 	644.977ms
+*******************CFG Information*********************
+CFG:
+variable:lngamma_sgn_0_eps, 0  FP 
+variable:lngamma_sgn_0_lng, 1  PTR 
+variable:lngamma_sgn_0_lng_0, 2  PTR 
+variable:lngamma_sgn_0_lng_1, 3  PTR 
+variable:lngamma_sgn_0_lng_0_0, 4  FP 
+variable:lngamma_sgn_0_lng_1_0, 5  FP 
+variable:lngamma_sgn_0_sgn, 6  PTR 
+variable:lngamma_sgn_0_sgn_0, 7  FP 
+variable:lngamma_sgn_0_eps.addr, 8  PTR 
+variable:lngamma_sgn_0_eps.addr_0, 9  FP 
+variable:lngamma_sgn_0_lng.addr, 10  PTR 
+variable:lngamma_sgn_0_lng.addr_0, 11  PTR 
+variable:lngamma_sgn_0_sgn.addr, 12  PTR 
+variable:lngamma_sgn_0_sgn.addr_0, 13  PTR 
+variable:lngamma_sgn_0_c1, 14  PTR 
+variable:lngamma_sgn_0_c1_0, 15  FP 
+variable:lngamma_sgn_0_c2, 16  PTR 
+variable:lngamma_sgn_0_c2_0, 17  FP 
+variable:lngamma_sgn_0_c3, 18  PTR 
+variable:lngamma_sgn_0_c3_0, 19  FP 
+variable:lngamma_sgn_0_c4, 20  PTR 
+variable:lngamma_sgn_0_c4_0, 21  FP 
+variable:lngamma_sgn_0_c5, 22  PTR 
+variable:lngamma_sgn_0_c5_0, 23  FP 
+variable:lngamma_sgn_0_c6, 24  PTR 
+variable:lngamma_sgn_0_c6_0, 25  FP 
+variable:lngamma_sgn_0_c7, 26  PTR 
+variable:lngamma_sgn_0_c7_0, 27  FP 
+variable:lngamma_sgn_0_c8, 28  PTR 
+variable:lngamma_sgn_0_c8_0, 29  FP 
+variable:lngamma_sgn_0_c9, 30  PTR 
+variable:lngamma_sgn_0_c9_0, 31  FP 
+variable:lngamma_sgn_0_c10, 32  PTR 
+variable:lngamma_sgn_0_c10_0, 33  FP 
+variable:lngamma_sgn_0_g6, 34  PTR 
+variable:lngamma_sgn_0_g6_0, 35  FP 
+variable:lngamma_sgn_0_g, 36  PTR 
+variable:lngamma_sgn_0_g_0, 37  FP 
+variable:lngamma_sgn_0_gee, 38  PTR 
+variable:lngamma_sgn_0_gee_0, 39  FP 
+variable:lngamma_sgn_0_c1/23219, 40  FP 
+variable:lngamma_sgn_0_c2/23220, 41  FP 
+variable:lngamma_sgn_0_c3/23221, 42  FP 
+variable:lngamma_sgn_0_c4/23222, 43  FP 
+variable:lngamma_sgn_0_c5/23223, 44  FP 
+variable:lngamma_sgn_0_c6/23224, 45  FP 
+variable:lngamma_sgn_0_c7/23225, 46  FP 
+variable:lngamma_sgn_0_c8/23226, 47  FP 
+variable:lngamma_sgn_0_c9/23227, 48  FP 
+variable:lngamma_sgn_0_c10/23228, 49  FP 
+variable:lngamma_sgn_0_%0, 50  FP 
+variable:lngamma_sgn_0_%1, 51  FP 
+variable:lngamma_sgn_0_%2, 52  FP 
+variable:lngamma_sgn_0_%3, 53  FP 
+variable:lngamma_sgn_0_mul, 54  FP 
+variable:lngamma_sgn_0_add, 55  FP 
+variable:lngamma_sgn_0_mul1, 56  FP 
+variable:lngamma_sgn_0_add2, 57  FP 
+variable:lngamma_sgn_0_mul3, 58  FP 
+variable:lngamma_sgn_0_add4, 59  FP 
+variable:lngamma_sgn_0_mul5, 60  FP 
+variable:lngamma_sgn_0_add6, 61  FP 
+variable:lngamma_sgn_0_%4, 62  FP 
+variable:lngamma_sgn_0_%5, 63  FP 
+variable:lngamma_sgn_0_%6, 64  FP 
+variable:lngamma_sgn_0_%7, 65  FP 
+variable:lngamma_sgn_0_%8, 66  FP 
+variable:lngamma_sgn_0_%9, 67  FP 
+variable:lngamma_sgn_0_%10, 68  FP 
+variable:lngamma_sgn_0_mul7, 69  FP 
+variable:lngamma_sgn_0_add8, 70  FP 
+variable:lngamma_sgn_0_mul9, 71  FP 
+variable:lngamma_sgn_0_add10, 72  FP 
+variable:lngamma_sgn_0_mul11, 73  FP 
+variable:lngamma_sgn_0_add12, 74  FP 
+variable:lngamma_sgn_0_mul13, 75  FP 
+variable:lngamma_sgn_0_add14, 76  FP 
+variable:lngamma_sgn_0_mul15, 77  FP 
+variable:lngamma_sgn_0_add16, 78  FP 
+variable:lngamma_sgn_0_mul17, 79  FP 
+variable:lngamma_sgn_0_%11, 80  FP 
+variable:lngamma_sgn_0_%12, 81  FP 
+variable:lngamma_sgn_0_add18, 82  FP 
+variable:lngamma_sgn_0_div, 83  FP 
+variable:lngamma_sgn_0_add19, 84  FP 
+variable:lngamma_sgn_0_%13, 85  FP 
+variable:lngamma_sgn_0_mul20, 86  FP 
+variable:lngamma_sgn_0_add21, 87  FP 
+variable:lngamma_sgn_0_%14, 88  FP 
+variable:lngamma_sgn_0_%15, 89  FP 
+variable:lngamma_sgn_0_call, 90  FP 
+variable:lngamma_sgn_0_div22, 91  FP 
+variable:lngamma_sgn_0_call23, 92  FP 
+variable:lngamma_sgn_0_%16, 93  PTR 
+variable:lngamma_sgn_0_val, 94  PTR 
+variable:lngamma_sgn_0_%17, 95  PTR 
+variable:lngamma_sgn_0_val24, 96  PTR 
+variable:lngamma_sgn_0_%18, 97  FP 
+variable:lngamma_sgn_0_call25, 98  FP 
+variable:lngamma_sgn_0_mul26, 99  FP 
+variable:lngamma_sgn_0_%19, 100  PTR 
+variable:lngamma_sgn_0_err, 101  PTR 
+variable:lngamma_sgn_0_%20, 102  FP 
+variable:lngamma_sgn_0_cmp, 103  INT 
+variable:lngamma_sgn_0_cond, 104  INT 
+variable:lngamma_sgn_0_conv, 105  FP 
+variable:lngamma_sgn_0_%21, 106  PTR 
+Location Name:lngamma_sgn_0 s0 ID:0 nextS:-1
+
+Initial location
+constraint: lngamma_sgn_0_lng_0 =  alloca  constraint: lngamma_sgn_0_lng_0 =  store lngamma_sgn_0_lng_0_0 constraint: lngamma_sgn_0_lng_1 =  alloca  constraint: lngamma_sgn_0_lng_1 =  store lngamma_sgn_0_lng_1_0 constraint: lngamma_sgn_0_lng =  addr lngamma_sgn_0_lng_0 constraint: lngamma_sgn_0_sgn =  alloca  constraint: lngamma_sgn_0_sgn =  store lngamma_sgn_0_sgn_0 constraint: lngamma_sgn_0_eps.addr =  alloca  constraint: lngamma_sgn_0_eps.addr =  store lngamma_sgn_0_eps.addr_0 constraint: lngamma_sgn_0_lng.addr =  alloca  constraint: lngamma_sgn_0_lng.addr =  store lngamma_sgn_0_lng.addr_0 constraint: lngamma_sgn_0_sgn.addr =  alloca  constraint: lngamma_sgn_0_sgn.addr =  store lngamma_sgn_0_sgn.addr_0 constraint: lngamma_sgn_0_c1 =  alloca  constraint: lngamma_sgn_0_c1 =  store lngamma_sgn_0_c1_0 constraint: lngamma_sgn_0_c2 =  alloca  constraint: lngamma_sgn_0_c2 =  store lngamma_sgn_0_c2_0 constraint: lngamma_sgn_0_c3 =  alloca  constraint: lngamma_sgn_0_c3 =  store lngamma_sgn_0_c3_0 constraint: lngamma_sgn_0_c4 =  alloca  constraint: lngamma_sgn_0_c4 =  store lngamma_sgn_0_c4_0 constraint: lngamma_sgn_0_c5 =  alloca  constraint: lngamma_sgn_0_c5 =  store lngamma_sgn_0_c5_0 constraint: lngamma_sgn_0_c6 =  alloca  constraint: lngamma_sgn_0_c6 =  store lngamma_sgn_0_c6_0 constraint: lngamma_sgn_0_c7 =  alloca  constraint: lngamma_sgn_0_c7 =  store lngamma_sgn_0_c7_0 constraint: lngamma_sgn_0_c8 =  alloca  constraint: lngamma_sgn_0_c8 =  store lngamma_sgn_0_c8_0 constraint: lngamma_sgn_0_c9 =  alloca  constraint: lngamma_sgn_0_c9 =  store lngamma_sgn_0_c9_0 constraint: lngamma_sgn_0_c10 =  alloca  constraint: lngamma_sgn_0_c10 =  store lngamma_sgn_0_c10_0 constraint: lngamma_sgn_0_g6 =  alloca  constraint: lngamma_sgn_0_g6 =  store lngamma_sgn_0_g6_0 constraint: lngamma_sgn_0_g =  alloca  constraint: lngamma_sgn_0_g =  store lngamma_sgn_0_g_0 constraint: lngamma_sgn_0_gee =  alloca  constraint: lngamma_sgn_0_gee =  store lngamma_sgn_0_gee_0 constraint: lngamma_sgn_0_eps.addr =  store lngamma_sgn_0_eps constraint: lngamma_sgn_0_lng.addr =  store lngamma_sgn_0_lng constraint: lngamma_sgn_0_sgn.addr =  store lngamma_sgn_0_sgn constraint: lngamma_sgn_0_c1/23219 =  -0.0772157 constraint: lngamma_sgn_0_c1 =  store lngamma_sgn_0_c1/23219 constraint: lngamma_sgn_0_c2/23220 =  -0.010944 constraint: lngamma_sgn_0_c2 =  store lngamma_sgn_0_c2/23220 constraint: lngamma_sgn_0_c3/23221 =  0.0925209 constraint: lngamma_sgn_0_c3 =  store lngamma_sgn_0_c3/23221 constraint: lngamma_sgn_0_c4/23222 =  -0.0182719 constraint: lngamma_sgn_0_c4 =  store lngamma_sgn_0_c4/23222 constraint: lngamma_sgn_0_c5/23223 =  0.0180049 constraint: lngamma_sgn_0_c5 =  store lngamma_sgn_0_c5/23223 constraint: lngamma_sgn_0_c6/23224 =  -0.00685089 constraint: lngamma_sgn_0_c6 =  store lngamma_sgn_0_c6/23224 constraint: lngamma_sgn_0_c7/23225 =  0.00399824 constraint: lngamma_sgn_0_c7 =  store lngamma_sgn_0_c7/23225 constraint: lngamma_sgn_0_c8/23226 =  -0.00189431 constraint: lngamma_sgn_0_c8 =  store lngamma_sgn_0_c8/23226 constraint: lngamma_sgn_0_c9/23227 =  0.000974732 constraint: lngamma_sgn_0_c9 =  store lngamma_sgn_0_c9/23227 constraint: lngamma_sgn_0_c10/23228 =  -0.000484344 constraint: lngamma_sgn_0_c10 =  store lngamma_sgn_0_c10/23228 constraint: lngamma_sgn_0_%0 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%1 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%2 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%3 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_mul = lngamma_sgn_0_%3 * -0.000484344 constraint: lngamma_sgn_0_add = 0.000974732 + lngamma_sgn_0_mul constraint: lngamma_sgn_0_mul1 = lngamma_sgn_0_%2 * lngamma_sgn_0_add constraint: lngamma_sgn_0_add2 = -0.00189431 + lngamma_sgn_0_mul1 constraint: lngamma_sgn_0_mul3 = lngamma_sgn_0_%1 * lngamma_sgn_0_add2 constraint: lngamma_sgn_0_add4 = 0.00399824 + lngamma_sgn_0_mul3 constraint: lngamma_sgn_0_mul5 = lngamma_sgn_0_%0 * lngamma_sgn_0_add4 constraint: lngamma_sgn_0_add6 = -0.00685089 + lngamma_sgn_0_mul5 constraint: lngamma_sgn_0_g6 =  store lngamma_sgn_0_add6 constraint: lngamma_sgn_0_%4 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%5 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%6 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%7 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%8 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%9 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_%10 =  load lngamma_sgn_0_g6 constraint: lngamma_sgn_0_mul7 = lngamma_sgn_0_%9 * lngamma_sgn_0_%10 constraint: lngamma_sgn_0_add8 = 0.0180049 + lngamma_sgn_0_mul7 constraint: lngamma_sgn_0_mul9 = lngamma_sgn_0_%8 * lngamma_sgn_0_add8 constraint: lngamma_sgn_0_add10 = -0.0182719 + lngamma_sgn_0_mul9 constraint: lngamma_sgn_0_mul11 = lngamma_sgn_0_%7 * lngamma_sgn_0_add10 constraint: lngamma_sgn_0_add12 = 0.0925209 + lngamma_sgn_0_mul11 constraint: lngamma_sgn_0_mul13 = lngamma_sgn_0_%6 * lngamma_sgn_0_add12 constraint: lngamma_sgn_0_add14 = -0.010944 + lngamma_sgn_0_mul13 constraint: lngamma_sgn_0_mul15 = lngamma_sgn_0_%5 * lngamma_sgn_0_add14 constraint: lngamma_sgn_0_add16 = -0.0772157 + lngamma_sgn_0_mul15 constraint: lngamma_sgn_0_mul17 = lngamma_sgn_0_%4 * lngamma_sgn_0_add16 constraint: lngamma_sgn_0_g =  store lngamma_sgn_0_mul17 constraint: lngamma_sgn_0_%11 =  load lngamma_sgn_0_g constraint: lngamma_sgn_0_%12 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_add18 = 1 + lngamma_sgn_0_%12 
+
+
+Location Name:lngamma_sgn_0 q0 ID:1 nextS:-1
+null
+
+
+Location Name:lngamma_sgn_0 s1 ID:2 nextS:-1
+constraint: lngamma_sgn_0_div = 1 / lngamma_sgn_0_add18 constraint: lngamma_sgn_0_add19 = lngamma_sgn_0_%11 + lngamma_sgn_0_div constraint: lngamma_sgn_0_%13 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_mul20 = 0.5 * lngamma_sgn_0_%13 constraint: lngamma_sgn_0_add21 = lngamma_sgn_0_add19 + lngamma_sgn_0_mul20 constraint: lngamma_sgn_0_gee =  store lngamma_sgn_0_add21 constraint: lngamma_sgn_0_%14 =  load lngamma_sgn_0_gee constraint: lngamma_sgn_0_%15 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_call =  abs lngamma_sgn_0_%15 
+
+
+Location Name:lngamma_sgn_0 q1 ID:3 nextS:-1
+null
+
+
+Location Name:lngamma_sgn_0 s2 ID:4 nextS:-1
+constraint: lngamma_sgn_0_div22 = lngamma_sgn_0_%14 / lngamma_sgn_0_call constraint: lngamma_sgn_0_call23 =  log lngamma_sgn_0_div22 constraint: lngamma_sgn_0_%16 =  load lngamma_sgn_0_lng.addr constraint: lngamma_sgn_0_val = lngamma_sgn_0_%16 getptr 0 constraint: lngamma_sgn_0_val =  store lngamma_sgn_0_call23 constraint: lngamma_sgn_0_%17 =  load lngamma_sgn_0_lng.addr constraint: lngamma_sgn_0_val24 = lngamma_sgn_0_%17 getptr 0 constraint: lngamma_sgn_0_%18 =  load lngamma_sgn_0_val24 constraint: lngamma_sgn_0_call25 =  abs lngamma_sgn_0_%18 constraint: lngamma_sgn_0_mul26 = 8.88178e-16 * lngamma_sgn_0_call25 constraint: lngamma_sgn_0_%19 =  load lngamma_sgn_0_lng.addr constraint: lngamma_sgn_0_err = lngamma_sgn_0_%19 getptr 1 constraint: lngamma_sgn_0_err =  store lngamma_sgn_0_mul26 constraint: lngamma_sgn_0_%20 =  load lngamma_sgn_0_eps.addr constraint: lngamma_sgn_0_cmp = lngamma_sgn_0_%20 >= 0 
+
+
+Location Name:lngamma_sgn_0 s3 ID:5 nextS:-1
+constraint: lngamma_sgn_0_cond =  1 
+/home/lich/Documents/test_CFG_v4/5.c	LineNum:23235	LineNum:23236	LineNum:23237
+
+Location Name:lngamma_sgn_0 s4 ID:6 nextS:-1
+constraint: lngamma_sgn_0_cond =  -1 
+
+
+Location Name:lngamma_sgn_0 s5 ID:7 nextS:-1
+constraint: lngamma_sgn_0_conv =  lngamma_sgn_0_cond constraint: lngamma_sgn_0_%21 =  load lngamma_sgn_0_sgn.addr constraint: lngamma_sgn_0_%21 =  store lngamma_sgn_0_conv 
+
+
+Transition Name:e0 ID:8
+ToLabel:
+from:s0 to:q0
+Guard:
+constraint: lngamma_sgn_0_add18 ==  0 
+
+Transition Name:e1 ID:9
+ToLabel:
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e2 ID:10
+ToLabel:
+from:s1 to:q1
+Guard:
+constraint: lngamma_sgn_0_call ==  0 
+
+Transition Name:e3 ID:11
+ToLabel:
+from:s1 to:s2
+Guard:
+null
+
+Transition Name:e4 ID:12
+ToLabel:lngamma_sgn_0_cond_true
+from:s2 to:s3
+Guard:
+constraint: lngamma_sgn_0_%20 >=  0 
+
+Transition Name:e5 ID:13
+ToLabel:lngamma_sgn_0_cond_false
+from:s2 to:s4
+Guard:
+constraint: lngamma_sgn_0_%20 <  0 
+
+Transition Name:e4 ID:14
+ToLabel:lngamma_sgn_0_cond_ret
+from:s3 to:s5
+Guard:
+null
+
+Transition Name:e5 ID:15
+ToLabel:lngamma_sgn_0_cond_ret
+from:s4 to:s5
+Guard:
+null
+
+target[0]:q0(1)
+target[1]:q1(3)
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+e0:
+(= lngamma_sgn_0_add18 0)
+q0:
+dreal_result is sat
+
+
+target[0]:from s0(0) to q0(1)
+
+Number of path checked:2
+line 23233 in state q0 is reachable
+lngamma_sgn_0_eps = [-1.000000e+00, -1.000000e+00]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+Witness:
+	s0:	LocLine:23216;23219;23220;23221;23222;23223;23224;23225;23226;23227;23228;23229;23230;23233;
+	e0
+	q0:	LocLine:23233;
+Dreal Time: 	746.234ms
+target[1]:q1(3)
+Path route: s0(0)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+e0:
+(= lngamma_sgn_0_add18 0)
+q0:
+dreal_result is sat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+e1:
+s1:
+(= lngamma_sgn_0_div (/ 1 lngamma_sgn_0_add18))
+(= lngamma_sgn_0_add19 (+ lngamma_sgn_0_div lngamma_sgn_0_%11))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%13)
+(= lngamma_sgn_0_mul20 (* lngamma_sgn_0_%13 0.5))
+(= lngamma_sgn_0_add21 (+ lngamma_sgn_0_mul20 lngamma_sgn_0_add19))
+(= lngamma_sgn_0_add21 lngamma_sgn_0_%14)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%15)
+(= lngamma_sgn_0_call (abs lngamma_sgn_0_%15))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->q1(3)
+Precision is 0.001
+VarTable initial 0	lngamma_sgn_0_eps
+VarTable initial 4	lngamma_sgn_0_lng_0_0
+VarTable initial 5	lngamma_sgn_0_lng_1_0
+VarTable initial 7	lngamma_sgn_0_sgn_0
+lngamma_sgn_0_eps = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= lngamma_sgn_0_c1/23219 -0.0772157)
+(= lngamma_sgn_0_c2/23220 -0.010944)
+(= lngamma_sgn_0_c3/23221 0.0925209)
+(= lngamma_sgn_0_c4/23222 -0.0182719)
+(= lngamma_sgn_0_c5/23223 0.0180049)
+(= lngamma_sgn_0_c6/23224 -0.00685089)
+(= lngamma_sgn_0_c7/23225 0.00399824)
+(= lngamma_sgn_0_c8/23226 -0.00189431)
+(= lngamma_sgn_0_c9/23227 0.000974732)
+(= lngamma_sgn_0_c10/23228 -0.000484344)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%0)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%1)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%2)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%3)
+(= lngamma_sgn_0_mul (* -0.000484344 lngamma_sgn_0_%3))
+(= lngamma_sgn_0_add (+ lngamma_sgn_0_mul 0.000974732))
+(= lngamma_sgn_0_mul1 (* lngamma_sgn_0_add lngamma_sgn_0_%2))
+(= lngamma_sgn_0_add2 (+ lngamma_sgn_0_mul1 -0.00189431))
+(= lngamma_sgn_0_mul3 (* lngamma_sgn_0_add2 lngamma_sgn_0_%1))
+(= lngamma_sgn_0_add4 (+ lngamma_sgn_0_mul3 0.00399824))
+(= lngamma_sgn_0_mul5 (* lngamma_sgn_0_add4 lngamma_sgn_0_%0))
+(= lngamma_sgn_0_add6 (+ lngamma_sgn_0_mul5 -0.00685089))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%4)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%5)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%6)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%7)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%8)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%9)
+(= lngamma_sgn_0_add6 lngamma_sgn_0_%10)
+(= lngamma_sgn_0_mul7 (* lngamma_sgn_0_%10 lngamma_sgn_0_%9))
+(= lngamma_sgn_0_add8 (+ lngamma_sgn_0_mul7 0.0180049))
+(= lngamma_sgn_0_mul9 (* lngamma_sgn_0_add8 lngamma_sgn_0_%8))
+(= lngamma_sgn_0_add10 (+ lngamma_sgn_0_mul9 -0.0182719))
+(= lngamma_sgn_0_mul11 (* lngamma_sgn_0_add10 lngamma_sgn_0_%7))
+(= lngamma_sgn_0_add12 (+ lngamma_sgn_0_mul11 0.0925209))
+(= lngamma_sgn_0_mul13 (* lngamma_sgn_0_add12 lngamma_sgn_0_%6))
+(= lngamma_sgn_0_add14 (+ lngamma_sgn_0_mul13 -0.010944))
+(= lngamma_sgn_0_mul15 (* lngamma_sgn_0_add14 lngamma_sgn_0_%5))
+(= lngamma_sgn_0_add16 (+ lngamma_sgn_0_mul15 -0.0772157))
+(= lngamma_sgn_0_mul17 (* lngamma_sgn_0_add16 lngamma_sgn_0_%4))
+(= lngamma_sgn_0_mul17 lngamma_sgn_0_%11)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%12)
+(= lngamma_sgn_0_add18 (+ lngamma_sgn_0_%12 1))
+e1:
+s1:
+(= lngamma_sgn_0_div (/ 1 lngamma_sgn_0_add18))
+(= lngamma_sgn_0_add19 (+ lngamma_sgn_0_div lngamma_sgn_0_%11))
+(= lngamma_sgn_0_eps lngamma_sgn_0_%13)
+(= lngamma_sgn_0_mul20 (* lngamma_sgn_0_%13 0.5))
+(= lngamma_sgn_0_add21 (+ lngamma_sgn_0_mul20 lngamma_sgn_0_add19))
+(= lngamma_sgn_0_add21 lngamma_sgn_0_%14)
+(= lngamma_sgn_0_eps lngamma_sgn_0_%15)
+(= lngamma_sgn_0_call (abs lngamma_sgn_0_%15))
+e2:
+(= lngamma_sgn_0_call 0)
+q1:
+dreal_result is sat
+
+
+target[1]:from s0(0) to q1(3)
+
+Number of path checked:6
+line 23235 in state q1 is reachable
+lngamma_sgn_0_eps = [0.000000e+00, 0.000000e+00]
+lngamma_sgn_0_lng_0_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_lng_1_0 = [-1.000000e+02, 1.000000e+02]
+lngamma_sgn_0_sgn_0 = [-1.000000e+02, 1.000000e+02]
+Witness:
+	s0:	LocLine:23216;23219;23220;23221;23222;23223;23224;23225;23226;23227;23228;23229;23230;23233;
+	e1
+	s1:	LocLine:23233;23235;
+	e2
+	q1:	LocLine:23235;
+Dreal Time: 	1508.37ms
+bound:	50	functionName:	lngamma_sgn_0	check:	
+Time: 	644.977s 
+BUILDCFG Time: 	644.977ms
+Dreal Time: 	1.50837s
+Memory used: 115.00 MB
+CPU Time: 2.268 s
+llvm-dis 5buildCFG.bc
+clang 5buildCFG.bc   -o 5_final
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 0 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 1 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 2 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 3 has invalid symbol index 2
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 4 has invalid symbol index 11
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 5 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 6 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 7 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 8 has invalid symbol index 12
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 9 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 10 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 11 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 12 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 13 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 14 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 15 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 16 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 17 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 18 has invalid symbol index 13
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_info): relocation 19 has invalid symbol index 21
+/usr/bin/ld: /usr/lib/debug/usr/lib/x86_64-linux-gnu/crt1.o(.debug_line): relocation 0 has invalid symbol index 2
+/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Ai_e':
+/home/lich/Documents/test_CFG_v4/5.c:5211: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5212: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `airy_mod_phase':
+/home/lich/Documents/test_CFG_v4/5.c:4796: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:4798: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_cos_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:36920: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `airy_aie':
+/home/lich/Documents/test_CFG_v4/5.c:5142: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5144: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Ai_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:5251: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5251: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Bi_e':
+/home/lich/Documents/test_CFG_v4/5.c:5301: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5302: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_sin_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:36911: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `airy_bie':
+/home/lich/Documents/test_CFG_v4/5.c:5159: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5161: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5168: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5170: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Bi_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:5345: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5345: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:5354: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:5354: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Ai_deriv_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:6040: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:6060: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6060: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:6068: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6070: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6079: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6081: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `airy_deriv_mod_phase':
+/home/lich/Documents/test_CFG_v4/5.c:6017: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:6020: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Ai_deriv_e':
+/home/lich/Documents/test_CFG_v4/5.c:6101: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:6120: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_mult_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:19818: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19824: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19831: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:19842: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19843: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19846: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19847: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Bi_deriv_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:6145: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:6164: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6164: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:6173: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6173: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:6184: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6186: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6195: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:6197: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_airy_Bi_deriv_e':
+/home/lich/Documents/test_CFG_v4/5.c:6217: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:6248: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `zero_f':
+/home/lich/Documents/test_CFG_v4/5.c:6690: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `zero_g':
+/home/lich/Documents/test_CFG_v4/5.c:6703: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_atanint_e':
+/home/lich/Documents/test_CFG_v4/5.c:6924: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:6930: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_asymp_Mnu_e':
+/home/lich/Documents/test_CFG_v4/5.c:7116: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7116: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_IJ_taylor_e':
+/home/lich/Documents/test_CFG_v4/5.c:7264: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:7270: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:7280: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_taylorcoeff_e':
+/home/lich/Documents/test_CFG_v4/5.c:23931: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:23931: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lngamma_e':
+/home/lich/Documents/test_CFG_v4/5.c:23636: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:23658: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:20123: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20124: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Jnu_asympx_e':
+/home/lich/Documents/test_CFG_v4/5.c:7347: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7348: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:7349: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Ynu_asympx_e':
+/home/lich/Documents/test_CFG_v4/5.c:7369: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7370: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:7371: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7372: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Inu_scaled_asympx_e':
+/home/lich/Documents/test_CFG_v4/5.c:7398: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Knu_scaled_asympx_e':
+/home/lich/Documents/test_CFG_v4/5.c:7413: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Inu_scaled_asymp_unif_e':
+/home/lich/Documents/test_CFG_v4/5.c:7456: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7457: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7458: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_e':
+/home/lich/Documents/test_CFG_v4/5.c:19696: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Knu_scaled_asymp_unif_e':
+/home/lich/Documents/test_CFG_v4/5.c:7494: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7495: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:7496: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_JY_mu_restricted':
+/home/lich/Documents/test_CFG_v4/5.c:7591: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Y_temme':
+/home/lich/Documents/test_CFG_v4/5.c:12560: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12561: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:12565: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:12566: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:12567: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:12578: undefined reference to `cosh'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K_scaled_steed_temme_CF2':
+/home/lich/Documents/test_CFG_v4/5.c:7854: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_cos_pi4_e':
+/home/lich/Documents/test_CFG_v4/5.c:7866: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7867: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:7879: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7880: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_sin_pi4_e':
+/home/lich/Documents/test_CFG_v4/5.c:7904: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7905: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:7917: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:7918: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_I0_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8225: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:8233: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:8243: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_I0_e':
+/home/lich/Documents/test_CFG_v4/5.c:8276: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_I1_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8467: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:8476: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:8489: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_I1_e':
+/home/lich/Documents/test_CFG_v4/5.c:8534: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_i0_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8630: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:8642: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_i1_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8663: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:8676: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:8702: more undefined references to `exp' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_il_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8760: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:8787: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:8794: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_In_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:8920: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_In_e':
+/home/lich/Documents/test_CFG_v4/5.c:9046: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_In_array':
+/home/lich/Documents/test_CFG_v4/5.c:9070: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Inu_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:9136: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K_scaled_temme':
+/home/lich/Documents/test_CFG_v4/5.c:12622: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12623: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:12626: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:12627: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:12628: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:12638: undefined reference to `cosh'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_J0_e':
+/home/lich/Documents/test_CFG_v4/5.c:9306: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_J1_e':
+/home/lich/Documents/test_CFG_v4/5.c:9434: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_sin_e':
+/home/lich/Documents/test_CFG_v4/5.c:36484: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:36485: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_cos_e':
+/home/lich/Documents/test_CFG_v4/5.c:36556: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:36557: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_jl_e':
+/home/lich/Documents/test_CFG_v4/5.c:9627: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:9636: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:9644: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:9656: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Jnu_asymp_Olver_e':
+/home/lich/Documents/test_CFG_v4/5.c:12169: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12186: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12186: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12190: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12191: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12191: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12193: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12193: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12197: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12198: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:12198: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12200: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12200: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_jl_steed_array':
+/home/lich/Documents/test_CFG_v4/5.c:9810: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Jnu_e':
+/home/lich/Documents/test_CFG_v4/5.c:10214: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K0_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:10369: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:10370: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:10382: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:10391: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K0_e':
+/home/lich/Documents/test_CFG_v4/5.c:10410: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K1_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:10587: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:10588: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:10600: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:10609: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_K1_e':
+/home/lich/Documents/test_CFG_v4/5.c:10631: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_kl_scaled_e':
+/home/lich/Documents/test_CFG_v4/5.c:10822: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:10829: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `bessel_kl_scaled_small_x':
+/home/lich/Documents/test_CFG_v4/5.c:10720: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `bessel_Kn_scaled_small_x':
+/home/lich/Documents/test_CFG_v4/5.c:10952: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:10953: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:10970: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:10972: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Kn_e':
+/home/lich/Documents/test_CFG_v4/5.c:11064: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Kn_array':
+/home/lich/Documents/test_CFG_v4/5.c:11129: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_lnKnu_e':
+/home/lich/Documents/test_CFG_v4/5.c:11248: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:11264: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:11271: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:11287: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Olver_zofmzeta':
+/home/lich/Documents/test_CFG_v4/5.c:11464: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Ynu_asymp_Olver_e':
+/home/lich/Documents/test_CFG_v4/5.c:12244: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12261: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12261: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12265: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12266: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12266: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12268: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12268: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12272: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12273: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:12274: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12276: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:12276: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_sequence_Jnu_e':
+/home/lich/Documents/test_CFG_v4/5.c:12366: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:12367: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:12424: undefined reference to `ceil'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Y0_e':
+/home/lich/Documents/test_CFG_v4/5.c:12754: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12769: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_Y1_e':
+/home/lich/Documents/test_CFG_v4/5.c:12878: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12888: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:12906: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_yl_e':
+/home/lich/Documents/test_CFG_v4/5.c:13123: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:13130: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `bessel_Yn_small_x':
+/home/lich/Documents/test_CFG_v4/5.c:13256: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:13273: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:13275: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_bessel_zero_Jnu_e':
+/home/lich/Documents/test_CFG_v4/5.c:14694: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:14714: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:14753: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `olver_f1':
+/home/lich/Documents/test_CFG_v4/5.c:14580: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lnbeta_e':
+/home/lich/Documents/test_CFG_v4/5.c:14841: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:14843: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:14844: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_gammastar_e':
+/home/lich/Documents/test_CFG_v4/5.c:23789: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_log_1plusx_e':
+/home/lich/Documents/test_CFG_v4/5.c:33693: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_gamma_e':
+/home/lich/Documents/test_CFG_v4/5.c:23738: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:23741: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_log_e':
+/home/lich/Documents/test_CFG_v4/5.c:33615: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_clausen_e':
+/home/lich/Documents/test_CFG_v4/5.c:15242: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:15249: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hydrogenicR_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:15328: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:15329: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hydrogenicR_e':
+/home/lich/Documents/test_CFG_v4/5.c:15354: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `R_norm':
+/home/lich/Documents/test_CFG_v4/5.c:15306: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_CL_e':
+/home/lich/Documents/test_CFG_v4/5.c:15499: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_CL_array':
+/home/lich/Documents/test_CFG_v4/5.c:15521: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_wave_FG_e':
+/home/lich/Documents/test_CFG_v4/5.c:16509: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16510: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:16553: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_F_recur':
+/home/lich/Documents/test_CFG_v4/5.c:15920: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_FGmhalf_series':
+/home/lich/Documents/test_CFG_v4/5.c:15840: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:15883: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_FG0_series':
+/home/lich/Documents/test_CFG_v4/5.c:15776: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_FG_series':
+/home/lich/Documents/test_CFG_v4/5.c:15671: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_G_recur':
+/home/lich/Documents/test_CFG_v4/5.c:15958: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_jwkb':
+/home/lich/Documents/test_CFG_v4/5.c:16213: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16214: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16215: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16215: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:16217: undefined reference to `atan2'
+/home/lich/Documents/test_CFG_v4/5.c:16217: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16219: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:16220: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16234: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:16235: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:16246: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:16247: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_wave_F_array':
+/home/lich/Documents/test_CFG_v4/5.c:16630: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_wave_FG_array':
+/home/lich/Documents/test_CFG_v4/5.c:16669: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16687: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_coulomb_wave_FGp_array':
+/home/lich/Documents/test_CFG_v4/5.c:16728: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:16748: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:16778: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_debye_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:17685: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:17686: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:17702: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_debye_2_e':
+/home/lich/Documents/test_CFG_v4/5.c:17738: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:17739: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:17757: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_debye_3_e':
+/home/lich/Documents/test_CFG_v4/5.c:17794: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:17795: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:17814: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_debye_4_e':
+/home/lich/Documents/test_CFG_v4/5.c:17851: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:17852: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:17872: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `dilog_xge0':
+/home/lich/Documents/test_CFG_v4/5.c:17977: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:17990: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:17991: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18006: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18026: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:18031: more undefined references to `log' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_complex_dilog_e':
+/home/lich/Documents/test_CFG_v4/5.c:18371: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:18372: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:18373: undefined reference to `atan2'
+/home/lich/Documents/test_CFG_v4/5.c:18374: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_angle_restrict_pos_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:36871: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `dilogc_unitdisk':
+/home/lich/Documents/test_CFG_v4/5.c:18200: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18223: undefined reference to `atan2'
+/home/lich/Documents/test_CFG_v4/5.c:18234: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18235: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18237: undefined reference to `atan2'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_RC_e':
+/home/lich/Documents/test_CFG_v4/5.c:18598: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18598: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18603: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_RD_e':
+/home/lich/Documents/test_CFG_v4/5.c:18619: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:18620: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:18646: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18647: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18648: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18663: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_RF_e':
+/home/lich/Documents/test_CFG_v4/5.c:18705: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:18706: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_RJ_e':
+/home/lich/Documents/test_CFG_v4/5.c:18732: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:18733: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:18767: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18768: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18769: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:18796: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_F_e':
+/home/lich/Documents/test_CFG_v4/5.c:18810: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_E_e':
+/home/lich/Documents/test_CFG_v4/5.c:18826: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_Ecomp_e':
+/home/lich/Documents/test_CFG_v4/5.c:18936: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_P_e':
+/home/lich/Documents/test_CFG_v4/5.c:18853: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_D_e':
+/home/lich/Documents/test_CFG_v4/5.c:18873: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_ellint_Kcomp_e':
+/home/lich/Documents/test_CFG_v4/5.c:18899: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_elljac_e':
+/home/lich/Documents/test_CFG_v4/5.c:19048: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:19049: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:19054: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:19055: undefined reference to `cosh'
+/home/lich/Documents/test_CFG_v4/5.c:19071: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:19072: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:19076: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:19093: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:19094: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:19095: undefined reference to `asin'
+/home/lich/Documents/test_CFG_v4/5.c:19096: undefined reference to `asin'
+/home/lich/Documents/test_CFG_v4/5.c:19102: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:19103: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:19106: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:19106: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_erfc_e':
+/home/lich/Documents/test_CFG_v4/5.c:19385: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19393: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `erfc8':
+/home/lich/Documents/test_CFG_v4/5.c:19199: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_log_erfc_e':
+/home/lich/Documents/test_CFG_v4/5.c:19463: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `log_erfc8':
+/home/lich/Documents/test_CFG_v4/5.c:19208: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_erf_Z_e':
+/home/lich/Documents/test_CFG_v4/5.c:19494: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:19712: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19713: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_mult_e':
+/home/lich/Documents/test_CFG_v4/5.c:19733: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19739: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:19750: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19751: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19755: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19755: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_mult_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:19777: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19784: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:19795: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19799: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_mult_err_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:19866: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19873: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19881: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:19892: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:19896: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_expm1_e':
+/home/lich/Documents/test_CFG_v4/5.c:19917: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19927: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exprel_e':
+/home/lich/Documents/test_CFG_v4/5.c:19947: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:19957: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:19977: more undefined references to `exp' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exprel_n_e':
+/home/lich/Documents/test_CFG_v4/5.c:20023: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20033: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20045: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20051: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lnfact_e':
+/home/lich/Documents/test_CFG_v4/5.c:23999: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_exp_err_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:20147: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:20148: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_expint_3_e':
+/home/lich/Documents/test_CFG_v4/5.c:20311: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:20313: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `expint_E1_impl':
+/home/lich/Documents/test_CFG_v4/5.c:20625: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20633: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20642: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20651: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20652: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20664: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20665: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20674: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20683: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `expint_E2_impl':
+/home/lich/Documents/test_CFG_v4/5.c:20704: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:20712: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:20721: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_m1_e':
+/home/lich/Documents/test_CFG_v4/5.c:22070: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:22076: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_0_e':
+/home/lich/Documents/test_CFG_v4/5.c:22091: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:22098: more undefined references to `exp' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_0_e':
+/home/lich/Documents/test_CFG_v4/5.c:22098: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:22103: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:22119: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_2_e':
+/home/lich/Documents/test_CFG_v4/5.c:22179: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `fd_nint':
+/home/lich/Documents/test_CFG_v4/5.c:21733: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:21740: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:21779: more undefined references to `exp' follow
+/tmp/5buildCFG-b6186d.o: In function `fd_neg':
+/home/lich/Documents/test_CFG_v4/5.c:21785: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:21797: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:21803: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `fd_asymp':
+/home/lich/Documents/test_CFG_v4/5.c:21831: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:21864: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:21870: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `fd_UMseries_int':
+/home/lich/Documents/test_CFG_v4/5.c:22008: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_mhalf_e':
+/home/lich/Documents/test_CFG_v4/5.c:22282: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:22288: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:22308: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_half_e':
+/home/lich/Documents/test_CFG_v4/5.c:22330: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:22336: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:22356: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_fermi_dirac_3half_e':
+/home/lich/Documents/test_CFG_v4/5.c:22378: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:22384: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:22404: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `lngamma_lanczos':
+/home/lich/Documents/test_CFG_v4/5.c:23201: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:23202: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `lngamma_sgn_0':
+/home/lich/Documents/test_CFG_v4/5.c:23235: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `lngamma_sgn_sing':
+/home/lich/Documents/test_CFG_v4/5.c:23279: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:23338: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:23340: more undefined references to `log' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lngamma_sgn_e':
+/home/lich/Documents/test_CFG_v4/5.c:23695: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:23719: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gamma_xgthalf':
+/home/lich/Documents/test_CFG_v4/5.c:23514: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:23515: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:23558: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:23571: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:23582: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:23583: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:23585: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gammastar_ser':
+/home/lich/Documents/test_CFG_v4/5.c:23457: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_gammainv_e':
+/home/lich/Documents/test_CFG_v4/5.c:23833: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lndoublefact_e':
+/home/lich/Documents/test_CFG_v4/5.c:24015: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gamma_inc_Q_asymp_unif':
+/home/lich/Documents/test_CFG_v4/5.c:24310: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:24315: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:24330: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:24335: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gamma_inc_Q_series':
+/home/lich/Documents/test_CFG_v4/5.c:24462: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_gamma_inc_e':
+/home/lich/Documents/test_CFG_v4/5.c:24789: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:24802: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:24802: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gamma_inc_CF':
+/home/lich/Documents/test_CFG_v4/5.c:24594: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_gegenpoly_n_e':
+/home/lich/Documents/test_CFG_v4/5.c:24944: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:24945: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_0F1_e':
+/home/lich/Documents/test_CFG_v4/5.c:25131: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:25144: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:25156: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25174: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:25186: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_0F1_bessel_J':
+/home/lich/Documents/test_CFG_v4/5.c:25109: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:25110: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_0F1_bessel_I':
+/home/lich/Documents/test_CFG_v4/5.c:25076: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:25077: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:25088: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_asymp_posx':
+/home/lich/Documents/test_CFG_v4/5.c:25303: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_asymp_negx':
+/home/lich/Documents/test_CFG_v4/5.c:25262: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_ab_posint':
+/home/lich/Documents/test_CFG_v4/5.c:26190: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:26191: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:26247: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:26268: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:26277: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_1F1_e':
+/home/lich/Documents/test_CFG_v4/5.c:26994: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26995: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26996: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:27041: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_renorm_b0':
+/home/lich/Documents/test_CFG_v4/5.c:25575: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:25584: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25584: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25596: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:25606: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25608: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_a_negint_lag':
+/home/lich/Documents/test_CFG_v4/5.c:26398: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:26413: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_small_a_bgt0':
+/home/lich/Documents/test_CFG_v4/5.c:25899: undefined reference to `ceil'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_ab_pos':
+/home/lich/Documents/test_CFG_v4/5.c:26664: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26702: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26739: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26781: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26782: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:26783: more undefined references to `floor' follow
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_a_negint_poly':
+/home/lich/Documents/test_CFG_v4/5.c:26350: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_ab_neg':
+/home/lich/Documents/test_CFG_v4/5.c:26862: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:26871: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:26915: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_2F0_e':
+/home/lich/Documents/test_CFG_v4/5.c:27247: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_2F1_e':
+/home/lich/Documents/test_CFG_v4/5.c:27898: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:27899: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:27900: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `pow_omx':
+/home/lich/Documents/test_CFG_v4/5.c:27883: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_2F1_series':
+/home/lich/Documents/test_CFG_v4/5.c:27336: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:27363: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_2F1_reflect':
+/home/lich/Documents/test_CFG_v4/5.c:27631: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:27635: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:27816: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:27843: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_2F1_conj_e':
+/home/lich/Documents/test_CFG_v4/5.c:28003: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_2F1_conj_series':
+/home/lich/Documents/test_CFG_v4/5.c:27404: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:27414: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_2F1_renorm_e':
+/home/lich/Documents/test_CFG_v4/5.c:28047: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28048: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28049: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_2F1_conj_renorm_e':
+/home/lich/Documents/test_CFG_v4/5.c:28109: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28110: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_1F1_large_b_e':
+/home/lich/Documents/test_CFG_v4/5.c:28286: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_U_large_b_e':
+/home/lich/Documents/test_CFG_v4/5.c:28310: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28318: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:28354: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:28384: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:28385: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:28388: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:28394: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:28395: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:28398: more undefined references to `exp' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_U_int_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:29775: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_U_int_bge1':
+/home/lich/Documents/test_CFG_v4/5.c:29174: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29177: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29214: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29238: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29247: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29275: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29300: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29321: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:29401: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29429: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29430: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29432: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hyperg_U_e10_e':
+/home/lich/Documents/test_CFG_v4/5.c:29796: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29797: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29825: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_U_bge1':
+/home/lich/Documents/test_CFG_v4/5.c:29454: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29480: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29508: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29509: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29523: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29524: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29538: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29555: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29590: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29606: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29607: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29616: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29632: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29662: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29678: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:29680: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:29729: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29730: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:29742: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_result_smash_e':
+/home/lich/Documents/test_CFG_v4/5.c:34955: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `laguerre_large_n':
+/home/lich/Documents/test_CFG_v4/5.c:29920: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:29920: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:29926: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29927: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:29930: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:29931: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:29931: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lambert_W0_e':
+/home/lich/Documents/test_CFG_v4/5.c:30321: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30331: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30345: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30350: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30351: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `halley_iteration':
+/home/lich/Documents/test_CFG_v4/5.c:30243: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lambert_Wm1_e':
+/home/lich/Documents/test_CFG_v4/5.c:30379: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30391: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30402: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30403: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_xlt1_large_neg_mu_e':
+/home/lich/Documents/test_CFG_v4/5.c:30643: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:30644: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30647: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30647: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30648: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30649: undefined reference to `atan'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_xgt1_neg_mu_largetau_e':
+/home/lich/Documents/test_CFG_v4/5.c:30748: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30751: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lnsinh_e':
+/home/lich/Documents/test_CFG_v4/5.c:36751: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36756: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36756: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `olver_B0_xi':
+/home/lich/Documents/test_CFG_v4/5.c:30682: undefined reference to `tanh'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_xlt1_neg_mu_largetau_e':
+/home/lich/Documents/test_CFG_v4/5.c:30807: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:30807: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30810: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `olver_B0_th':
+/home/lich/Documents/test_CFG_v4/5.c:30703: undefined reference to `tan'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_large_x_e':
+/home/lich/Documents/test_CFG_v4/5.c:30923: undefined reference to `atan2'
+/home/lich/Documents/test_CFG_v4/5.c:30925: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30926: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30927: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30937: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:30945: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_0_e':
+/home/lich/Documents/test_CFG_v4/5.c:31205: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31206: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:31214: undefined reference to `acosh'
+/home/lich/Documents/test_CFG_v4/5.c:31215: undefined reference to `cosh'
+/home/lich/Documents/test_CFG_v4/5.c:31216: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:31249: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31250: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31259: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31266: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31266: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31267: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31275: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `conicalP_xlt1_hyperg_A':
+/home/lich/Documents/test_CFG_v4/5.c:30981: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:30981: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:31308: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31313: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31314: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:31316: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:31329: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31334: undefined reference to `acosh'
+/home/lich/Documents/test_CFG_v4/5.c:31335: undefined reference to `cosh'
+/home/lich/Documents/test_CFG_v4/5.c:31336: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:31337: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:31359: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31381: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31382: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31383: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31395: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31403: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31404: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31406: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31419: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_half_e':
+/home/lich/Documents/test_CFG_v4/5.c:31444: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31445: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31445: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31445: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31446: undefined reference to `cosh'
+/home/lich/Documents/test_CFG_v4/5.c:31459: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31459: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31460: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31461: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_mhalf_e':
+/home/lich/Documents/test_CFG_v4/5.c:31486: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:31487: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31487: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31487: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31496: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:31510: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31510: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31511: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31512: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_conicalP_sph_reg_e':
+/home/lich/Documents/test_CFG_v4/5.c:31554: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31578: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31578: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:31610: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:30486: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_H3d_0_e':
+/home/lich/Documents/test_CFG_v4/5.c:32062: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:32069: undefined reference to `sinh'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_H3d_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:32103: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32142: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:32143: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:32145: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_H3d_e':
+/home/lich/Documents/test_CFG_v4/5.c:32167: undefined reference to `cosh'
+/home/lich/Documents/test_CFG_v4/5.c:32192: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32211: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32242: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32254: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:32263: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32264: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `legendre_H3d_series':
+/home/lich/Documents/test_CFG_v4/5.c:31898: undefined reference to `sinh'
+/home/lich/Documents/test_CFG_v4/5.c:31899: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31900: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31916: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `legendre_H3d_lnnorm':
+/home/lich/Documents/test_CFG_v4/5.c:31860: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:31860: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:31863: more undefined references to `log' follow
+/tmp/5buildCFG-b6186d.o: In function `legendre_H3d_CF1_ser':
+/home/lich/Documents/test_CFG_v4/5.c:32010: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_H3d_array':
+/home/lich/Documents/test_CFG_v4/5.c:32323: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:32334: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32335: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_Pl_e':
+/home/lich/Documents/test_CFG_v4/5.c:32523: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:32540: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32543: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_Plm_e':
+/home/lich/Documents/test_CFG_v4/5.c:32656: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32657: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32658: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `legendre_Pmm':
+/home/lich/Documents/test_CFG_v4/5.c:32414: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32414: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_Plm_array':
+/home/lich/Documents/test_CFG_v4/5.c:32723: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32724: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:32725: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_sphPlm_e':
+/home/lich/Documents/test_CFG_v4/5.c:32866: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32891: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32899: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32925: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32926: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:32973: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_sphPlm_array':
+/home/lich/Documents/test_CFG_v4/5.c:32973: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:32974: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32997: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:32998: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_sphPlm_deriv_array':
+/home/lich/Documents/test_CFG_v4/5.c:33028: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:33044: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:33070: more undefined references to `sqrt' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_Q0_e':
+/home/lich/Documents/test_CFG_v4/5.c:33329: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33334: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_legendre_Q1_e':
+/home/lich/Documents/test_CFG_v4/5.c:33378: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33383: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `legendre_Ql_asymp_unif':
+/home/lich/Documents/test_CFG_v4/5.c:33234: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:33250: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:33253: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:33269: undefined reference to `acosh'
+/home/lich/Documents/test_CFG_v4/5.c:33285: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:33288: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_log_abs_e':
+/home/lich/Documents/test_CFG_v4/5.c:33631: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_complex_log_e':
+/home/lich/Documents/test_CFG_v4/5.c:33649: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33649: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33651: undefined reference to `atan2'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_log_1plusx_mx_e':
+/home/lich/Documents/test_CFG_v4/5.c:33732: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `lnpoch_pos':
+/home/lich/Documents/test_CFG_v4/5.c:33956: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33966: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:34016: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lnpoch_sgn_e':
+/home/lich/Documents/test_CFG_v4/5.c:34083: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:34084: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:34092: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_pochrel_e':
+/home/lich/Documents/test_CFG_v4/5.c:34160: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:34168: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `pochrel_smallx':
+/home/lich/Documents/test_CFG_v4/5.c:33868: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:33934: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:33935: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:33936: undefined reference to `tan'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_psi_int_e':
+/home/lich/Documents/test_CFG_v4/5.c:34665: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:34666: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_psi_e':
+/home/lich/Documents/test_CFG_v4/5.c:34687: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:34688: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:34693: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:34701: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_psi_1piy_e':
+/home/lich/Documents/test_CFG_v4/5.c:34763: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:34772: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hzeta_e':
+/home/lich/Documents/test_CFG_v4/5.c:37581: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:37590: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37595: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37596: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37597: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37609: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:37615: more undefined references to `pow' follow
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_Si_e':
+/home/lich/Documents/test_CFG_v4/5.c:35478: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:35478: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_Ci_e':
+/home/lich/Documents/test_CFG_v4/5.c:35495: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_synchrotron_1_e':
+/home/lich/Documents/test_CFG_v4/5.c:35725: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:35731: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:35748: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:35748: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_synchrotron_2_e':
+/home/lich/Documents/test_CFG_v4/5.c:35766: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:35771: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:35788: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:35788: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_transport_2_e':
+/home/lich/Documents/test_CFG_v4/5.c:36005: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36006: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36006: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36012: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36021: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36021: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36027: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36034: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36040: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_transport_3_e':
+/home/lich/Documents/test_CFG_v4/5.c:36082: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36083: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36083: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36089: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36098: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36098: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36104: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36111: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36117: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_transport_4_e':
+/home/lich/Documents/test_CFG_v4/5.c:36159: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36160: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36160: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36166: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36175: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36175: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36181: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36188: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36194: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_transport_5_e':
+/home/lich/Documents/test_CFG_v4/5.c:36236: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36237: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36237: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36243: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36252: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36252: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36258: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36265: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:36271: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_hypot_e':
+/home/lich/Documents/test_CFG_v4/5.c:36628: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_complex_sin_e':
+/home/lich/Documents/test_CFG_v4/5.c:36653: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:36654: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:36660: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36663: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:36664: undefined reference to `cos'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_complex_cos_e':
+/home/lich/Documents/test_CFG_v4/5.c:36686: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:36687: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:36693: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36696: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:36697: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_lncosh_e':
+/home/lich/Documents/test_CFG_v4/5.c:36778: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:36778: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_polar_to_rect':
+/home/lich/Documents/test_CFG_v4/5.c:36806: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:36807: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:36808: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:36809: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_rect_to_polar':
+/home/lich/Documents/test_CFG_v4/5.c:36824: undefined reference to `atan2'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_angle_restrict_symm_err_e':
+/home/lich/Documents/test_CFG_v4/5.c:36842: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_sinc_e':
+/home/lich/Documents/test_CFG_v4/5.c:36989: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `gsl_sf_zeta_e':
+/home/lich/Documents/test_CFG_v4/5.c:37649: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:37682: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:37684: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `riemann_zeta_sgt0':
+/home/lich/Documents/test_CFG_v4/5.c:37192: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37193: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37194: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/5.c:37195: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:37215: more undefined references to `pow' follow
+/tmp/5buildCFG-b6186d.o: In function `hyperg_zaU_asymp':
+/home/lich/Documents/test_CFG_v4/5.c:28687: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28688: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_U_small_a_bgt0':
+/home/lich/Documents/test_CFG_v4/5.c:29095: undefined reference to `floor'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_U_series':
+/home/lich/Documents/test_CFG_v4/5.c:28833: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:28839: undefined reference to `ceil'
+/home/lich/Documents/test_CFG_v4/5.c:28839: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:28843: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:28844: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:28862: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_U_small_ab':
+/home/lich/Documents/test_CFG_v4/5.c:29053: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_lnU_beq2a':
+/home/lich/Documents/test_CFG_v4/5.c:28517: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_U':
+/home/lich/Documents/test_CFG_v4/5.c:26501: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:26536: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:26548: undefined reference to `exp'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_1':
+/home/lich/Documents/test_CFG_v4/5.c:25507: undefined reference to `floor'
+/home/lich/Documents/test_CFG_v4/5.c:25531: undefined reference to `ceil'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_large2bm4a':
+/home/lich/Documents/test_CFG_v4/5.c:25338: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:25338: undefined reference to `acos'
+/home/lich/Documents/test_CFG_v4/5.c:25342: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25343: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:25346: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:25347: undefined reference to `sin'
+/home/lich/Documents/test_CFG_v4/5.c:25347: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `hyperg_1F1_beq2a_pos':
+/home/lich/Documents/test_CFG_v4/5.c:26020: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `gamma_inc_F_CF':
+/home/lich/Documents/test_CFG_v4/5.c:24362: undefined reference to `pow'
+/tmp/5buildCFG-b6186d.o: In function `gamma_inc_D':
+/home/lich/Documents/test_CFG_v4/5.c:24209: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:24210: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:24220: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:24227: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:24227: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `dilogc_series_1':
+/home/lich/Documents/test_CFG_v4/5.c:18070: undefined reference to `log'
+/tmp/5buildCFG-b6186d.o: In function `dilogc_series_2':
+/home/lich/Documents/test_CFG_v4/5.c:18114: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18127: undefined reference to `log'
+/home/lich/Documents/test_CFG_v4/5.c:18128: undefined reference to `atan2'
+/tmp/5buildCFG-b6186d.o: In function `coulomb_connection':
+/home/lich/Documents/test_CFG_v4/5.c:15630: undefined reference to `exp'
+/home/lich/Documents/test_CFG_v4/5.c:15631: undefined reference to `tan'
+/home/lich/Documents/test_CFG_v4/5.c:15638: undefined reference to `tanh'
+/home/lich/Documents/test_CFG_v4/5.c:15638: undefined reference to `tan'
+/home/lich/Documents/test_CFG_v4/5.c:15639: undefined reference to `atan'
+/home/lich/Documents/test_CFG_v4/5.c:15640: undefined reference to `cos'
+/home/lich/Documents/test_CFG_v4/5.c:15641: undefined reference to `sin'
+/tmp/5buildCFG-b6186d.o: In function `olver_b0':
+/home/lich/Documents/test_CFG_v4/5.c:14569: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:14570: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o: In function `olver_B0':
+/home/lich/Documents/test_CFG_v4/5.c:11842: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:11843: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/5.c:11859: undefined reference to `sqrt'
+/tmp/5buildCFG-b6186d.o:/home/lich/Documents/test_CFG_v4/5.c:11860: more undefined references to `sqrt' follow
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [5_final.bc] Error 1

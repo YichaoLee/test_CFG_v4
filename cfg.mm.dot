@@ -1,0 +1,5 @@
+digraph "CFG for 'mm' function" {
+	label="CFG for 'mm' function";
+
+	Node0x33b0610 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  store i32 %x, i32* %1, align 4\l  call void @llvm.dbg.declare(metadata !\{i32* %1\}, metadata !18), !dbg !19\l  ret void, !dbg !20\l}"];
+}

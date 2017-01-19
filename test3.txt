@@ -1,0 +1,527 @@
+[runlim] version:		1.7
+[runlim] time limit:		300 seconds
+[runlim] real time limit:	311040000 seconds
+[runlim] space limit:		3893 MB
+[runlim] argv[0]:		make
+[runlim] start:			Mon May 23 20:36:50 2016
+[runlim] main pid:		18451
+clang -c -emit-llvm -g 2.c -o 2.bc
+llvm-dis 2.bc
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="main" -name=2 -bound=50 -check="" <2.bc>   2buildCFG.bc
+START CHECK FUNCTION <main> in precision 1.783887e+127~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  %retval = alloca i32, align 4
+BUILDCFG Time: 	1.724ms
+*******************CFG Information*********************
+CFG:
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_p, 2  PTR 
+variable:main_p_0, 3  PTR 
+variable:main_p_1, 4  PTR 
+variable:main_p_2, 5  PTR 
+variable:main_p_3, 6  PTR 
+variable:main_p_4, 7  PTR 
+variable:main_p_0_0, 8  FP 
+variable:main_p_1_0, 9  FP 
+variable:main_p_2_0, 10  FP 
+variable:main_p_3_0, 11  FP 
+variable:main_p_4_0, 12  FP 
+variable:main_q, 13  PTR 
+variable:main_q_0, 14  PTR 
+variable:main_t, 15  PTR 
+variable:main_t_0, 16  FP 
+variable:main_i, 17  PTR 
+variable:main_i_0, 18  INT 
+variable:main_retval/0, 19  INT 
+variable:main_arrayidx, 20  PTR 
+variable:main_%0, 21  PTR 
+variable:main_%0/7, 22  FP 
+variable:main_arrayidx1, 23  PTR 
+variable:main_%1, 24  FP 
+variable:main_call, 25  FP 
+variable:main_%2, 26  FP 
+variable:main_cmp, 27  INT 
+variable:main_i/11, 28  INT 
+variable:main_%4, 29  INT 
+variable:main_cmp2, 30  INT 
+variable:main_%5, 31  INT 
+variable:main_conv, 32  FP 
+variable:main_call3, 33  FP 
+variable:main_%6, 34  INT 
+variable:main_sub, 35  INT 
+variable:main_idxprom, 36  INT 
+variable:main_arrayidx4, 37  PTR 
+variable:main_%7, 38  FP 
+variable:main_mul, 39  FP 
+variable:main_%8, 40  INT 
+variable:main_idxprom5, 41  INT 
+variable:main_arrayidx6, 42  PTR 
+variable:main_%9, 43  INT 
+variable:main_inc, 44  INT 
+variable:main_arrayidx7, 45  PTR 
+variable:main_%10, 46  FP 
+variable:main_call8, 47  FP 
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+
+Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_p_0 =  alloca  constraint: main_p_0 =  store main_p_0_0 constraint: main_p_1 =  alloca  constraint: main_p_1 =  store main_p_1_0 constraint: main_p_2 =  alloca  constraint: main_p_2 =  store main_p_2_0 constraint: main_p_3 =  alloca  constraint: main_p_3 =  store main_p_3_0 constraint: main_p_4 =  alloca  constraint: main_p_4 =  store main_p_4_0 constraint: main_p =  addr main_p_0 constraint: main_q =  alloca  constraint: main_q =  store main_q_0 constraint: main_t =  alloca  constraint: main_t =  store main_t_0 constraint: main_i =  alloca  constraint: main_i =  store main_i_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_arrayidx = main_p getptr 0 constraint: main_q =  store main_arrayidx constraint: main_%0 =  load main_q constraint: main_%0/7 =  0.1 constraint: main_%0 =  store main_%0/7 constraint: main_arrayidx1 = main_p getptr 0 constraint: main_%1 =  load main_arrayidx1 
+
+
+Location Name:main q0 ID:1 nextS:-1
+Level:1
+null
+
+
+Location Name:main s1 ID:2 nextS:-1
+Level:0
+constraint: main_call =  sqrt main_%1 constraint: main_t =  store main_call constraint: main_%2 =  load main_t constraint: main_cmp = main_%2 == 1 
+
+
+Location Name:main s2 ID:3 nextS:-1
+Level:1
+null
+
+
+Location Name:main s3 ID:4 nextS:-1
+Level:1
+null
+
+
+Location Name:main q1 ID:5 nextS:-1
+Level:2
+null
+
+
+Location Name:main s4 ID:6 nextS:-1
+Level:2
+constraint: main_i/11 =  1 constraint: main_i =  store main_i/11 
+
+
+Location Name:main s5 ID:7 nextS:-1
+Level:3
+constraint: main_%4 =  load main_i 
+
+
+Location Name:main s6 ID:8 nextS:-1
+Level:4
+constraint: main_%5 =  load main_i constraint: main_conv =  main_%5 constraint: main_call3 = -1 pow main_conv constraint: main_%6 =  load main_i constraint: main_sub = main_%6 - 1 constraint: main_idxprom =  main_sub constraint: main_arrayidx4 = main_p getptr main_idxprom constraint: main_%7 =  load main_arrayidx4 constraint: main_mul = main_call3 * main_%7 constraint: main_%8 =  load main_i constraint: main_idxprom5 =  main_%8 constraint: main_arrayidx6 = main_p getptr main_idxprom5 constraint: main_arrayidx6 =  store main_mul 
+
+
+Location Name:main s7 ID:9 nextS:-1
+Level:5
+constraint: main_%9 =  load main_i constraint: main_inc = main_%9 + 1 constraint: main_i =  store main_inc 
+
+
+Location Name:main s8 ID:10 nextS:-1
+Level:4
+constraint: main_arrayidx7 = main_p getptr 4 constraint: main_%10 =  load main_arrayidx7 
+
+
+Location Name:main q2 ID:11 nextS:-1
+Level:5
+null
+
+
+Location Name:main s9 ID:12 nextS:-1
+Level:0
+constraint: main_call8 =  log main_%10 constraint: main_t =  store main_call8 
+
+
+Transition Name:e0 ID:13
+Level:1
+ToLabel:
+from:s0 to:q0
+Guard:
+constraint: main_%1 <  0 
+
+Transition Name:e1 ID:14
+Level:0
+ToLabel:
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e2 ID:15
+Level:1
+ToLabel:main_cond.false
+from:s1 to:s3
+Guard:
+constraint: main_%2 !=  1 
+
+Transition Name:e3 ID:16
+Level:1
+ToLabel:main_cond.true
+from:s1 to:s2
+Guard:
+constraint: main_%2 ==  1 
+
+Transition Name:e4 ID:17
+Level:2
+ToLabel:main_cond.end
+from:s2 to:s4
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e5 ID:18
+Level:2
+ToLabel:
+from:s3 to:q1
+Guard:
+null
+
+Transition Name:e6 ID:19
+Level:3
+ToLabel:main_for.cond
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:20
+Level:4
+ToLabel:main_for.end
+from:s5 to:s8
+Guard:
+constraint: main_%4 >=  5 
+
+Transition Name:e8 ID:21
+Level:4
+ToLabel:main_for.body
+from:s5 to:s6
+Guard:
+constraint: main_%4 <  5 
+
+Transition Name:e9 ID:22
+Level:5
+ToLabel:main_for.inc
+from:s6 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e10 ID:23
+Level:6
+ToLabel:main_for.cond
+from:s7 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e11 ID:24
+Level:5
+ToLabel:
+from:s8 to:q2
+Guard:
+constraint: main_%10 <=  0 
+
+Transition Name:e12 ID:25
+Level:0
+ToLabel:
+from:s8 to:s9
+Guard:
+null
+
+target[0]:q0(1)
+target[1]:q1(5)
+target[2]:q2(11)
+
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e0:
+(not (<= 0 main_%1))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2(3)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e3:
+(= main_%2 1)
+s2:
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(1)
+Number of path checked:4
+line 8 is not reachable under bound 50 when check=
+Dreal Time: 	15.934ms
+target[1]:q1(5)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e0:
+(not (<= 0 main_%1))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+target[1]:from s0(0) to q1(5)
+
+Number of path checked:8
+line 9 in state q1 is reachable
+Witness:
+	s0:	LocLine:5;6;7;8;
+	e1
+	s1:	LocLine:8;9;
+	e2
+	s3:	LocLine:9;
+	e5
+	q1:	LocLine:9;
+Dreal Time: 	28.38ms
+target[2]:q2(11)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e0:
+(not (<= 0 main_%1))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e2:
+(not (= main_%2 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2(3)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_%0/7 0.1)
+(= main_%0/7 main_%1)
+e1:
+s1:
+(= main_call (^ main_%1 0.5))
+(= main_call main_%2)
+(= main_cmp (ite (= main_%2 1) 1 0))
+e3:
+(= main_%2 1)
+s2:
+dreal_result is unsat
+
+
+target[2]:from s0(0) to q2(11)
+Number of path checked:12
+line 13 is not reachable under bound 50 when check=
+Dreal Time: 	43.43ms
+bound:	50	precision:	1.783887e+127	functionName:	main	check:	
+Time: 	1.724ms 
+BUILDCFG Time: 	1.724ms
+Dreal Time: 	0.04343s
+Memory used: 103.00 MB
+CPU Time: 0.056 s
+MainFunc: main
+Num_input: 0
+Num_invar: 5
+Num_line: 14
+Calllevel: 0
+nonlinearOp: 
+	 sqrt : 1
+	 pow : 1
+	 log : 1
+llvm-dis 2buildCFG.bc
+clang 2buildCFG.bc   -o 2_final
+/tmp/2buildCFG-7eb717.o: In function `main':
+/home/lich/Documents/test_CFG_v4/2.c:8: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/2.c:12: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/2.c:13: undefined reference to `log'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [2_final.bc] Error 1
+[runlim] end:			Mon May 23 20:36:50 2016
+[runlim] status:		ok
+[runlim] result:		2
+[runlim] children:		2
+[runlim] real:			0.26 seconds
+[runlim] time:			0.06 seconds
+[runlim] space:			49.6 MB
+[runlim] samples:		1

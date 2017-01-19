@@ -1,0 +1,499 @@
+clang -c -emit-llvm -g float13_true-unreach-call.c -o float13_true-unreach-call.bc
+llvm-dis float13_true-unreach-call.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=float13_true-unreach-call -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <float13_true-unreach-call.bc>   float13_true-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+3.BranchInst error 10086: main_if.end
+3.BranchInst error 10086: main_if.end3
+3.BranchInst error 10086: main_if.end6
+3.BranchInst error 10086: main_if.end9
+3.BranchInst error 10086: main_if.end12
+3.BranchInst error 10086: main_if.end15
+3.BranchInst error 10086: main_if.end18
+3.BranchInst error 10086: main_if.end21
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_temp, 2  PTR 
+variable:main_temp_0, 3  INT 
+variable:main_retval/0, 4  INT 
+variable:main_temp/12, 5  INT 
+variable:main_%0, 6  INT 
+variable:main_tobool, 7  INT 
+variable:main_temp/15, 8  INT 
+variable:main_%1, 9  INT 
+variable:main_tobool1, 10  INT 
+variable:main_temp/18, 11  INT 
+variable:main_%2, 12  INT 
+variable:main_tobool4, 13  INT 
+variable:main_temp/21, 14  INT 
+variable:main_%3, 15  INT 
+variable:main_tobool7, 16  INT 
+variable:main_temp/24, 17  INT 
+variable:main_%4, 18  INT 
+variable:main_tobool10, 19  INT 
+variable:main_temp/27, 20  INT 
+variable:main_%5, 21  INT 
+variable:main_tobool13, 22  INT 
+variable:main_temp/30, 23  INT 
+variable:main_%6, 24  INT 
+variable:main_tobool16, 25  INT 
+variable:main_temp/33, 26  INT 
+variable:main_%7, 27  INT 
+variable:main_tobool19, 28  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_temp =  alloca  constraint: main_temp =  store main_temp_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_temp/12 =  0 constraint: main_temp =  store main_temp/12 constraint: main_%0 =  load main_temp constraint: main_tobool =  main_%0 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:9	LineNum:12	LineNum:13
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:13
+
+Location Name:main q0 ID:2 nextS:-1
+Level:2
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s2 ID:3 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main_temp/15 =  0 constraint: main_temp =  store main_temp/15 constraint: main_%1 =  load main_temp constraint: main_tobool1 =  main_%1 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:15	LineNum:16
+
+Location Name:main s3 ID:4 nextS:-1
+Level:2
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:16
+
+Location Name:main q1 ID:5 nextS:-1
+Level:3
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s4 ID:6 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main_temp/18 =  0 constraint: main_temp =  store main_temp/18 constraint: main_%2 =  load main_temp constraint: main_tobool4 =  main_%2 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:18	LineNum:19
+
+Location Name:main s5 ID:7 nextS:-1
+Level:3
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:19
+
+Location Name:main q2 ID:8 nextS:-1
+Level:4
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s6 ID:9 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: main_temp/21 =  0 constraint: main_temp =  store main_temp/21 constraint: main_%3 =  load main_temp constraint: main_tobool7 =  main_%3 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:21	LineNum:22
+
+Location Name:main s7 ID:10 nextS:-1
+Level:4
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:22
+
+Location Name:main q3 ID:11 nextS:-1
+Level:5
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s8 ID:12 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: main_temp/24 =  0 constraint: main_temp =  store main_temp/24 constraint: main_%4 =  load main_temp constraint: main_tobool10 =  main_%4 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:24	LineNum:25
+
+Location Name:main s9 ID:13 nextS:-1
+Level:5
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:25
+
+Location Name:main q4 ID:14 nextS:-1
+Level:6
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s10 ID:15 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: main_temp/27 =  0 constraint: main_temp =  store main_temp/27 constraint: main_%5 =  load main_temp constraint: main_tobool13 =  main_%5 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:27	LineNum:28
+
+Location Name:main s11 ID:16 nextS:-1
+Level:6
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:28
+
+Location Name:main q5 ID:17 nextS:-1
+Level:7
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s12 ID:18 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: main_temp/30 =  0 constraint: main_temp =  store main_temp/30 constraint: main_%6 =  load main_temp constraint: main_tobool16 =  main_%6 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:30	LineNum:31
+
+Location Name:main s13 ID:19 nextS:-1
+Level:7
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:31
+
+Location Name:main q6 ID:20 nextS:-1
+Level:8
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s14 ID:21 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: main_temp/33 =  0 constraint: main_temp =  store main_temp/33 constraint: main_%7 =  load main_temp constraint: main_tobool19 =  main_%7 
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:33	LineNum:34
+
+Location Name:main s15 ID:22 nextS:-1
+Level:8
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:34
+
+Location Name:main q7 ID:23 nextS:-1
+Level:9
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s16 ID:24 nextS:-1
+Level:8
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float13_true-unreach-call.c	LineNum:36
+
+Transition Name:e0 ID:25
+Level:1
+ToLabel:main_if.end
+from:s0 to:s2
+Guard:
+constraint: main_tobool !=  1 
+
+Transition Name:e1 ID:26
+Level:1
+ToLabel:main_if.then
+from:s0 to:s1
+Guard:
+constraint: main_tobool ==  1 
+
+Transition Name:e2 ID:27
+Level:2
+ToLabel:
+from:s1 to:q0
+Guard:
+null
+
+Transition Name:e4 ID:28
+Level:2
+ToLabel:main_if.end3
+from:s2 to:s4
+Guard:
+constraint: main_tobool1 !=  1 
+
+Transition Name:e5 ID:29
+Level:2
+ToLabel:main_if.then2
+from:s2 to:s3
+Guard:
+constraint: main_tobool1 ==  1 
+
+Transition Name:e6 ID:30
+Level:3
+ToLabel:
+from:s3 to:q1
+Guard:
+null
+
+Transition Name:e8 ID:31
+Level:3
+ToLabel:main_if.end6
+from:s4 to:s6
+Guard:
+constraint: main_tobool4 !=  1 
+
+Transition Name:e9 ID:32
+Level:3
+ToLabel:main_if.then5
+from:s4 to:s5
+Guard:
+constraint: main_tobool4 ==  1 
+
+Transition Name:e10 ID:33
+Level:4
+ToLabel:
+from:s5 to:q2
+Guard:
+null
+
+Transition Name:e12 ID:34
+Level:4
+ToLabel:main_if.end9
+from:s6 to:s8
+Guard:
+constraint: main_tobool7 !=  1 
+
+Transition Name:e13 ID:35
+Level:4
+ToLabel:main_if.then8
+from:s6 to:s7
+Guard:
+constraint: main_tobool7 ==  1 
+
+Transition Name:e14 ID:36
+Level:5
+ToLabel:
+from:s7 to:q3
+Guard:
+null
+
+Transition Name:e16 ID:37
+Level:5
+ToLabel:main_if.end12
+from:s8 to:s10
+Guard:
+constraint: main_tobool10 !=  1 
+
+Transition Name:e17 ID:38
+Level:5
+ToLabel:main_if.then11
+from:s8 to:s9
+Guard:
+constraint: main_tobool10 ==  1 
+
+Transition Name:e18 ID:39
+Level:6
+ToLabel:
+from:s9 to:q4
+Guard:
+null
+
+Transition Name:e20 ID:40
+Level:6
+ToLabel:main_if.end15
+from:s10 to:s12
+Guard:
+constraint: main_tobool13 !=  1 
+
+Transition Name:e21 ID:41
+Level:6
+ToLabel:main_if.then14
+from:s10 to:s11
+Guard:
+constraint: main_tobool13 ==  1 
+
+Transition Name:e22 ID:42
+Level:7
+ToLabel:
+from:s11 to:q5
+Guard:
+null
+
+Transition Name:e24 ID:43
+Level:7
+ToLabel:main_if.end18
+from:s12 to:s14
+Guard:
+constraint: main_tobool16 !=  1 
+
+Transition Name:e25 ID:44
+Level:7
+ToLabel:main_if.then17
+from:s12 to:s13
+Guard:
+constraint: main_tobool16 ==  1 
+
+Transition Name:e26 ID:45
+Level:8
+ToLabel:
+from:s13 to:q6
+Guard:
+null
+
+Transition Name:e28 ID:46
+Level:8
+ToLabel:main_if.end21
+from:s14 to:s16
+Guard:
+constraint: main_tobool19 !=  1 
+
+Transition Name:e29 ID:47
+Level:8
+ToLabel:main_if.then20
+from:s14 to:s15
+Guard:
+constraint: main_tobool19 ==  1 
+
+Transition Name:e30 ID:48
+Level:9
+ToLabel:
+from:s15 to:q7
+Guard:
+null
+
+#BUILDCFG Time: 	3.794ms
+MainFunc: main
+#CallDepth: 0
+#Loc: 28
+#targetsize:	8
+target[0]:q0( Assert Error )
+target[1]:q1( Assert Error )
+target[2]:q2( Assert Error )
+target[3]:q3( Assert Error )
+target[4]:q4( Assert Error )
+target[5]:q5( Assert Error )
+target[6]:q6( Assert Error )
+target[7]:q7( Assert Error )
+
+target[0]:q0(2)
+Path route: s0->e1->s1->e2->q0(2)
+s0:
+(= main_retval/0_4 0)
+(= main_temp/12_6 0)
+(= main_%0_8 main_temp/12_6)
+(= main_tobool_9 main_%0_8)
+e1:
+(= main_tobool_9 1)
+s1:
+e2:
+q0:
+IIS:	(0,0)z3_result is unsat
+
+
+target[0]:from s0(0) to q0(2)
+ Assert Error at line 13 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[1]:q1(5)
+target[1]:from s0(0) to q1(5)
+ Assert Error at line 16 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[2]:q2(8)
+target[2]:from s0(0) to q2(8)
+ Assert Error at line 19 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[3]:q3(11)
+target[3]:from s0(0) to q3(11)
+ Assert Error at line 22 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[4]:q4(14)
+target[4]:from s0(0) to q4(14)
+ Assert Error at line 25 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[5]:q5(17)
+target[5]:from s0(0) to q5(17)
+ Assert Error at line 28 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[6]:q6(20)
+target[6]:from s0(0) to q6(20)
+ Assert Error at line 31 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+target[7]:q7(23)
+target[7]:from s0(0) to q7(23)
+ Assert Error at line 34 is unreachable under bound 25
+Number of path checked:1
+#Avg_var: 2.000000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	11.515ms
+
+opt: symbol lookup error: /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so: undefined symbol: _ZN6VerifyD2Ev
+make: *** [float13_true-unreach-callbuildCFG.bc] Error 127

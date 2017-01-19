@@ -1,0 +1,8 @@
+cc -emit-llvm -g    2.c   -o 2
+/usr/bin/ld: warning: cannot find entry symbol mit-llvm; defaulting to 0000000000400450
+/tmp/ccYqB47a.o: In function `main':
+/home/lich/Documents/test_CFG_v4/2.c:8: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/2.c:13: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/2.c:14: undefined reference to `log'
+collect2: error: ld returned 1 exit status
+make: *** [2] Error 1

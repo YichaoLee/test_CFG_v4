@@ -1,0 +1,1448 @@
+[runlim] version:		1.7
+[runlim] time limit:		3000 seconds
+[runlim] real time limit:	311040000 seconds
+[runlim] space limit:		2000 MB
+[runlim] argv[0]:		make
+[runlim] start:			Wed May 25 15:20:51 2016
+[runlim] main pid:		2419
+clang -c -emit-llvm -g 5.c -o 5.bc
+5.c:24094:54: warning: taking the absolute value of unsigned type 'unsigned int' has no effect [-Wabsolute-value]
+        result->err = 2.0 * GSL_DBL_EPSILON * prod * fabs(n-m);
+                                                     ^
+5.c:24094:54: note: remove the call to 'fabs' since unsigned values cannot be negative
+        result->err = 2.0 * GSL_DBL_EPSILON * prod * fabs(n-m);
+                                                     ^~~~
+5.c:26149:44: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err = 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ma/Mn);
+                                           ^
+5.c:26149:44: note: use function 'abs' instead
+    result->err = 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ma/Mn);
+                                           ^~~~
+                                           abs
+5.c:26180:45: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err += 4.0 * GSL_DBL_EPSILON * (fabs(b-a)+1.0) * fabs(result->val);
+                                            ^
+5.c:26180:45: note: use function 'abs' instead
+    result->err += 4.0 * GSL_DBL_EPSILON * (fabs(b-a)+1.0) * fabs(result->val);
+                                            ^~~~
+                                            abs
+5.c:26203:24: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        result->err *= fabs(a-b)+1.0;
+                       ^
+5.c:26203:24: note: use function 'abs' instead
+        result->err *= fabs(a-b)+1.0;
+                       ^~~~
+                       abs
+5.c:26232:40: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err  = fabs(Mn) * (1.0 + fabs(a)) * fabs(r_Mn.err / r_Mn.val);
+                                       ^
+5.c:26232:40: note: use function 'abs' instead
+      result->err  = fabs(Mn) * (1.0 + fabs(a)) * fabs(r_Mn.err / r_Mn.val);
+                                       ^~~~
+                                       abs
+5.c:26259:22: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err *= fabs(b-a)+1.0;
+                     ^
+5.c:26259:22: note: use function 'abs' instead
+      result->err *= fabs(b-a)+1.0;
+                     ^~~~
+                     abs
+5.c:26315:22: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err *= fabs(b-a)+1.0;
+                     ^
+5.c:26315:22: note: use function 'abs' instead
+      result->err *= fabs(b-a)+1.0;
+                     ^~~~
+                     abs
+5.c:26959:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:41: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:41: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:68: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:68: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^~~~
+                                                                   abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26959:68: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26959:68: note: use function 'abs' instead
+  else if(x > 100.0  && GSL_MAX_DBL(1.0,fabs(b-a))*GSL_MAX_DBL(1.0,fabs(1-a)) < 0.5 * x) {
+                                                                   ^~~~
+                                                                   abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:41: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:41: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:41: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                        ^~~~
+                                        abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:66: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:66: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^~~~
+                                                                 abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:30: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                             ^
+5.c:26963:66: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:26963:66: note: use function 'abs' instead
+  else if(x < -100.0 && GSL_MAX_DBL(1.0,fabs(a))*GSL_MAX_DBL(1.0,fabs(1+a-b)) < 0.5 * fabs(x)) {
+                                                                 ^~~~
+                                                                 abs
+5.c:117:38: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                     ^
+5.c:113:42: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                         ^
+5.c:28752:38: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err += fabs(poch.val) * (fabs(N) + 2.0) * GSL_DBL_EPSILON * fabs(sum_val);
+                                     ^
+5.c:28752:38: note: use function 'abs' instead
+    result->err += fabs(poch.val) * (fabs(N) + 2.0) * GSL_DBL_EPSILON * fabs(sum_val);
+                                     ^~~~
+                                     abs
+5.c:29166:45: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    result->err  = 2.0 * GSL_DBL_EPSILON * (fabs(b) + fabs(x));
+                                            ^
+5.c:29166:45: note: use function 'abs' instead
+    result->err  = 2.0 * GSL_DBL_EPSILON * (fabs(b) + fabs(x));
+                                            ^~~~
+                                            abs
+5.c:29176:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(ASYMP_EVAL_OK(a,b,x)) {
+          ^
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:24: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                       ^
+5.c:29176:11: note: use function 'abs' instead
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:24: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                       ^
+5.c:29176:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(ASYMP_EVAL_OK(a,b,x)) {
+          ^
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:36: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                   ^
+5.c:29176:11: note: use function 'abs' instead
+5.c:28506:43: note: expanded from macro 'ASYMP_EVAL_OK'
+#define ASYMP_EVAL_OK(a,b,x) (GSL_MAX_DBL(fabs(a),1.0)*GSL_MAX_DBL(fabs(1.0+a-b),1.0) < 0.99*fabs(x))
+                                          ^
+5.c:117:36: note: expanded from macro 'GSL_MAX_DBL'
+#define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
+                                   ^
+5.c:113:36: note: expanded from macro 'GSL_MAX'
+#define GSL_MAX(a,b) ((a) > (b) ? (a) : (b))
+                                   ^
+5.c:29186:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(SERIES_EVAL_OK(a,b,x)) {
+          ^
+5.c:28504:33: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                ^
+5.c:29186:11: note: use function 'abs' instead
+5.c:28504:33: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                ^
+5.c:29186:11: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  else if(SERIES_EVAL_OK(a,b,x)) {
+          ^
+5.c:28504:70: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                                                     ^
+5.c:29186:11: note: use function 'abs' instead
+5.c:28504:70: note: expanded from macro 'SERIES_EVAL_OK'
+#define SERIES_EVAL_OK(a,b,x) ((fabs(a) < 5 && b < 5 && x < 2.0) || (fabs(a) <  10 && b < 10 && x < 1.0))
+                                                                     ^
+5.c:29218:38: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    y.err = 4.0 * GSL_DBL_EPSILON * (fabs(a)+1.0) * fabs(Ua);
+                                     ^
+5.c:29218:38: note: use function 'abs' instead
+    y.err = 4.0 * GSL_DBL_EPSILON * (fabs(a)+1.0) * fabs(Ua);
+                                     ^~~~
+                                     abs
+5.c:29252:39: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    y.err += 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ua);
+                                      ^
+5.c:29252:39: note: use function 'abs' instead
+    y.err += 2.0 * GSL_DBL_EPSILON * (fabs(a) + 1.0) * fabs(Ua);
+                                      ^~~~
+                                      abs
+5.c:29303:35: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        double oUa_err   = 2.0 * (fabs(a_target-a) + CF1_count + 1.0) * GSL_DBL_EPSILON * fabs(1.0/Ua);
+                                  ^
+5.c:29303:35: note: use function 'abs' instead
+        double oUa_err   = 2.0 * (fabs(a_target-a) + CF1_count + 1.0) * GSL_DBL_EPSILON * fabs(1.0/Ua);
+                                  ^~~~
+                                  abs
+5.c:29347:48: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        Ua1_bck_err = 2.0 * GSL_DBL_EPSILON * (fabs(a1-a)+CF1_count+1.0) * fabs(Ua);
+                                               ^
+5.c:29347:48: note: use function 'abs' instead
+        Ua1_bck_err = 2.0 * GSL_DBL_EPSILON * (fabs(a1-a)+CF1_count+1.0) * fabs(Ua);
+                                               ^~~~
+                                               abs
+5.c:29413:49: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+        Ua1_for_err += 2.0 * GSL_DBL_EPSILON * (fabs(a1-a0)+1.0) * fabs(Ua1_for_val);
+                                                ^
+5.c:29413:49: note: use function 'abs' instead
+        Ua1_for_err += 2.0 * GSL_DBL_EPSILON * (fabs(a1-a0)+1.0) * fabs(Ua1_for_val);
+                                                ^~~~
+                                                abs
+5.c:29744:57: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      lnm.err = 2.0 * GSL_DBL_EPSILON * (fabs(lm_for) + fabs(scale_count_for - scale_count_bck)*fabs(lnscale));
+                                                        ^
+5.c:29744:57: note: use function 'abs' instead
+      lnm.err = 2.0 * GSL_DBL_EPSILON * (fabs(lm_for) + fabs(scale_count_for - scale_count_bck)*fabs(lnscale));
+                                                        ^~~~
+                                                        abs
+5.c:29781:52: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      double ln_pre_err = 2.0 * GSL_DBL_EPSILON * (fabs(b)+1.0) * fabs(ln_x);
+                                                   ^
+5.c:29781:52: note: use function 'abs' instead
+      double ln_pre_err = 2.0 * GSL_DBL_EPSILON * (fabs(b)+1.0) * fabs(ln_x);
+                                                   ^~~~
+                                                   abs
+5.c:32897:67: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    lnpre_err = 0.25*M_LNPI*GSL_DBL_EPSILON + 0.5 * (lnpoch.err + fabs(m)*lncirc.err);
+                                                                  ^
+5.c:32897:67: note: use function 'abs' instead
+    lnpre_err = 0.25*M_LNPI*GSL_DBL_EPSILON + 0.5 * (lnpoch.err + fabs(m)*lncirc.err);
+                                                                  ^~~~
+                                                                  abs
+5.c:33926:46: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err = 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                             ^
+5.c:33926:46: note: use function 'abs' instead
+      result->err = 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                             ^~~~
+                                             abs
+5.c:33941:47: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+      result->err += 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                              ^
+5.c:33941:47: note: use function 'abs' instead
+      result->err += 2.0 * GSL_DBL_EPSILON * (fabs(incr) + 1.0) * fabs(result->val);
+                                              ^~~~
+                                              abs
+31 warnings generated.
+llvm-dis 5.bc
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="gsl_sf_bessel_In_e" -name=5 -bound=50 -pre=0.01 -mode=0 -expression="" <5.bc>   5buildCFG.bc
+START CHECK FUNCTION <gsl_sf_bessel_In_e> in precision 1.000000e-02~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckMode: 0
+Check assertions, div-0 and domain error
+Warning: There is no main function in the Module!
+[runlim] sample:		5.4 seconds, 62.6 MB
+[runlim] sample:		15.4 seconds, 72.4 MB
+[runlim] sample:		25.4 seconds, 70.7 MB
+[runlim] sample:		35.4 seconds, 74.3 MB
+[runlim] sample:		45.4 seconds, 73.4 MB
+[runlim] sample:		55.4 seconds, 73.9 MB
+[runlim] sample:		65.3 seconds, 76.0 MB
+[runlim] sample:		75.3 seconds, 77.5 MB
+[runlim] sample:		85.3 seconds, 76.6 MB
+[runlim] sample:		95.3 seconds, 78.9 MB
+[runlim] sample:		105.3 seconds, 79.9 MB
+[runlim] sample:		115.3 seconds, 81.5 MB
+[runlim] sample:		125.3 seconds, 81.5 MB
+#BUILDCFG Time: 	133230ms
+MainFunc: gsl_sf_bessel_In_e
+#Num_input: 3
+#Num_var: 2400
+#Loc: 1446
+#Calllevel: 0
+#nonlinearOp: 0 
+	# tan : 0
+	# atan : 0
+	# atan2 : 0
+	# sin : 17
+	# asin : 0
+	# cos : 2
+	# acos : 0
+	# sqrt : 16
+	# pow : 5
+	# log : 113
+	# log10 : 0
+	# abs : 529
+	# exp : 26
+	# sinh : 0
+	# cosh : 0
+	# tanh : 0
+#targetsize:	450
+target[0]:q0(8)
+target[1]:q1(17)
+target[2]:q2(19)
+target[3]:q3(22)
+target[4]:q4(29)
+target[5]:q5(31)
+target[6]:q6(33)
+target[7]:q7(36)
+target[8]:q8(38)
+target[9]:q9(41)
+target[10]:q10(48)
+target[11]:q11(50)
+target[12]:q12(52)
+target[13]:q13(67)
+target[14]:q14(76)
+target[15]:q15(78)
+target[16]:q16(81)
+target[17]:q17(88)
+target[18]:q18(93)
+target[19]:q19(96)
+target[20]:q20(98)
+target[21]:q21(101)
+target[22]:q22(108)
+target[23]:q23(113)
+target[24]:q24(149)
+target[25]:q25(162)
+target[26]:q26(168)
+target[27]:q27(176)
+target[28]:q28(180)
+target[29]:q29(182)
+target[30]:q30(190)
+target[31]:q31(192)
+target[32]:q32(194)
+target[33]:q33(211)
+target[34]:q34(213)
+target[35]:q35(215)
+target[36]:q36(223)
+target[37]:q37(229)
+target[38]:q38(235)
+target[39]:q39(255)
+target[40]:q40(259)
+target[41]:q41(261)
+target[42]:q42(267)
+target[43]:q43(280)
+target[44]:q44(289)
+target[45]:q45(293)
+target[46]:q46(295)
+target[47]:q47(301)
+target[48]:q48(310)
+target[49]:q49(312)
+target[50]:q50(315)
+target[51]:q51(317)
+target[52]:q52(319)
+target[53]:q53(323)
+target[54]:q54(339)
+target[55]:q55(345)
+target[56]:q56(353)
+target[57]:q57(357)
+target[58]:q58(359)
+target[59]:q59(367)
+target[60]:q60(369)
+target[61]:q61(371)
+target[62]:q62(388)
+target[63]:q63(390)
+target[64]:q64(392)
+target[65]:q65(406)
+target[66]:q66(410)
+target[67]:q67(412)
+target[68]:q68(426)
+target[69]:q69(435)
+target[70]:q70(439)
+target[71]:q71(441)
+target[72]:q72(447)
+target[73]:q73(456)
+target[74]:q74(458)
+target[75]:q75(461)
+target[76]:q76(463)
+target[77]:q77(465)
+target[78]:q78(474)
+target[79]:q79(476)
+target[80]:q80(478)
+target[81]:q81(480)
+target[82]:q82(486)
+target[83]:q83(489)
+target[84]:q84(494)
+target[85]:q85(497)
+target[86]:q86(504)
+target[87]:q87(508)
+target[88]:q88(510)
+target[89]:q89(518)
+target[90]:q90(520)
+target[91]:q91(522)
+target[92]:q92(539)
+target[93]:q93(541)
+target[94]:q94(543)
+target[95]:q95(551)
+target[96]:q96(557)
+target[97]:q97(560)
+target[98]:q98(565)
+target[99]:q99(568)
+target[100]:q100(575)
+target[101]:q101(579)
+target[102]:q102(581)
+target[103]:q103(589)
+target[104]:q104(591)
+target[105]:q105(593)
+target[106]:q106(615)
+target[107]:q107(617)
+target[108]:q108(619)
+target[109]:q109(621)
+target[110]:q110(623)
+target[111]:q111(625)
+target[112]:q112(634)
+target[113]:q113(638)
+target[114]:q114(640)
+target[115]:q115(643)
+target[116]:q116(651)
+target[117]:q117(654)
+target[118]:q118(659)
+target[119]:q119(675)
+target[120]:q120(677)
+target[121]:q121(679)
+target[122]:q122(681)
+target[123]:q123(683)
+target[124]:q124(689)
+target[125]:q125(695)
+target[126]:q126(707)
+target[127]:q127(709)
+target[128]:q128(711)
+target[129]:q129(713)
+target[130]:q130(715)
+target[131]:q131(717)
+target[132]:q132(719)
+target[133]:q133(721)
+target[134]:q134(723)
+target[135]:q135(735)
+target[136]:q136(738)
+target[137]:q137(748)
+target[138]:q138(750)
+target[139]:q139(752)
+target[140]:q140(754)
+target[141]:q141(757)
+target[142]:q142(759)
+target[143]:q143(763)
+target[144]:q144(765)
+target[145]:q145(767)
+target[146]:q146(770)
+target[147]:q147(777)
+target[148]:q148(779)
+target[149]:q149(783)
+target[150]:q150(785)
+target[151]:q151(788)
+target[152]:q152(795)
+target[153]:q153(799)
+target[154]:q154(802)
+target[155]:q155(811)
+target[156]:q156(827)
+target[157]:q157(830)
+target[158]:q158(832)
+target[159]:q159(834)
+target[160]:q160(844)
+target[161]:q161(862)
+target[162]:q162(879)
+target[163]:q163(892)
+target[164]:q164(898)
+target[165]:q165(906)
+target[166]:q166(910)
+target[167]:q167(912)
+target[168]:q168(920)
+target[169]:q169(922)
+target[170]:q170(924)
+target[171]:q171(941)
+target[172]:q172(943)
+target[173]:q173(945)
+target[174]:q174(953)
+target[175]:q175(963)
+target[176]:q176(967)
+target[177]:q177(969)
+target[178]:q178(975)
+target[179]:q179(987)
+target[180]:q180(996)
+target[181]:q181(1000)
+target[182]:q182(1002)
+target[183]:q183(1008)
+target[184]:q184(1017)
+target[185]:q185(1019)
+target[186]:q186(1022)
+target[187]:q187(1024)
+target[188]:q188(1026)
+target[189]:q189(1045)
+target[190]:q190(1051)
+target[191]:q191(1059)
+target[192]:q192(1063)
+target[193]:q193(1065)
+target[194]:q194(1073)
+target[195]:q195(1075)
+target[196]:q196(1077)
+target[197]:q197(1104)
+target[198]:q198(1113)
+target[199]:q199(1117)
+target[200]:q200(1119)
+target[201]:q201(1125)
+target[202]:q202(1130)
+target[203]:q203(1132)
+target[204]:q204(1140)
+target[205]:q205(1142)
+target[206]:q206(1148)
+target[207]:q207(1150)
+target[208]:q208(1152)
+target[209]:q209(1154)
+target[210]:q210(1160)
+target[211]:q211(1163)
+target[212]:q212(1168)
+target[213]:q213(1171)
+target[214]:q214(1178)
+target[215]:q215(1182)
+target[216]:q216(1184)
+target[217]:q217(1192)
+target[218]:q218(1194)
+target[219]:q219(1196)
+target[220]:q220(1213)
+target[221]:q221(1215)
+target[222]:q222(1217)
+target[223]:q223(1225)
+target[224]:q224(1231)
+target[225]:q225(1237)
+target[226]:q226(1257)
+target[227]:q227(1261)
+target[228]:q228(1263)
+target[229]:q229(1266)
+target[230]:q230(1277)
+target[231]:q231(1279)
+target[232]:q232(1281)
+target[233]:q233(1283)
+target[234]:q234(1285)
+target[235]:q235(1291)
+target[236]:q236(1297)
+target[237]:q237(1309)
+target[238]:q238(1311)
+target[239]:q239(1313)
+target[240]:q240(1315)
+target[241]:q241(1317)
+target[242]:q242(1319)
+target[243]:q243(1321)
+target[244]:q244(1323)
+target[245]:q245(1325)
+target[246]:q246(1337)
+target[247]:q247(1340)
+target[248]:q248(1350)
+target[249]:q249(1352)
+target[250]:q250(1354)
+target[251]:q251(1356)
+target[252]:q252(1359)
+target[253]:q253(1361)
+target[254]:q254(1365)
+target[255]:q255(1367)
+target[256]:q256(1369)
+target[257]:q257(1372)
+target[258]:q258(1379)
+target[259]:q259(1381)
+target[260]:q260(1385)
+target[261]:q261(1387)
+target[262]:q262(1390)
+target[263]:q263(1397)
+target[264]:q264(1401)
+target[265]:q265(1404)
+target[266]:q266(1413)
+target[267]:q267(1429)
+target[268]:q268(1432)
+target[269]:q269(1434)
+target[270]:q270(1436)
+target[271]:q271(1446)
+target[272]:q272(1466)
+target[273]:q273(1468)
+target[274]:q274(1477)
+target[275]:q275(1483)
+target[276]:q276(1491)
+target[277]:q277(1495)
+target[278]:q278(1497)
+target[279]:q279(1505)
+target[280]:q280(1507)
+target[281]:q281(1509)
+target[282]:q282(1526)
+target[283]:q283(1528)
+target[284]:q284(1530)
+target[285]:q285(1538)
+target[286]:q286(1544)
+target[287]:q287(1547)
+target[288]:q288(1552)
+target[289]:q289(1555)
+target[290]:q290(1562)
+target[291]:q291(1566)
+target[292]:q292(1568)
+target[293]:q293(1576)
+target[294]:q294(1578)
+target[295]:q295(1580)
+target[296]:q296(1597)
+target[297]:q297(1599)
+target[298]:q298(1601)
+target[299]:q299(1615)
+target[300]:q300(1619)
+target[301]:q301(1621)
+target[302]:q302(1634)
+target[303]:q303(1636)
+target[304]:q304(1638)
+target[305]:q305(1640)
+target[306]:q306(1642)
+target[307]:q307(1644)
+target[308]:q308(1655)
+target[309]:q309(1659)
+target[310]:q310(1661)
+target[311]:q311(1667)
+target[312]:q312(1675)
+target[313]:q313(1681)
+target[314]:q314(1689)
+target[315]:q315(1693)
+target[316]:q316(1695)
+target[317]:q317(1703)
+target[318]:q318(1705)
+target[319]:q319(1707)
+target[320]:q320(1741)
+target[321]:q321(1743)
+target[322]:q322(1751)
+target[323]:q323(1759)
+target[324]:q324(1761)
+target[325]:q325(1763)
+target[326]:q326(1775)
+target[327]:q327(1778)
+target[328]:q328(1783)
+target[329]:q329(1786)
+target[330]:q330(1793)
+target[331]:q331(1797)
+target[332]:q332(1799)
+target[333]:q333(1807)
+target[334]:q334(1809)
+target[335]:q335(1811)
+target[336]:q336(1828)
+target[337]:q337(1830)
+target[338]:q338(1832)
+target[339]:q339(1840)
+target[340]:q340(1846)
+target[341]:q341(1849)
+target[342]:q342(1854)
+target[343]:q343(1857)
+target[344]:q344(1864)
+target[345]:q345(1868)
+target[346]:q346(1870)
+target[347]:q347(1878)
+target[348]:q348(1880)
+target[349]:q349(1882)
+target[350]:q350(1899)
+target[351]:q351(1901)
+target[352]:q352(1903)
+target[353]:q353(1911)
+target[354]:q354(1917)
+target[355]:q355(1920)
+target[356]:q356(1925)
+target[357]:q357(1928)
+target[358]:q358(1935)
+target[359]:q359(1939)
+target[360]:q360(1941)
+target[361]:q361(1949)
+target[362]:q362(1951)
+target[363]:q363(1953)
+target[364]:q364(1978)
+target[365]:q365(1982)
+target[366]:q366(1984)
+target[367]:q367(1987)
+target[368]:q368(1999)
+target[369]:q369(2001)
+target[370]:q370(2003)
+target[371]:q371(2005)
+target[372]:q372(2007)
+target[373]:q373(2009)
+target[374]:q374(2018)
+target[375]:q375(2022)
+target[376]:q376(2024)
+target[377]:q377(2027)
+target[378]:q378(2032)
+target[379]:q379(2039)
+target[380]:q380(2043)
+target[381]:q381(2057)
+target[382]:q382(2059)
+target[383]:q383(2081)
+target[384]:q384(2090)
+target[385]:q385(2092)
+target[386]:q386(2095)
+target[387]:q387(2102)
+target[388]:q388(2104)
+target[389]:q389(2106)
+target[390]:q390(2109)
+target[391]:q391(2111)
+target[392]:q392(2114)
+target[393]:q393(2121)
+target[394]:q394(2123)
+target[395]:q395(2125)
+target[396]:q396(2132)
+target[397]:q397(2134)
+target[398]:q398(2136)
+target[399]:q399(2138)
+target[400]:q400(2144)
+target[401]:q401(2151)
+target[402]:q402(2155)
+target[403]:q403(2157)
+target[404]:q404(2169)
+target[405]:q405(2171)
+target[406]:q406(2174)
+target[407]:q407(2177)
+target[408]:q408(2182)
+target[409]:q409(2184)
+target[410]:q410(2186)
+target[411]:q411(2188)
+target[412]:q412(2190)
+target[413]:q413(2192)
+target[414]:q414(2196)
+target[415]:q415(2198)
+target[416]:q416(2208)
+target[417]:q417(2216)
+target[418]:q418(2220)
+target[419]:q419(2224)
+target[420]:q420(2228)
+target[421]:q421(2232)
+target[422]:q422(2234)
+target[423]:q423(2244)
+target[424]:q424(2246)
+target[425]:q425(2248)
+target[426]:q426(2250)
+target[427]:q427(2252)
+target[428]:q428(2254)
+target[429]:q429(2258)
+target[430]:q430(2260)
+target[431]:q431(2270)
+target[432]:q432(2278)
+target[433]:q433(2282)
+target[434]:q434(2286)
+target[435]:q435(2290)
+target[436]:q436(2294)
+target[437]:q437(2296)
+target[438]:q438(2302)
+target[439]:q439(2304)
+target[440]:q440(2306)
+target[441]:q441(2308)
+target[442]:q442(2310)
+target[443]:q443(2312)
+target[444]:q444(2316)
+target[445]:q445(2318)
+target[446]:q446(2328)
+target[447]:q447(2341)
+target[448]:q448(2345)
+target[449]:q449(2347)
+
+target[0]:q0(8)
+Path route: s0(0)
+Precision is 0.01
+VarTable initial 0	gsl_sf_bessel_In_e_n_in
+VarTable initial 1	gsl_sf_bessel_In_e_x
+VarTable initial 5	gsl_sf_bessel_In_e_result_0_0
+VarTable initial 6	gsl_sf_bessel_In_e_result_1_0
+gsl_sf_bessel_In_e_n_in = [-1.000000e+02, 1.000000e+02]
+gsl_sf_bessel_In_e_x = [-1.000000e+02, 1.000000e+02]
+gsl_sf_bessel_In_e_result_0_0 = [-1.000000e+02, 1.000000e+02]
+gsl_sf_bessel_In_e_result_1_0 = [-1.000000e+02, 1.000000e+02]
+s0:
+(= gsl_sf_bessel_In_e_x gsl_sf_bessel_In_e_%0)
+(= gsl_sf_bessel_In_e_call (abs gsl_sf_bessel_In_e_%0))
+(= gsl_sf_bessel_In_e_n_in gsl_sf_bessel_In_e_%1)
+(= gsl_sf_bessel_In_e_call1 (abs gsl_sf_bessel_In_e_%1))
+(= gsl_sf_bessel_In_e_call1 gsl_sf_bessel_In_e_%2)
+(= gsl_sf_bessel_In_e_call gsl_sf_bessel_In_e_%3)
+(= bi0_data_0_0 -0.0766055)
+(= bi0_data_1_0 1.92734)
+(= bi0_data_2_0 0.228264)
+(= bi0_data_3_0 0.0130489)
+(= bi0_data_4_0 0.000434427)
+(= bi0_data_5_0 9.42266e-06)
+(= bi0_data_6_0 1.43401e-07)
+(= bi0_data_7_0 1.61385e-09)
+(= bi0_data_8_0 1.39665e-11)
+(= bi0_data_9_0 9.57945e-14)
+(= bi0_data_10_0 5.3339e-16)
+(= bi0_data_11_0 2.45e-18)
+(= bi0_cs_1_0 11)
+(= bi0_cs_2_0 -1)
+(= bi0_cs_3_0 1)
+(= bi0_cs_4_0 11)
+(= ai0_data_0_0 0.0757599)
+(= ai0_data_1_0 0.00759138)
+(= ai0_data_2_0 0.000415313)
+(= ai0_data_3_0 1.07008e-05)
+(= ai0_data_4_0 -7.90118e-06)
+(= ai0_data_5_0 -7.82614e-07)
+(= ai0_data_6_0 2.78385e-07)
+(= ai0_data_7_0 8.25247e-09)
+(= ai0_data_8_0 -1.20446e-08)
+(= ai0_data_9_0 1.55965e-09)
+(= ai0_data_10_0 2.29256e-10)
+(= ai0_data_11_0 -1.19162e-10)
+(= ai0_data_12_0 1.75785e-11)
+(= ai0_data_13_0 1.12822e-12)
+(= ai0_data_14_0 -1.14684e-12)
+(= ai0_data_15_0 2.7155e-13)
+(= ai0_data_16_0 -2.415e-14)
+(= ai0_data_17_0 -6.08e-15)
+(= ai0_data_18_0 3.14e-15)
+(= ai0_data_19_0 -7.1e-16)
+(= ai0_data_20_0 7e-17)
+(= ai0_cs_1_0 20)
+(= ai0_cs_2_0 -1)
+(= ai0_cs_3_0 1)
+(= ai0_cs_4_0 13)
+(= ai02_data_0_0 0.0544904)
+(= ai02_data_1_0 0.00336912)
+(= ai02_data_2_0 6.88976e-05)
+(= ai02_data_3_0 2.89137e-06)
+(= ai02_data_4_0 2.04892e-07)
+(= ai02_data_5_0 2.26667e-08)
+(= ai02_data_6_0 3.39623e-09)
+(= ai02_data_7_0 4.9406e-10)
+(= ai02_data_8_0 1.18891e-11)
+(= ai02_data_9_0 -3.14992e-11)
+(= ai02_data_10_0 -1.32158e-11)
+(= ai02_data_11_0 -1.79419e-12)
+(= ai02_data_12_0 7.1801e-13)
+(= ai02_data_13_0 3.8529e-13)
+(= ai02_data_14_0 1.539e-14)
+(= ai02_data_15_0 -4.151e-14)
+(= ai02_data_16_0 -9.54e-15)
+(= ai02_data_17_0 3.82e-15)
+(= ai02_data_18_0 1.76e-15)
+(= ai02_data_19_0 -3.4e-16)
+(= ai02_data_20_0 -2.7e-16)
+(= ai02_data_21_0 3e-17)
+(= ai02_cs_1_0 21)
+(= ai02_cs_2_0 -1)
+(= ai02_cs_3_0 1)
+(= ai02_cs_4_0 11)
+(= bi1_data_0_0 -0.00197171)
+(= bi1_data_1_0 0.407349)
+(= bi1_data_2_0 0.034839)
+(= bi1_data_3_0 0.00154539)
+(= bi1_data_4_0 4.18885e-05)
+(= bi1_data_5_0 7.64903e-07)
+(= bi1_data_6_0 1.00425e-08)
+(= bi1_data_7_0 9.93221e-11)
+(= bi1_data_8_0 7.6638e-13)
+(= bi1_data_9_0 4.741e-15)
+(= bi1_data_10_0 2.4e-17)
+(= bi1_cs_1_0 10)
+(= bi1_cs_2_0 -1)
+(= bi1_cs_3_0 1)
+(= bi1_cs_4_0 10)
+(= ai1_data_0_0 -0.0284674)
+(= ai1_data_1_0 -0.0192295)
+(= ai1_data_2_0 -0.000611519)
+(= ai1_data_3_0 -2.06997e-05)
+(= ai1_data_4_0 8.58562e-06)
+(= ai1_data_5_0 1.0495e-06)
+(= ai1_data_6_0 -2.91834e-07)
+(= ai1_data_7_0 -1.55938e-08)
+(= ai1_data_8_0 1.31801e-08)
+(= ai1_data_9_0 -1.44842e-09)
+(= ai1_data_10_0 -2.90851e-10)
+(= ai1_data_11_0 1.26639e-10)
+(= ai1_data_12_0 -1.66495e-11)
+(= ai1_data_13_0 -1.66665e-12)
+(= ai1_data_14_0 1.2426e-12)
+(= ai1_data_15_0 -2.7315e-13)
+(= ai1_data_16_0 2.023e-14)
+(= ai1_data_17_0 7.3e-15)
+(= ai1_data_18_0 -3.33e-15)
+(= ai1_data_19_0 7.1e-16)
+(= ai1_data_20_0 -6e-17)
+(= ai1_cs_1_0 20)
+(= ai1_cs_2_0 -1)
+(= ai1_cs_3_0 1)
+(= ai1_cs_4_0 11)
+(= ai12_data_0_0 0.0285762)
+(= ai12_data_1_0 -0.0097611)
+(= ai12_data_2_0 -0.000110589)
+(= ai12_data_3_0 -3.88256e-06)
+(= ai12_data_4_0 -2.51224e-07)
+(= ai12_data_5_0 -2.63147e-08)
+(= ai12_data_6_0 -3.83538e-09)
+(= ai12_data_7_0 -5.58974e-10)
+(= ai12_data_8_0 -1.8975e-11)
+(= ai12_data_9_0 3.2526e-11)
+(= ai12_data_10_0 1.41258e-11)
+(= ai12_data_11_0 2.03564e-12)
+(= ai12_data_12_0 -7.1985e-13)
+(= ai12_data_13_0 -4.0836e-13)
+(= ai12_data_14_0 -2.101e-14)
+(= ai12_data_15_0 4.273e-14)
+(= ai12_data_16_0 1.041e-14)
+(= ai12_data_17_0 -3.82e-15)
+(= ai12_data_18_0 -1.86e-15)
+(= ai12_data_19_0 3.3e-16)
+(= ai12_data_20_0 2.8e-16)
+(= ai12_data_21_0 -3e-17)
+(= ai12_cs_1_0 21)
+(= ai12_cs_2_0 -1)
+(= ai12_cs_3_0 1)
+(= ai12_cs_4_0 9)
+(= lanczos_7_c_0_0 1)
+(= lanczos_7_c_1_0 676.52)
+(= lanczos_7_c_2_0 -1259.14)
+(= lanczos_7_c_3_0 771.323)
+(= lanczos_7_c_4_0 -176.615)
+(= lanczos_7_c_5_0 12.5073)
+(= lanczos_7_c_6_0 -0.138571)
+(= lanczos_7_c_7_0 9.98437e-06)
+(= lanczos_7_c_8_0 1.50563e-07)
+(= fact_table_0_0_0 0)
+(= fact_table_0_1_0 1)
+(= fact_table_0_2_0 1)
+(= fact_table_1_0_0 1)
+(= fact_table_1_1_0 1)
+(= fact_table_1_2_0 1)
+(= fact_table_2_0_0 2)
+(= fact_table_2_1_0 2)
+(= fact_table_2_2_0 2)
+(= fact_table_3_0_0 3)
+(= fact_table_3_1_0 6)
+(= fact_table_3_2_0 6)
+(= fact_table_4_0_0 4)
+(= fact_table_4_1_0 24)
+(= fact_table_4_2_0 24)
+(= fact_table_5_0_0 5)
+(= fact_table_5_1_0 120)
+(= fact_table_5_2_0 120)
+(= fact_table_6_0_0 6)
+(= fact_table_6_1_0 720)
+(= fact_table_6_2_0 720)
+(= fact_table_7_0_0 7)
+(= fact_table_7_1_0 5040)
+(= fact_table_7_2_0 5040)
+(= fact_table_8_0_0 8)
+(= fact_table_8_1_0 40320)
+(= fact_table_8_2_0 40320)
+(= fact_table_9_0_0 9)
+(= fact_table_9_1_0 362880)
+(= fact_table_9_2_0 362880)
+(= fact_table_10_0_0 10)
+(= fact_table_10_1_0 3.6288e+06)
+(= fact_table_10_2_0 3.6288e+06)
+(= fact_table_11_0_0 11)
+(= fact_table_11_1_0 3.99168e+07)
+(= fact_table_11_2_0 3.99168e+07)
+(= fact_table_12_0_0 12)
+(= fact_table_12_1_0 4.79002e+08)
+(= fact_table_12_2_0 4.79002e+08)
+(= fact_table_13_0_0 13)
+(= fact_table_13_1_0 6.22702e+09)
+(= fact_table_13_2_0 0)
+(= fact_table_14_0_0 14)
+(= fact_table_14_1_0 8.71783e+10)
+(= fact_table_14_2_0 0)
+(= fact_table_15_0_0 15)
+(= fact_table_15_1_0 1.30767e+12)
+(= fact_table_15_2_0 0)
+(= fact_table_16_0_0 16)
+(= fact_table_16_1_0 2.09228e+13)
+(= fact_table_16_2_0 0)
+(= fact_table_17_0_0 17)
+(= fact_table_17_1_0 3.55687e+14)
+(= fact_table_17_2_0 0)
+(= fact_table_18_0_0 18)
+(= fact_table_18_1_0 6.40237e+15)
+(= fact_table_18_2_0 0)
+(= fact_table_19_0_0 19)
+(= fact_table_19_1_0 1.21645e+17)
+(= fact_table_19_2_0 0)
+(= fact_table_20_0_0 20)
+(= fact_table_20_1_0 2.4329e+18)
+(= fact_table_20_2_0 0)
+(= fact_table_21_0_0 21)
+(= fact_table_21_1_0 5.10909e+19)
+(= fact_table_21_2_0 0)
+(= fact_table_22_0_0 22)
+(= fact_table_22_1_0 1.124e+21)
+(= fact_table_22_2_0 0)
+(= fact_table_23_0_0 23)
+(= fact_table_23_1_0 2.5852e+22)
+(= fact_table_23_2_0 0)
+(= fact_table_24_0_0 24)
+(= fact_table_24_1_0 6.20448e+23)
+(= fact_table_24_2_0 0)
+(= fact_table_25_0_0 25)
+(= fact_table_25_1_0 1.55112e+25)
+(= fact_table_25_2_0 0)
+(= fact_table_26_0_0 26)
+(= fact_table_26_1_0 4.03291e+26)
+(= fact_table_26_2_0 0)
+(= fact_table_27_0_0 27)
+(= fact_table_27_1_0 1.08889e+28)
+(= fact_table_27_2_0 0)
+(= fact_table_28_0_0 28)
+(= fact_table_28_1_0 3.04888e+29)
+(= fact_table_28_2_0 0)
+(= fact_table_29_0_0 29)
+(= fact_table_29_1_0 8.84176e+30)
+(= fact_table_29_2_0 0)
+(= fact_table_30_0_0 30)
+(= fact_table_30_1_0 2.65253e+32)
+(= fact_table_30_2_0 0)
+(= fact_table_31_0_0 31)
+(= fact_table_31_1_0 8.22284e+33)
+(= fact_table_31_2_0 0)
+(= fact_table_32_0_0 32)
+(= fact_table_32_1_0 2.63131e+35)
+(= fact_table_32_2_0 0)
+(= fact_table_33_0_0 33)
+(= fact_table_33_1_0 8.68332e+36)
+(= fact_table_33_2_0 0)
+(= fact_table_34_0_0 34)
+(= fact_table_34_1_0 2.95233e+38)
+(= fact_table_34_2_0 0)
+(= fact_table_35_0_0 35)
+(= fact_table_35_1_0 1.03331e+40)
+(= fact_table_35_2_0 0)
+(= fact_table_36_0_0 36)
+(= fact_table_36_1_0 3.71993e+41)
+(= fact_table_36_2_0 0)
+(= fact_table_37_0_0 37)
+(= fact_table_37_1_0 1.37638e+43)
+(= fact_table_37_2_0 0)
+(= fact_table_38_0_0 38)
+(= fact_table_38_1_0 5.23023e+44)
+(= fact_table_38_2_0 0)
+(= fact_table_39_0_0 39)
+(= fact_table_39_1_0 2.03979e+46)
+(= fact_table_39_2_0 0)
+(= fact_table_40_0_0 40)
+(= fact_table_40_1_0 8.15915e+47)
+(= fact_table_40_2_0 0)
+(= fact_table_41_0_0 41)
+(= fact_table_41_1_0 3.34525e+49)
+(= fact_table_41_2_0 0)
+(= fact_table_42_0_0 42)
+(= fact_table_42_1_0 1.40501e+51)
+(= fact_table_42_2_0 0)
+(= fact_table_43_0_0 43)
+(= fact_table_43_1_0 6.04153e+52)
+(= fact_table_43_2_0 0)
+(= fact_table_44_0_0 44)
+(= fact_table_44_1_0 2.65827e+54)
+(= fact_table_44_2_0 0)
+(= fact_table_45_0_0 45)
+(= fact_table_45_1_0 1.19622e+56)
+(= fact_table_45_2_0 0)
+(= fact_table_46_0_0 46)
+(= fact_table_46_1_0 5.50262e+57)
+(= fact_table_46_2_0 0)
+(= fact_table_47_0_0 47)
+(= fact_table_47_1_0 2.58623e+59)
+(= fact_table_47_2_0 0)
+(= fact_table_48_0_0 48)
+(= fact_table_48_1_0 1.24139e+61)
+(= fact_table_48_2_0 0)
+(= fact_table_49_0_0 49)
+(= fact_table_49_1_0 6.08282e+62)
+(= fact_table_49_2_0 0)
+(= fact_table_50_0_0 50)
+(= fact_table_50_1_0 3.04141e+64)
+(= fact_table_50_2_0 0)
+(= fact_table_51_0_0 51)
+(= fact_table_51_1_0 1.55112e+66)
+(= fact_table_51_2_0 0)
+(= fact_table_52_0_0 52)
+(= fact_table_52_1_0 8.06582e+67)
+(= fact_table_52_2_0 0)
+(= fact_table_53_0_0 53)
+(= fact_table_53_1_0 4.27488e+69)
+(= fact_table_53_2_0 0)
+(= fact_table_54_0_0 54)
+(= fact_table_54_1_0 2.30844e+71)
+(= fact_table_54_2_0 0)
+(= fact_table_55_0_0 55)
+(= fact_table_55_1_0 1.26964e+73)
+(= fact_table_55_2_0 0)
+(= fact_table_56_0_0 56)
+(= fact_table_56_1_0 7.10999e+74)
+(= fact_table_56_2_0 0)
+(= fact_table_57_0_0 57)
+(= fact_table_57_1_0 4.05269e+76)
+(= fact_table_57_2_0 0)
+(= fact_table_58_0_0 58)
+(= fact_table_58_1_0 2.35056e+78)
+(= fact_table_58_2_0 0)
+(= fact_table_59_0_0 59)
+(= fact_table_59_1_0 1.38683e+80)
+(= fact_table_59_2_0 0)
+(= fact_table_60_0_0 60)
+(= fact_table_60_1_0 8.32099e+81)
+(= fact_table_60_2_0 0)
+(= fact_table_61_0_0 61)
+(= fact_table_61_1_0 5.0758e+83)
+(= fact_table_61_2_0 0)
+(= fact_table_62_0_0 62)
+(= fact_table_62_1_0 3.147e+85)
+(= fact_table_62_2_0 0)
+(= fact_table_63_0_0 63)
+(= fact_table_63_1_0 1.98261e+87)
+(= fact_table_63_2_0 0)
+(= fact_table_64_0_0 64)
+(= fact_table_64_1_0 1.26887e+89)
+(= fact_table_64_2_0 0)
+(= fact_table_65_0_0 65)
+(= fact_table_65_1_0 8.24765e+90)
+(= fact_table_65_2_0 0)
+(= fact_table_66_0_0 66)
+(= fact_table_66_1_0 5.44345e+92)
+(= fact_table_66_2_0 0)
+(= fact_table_67_0_0 67)
+(= fact_table_67_1_0 3.64711e+94)
+(= fact_table_67_2_0 0)
+(= fact_table_68_0_0 68)
+(= fact_table_68_1_0 2.48004e+96)
+(= fact_table_68_2_0 0)
+(= fact_table_69_0_0 69)
+(= fact_table_69_1_0 1.71122e+98)
+(= fact_table_69_2_0 0)
+(= fact_table_70_0_0 70)
+(= fact_table_70_1_0 1.19786e+100)
+(= fact_table_70_2_0 0)
+(= fact_table_71_0_0 71)
+(= fact_table_71_1_0 8.50479e+101)
+(= fact_table_71_2_0 0)
+(= fact_table_72_0_0 72)
+(= fact_table_72_1_0 6.12345e+103)
+(= fact_table_72_2_0 0)
+(= fact_table_73_0_0 73)
+(= fact_table_73_1_0 4.47012e+105)
+(= fact_table_73_2_0 0)
+(= fact_table_74_0_0 74)
+(= fact_table_74_1_0 3.30789e+107)
+(= fact_table_74_2_0 0)
+(= fact_table_75_0_0 75)
+(= fact_table_75_1_0 2.48091e+109)
+(= fact_table_75_2_0 0)
+(= fact_table_76_0_0 76)
+(= fact_table_76_1_0 1.88549e+111)
+(= fact_table_76_2_0 0)
+(= fact_table_77_0_0 77)
+(= fact_table_77_1_0 1.45183e+113)
+(= fact_table_77_2_0 0)
+(= fact_table_78_0_0 78)
+(= fact_table_78_1_0 1.13243e+115)
+(= fact_table_78_2_0 0)
+(= fact_table_79_0_0 79)
+(= fact_table_79_1_0 8.94618e+116)
+(= fact_table_79_2_0 0)
+(= fact_table_80_0_0 80)
+(= fact_table_80_1_0 7.15695e+118)
+(= fact_table_80_2_0 0)
+(= fact_table_81_0_0 81)
+(= fact_table_81_1_0 5.79713e+120)
+(= fact_table_81_2_0 0)
+(= fact_table_82_0_0 82)
+(= fact_table_82_1_0 4.75364e+122)
+(= fact_table_82_2_0 0)
+(= fact_table_83_0_0 83)
+(= fact_table_83_1_0 3.94552e+124)
+(= fact_table_83_2_0 0)
+(= fact_table_84_0_0 84)
+(= fact_table_84_1_0 3.31424e+126)
+(= fact_table_84_2_0 0)
+(= fact_table_85_0_0 85)
+(= fact_table_85_1_0 2.8171e+128)
+(= fact_table_85_2_0 0)
+(= fact_table_86_0_0 86)
+(= fact_table_86_1_0 2.42271e+130)
+(= fact_table_86_2_0 0)
+(= fact_table_87_0_0 87)
+(= fact_table_87_1_0 2.10776e+132)
+(= fact_table_87_2_0 0)
+(= fact_table_88_0_0 88)
+(= fact_table_88_1_0 1.85483e+134)
+(= fact_table_88_2_0 0)
+(= fact_table_89_0_0 89)
+(= fact_table_89_1_0 1.6508e+136)
+(= fact_table_89_2_0 0)
+(= fact_table_90_0_0 90)
+(= fact_table_90_1_0 1.48572e+138)
+(= fact_table_90_2_0 0)
+(= fact_table_91_0_0 91)
+(= fact_table_91_1_0 1.352e+140)
+(= fact_table_91_2_0 0)
+(= fact_table_92_0_0 92)
+(= fact_table_92_1_0 1.24384e+142)
+(= fact_table_92_2_0 0)
+(= fact_table_93_0_0 93)
+(= fact_table_93_1_0 1.15677e+144)
+(= fact_table_93_2_0 0)
+(= fact_table_94_0_0 94)
+(= fact_table_94_1_0 1.08737e+146)
+(= fact_table_94_2_0 0)
+(= fact_table_95_0_0 95)
+(= fact_table_95_1_0 1.033e+148)
+(= fact_table_95_2_0 0)
+(= fact_table_96_0_0 96)
+(= fact_table_96_1_0 9.91678e+149)
+(= fact_table_96_2_0 0)
+(= fact_table_97_0_0 97)
+(= fact_table_97_1_0 9.61928e+151)
+(= fact_table_97_2_0 0)
+(= fact_table_98_0_0 98)
+(= fact_table_98_1_0 9.42689e+153)
+(= fact_table_98_2_0 0)
+(= fact_table_99_0_0 99)
+(= fact_table_99_1_0 9.33262e+155)
+(= fact_table_99_2_0 0)
+(= fact_table_100_0_0 100)
+(= fact_table_100_1_0 9.33262e+157)
+(= fact_table_100_2_0 0)
+(= fact_table_101_0_0 101)
+(= fact_table_101_1_0 9.42595e+159)
+(= fact_table_101_2_0 0)
+(= fact_table_102_0_0 102)
+(= fact_table_102_1_0 9.61447e+161)
+(= fact_table_102_2_0 0)
+(= fact_table_103_0_0 103)
+(= fact_table_103_1_0 9.9029e+163)
+(= fact_table_103_2_0 0)
+(= fact_table_104_0_0 104)
+(= fact_table_104_1_0 1.0299e+166)
+(= fact_table_104_2_0 0)
+(= fact_table_105_0_0 105)
+(= fact_table_105_1_0 1.0814e+168)
+(= fact_table_105_2_0 0)
+(= fact_table_106_0_0 106)
+(= fact_table_106_1_0 1.14628e+170)
+(= fact_table_106_2_0 0)
+(= fact_table_107_0_0 107)
+(= fact_table_107_1_0 1.22652e+172)
+(= fact_table_107_2_0 0)
+(= fact_table_108_0_0 108)
+(= fact_table_108_1_0 1.32464e+174)
+(= fact_table_108_2_0 0)
+(= fact_table_109_0_0 109)
+(= fact_table_109_1_0 1.44386e+176)
+(= fact_table_109_2_0 0)
+(= fact_table_110_0_0 110)
+(= fact_table_110_1_0 1.58825e+178)
+(= fact_table_110_2_0 0)
+(= fact_table_111_0_0 111)
+(= fact_table_111_1_0 1.76295e+180)
+(= fact_table_111_2_0 0)
+(= fact_table_112_0_0 112)
+(= fact_table_112_1_0 1.97451e+182)
+(= fact_table_112_2_0 0)
+(= fact_table_113_0_0 113)
+(= fact_table_113_1_0 2.23119e+184)
+(= fact_table_113_2_0 0)
+(= fact_table_114_0_0 114)
+(= fact_table_114_1_0 2.54356e+186)
+(= fact_table_114_2_0 0)
+(= fact_table_115_0_0 115)
+(= fact_table_115_1_0 2.92509e+188)
+(= fact_table_115_2_0 0)
+(= fact_table_116_0_0 116)
+(= fact_table_116_1_0 3.39311e+190)
+(= fact_table_116_2_0 0)
+(= fact_table_117_0_0 117)
+(= fact_table_117_1_0 3.96994e+192)
+(= fact_table_117_2_0 0)
+(= fact_table_118_0_0 118)
+(= fact_table_118_1_0 4.68453e+194)
+(= fact_table_118_2_0 0)
+(= fact_table_119_0_0 119)
+(= fact_table_119_1_0 5.57459e+196)
+(= fact_table_119_2_0 0)
+(= fact_table_120_0_0 120)
+(= fact_table_120_1_0 6.6895e+198)
+(= fact_table_120_2_0 0)
+(= fact_table_121_0_0 121)
+(= fact_table_121_1_0 8.0943e+200)
+(= fact_table_121_2_0 0)
+(= fact_table_122_0_0 122)
+(= fact_table_122_1_0 9.87504e+202)
+(= fact_table_122_2_0 0)
+(= fact_table_123_0_0 123)
+(= fact_table_123_1_0 1.21463e+205)
+(= fact_table_123_2_0 0)
+(= fact_table_124_0_0 124)
+(= fact_table_124_1_0 1.50614e+207)
+(= fact_table_124_2_0 0)
+(= fact_table_125_0_0 125)
+(= fact_table_125_1_0 1.88268e+209)
+(= fact_table_125_2_0 0)
+(= fact_table_126_0_0 126)
+(= fact_table_126_1_0 2.37217e+211)
+(= fact_table_126_2_0 0)
+(= fact_table_127_0_0 127)
+(= fact_table_127_1_0 3.01266e+213)
+(= fact_table_127_2_0 0)
+(= fact_table_128_0_0 128)
+(= fact_table_128_1_0 3.8562e+215)
+(= fact_table_128_2_0 0)
+(= fact_table_129_0_0 129)
+(= fact_table_129_1_0 4.9745e+217)
+(= fact_table_129_2_0 0)
+(= fact_table_130_0_0 130)
+(= fact_table_130_1_0 6.46686e+219)
+(= fact_table_130_2_0 0)
+(= fact_table_131_0_0 131)
+(= fact_table_131_1_0 8.47158e+221)
+(= fact_table_131_2_0 0)
+(= fact_table_132_0_0 132)
+0  opt             0x00000000016128d2 llvm::sys::PrintStackTrace(_IO_FILE*) + 34
+1  opt             0x00000000016124f4
+2  libpthread.so.0 0x00002adbbab72340
+3  libc.so.6       0x00002adbbb7e9cc9 gsignal + 57
+4  libc.so.6       0x00002adbbb7ed0d8 abort + 328
+5  libc.so.6       0x00002adbbb826394
+6  libc.so.6       0x00002adbbb8bdc9c __fortify_fail + 92
+7  libc.so.6       0x00002adbbb8bcb60
+8  libc.so.6       0x00002adbbb8bc069
+9  libc.so.6       0x00002adbbb82e70c _IO_default_xsputn + 188
+10 libc.so.6       0x00002adbbb803b29 __printf_fp + 6217
+11 libc.so.6       0x00002adbbb801793 _IO_vfprintf + 19107
+12 libc.so.6       0x00002adbbb8bc0f4 __vsprintf_chk + 132
+13 libc.so.6       0x00002adbbb8bc04d __sprintf_chk + 125
+14 libdreal.so     0x00002adbbbe7ffee Egraph::mkNum(double) + 78
+15 buildCFG.so     0x00002adbbbbb8fe3
+16 buildCFG.so     0x00002adbbbbbb5ea
+17 buildCFG.so     0x00002adbbbbbbb82
+18 buildCFG.so     0x00002adbbbbbc4e6
+19 buildCFG.so     0x00002adbbbbbc7d5
+20 buildCFG.so     0x00002adbbbbbce32
+21 buildCFG.so     0x00002adbbbbc3324
+22 buildCFG.so     0x00002adbbbbbd959
+23 opt             0x0000000001599ed7 llvm::FPPassManager::doInitialization(llvm::Module&) + 87
+24 opt             0x00000000015a33c7 llvm::legacy::PassManagerImpl::run(llvm::Module&) + 375
+25 opt             0x00000000005df45c main + 3548
+26 libc.so.6       0x00002adbbb7d4ec5 __libc_start_main + 245
+27 opt             0x000000000060256a
+Stack dump:
+0.	Program arguments: opt -load /home/lich/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func=gsl_sf_bessel_In_e -name=5 -bound=50 -pre=0.01 -mode=0 -expression= 
+Aborted (core dumped)
+make: *** [5buildCFG.bc] Error 134
+[runlim] end:			Wed May 25 15:23:10 2016
+[runlim] status:		ok
+[runlim] result:		2
+[runlim] children:		2751
+[runlim] real:			139.14 seconds
+[runlim] time:			133.52 seconds
+[runlim] space:			90.3 MB
+[runlim] samples:		1384

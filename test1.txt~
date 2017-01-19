@@ -1,0 +1,346 @@
+clang -c -emit-llvm -g 1.c -o 1.bc
+llvm-dis 1.bc
+make -C ~/Documents/llvm/lib/Transforms/Checker/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/Checker'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:52:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:50:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:54:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:81:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:78:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:83:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:142:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:140:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:162:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+CFG.cpp: In function ‘std::string get_m_Operator_str(Op_m)’:
+CFG.cpp:285:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+CFG.cpp: In function ‘Operator getEnumOperator(std::string)’:
+CFG.cpp:384:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+In file included from InstParser.h:25:0,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:52:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:50:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:54:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:81:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:78:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:83:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from InstParser.h:25:0,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:142:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:140:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:162:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+InstParser.cpp: In function ‘std::string llvm::getVariableName(llvm::raw_ostream&, const llvm::Value*, llvm::TypePrinting*, llvm::SlotTracker*, const llvm::Module*)’:
+InstParser.cpp:1245:23: warning: unused variable ‘ignored’ [-Wunused-variable]
+                  bool ignored;
+                       ^
+InstParser.cpp: In member function ‘void llvm::InstParser::setConstraint(CFG*, State*&, llvm::BasicBlock::iterator&, std::string, std::vector<int>&)’:
+InstParser.cpp:3106:19: warning: unused variable ‘CI’ [-Wunused-variable]
+   const LoadInst *CI = dyn_cast<LoadInst>(I);
+                   ^
+InstParser.cpp:3398:17: warning: variable ‘type’ set but not used [-Wunused-but-set-variable]
+         VarType type;
+                 ^
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:52:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:50:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:54:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:81:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:78:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:83:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:142:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:140:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:162:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from Verification.cpp:1:0:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:48:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){     
+                                   ^
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:52:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:50:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:54:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:81:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:78:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:83:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:142:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:140:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:162:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from programCFG.h:17:0,
+                 from buildCFG.cpp:4:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:48:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){     
+                                   ^
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:52:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:50:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:54:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:81:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:78:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:83:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:142:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:140:9: warning:   ‘std::string State::funcName’ [-Wreorder]
+  string funcName;
+         ^
+CFG.h:162:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){};
+         ^
+In file included from programCFG.h:17:0,
+                 from programCFG.cpp:1:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:38: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                                      ^
+Verification.h:48:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){     
+                                   ^
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+programCFG.cpp: In function ‘CFG* Add_target(CFG*, int, std::string)’:
+programCFG.cpp:240:15: warning: ISO C++ forbids variable length array ‘x’ [-Wvla]
+     char x[len];
+               ^
+programCFG.cpp:258:21: warning: ISO C++ forbids variable length array ‘a’ [-Wvla]
+     int a[numCheck+1];
+                     ^
+programCFG.cpp:265:22: warning: ISO C++ forbids variable length array ‘b’ [-Wvla]
+     string b[numCheck];
+                      ^
+programCFG.cpp: In constructor ‘ProgramCFG::ProgramCFG(llvm::Module&)’:
+programCFG.cpp:308:13: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+             ^
+programCFG.cpp:308:19: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+                   ^
+programCFG.cpp:323:13: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+             ^
+programCFG.cpp:323:19: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+     clock_t start,finish;
+                   ^
+llvm[1]: Compiling verify.cpp for Release+Asserts build (PIC)
+verify.cpp: In function ‘std::string split(std::string)’:
+verify.cpp:74:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(i = 0; i < filename.length(); i ++){
+                                    ^
+verify.cpp: In function ‘void compile(std::string)’:
+verify.cpp:56:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+verify.cpp: In function ‘void opt(std::string, int, char*, char*)’:
+verify.cpp:70:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/Checker'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="main" -name=1 -bound=50 -check="" <1.bc>   1buildCFG.bc
+START CHECK FUNCTION <main>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	0.33ms
+*******************CFG Information*********************
+CFG:
+variable:main_retval, 0
+variable:main_div1, 1
+variable:main_div2, 2
+variable:main_mod, 3
+variable:main_div3, 4
+variable:main_retval/0, 5
+variable:main_div1/46, 6
+variable:main_div2/47, 7
+variable:main_%0, 8
+variable:main_%1, 9
+variable:main_rem, 10
+variable:main_%2, 11
+variable:main_sub, 12
+variable:main_div, 13
+Location Name:main s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_retval =  alloca  constraint: main_div1 =  alloca  constraint: main_div2 =  alloca  constraint: main_mod =  alloca  constraint: main_div3 =  alloca  constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_div1/46 =  9 constraint: main_div1 =  store main_div1/46 constraint: main_div2/47 =  2 constraint: main_div2 =  store main_div2/47 constraint: main_%0 =  load main_div1 constraint: main_%1 =  load main_div2 constraint: main_rem = main_%0 % main_%1 constraint: main_mod =  store main_rem constraint: main_%2 =  load main_mod constraint: main_sub = main_%2 - 1 
+
+
+Location Name:main q0 ID:1 nextS:-1
+null
+
+
+Location Name:main s1 ID:2 nextS:-1
+constraint: main_div = 1 / main_sub constraint: main_div3 =  store main_div 
+
+
+Transition Name:e0 ID:3
+ToLabel:
+from:s0 to:q0
+Guard:
+constraint: main_sub ==  0 
+
+Transition Name:e1 ID:4
+ToLabel:
+from:s0 to:s1
+Guard:
+null
+
+target[0]:q0(1)
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+(= main_div1/46 9)
+(= main_div2/47 2)
+(= main_div1/46 main_%0)
+(= main_div2/47 main_%1)
+(= main_rem_div (/ main_%0 main_%1))(= main_rem (+ main_%0 (* -1 (* main_%1 main_rem_div))))
+(= main_rem main_%2)
+(= main_sub (+ main_%2 -1))
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(1)
+Number of path checked:0
+line 49 is not reachable under bound 50 when check=
+Dreal Time: 	0.56ms
+bound:	50	functionName:	main	check:	
+Time: 	0.33s 
+BUILDCFG Time: 	0.33ms
+Dreal Time: 	0.00056s
+Memory used: 78.00 MB
+CPU Time: 0.008 s
+llvm-dis 1buildCFG.bc
+clang 1buildCFG.bc   -o 1_final

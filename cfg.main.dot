@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x33b0a30 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  %x = alloca i32, align 4\l  %z = alloca i32, align 4\l  %y = alloca i32, align 4\l  store i32 0, i32* %1\l  call void @llvm.dbg.declare(metadata !\{i32* %x\}, metadata !18), !dbg !19\l  store i32 -2, i32* %x, align 4, !dbg !19\l  call void @llvm.dbg.declare(metadata !\{i32* %z\}, metadata !20), !dbg !21\l  %2 = load i32* %x, align 4, !dbg !21\l  %3 = call i32 @add(i32 %2), !dbg !21\l  store i32 %3, i32* %z, align 4, !dbg !21\l  call void @llvm.dbg.declare(metadata !\{i32* %y\}, metadata !22), !dbg !23\l  %4 = load i32* %z, align 4, !dbg !23\l  %5 = call i32 @add(i32 %4), !dbg !23\l  store i32 %5, i32* %y, align 4, !dbg !23\l  br label %6, !dbg !24\l}"];
+	Node0x33b0a30 -> Node0x33b0a90;
+	Node0x33b0a90 [shape=record,label="{%6:\l\l  %7 = load i32* %y, align 4, !dbg !24\l  %8 = icmp ne i32 %7, 2, !dbg !24\l  br i1 %8, label %9, label %13, !dbg !24\l|{<s0>T|<s1>F}}"];
+	Node0x33b0a90:s0 -> Node0x33b0af0;
+	Node0x33b0a90:s1 -> Node0x33b0b50;
+	Node0x33b0af0 [shape=record,label="{%9:\l\l  %10 = load i32* %y, align 4, !dbg !25\l  %11 = call i32 @add(i32 %10), !dbg !25\l  store i32 %11, i32* %y, align 4, !dbg !25\l  %12 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([10 x i8]*\l... @.str, i32 0, i32 0)), !dbg !27\l  br label %6, !dbg !28\l}"];
+	Node0x33b0af0 -> Node0x33b0a90;
+	Node0x33b0b50 [shape=record,label="{%13:\l\l  ret i32 0, !dbg !29\l}"];
+}

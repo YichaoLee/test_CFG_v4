@@ -1,0 +1,949 @@
+clang -c -emit-llvm -g float22_true-unreach-call.c -o float22_true-unreach-call.bc
+llvm-dis float22_true-unreach-call.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=float22_true-unreach-call -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <float22_true-unreach-call.bc>   float22_true-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_retval/0, 2  INT 
+variable:testOne_f1, 3  PTR 
+variable:testOne_f1_0, 4  PTR 
+variable:testOne_f1_0_0, 5  PTR 
+variable:testOne_f1_0_0_0, 6  INT 
+variable:testOne_f2, 7  PTR 
+variable:testOne_f2_0, 8  PTR 
+variable:testOne_f2_0_0, 9  PTR 
+variable:testOne_f2_0_0_0, 10  INT 
+variable:testOne_coerce, 11  PTR 
+variable:testOne_coerce_0, 12  PTR 
+variable:testOne_coerce_0_0, 13  PTR 
+variable:testOne_coerce_0_0_0, 14  INT 
+variable:testOne_coerce3, 15  PTR 
+variable:testOne_coerce3_0, 16  PTR 
+variable:testOne_coerce3_0_0, 17  PTR 
+variable:testOne_coerce3_0_0_0, 18  INT 
+variable:testOne_call, 19  INT 
+variable:returnsStructure_index, 20  INT 
+variable:returnsStructure_retval, 21  PTR 
+variable:returnsStructure_retval_0, 22  PTR 
+variable:returnsStructure_retval_0_0, 23  PTR 
+variable:returnsStructure_retval_0_0_0, 24  INT 
+variable:returnsStructure_index.addr, 25  PTR 
+variable:returnsStructure_index.addr_0, 26  INT 
+variable:returnsStructure_c, 27  PTR 
+variable:returnsStructure_c_0, 28  PTR 
+variable:returnsStructure_c_0_0, 29  PTR 
+variable:returnsStructure_c_0_0_0, 30  INT 
+variable:returnsStructure_%0, 31  INT 
+variable:returnsStructure_and, 32  INT 
+variable:returnsStructure_ieee, 33  PTR 
+variable:returnsStructure_%1, 34  PTR 
+variable:returnsStructure_bf.load, 35  INT 
+variable:returnsStructure_bf.value, 36  INT 
+variable:returnsStructure_bf.clear, 37  INT 
+variable:returnsStructure_bf.set, 38  INT 
+variable:returnsStructure_ieee1, 39  PTR 
+variable:returnsStructure_%2, 40  PTR 
+variable:returnsStructure_bf.load2, 41  INT 
+variable:returnsStructure_bf.clear3, 42  INT 
+variable:returnsStructure_ieee4, 43  PTR 
+variable:returnsStructure_%3, 44  PTR 
+variable:returnsStructure_bf.load5, 45  INT 
+variable:returnsStructure_bf.clear6, 46  INT 
+variable:returnsStructure_%4, 47  PTR 
+variable:returnsStructure_%5, 48  PTR 
+variable:returnsStructure_coerce.dive, 49  PTR 
+variable:returnsStructure_coerce.dive7, 50  PTR 
+variable:returnsStructure_%6, 51  INT 
+variable:testOne_coerce.dive, 52  PTR 
+variable:testOne_coerce.dive1, 53  PTR 
+variable:testOne_%0, 54  PTR 
+variable:testOne_%1, 55  PTR 
+variable:testOne_call2, 56  INT 
+variable:returnsStructure1_index, 57  INT 
+variable:returnsStructure1_retval, 58  PTR 
+variable:returnsStructure1_retval_0, 59  PTR 
+variable:returnsStructure1_retval_0_0, 60  PTR 
+variable:returnsStructure1_retval_0_0_0, 61  INT 
+variable:returnsStructure1_index.addr, 62  PTR 
+variable:returnsStructure1_index.addr_0, 63  INT 
+variable:returnsStructure1_c, 64  PTR 
+variable:returnsStructure1_c_0, 65  PTR 
+variable:returnsStructure1_c_0_0, 66  PTR 
+variable:returnsStructure1_c_0_0_0, 67  INT 
+variable:returnsStructure1_%0, 68  INT 
+variable:returnsStructure1_and, 69  INT 
+variable:returnsStructure1_ieee, 70  PTR 
+variable:returnsStructure1_%1, 71  PTR 
+variable:returnsStructure1_bf.load, 72  INT 
+variable:returnsStructure1_bf.value, 73  INT 
+variable:returnsStructure1_bf.clear, 74  INT 
+variable:returnsStructure1_bf.set, 75  INT 
+variable:returnsStructure1_ieee1, 76  PTR 
+variable:returnsStructure1_%2, 77  PTR 
+variable:returnsStructure1_bf.load2, 78  INT 
+variable:returnsStructure1_bf.clear3, 79  INT 
+variable:returnsStructure1_ieee4, 80  PTR 
+variable:returnsStructure1_%3, 81  PTR 
+variable:returnsStructure1_bf.load5, 82  INT 
+variable:returnsStructure1_bf.clear6, 83  INT 
+variable:returnsStructure1_%4, 84  PTR 
+variable:returnsStructure1_%5, 85  PTR 
+variable:returnsStructure1_coerce.dive, 86  PTR 
+variable:returnsStructure1_coerce.dive7, 87  PTR 
+variable:returnsStructure1_%6, 88  INT 
+variable:testOne_coerce.dive4, 89  PTR 
+variable:testOne_coerce.dive5, 90  PTR 
+variable:testOne_%2, 91  PTR 
+variable:testOne_%3, 92  PTR 
+variable:testOne_ieee, 93  PTR 
+variable:testOne_%4, 94  PTR 
+variable:testOne_bf.load, 95  INT 
+variable:testOne_bf.clear, 96  INT 
+variable:testOne_ieee6, 97  PTR 
+variable:testOne_%5, 98  PTR 
+variable:testOne_bf.load7, 99  INT 
+variable:testOne_bf.clear8, 100  INT 
+variable:testOne_cmp, 101  INT 
+variable:testTwo_f1, 102  PTR 
+variable:testTwo_f1_0, 103  PTR 
+variable:testTwo_f1_0_0, 104  PTR 
+variable:testTwo_f1_0_0_0, 105  INT 
+variable:testTwo_f2, 106  PTR 
+variable:testTwo_f2_0, 107  PTR 
+variable:testTwo_f2_0_0, 108  PTR 
+variable:testTwo_f2_0_0_0, 109  INT 
+variable:testTwo_coerce, 110  PTR 
+variable:testTwo_coerce_0, 111  PTR 
+variable:testTwo_coerce_0_0, 112  PTR 
+variable:testTwo_coerce_0_0_0, 113  INT 
+variable:testTwo_coerce3, 114  PTR 
+variable:testTwo_coerce3_0, 115  PTR 
+variable:testTwo_coerce3_0_0, 116  PTR 
+variable:testTwo_coerce3_0_0_0, 117  INT 
+variable:testTwo_call, 118  INT 
+variable:returnsStructure2_index, 119  INT 
+variable:returnsStructure2_retval, 120  PTR 
+variable:returnsStructure2_retval_0, 121  PTR 
+variable:returnsStructure2_retval_0_0, 122  PTR 
+variable:returnsStructure2_retval_0_0_0, 123  INT 
+variable:returnsStructure2_index.addr, 124  PTR 
+variable:returnsStructure2_index.addr_0, 125  INT 
+variable:returnsStructure2_c, 126  PTR 
+variable:returnsStructure2_c_0, 127  PTR 
+variable:returnsStructure2_c_0_0, 128  PTR 
+variable:returnsStructure2_c_0_0_0, 129  INT 
+variable:returnsStructure2_%0, 130  INT 
+variable:returnsStructure2_and, 131  INT 
+variable:returnsStructure2_ieee, 132  PTR 
+variable:returnsStructure2_%1, 133  PTR 
+variable:returnsStructure2_bf.load, 134  INT 
+variable:returnsStructure2_bf.value, 135  INT 
+variable:returnsStructure2_bf.clear, 136  INT 
+variable:returnsStructure2_bf.set, 137  INT 
+variable:returnsStructure2_ieee1, 138  PTR 
+variable:returnsStructure2_%2, 139  PTR 
+variable:returnsStructure2_bf.load2, 140  INT 
+variable:returnsStructure2_bf.clear3, 141  INT 
+variable:returnsStructure2_ieee4, 142  PTR 
+variable:returnsStructure2_%3, 143  PTR 
+variable:returnsStructure2_bf.load5, 144  INT 
+variable:returnsStructure2_bf.clear6, 145  INT 
+variable:returnsStructure2_%4, 146  PTR 
+variable:returnsStructure2_%5, 147  PTR 
+variable:returnsStructure2_coerce.dive, 148  PTR 
+variable:returnsStructure2_coerce.dive7, 149  PTR 
+variable:returnsStructure2_%6, 150  INT 
+variable:testTwo_coerce.dive, 151  PTR 
+variable:testTwo_coerce.dive1, 152  PTR 
+variable:testTwo_%0, 153  PTR 
+variable:testTwo_%1, 154  PTR 
+variable:testTwo_call2, 155  INT 
+variable:returnsStructure3_index, 156  INT 
+variable:returnsStructure3_retval, 157  PTR 
+variable:returnsStructure3_retval_0, 158  PTR 
+variable:returnsStructure3_retval_0_0, 159  PTR 
+variable:returnsStructure3_retval_0_0_0, 160  INT 
+variable:returnsStructure3_index.addr, 161  PTR 
+variable:returnsStructure3_index.addr_0, 162  INT 
+variable:returnsStructure3_c, 163  PTR 
+variable:returnsStructure3_c_0, 164  PTR 
+variable:returnsStructure3_c_0_0, 165  PTR 
+variable:returnsStructure3_c_0_0_0, 166  INT 
+variable:returnsStructure3_%0, 167  INT 
+variable:returnsStructure3_and, 168  INT 
+variable:returnsStructure3_ieee, 169  PTR 
+variable:returnsStructure3_%1, 170  PTR 
+variable:returnsStructure3_bf.load, 171  INT 
+variable:returnsStructure3_bf.value, 172  INT 
+variable:returnsStructure3_bf.clear, 173  INT 
+variable:returnsStructure3_bf.set, 174  INT 
+variable:returnsStructure3_ieee1, 175  PTR 
+variable:returnsStructure3_%2, 176  PTR 
+variable:returnsStructure3_bf.load2, 177  INT 
+variable:returnsStructure3_bf.clear3, 178  INT 
+variable:returnsStructure3_ieee4, 179  PTR 
+variable:returnsStructure3_%3, 180  PTR 
+variable:returnsStructure3_bf.load5, 181  INT 
+variable:returnsStructure3_bf.clear6, 182  INT 
+variable:returnsStructure3_%4, 183  PTR 
+variable:returnsStructure3_%5, 184  PTR 
+variable:returnsStructure3_coerce.dive, 185  PTR 
+variable:returnsStructure3_coerce.dive7, 186  PTR 
+variable:returnsStructure3_%6, 187  INT 
+variable:testTwo_coerce.dive4, 188  PTR 
+variable:testTwo_coerce.dive5, 189  PTR 
+variable:testTwo_%2, 190  PTR 
+variable:testTwo_%3, 191  PTR 
+variable:testTwo_ieee, 192  PTR 
+variable:testTwo_%4, 193  PTR 
+variable:testTwo_bf.load, 194  INT 
+variable:testTwo_bf.clear, 195  INT 
+variable:testTwo_ieee6, 196  PTR 
+variable:testTwo_%5, 197  PTR 
+variable:testTwo_bf.load7, 198  INT 
+variable:testTwo_bf.clear8, 199  INT 
+variable:testTwo_cmp, 200  INT 
+variable:testTwo_call9, 201  FP 
+variable:returnsField_index, 202  INT 
+variable:returnsField_index.addr, 203  PTR 
+variable:returnsField_index.addr_0, 204  INT 
+variable:returnsField_c, 205  PTR 
+variable:returnsField_c_0, 206  PTR 
+variable:returnsField_c_0_0, 207  PTR 
+variable:returnsField_c_0_0_0, 208  INT 
+variable:returnsField_%0, 209  INT 
+variable:returnsField_and, 210  INT 
+variable:returnsField_ieee, 211  PTR 
+variable:returnsField_%1, 212  PTR 
+variable:returnsField_bf.load, 213  INT 
+variable:returnsField_bf.value, 214  INT 
+variable:returnsField_bf.clear, 215  INT 
+variable:returnsField_bf.set, 216  INT 
+variable:returnsField_ieee1, 217  PTR 
+variable:returnsField_%2, 218  PTR 
+variable:returnsField_bf.load2, 219  INT 
+variable:returnsField_bf.clear3, 220  INT 
+variable:returnsField_ieee4, 221  PTR 
+variable:returnsField_%3, 222  PTR 
+variable:returnsField_bf.load5, 223  INT 
+variable:returnsField_bf.clear6, 224  INT 
+variable:returnsField_f, 225  PTR 
+variable:returnsField_%4, 226  FP 
+variable:testTwo_f, 227  PTR 
+variable:testTwo_call10, 228  FP 
+variable:returnsField1_index, 229  INT 
+variable:returnsField1_index.addr, 230  PTR 
+variable:returnsField1_index.addr_0, 231  INT 
+variable:returnsField1_c, 232  PTR 
+variable:returnsField1_c_0, 233  PTR 
+variable:returnsField1_c_0_0, 234  PTR 
+variable:returnsField1_c_0_0_0, 235  INT 
+variable:returnsField1_%0, 236  INT 
+variable:returnsField1_and, 237  INT 
+variable:returnsField1_ieee, 238  PTR 
+variable:returnsField1_%1, 239  PTR 
+variable:returnsField1_bf.load, 240  INT 
+variable:returnsField1_bf.value, 241  INT 
+variable:returnsField1_bf.clear, 242  INT 
+variable:returnsField1_bf.set, 243  INT 
+variable:returnsField1_ieee1, 244  PTR 
+variable:returnsField1_%2, 245  PTR 
+variable:returnsField1_bf.load2, 246  INT 
+variable:returnsField1_bf.clear3, 247  INT 
+variable:returnsField1_ieee4, 248  PTR 
+variable:returnsField1_%3, 249  PTR 
+variable:returnsField1_bf.load5, 250  INT 
+variable:returnsField1_bf.clear6, 251  INT 
+variable:returnsField1_f, 252  PTR 
+variable:returnsField1_%4, 253  FP 
+variable:testTwo_f11, 254  PTR 
+variable:testTwo_ieee12, 255  PTR 
+variable:testTwo_%6, 256  PTR 
+variable:testTwo_bf.load13, 257  INT 
+variable:testTwo_bf.clear14, 258  INT 
+variable:testTwo_ieee15, 259  PTR 
+variable:testTwo_%7, 260  PTR 
+variable:testTwo_bf.load16, 261  INT 
+variable:testTwo_bf.clear17, 262  INT 
+variable:testTwo_cmp18, 263  INT 
+variable:main_call, 264  INT 
+variable:testThree_f1, 265  PTR 
+variable:testThree_f1_0, 266  PTR 
+variable:testThree_f1_0_0, 267  PTR 
+variable:testThree_f1_0_0_0, 268  INT 
+variable:testThree_f2, 269  PTR 
+variable:testThree_f2_0, 270  PTR 
+variable:testThree_f2_0_0, 271  PTR 
+variable:testThree_f2_0_0_0, 272  INT 
+variable:testThree_call, 273  FP 
+variable:returnsField2_index, 274  INT 
+variable:returnsField2_index.addr, 275  PTR 
+variable:returnsField2_index.addr_0, 276  INT 
+variable:returnsField2_c, 277  PTR 
+variable:returnsField2_c_0, 278  PTR 
+variable:returnsField2_c_0_0, 279  PTR 
+variable:returnsField2_c_0_0_0, 280  INT 
+variable:returnsField2_%0, 281  INT 
+variable:returnsField2_and, 282  INT 
+variable:returnsField2_ieee, 283  PTR 
+variable:returnsField2_%1, 284  PTR 
+variable:returnsField2_bf.load, 285  INT 
+variable:returnsField2_bf.value, 286  INT 
+variable:returnsField2_bf.clear, 287  INT 
+variable:returnsField2_bf.set, 288  INT 
+variable:returnsField2_ieee1, 289  PTR 
+variable:returnsField2_%2, 290  PTR 
+variable:returnsField2_bf.load2, 291  INT 
+variable:returnsField2_bf.clear3, 292  INT 
+variable:returnsField2_ieee4, 293  PTR 
+variable:returnsField2_%3, 294  PTR 
+variable:returnsField2_bf.load5, 295  INT 
+variable:returnsField2_bf.clear6, 296  INT 
+variable:returnsField2_f, 297  PTR 
+variable:returnsField2_%4, 298  FP 
+variable:testThree_f, 299  PTR 
+variable:testThree_call1, 300  FP 
+variable:returnsField3_index, 301  INT 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:89
+
+Location Name:testOne s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: testOne_f1_0_0 =  alloca  constraint: testOne_f1_0_0 =  store testOne_f1_0_0_0 constraint: testOne_f1_0 =  addr testOne_f1_0_0 constraint: testOne_f1 =  addr testOne_f1_0 constraint: testOne_f2_0_0 =  alloca  constraint: testOne_f2_0_0 =  store testOne_f2_0_0_0 constraint: testOne_f2_0 =  addr testOne_f2_0_0 constraint: testOne_f2 =  addr testOne_f2_0 constraint: testOne_coerce_0_0 =  alloca  constraint: testOne_coerce_0_0 =  store testOne_coerce_0_0_0 constraint: testOne_coerce_0 =  addr testOne_coerce_0_0 constraint: testOne_coerce =  addr testOne_coerce_0 constraint: testOne_coerce3_0_0 =  alloca  constraint: testOne_coerce3_0_0 =  store testOne_coerce3_0_0_0 constraint: testOne_coerce3_0 =  addr testOne_coerce3_0_0 constraint: testOne_coerce3 =  addr testOne_coerce3_0 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:49	LineNum:51
+
+Location Name:returnsStructure s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: returnsStructure_index =  0 constraint: returnsStructure_retval_0_0 =  alloca  constraint: returnsStructure_retval_0_0 =  store returnsStructure_retval_0_0_0 constraint: returnsStructure_retval_0 =  addr returnsStructure_retval_0_0 constraint: returnsStructure_retval =  addr returnsStructure_retval_0 constraint: returnsStructure_index.addr =  alloca  constraint: returnsStructure_index.addr =  store returnsStructure_index.addr_0 constraint: returnsStructure_c_0_0 =  alloca  constraint: returnsStructure_c_0_0 =  store returnsStructure_c_0_0_0 constraint: returnsStructure_c_0 =  addr returnsStructure_c_0_0 constraint: returnsStructure_c =  addr returnsStructure_c_0 constraint: returnsStructure_index.addr =  store returnsStructure_index constraint: returnsStructure_%0 =  load returnsStructure_index.addr constraint: returnsStructure_and = returnsStructure_%0 and 1 constraint: returnsStructure_ieee =  returnsStructure_c constraint: returnsStructure_%1 =  returnsStructure_ieee constraint: returnsStructure_bf.load =  load returnsStructure_%1 constraint: returnsStructure_bf.value = returnsStructure_and and 1 constraint: returnsStructure_bf.clear = returnsStructure_bf.load and -2 constraint: returnsStructure_bf.set = returnsStructure_bf.clear or returnsStructure_bf.value constraint: returnsStructure_%1 =  store returnsStructure_bf.set constraint: returnsStructure_ieee1 =  returnsStructure_c constraint: returnsStructure_%2 =  returnsStructure_ieee1 constraint: returnsStructure_bf.load2 =  load returnsStructure_%2 constraint: returnsStructure_bf.clear3 = returnsStructure_bf.load2 and -511 constraint: returnsStructure_%2 =  store returnsStructure_bf.clear3 constraint: returnsStructure_ieee4 =  returnsStructure_c constraint: returnsStructure_%3 =  returnsStructure_ieee4 constraint: returnsStructure_bf.load5 =  load returnsStructure_%3 constraint: returnsStructure_bf.clear6 = returnsStructure_bf.load5 and 511 constraint: returnsStructure_%3 =  store returnsStructure_bf.clear6 constraint: returnsStructure_%4 =  returnsStructure_retval constraint: returnsStructure_%5 =  returnsStructure_c constraint: returnsStructure_coerce.dive =  getptr returnsStructure_retval 0 0  constraint: returnsStructure_coerce.dive7 =  getptr returnsStructure_coerce.dive 0 0  constraint: returnsStructure_%6 =  load returnsStructure_coerce.dive7 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:37	LineNum:38	LineNum:40	LineNum:41	LineNum:42	LineNum:44
+
+Location Name:testOne s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: testOne_coerce.dive =  getptr testOne_coerce 0 0  constraint: testOne_coerce.dive1 =  getptr testOne_coerce.dive 0 0  constraint: testOne_coerce.dive1 =  store testOne_call constraint: testOne_%0 =  testOne_f1 constraint: testOne_%1 =  testOne_coerce 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:51	LineNum:52
+
+Location Name:returnsStructure1 s4 ID:4 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: returnsStructure1_index =  1 constraint: returnsStructure1_retval_0_0 =  alloca  constraint: returnsStructure1_retval_0_0 =  store returnsStructure1_retval_0_0_0 constraint: returnsStructure1_retval_0 =  addr returnsStructure1_retval_0_0 constraint: returnsStructure1_retval =  addr returnsStructure1_retval_0 constraint: returnsStructure1_index.addr =  alloca  constraint: returnsStructure1_index.addr =  store returnsStructure1_index.addr_0 constraint: returnsStructure1_c_0_0 =  alloca  constraint: returnsStructure1_c_0_0 =  store returnsStructure1_c_0_0_0 constraint: returnsStructure1_c_0 =  addr returnsStructure1_c_0_0 constraint: returnsStructure1_c =  addr returnsStructure1_c_0 constraint: returnsStructure1_index.addr =  store returnsStructure1_index constraint: returnsStructure1_%0 =  load returnsStructure1_index.addr constraint: returnsStructure1_and = returnsStructure1_%0 and 1 constraint: returnsStructure1_ieee =  returnsStructure1_c constraint: returnsStructure1_%1 =  returnsStructure1_ieee constraint: returnsStructure1_bf.load =  load returnsStructure1_%1 constraint: returnsStructure1_bf.value = returnsStructure1_and and 1 constraint: returnsStructure1_bf.clear = returnsStructure1_bf.load and -2 constraint: returnsStructure1_bf.set = returnsStructure1_bf.clear or returnsStructure1_bf.value constraint: returnsStructure1_%1 =  store returnsStructure1_bf.set constraint: returnsStructure1_ieee1 =  returnsStructure1_c constraint: returnsStructure1_%2 =  returnsStructure1_ieee1 constraint: returnsStructure1_bf.load2 =  load returnsStructure1_%2 constraint: returnsStructure1_bf.clear3 = returnsStructure1_bf.load2 and -511 constraint: returnsStructure1_%2 =  store returnsStructure1_bf.clear3 constraint: returnsStructure1_ieee4 =  returnsStructure1_c constraint: returnsStructure1_%3 =  returnsStructure1_ieee4 constraint: returnsStructure1_bf.load5 =  load returnsStructure1_%3 constraint: returnsStructure1_bf.clear6 = returnsStructure1_bf.load5 and 511 constraint: returnsStructure1_%3 =  store returnsStructure1_bf.clear6 constraint: returnsStructure1_%4 =  returnsStructure1_retval constraint: returnsStructure1_%5 =  returnsStructure1_c constraint: returnsStructure1_coerce.dive =  getptr returnsStructure1_retval 0 0  constraint: returnsStructure1_coerce.dive7 =  getptr returnsStructure1_coerce.dive 0 0  constraint: returnsStructure1_%6 =  load returnsStructure1_coerce.dive7 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:37	LineNum:38	LineNum:40	LineNum:41	LineNum:42	LineNum:44
+
+Location Name:testOne s5 ID:5 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: testOne_coerce.dive4 =  getptr testOne_coerce3 0 0  constraint: testOne_coerce.dive5 =  getptr testOne_coerce.dive4 0 0  constraint: testOne_coerce.dive5 =  store testOne_call2 constraint: testOne_%2 =  testOne_f2 constraint: testOne_%3 =  testOne_coerce3 constraint: testOne_ieee =  testOne_f1 constraint: testOne_%4 =  testOne_ieee constraint: testOne_bf.load =  load testOne_%4 constraint: testOne_bf.clear = testOne_bf.load and 1 constraint: testOne_ieee6 =  testOne_f2 constraint: testOne_%5 =  testOne_ieee6 constraint: testOne_bf.load7 =  load testOne_%5 constraint: testOne_bf.clear8 = testOne_bf.load7 and 1 constraint: testOne_cmp = testOne_bf.clear != testOne_bf.clear8 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:52	LineNum:54
+
+Location Name:testOne s6 ID:6 nextS:-1
+Level:6
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:54
+
+Location Name:testOne q0 ID:7 nextS:-1
+Level:7
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:testOne s7 ID:8 nextS:-1
+Level:7
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:56
+
+Location Name:main s8 ID:9 nextS:-1
+Level:8
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:90
+
+Location Name:testTwo s9 ID:10 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: testTwo_f1_0_0 =  alloca  constraint: testTwo_f1_0_0 =  store testTwo_f1_0_0_0 constraint: testTwo_f1_0 =  addr testTwo_f1_0_0 constraint: testTwo_f1 =  addr testTwo_f1_0 constraint: testTwo_f2_0_0 =  alloca  constraint: testTwo_f2_0_0 =  store testTwo_f2_0_0_0 constraint: testTwo_f2_0 =  addr testTwo_f2_0_0 constraint: testTwo_f2 =  addr testTwo_f2_0 constraint: testTwo_coerce_0_0 =  alloca  constraint: testTwo_coerce_0_0 =  store testTwo_coerce_0_0_0 constraint: testTwo_coerce_0 =  addr testTwo_coerce_0_0 constraint: testTwo_coerce =  addr testTwo_coerce_0 constraint: testTwo_coerce3_0_0 =  alloca  constraint: testTwo_coerce3_0_0 =  store testTwo_coerce3_0_0_0 constraint: testTwo_coerce3_0 =  addr testTwo_coerce3_0_0 constraint: testTwo_coerce3 =  addr testTwo_coerce3_0 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:61	LineNum:63
+
+Location Name:returnsStructure2 s10 ID:11 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: returnsStructure2_index =  0 constraint: returnsStructure2_retval_0_0 =  alloca  constraint: returnsStructure2_retval_0_0 =  store returnsStructure2_retval_0_0_0 constraint: returnsStructure2_retval_0 =  addr returnsStructure2_retval_0_0 constraint: returnsStructure2_retval =  addr returnsStructure2_retval_0 constraint: returnsStructure2_index.addr =  alloca  constraint: returnsStructure2_index.addr =  store returnsStructure2_index.addr_0 constraint: returnsStructure2_c_0_0 =  alloca  constraint: returnsStructure2_c_0_0 =  store returnsStructure2_c_0_0_0 constraint: returnsStructure2_c_0 =  addr returnsStructure2_c_0_0 constraint: returnsStructure2_c =  addr returnsStructure2_c_0 constraint: returnsStructure2_index.addr =  store returnsStructure2_index constraint: returnsStructure2_%0 =  load returnsStructure2_index.addr constraint: returnsStructure2_and = returnsStructure2_%0 and 1 constraint: returnsStructure2_ieee =  returnsStructure2_c constraint: returnsStructure2_%1 =  returnsStructure2_ieee constraint: returnsStructure2_bf.load =  load returnsStructure2_%1 constraint: returnsStructure2_bf.value = returnsStructure2_and and 1 constraint: returnsStructure2_bf.clear = returnsStructure2_bf.load and -2 constraint: returnsStructure2_bf.set = returnsStructure2_bf.clear or returnsStructure2_bf.value constraint: returnsStructure2_%1 =  store returnsStructure2_bf.set constraint: returnsStructure2_ieee1 =  returnsStructure2_c constraint: returnsStructure2_%2 =  returnsStructure2_ieee1 constraint: returnsStructure2_bf.load2 =  load returnsStructure2_%2 constraint: returnsStructure2_bf.clear3 = returnsStructure2_bf.load2 and -511 constraint: returnsStructure2_%2 =  store returnsStructure2_bf.clear3 constraint: returnsStructure2_ieee4 =  returnsStructure2_c constraint: returnsStructure2_%3 =  returnsStructure2_ieee4 constraint: returnsStructure2_bf.load5 =  load returnsStructure2_%3 constraint: returnsStructure2_bf.clear6 = returnsStructure2_bf.load5 and 511 constraint: returnsStructure2_%3 =  store returnsStructure2_bf.clear6 constraint: returnsStructure2_%4 =  returnsStructure2_retval constraint: returnsStructure2_%5 =  returnsStructure2_c constraint: returnsStructure2_coerce.dive =  getptr returnsStructure2_retval 0 0  constraint: returnsStructure2_coerce.dive7 =  getptr returnsStructure2_coerce.dive 0 0  constraint: returnsStructure2_%6 =  load returnsStructure2_coerce.dive7 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:37	LineNum:38	LineNum:40	LineNum:41	LineNum:42	LineNum:44
+
+Location Name:testTwo s11 ID:12 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: testTwo_coerce.dive =  getptr testTwo_coerce 0 0  constraint: testTwo_coerce.dive1 =  getptr testTwo_coerce.dive 0 0  constraint: testTwo_coerce.dive1 =  store testTwo_call constraint: testTwo_%0 =  testTwo_f1 constraint: testTwo_%1 =  testTwo_coerce 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:63	LineNum:64
+
+Location Name:returnsStructure3 s12 ID:13 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: returnsStructure3_index =  1 constraint: returnsStructure3_retval_0_0 =  alloca  constraint: returnsStructure3_retval_0_0 =  store returnsStructure3_retval_0_0_0 constraint: returnsStructure3_retval_0 =  addr returnsStructure3_retval_0_0 constraint: returnsStructure3_retval =  addr returnsStructure3_retval_0 constraint: returnsStructure3_index.addr =  alloca  constraint: returnsStructure3_index.addr =  store returnsStructure3_index.addr_0 constraint: returnsStructure3_c_0_0 =  alloca  constraint: returnsStructure3_c_0_0 =  store returnsStructure3_c_0_0_0 constraint: returnsStructure3_c_0 =  addr returnsStructure3_c_0_0 constraint: returnsStructure3_c =  addr returnsStructure3_c_0 constraint: returnsStructure3_index.addr =  store returnsStructure3_index constraint: returnsStructure3_%0 =  load returnsStructure3_index.addr constraint: returnsStructure3_and = returnsStructure3_%0 and 1 constraint: returnsStructure3_ieee =  returnsStructure3_c constraint: returnsStructure3_%1 =  returnsStructure3_ieee constraint: returnsStructure3_bf.load =  load returnsStructure3_%1 constraint: returnsStructure3_bf.value = returnsStructure3_and and 1 constraint: returnsStructure3_bf.clear = returnsStructure3_bf.load and -2 constraint: returnsStructure3_bf.set = returnsStructure3_bf.clear or returnsStructure3_bf.value constraint: returnsStructure3_%1 =  store returnsStructure3_bf.set constraint: returnsStructure3_ieee1 =  returnsStructure3_c constraint: returnsStructure3_%2 =  returnsStructure3_ieee1 constraint: returnsStructure3_bf.load2 =  load returnsStructure3_%2 constraint: returnsStructure3_bf.clear3 = returnsStructure3_bf.load2 and -511 constraint: returnsStructure3_%2 =  store returnsStructure3_bf.clear3 constraint: returnsStructure3_ieee4 =  returnsStructure3_c constraint: returnsStructure3_%3 =  returnsStructure3_ieee4 constraint: returnsStructure3_bf.load5 =  load returnsStructure3_%3 constraint: returnsStructure3_bf.clear6 = returnsStructure3_bf.load5 and 511 constraint: returnsStructure3_%3 =  store returnsStructure3_bf.clear6 constraint: returnsStructure3_%4 =  returnsStructure3_retval constraint: returnsStructure3_%5 =  returnsStructure3_c constraint: returnsStructure3_coerce.dive =  getptr returnsStructure3_retval 0 0  constraint: returnsStructure3_coerce.dive7 =  getptr returnsStructure3_coerce.dive 0 0  constraint: returnsStructure3_%6 =  load returnsStructure3_coerce.dive7 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:37	LineNum:38	LineNum:40	LineNum:41	LineNum:42	LineNum:44
+
+Location Name:testTwo s13 ID:14 nextS:-1
+Level:13
+ErrorType: No Error 
+constraint: testTwo_coerce.dive4 =  getptr testTwo_coerce3 0 0  constraint: testTwo_coerce.dive5 =  getptr testTwo_coerce.dive4 0 0  constraint: testTwo_coerce.dive5 =  store testTwo_call2 constraint: testTwo_%2 =  testTwo_f2 constraint: testTwo_%3 =  testTwo_coerce3 constraint: testTwo_ieee =  testTwo_f1 constraint: testTwo_%4 =  testTwo_ieee constraint: testTwo_bf.load =  load testTwo_%4 constraint: testTwo_bf.clear = testTwo_bf.load and 1 constraint: testTwo_ieee6 =  testTwo_f2 constraint: testTwo_%5 =  testTwo_ieee6 constraint: testTwo_bf.load7 =  load testTwo_%5 constraint: testTwo_bf.clear8 = testTwo_bf.load7 and 1 constraint: testTwo_cmp = testTwo_bf.clear != testTwo_bf.clear8 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:64	LineNum:66
+
+Location Name:testTwo s14 ID:15 nextS:-1
+Level:14
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:66
+
+Location Name:testTwo q1 ID:16 nextS:-1
+Level:15
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:testTwo s15 ID:17 nextS:-1
+Level:15
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:68
+
+Location Name:returnsField s16 ID:18 nextS:-1
+Level:16
+ErrorType: No Error 
+constraint: returnsField_index =  0 constraint: returnsField_index.addr =  alloca  constraint: returnsField_index.addr =  store returnsField_index.addr_0 constraint: returnsField_c_0_0 =  alloca  constraint: returnsField_c_0_0 =  store returnsField_c_0_0_0 constraint: returnsField_c_0 =  addr returnsField_c_0_0 constraint: returnsField_c =  addr returnsField_c_0 constraint: returnsField_index.addr =  store returnsField_index constraint: returnsField_%0 =  load returnsField_index.addr constraint: returnsField_and = returnsField_%0 and 1 constraint: returnsField_ieee =  returnsField_c constraint: returnsField_%1 =  returnsField_ieee constraint: returnsField_bf.load =  load returnsField_%1 constraint: returnsField_bf.value = returnsField_and and 1 constraint: returnsField_bf.clear = returnsField_bf.load and -2 constraint: returnsField_bf.set = returnsField_bf.clear or returnsField_bf.value constraint: returnsField_%1 =  store returnsField_bf.set constraint: returnsField_ieee1 =  returnsField_c constraint: returnsField_%2 =  returnsField_ieee1 constraint: returnsField_bf.load2 =  load returnsField_%2 constraint: returnsField_bf.clear3 = returnsField_bf.load2 and -511 constraint: returnsField_%2 =  store returnsField_bf.clear3 constraint: returnsField_ieee4 =  returnsField_c constraint: returnsField_%3 =  returnsField_ieee4 constraint: returnsField_bf.load5 =  load returnsField_%3 constraint: returnsField_bf.clear6 = returnsField_bf.load5 and 511 constraint: returnsField_%3 =  store returnsField_bf.clear6 constraint: returnsField_f =  returnsField_c constraint: returnsField_%4 =  load returnsField_f 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:27	LineNum:28	LineNum:30	LineNum:31	LineNum:32	LineNum:34
+
+Location Name:testTwo s17 ID:19 nextS:-1
+Level:17
+ErrorType: No Error 
+constraint: testTwo_f =  testTwo_f1 constraint: testTwo_f =  store testTwo_call9 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:68	LineNum:69
+
+Location Name:returnsField1 s18 ID:20 nextS:-1
+Level:18
+ErrorType: No Error 
+constraint: returnsField1_index =  1 constraint: returnsField1_index.addr =  alloca  constraint: returnsField1_index.addr =  store returnsField1_index.addr_0 constraint: returnsField1_c_0_0 =  alloca  constraint: returnsField1_c_0_0 =  store returnsField1_c_0_0_0 constraint: returnsField1_c_0 =  addr returnsField1_c_0_0 constraint: returnsField1_c =  addr returnsField1_c_0 constraint: returnsField1_index.addr =  store returnsField1_index constraint: returnsField1_%0 =  load returnsField1_index.addr constraint: returnsField1_and = returnsField1_%0 and 1 constraint: returnsField1_ieee =  returnsField1_c constraint: returnsField1_%1 =  returnsField1_ieee constraint: returnsField1_bf.load =  load returnsField1_%1 constraint: returnsField1_bf.value = returnsField1_and and 1 constraint: returnsField1_bf.clear = returnsField1_bf.load and -2 constraint: returnsField1_bf.set = returnsField1_bf.clear or returnsField1_bf.value constraint: returnsField1_%1 =  store returnsField1_bf.set constraint: returnsField1_ieee1 =  returnsField1_c constraint: returnsField1_%2 =  returnsField1_ieee1 constraint: returnsField1_bf.load2 =  load returnsField1_%2 constraint: returnsField1_bf.clear3 = returnsField1_bf.load2 and -511 constraint: returnsField1_%2 =  store returnsField1_bf.clear3 constraint: returnsField1_ieee4 =  returnsField1_c constraint: returnsField1_%3 =  returnsField1_ieee4 constraint: returnsField1_bf.load5 =  load returnsField1_%3 constraint: returnsField1_bf.clear6 = returnsField1_bf.load5 and 511 constraint: returnsField1_%3 =  store returnsField1_bf.clear6 constraint: returnsField1_f =  returnsField1_c constraint: returnsField1_%4 =  load returnsField1_f 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:27	LineNum:28	LineNum:30	LineNum:31	LineNum:32	LineNum:34
+
+Location Name:testTwo s19 ID:21 nextS:-1
+Level:19
+ErrorType: No Error 
+constraint: testTwo_f11 =  testTwo_f2 constraint: testTwo_f11 =  store testTwo_call10 constraint: testTwo_ieee12 =  testTwo_f1 constraint: testTwo_%6 =  testTwo_ieee12 constraint: testTwo_bf.load13 =  load testTwo_%6 constraint: testTwo_bf.clear14 = testTwo_bf.load13 and 1 constraint: testTwo_ieee15 =  testTwo_f2 constraint: testTwo_%7 =  testTwo_ieee15 constraint: testTwo_bf.load16 =  load testTwo_%7 constraint: testTwo_bf.clear17 = testTwo_bf.load16 and 1 constraint: testTwo_cmp18 = testTwo_bf.clear14 != testTwo_bf.clear17 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:69	LineNum:71
+
+Location Name:testTwo s20 ID:22 nextS:-1
+Level:20
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:71
+
+Location Name:testTwo q2 ID:23 nextS:-1
+Level:21
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:testTwo s21 ID:24 nextS:-1
+Level:21
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:73
+
+Location Name:main s22 ID:25 nextS:-1
+Level:22
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:91
+
+Location Name:testThree s23 ID:26 nextS:-1
+Level:23
+ErrorType: No Error 
+constraint: testThree_f1_0_0 =  alloca  constraint: testThree_f1_0_0 =  store testThree_f1_0_0_0 constraint: testThree_f1_0 =  addr testThree_f1_0_0 constraint: testThree_f1 =  addr testThree_f1_0 constraint: testThree_f2_0_0 =  alloca  constraint: testThree_f2_0_0 =  store testThree_f2_0_0_0 constraint: testThree_f2_0 =  addr testThree_f2_0_0 constraint: testThree_f2 =  addr testThree_f2_0 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:78	LineNum:80
+
+Location Name:returnsField2 s24 ID:27 nextS:-1
+Level:24
+ErrorType: No Error 
+constraint: returnsField2_index =  0 constraint: returnsField2_index.addr =  alloca  constraint: returnsField2_index.addr =  store returnsField2_index.addr_0 constraint: returnsField2_c_0_0 =  alloca  constraint: returnsField2_c_0_0 =  store returnsField2_c_0_0_0 constraint: returnsField2_c_0 =  addr returnsField2_c_0_0 constraint: returnsField2_c =  addr returnsField2_c_0 constraint: returnsField2_index.addr =  store returnsField2_index constraint: returnsField2_%0 =  load returnsField2_index.addr constraint: returnsField2_and = returnsField2_%0 and 1 constraint: returnsField2_ieee =  returnsField2_c constraint: returnsField2_%1 =  returnsField2_ieee constraint: returnsField2_bf.load =  load returnsField2_%1 constraint: returnsField2_bf.value = returnsField2_and and 1 constraint: returnsField2_bf.clear = returnsField2_bf.load and -2 constraint: returnsField2_bf.set = returnsField2_bf.clear or returnsField2_bf.value constraint: returnsField2_%1 =  store returnsField2_bf.set constraint: returnsField2_ieee1 =  returnsField2_c constraint: returnsField2_%2 =  returnsField2_ieee1 constraint: returnsField2_bf.load2 =  load returnsField2_%2 constraint: returnsField2_bf.clear3 = returnsField2_bf.load2 and -511 constraint: returnsField2_%2 =  store returnsField2_bf.clear3 constraint: returnsField2_ieee4 =  returnsField2_c constraint: returnsField2_%3 =  returnsField2_ieee4 constraint: returnsField2_bf.load5 =  load returnsField2_%3 constraint: returnsField2_bf.clear6 = returnsField2_bf.load5 and 511 constraint: returnsField2_%3 =  store returnsField2_bf.clear6 constraint: returnsField2_f =  returnsField2_c constraint: returnsField2_%4 =  load returnsField2_f 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:27	LineNum:28	LineNum:30	LineNum:31	LineNum:32	LineNum:34
+
+Location Name:testThree s25 ID:28 nextS:-1
+Level:25
+ErrorType: No Error 
+constraint: testThree_f =  testThree_f1 constraint: testThree_f =  store testThree_call 
+Content:/home/lich/Documents/test_CFG_v4/float22_true-unreach-call.c	LineNum:80	LineNum:81
+
+Location Name:returnsField3 s26 ID:29 nextS:-1
+Level:26
+ErrorType: No Error 
+null
+Content:
+
+Location Name:  ID:30 nextS:-1
+Level:-1
+ErrorType: No Error 
+null
+Content:
+
+Transition Name:e0 ID:31
+Level:1
+ToLabel:testOne_entry
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e1 ID:32
+Level:2
+ToLabel:returnsStructure_entry
+from:s1 to:s2
+Guard:
+null
+
+Transition Name:e2 ID:33
+Level:3
+ToLabel:returnsStructure_ret
+from:s2 to:s3
+Guard:
+constraint: testOne_call =  returnsStructure_%6 
+
+Transition Name:e3 ID:34
+Level:4
+ToLabel:returnsStructure1_entry
+from:s3 to:s4
+Guard:
+null
+
+Transition Name:e4 ID:35
+Level:5
+ToLabel:returnsStructure1_ret
+from:s4 to:s5
+Guard:
+constraint: testOne_call2 =  returnsStructure1_%6 
+
+Transition Name:e5 ID:36
+Level:6
+ToLabel:testOne_if.then
+from:s5 to:s6
+Guard:
+constraint: testOne_bf.clear ==  testOne_bf.clear8 
+
+Transition Name:e6 ID:37
+Level:6
+ToLabel:testOne_if.end
+from:s5 to:s7
+Guard:
+constraint: testOne_bf.clear !=  testOne_bf.clear8 
+
+Transition Name:e7 ID:38
+Level:7
+ToLabel:
+from:s6 to:q0
+Guard:
+null
+
+Transition Name:e8 ID:39
+Level:7
+ToLabel:testOne_if.end
+from:s6 to:s7
+Guard:
+null
+
+Transition Name:e9 ID:40
+Level:8
+ToLabel:testOne_ret
+from:s7 to:s8
+Guard:
+null
+
+Transition Name:e10 ID:41
+Level:9
+ToLabel:testTwo_entry
+from:s8 to:s9
+Guard:
+null
+
+Transition Name:e11 ID:42
+Level:10
+ToLabel:returnsStructure2_entry
+from:s9 to:s10
+Guard:
+null
+
+Transition Name:e12 ID:43
+Level:11
+ToLabel:returnsStructure2_ret
+from:s10 to:s11
+Guard:
+constraint: testTwo_call =  returnsStructure2_%6 
+
+Transition Name:e13 ID:44
+Level:12
+ToLabel:returnsStructure3_entry
+from:s11 to:s12
+Guard:
+null
+
+Transition Name:e14 ID:45
+Level:13
+ToLabel:returnsStructure3_ret
+from:s12 to:s13
+Guard:
+constraint: testTwo_call2 =  returnsStructure3_%6 
+
+Transition Name:e15 ID:46
+Level:14
+ToLabel:testTwo_if.then
+from:s13 to:s14
+Guard:
+constraint: testTwo_bf.clear ==  testTwo_bf.clear8 
+
+Transition Name:e16 ID:47
+Level:14
+ToLabel:testTwo_if.end
+from:s13 to:s15
+Guard:
+constraint: testTwo_bf.clear !=  testTwo_bf.clear8 
+
+Transition Name:e17 ID:48
+Level:15
+ToLabel:
+from:s14 to:q1
+Guard:
+null
+
+Transition Name:e18 ID:49
+Level:15
+ToLabel:testTwo_if.end
+from:s14 to:s15
+Guard:
+null
+
+Transition Name:e19 ID:50
+Level:16
+ToLabel:returnsField_entry
+from:s15 to:s16
+Guard:
+null
+
+Transition Name:e20 ID:51
+Level:17
+ToLabel:returnsField_ret
+from:s16 to:s17
+Guard:
+constraint: testTwo_call9 =  returnsField_%4 
+
+Transition Name:e21 ID:52
+Level:18
+ToLabel:returnsField1_entry
+from:s17 to:s18
+Guard:
+null
+
+Transition Name:e22 ID:53
+Level:19
+ToLabel:returnsField1_ret
+from:s18 to:s19
+Guard:
+constraint: testTwo_call10 =  returnsField1_%4 
+
+Transition Name:e23 ID:54
+Level:20
+ToLabel:testTwo_if.then19
+from:s19 to:s20
+Guard:
+constraint: testTwo_bf.clear14 ==  testTwo_bf.clear17 
+
+Transition Name:e24 ID:55
+Level:20
+ToLabel:testTwo_if.end20
+from:s19 to:s21
+Guard:
+constraint: testTwo_bf.clear14 !=  testTwo_bf.clear17 
+
+Transition Name:e25 ID:56
+Level:21
+ToLabel:
+from:s20 to:q2
+Guard:
+null
+
+Transition Name:e26 ID:57
+Level:21
+ToLabel:testTwo_if.end20
+from:s20 to:s21
+Guard:
+null
+
+Transition Name:e27 ID:58
+Level:22
+ToLabel:testTwo_ret
+from:s21 to:s22
+Guard:
+null
+
+Transition Name:e28 ID:59
+Level:23
+ToLabel:testThree_entry
+from:s22 to:s23
+Guard:
+null
+
+Transition Name:e29 ID:60
+Level:24
+ToLabel:returnsField2_entry
+from:s23 to:s24
+Guard:
+null
+
+Transition Name:e30 ID:61
+Level:25
+ToLabel:returnsField2_ret
+from:s24 to:s25
+Guard:
+constraint: testThree_call =  returnsField2_%4 
+
+Transition Name:e31 ID:62
+Level:26
+ToLabel:returnsField3_entry
+from:s25 to:s26
+Guard:
+null
+
+#BUILDCFG Time: 	30.223ms
+MainFunc: main
+#CallDepth: 11
+#Loc: 50
+#targetsize:	3
+target[0]:q0( Assert Error )
+target[1]:q1( Assert Error )
+target[2]:q2( Assert Error )
+
+target[0]:q0(7)
+Path route: s0->e0->s1->e1->s2->e2->s3->e3->s4->e4->s5->e5->s6->e7->q0(7)
+s0:
+(= main_retval/0_2 0)
+e0:
+s1:
+e1:
+s2:
+(= returnsStructure_index 0)
+(= returnsStructure_%0_12 returnsStructure_index)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure_%0_12)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure_%0_12)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure_%0_12)
+                               ((_ int2bv 32) 1))))))
+  (= returnsStructure_and_13 a!2)))
+(= returnsStructure_bf.load_16 main_retval_0)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure_and_13)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure_and_13)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure_and_13)
+                               ((_ int2bv 32) 1))))))
+  (= returnsStructure_bf.value_17 a!2)))
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load_16)
+                             ((_ int2bv 32) (- 2))))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure_bf.load_16)
+                              ((_ int2bv 32) (- 2)))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load_16)
+                               ((_ int2bv 32) (- 2)))))))
+  (= returnsStructure_bf.clear_18 a!2)))
+(let ((a!1 (- (bv2int (bvor ((_ int2bv 32) returnsStructure_bf.clear_18)
+                            ((_ int2bv 32) returnsStructure_bf.value_17)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvor ((_ int2bv 32) returnsStructure_bf.clear_18)
+                             ((_ int2bv 32) returnsStructure_bf.value_17))
+                       #x00000000)
+                a!1
+                (bv2int (bvor ((_ int2bv 32) returnsStructure_bf.clear_18)
+                              ((_ int2bv 32) returnsStructure_bf.value_17))))))
+  (= returnsStructure_bf.set_19 a!2)))
+(= returnsStructure_bf.load2_23 returnsStructure_bf.set_19)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load2_23)
+                             ((_ int2bv 32) (- 511))))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure_bf.load2_23)
+                              ((_ int2bv 32) (- 511)))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load2_23)
+                               ((_ int2bv 32) (- 511)))))))
+  (= returnsStructure_bf.clear3_24 a!2)))
+(= returnsStructure_bf.load5_28 returnsStructure_bf.clear3_24)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load5_28)
+                             ((_ int2bv 32) 511)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure_bf.load5_28)
+                              ((_ int2bv 32) 511))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure_bf.load5_28)
+                               ((_ int2bv 32) 511))))))
+  (= returnsStructure_bf.clear6_29 a!2)))
+(= returnsStructure_%6_35 returnsStructure_retval_0_0_0)
+e2:
+(= testOne_call returnsStructure_%6_35)
+s3:
+e3:
+s4:
+(= returnsStructure1_index 1)
+(= returnsStructure1_%0_12 returnsStructure1_index)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure1_%0_12)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure1_%0_12)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure1_%0_12)
+                               ((_ int2bv 32) 1))))))
+  (= returnsStructure1_and_13 a!2)))
+(= returnsStructure1_bf.load_16 main_retval_0)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure1_and_13)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure1_and_13)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure1_and_13)
+                               ((_ int2bv 32) 1))))))
+  (= returnsStructure1_bf.value_17 a!2)))
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load_16)
+                             ((_ int2bv 32) (- 2))))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure1_bf.load_16)
+                              ((_ int2bv 32) (- 2)))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load_16)
+                               ((_ int2bv 32) (- 2)))))))
+  (= returnsStructure1_bf.clear_18 a!2)))
+(let ((a!1 (- (bv2int (bvor ((_ int2bv 32) returnsStructure1_bf.clear_18)
+                            ((_ int2bv 32) returnsStructure1_bf.value_17)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvor ((_ int2bv 32) returnsStructure1_bf.clear_18)
+                             ((_ int2bv 32) returnsStructure1_bf.value_17))
+                       #x00000000)
+                a!1
+                (bv2int (bvor ((_ int2bv 32) returnsStructure1_bf.clear_18)
+                              ((_ int2bv 32) returnsStructure1_bf.value_17))))))
+  (= returnsStructure1_bf.set_19 a!2)))
+(= returnsStructure1_bf.load2_23 returnsStructure1_bf.set_19)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load2_23)
+                             ((_ int2bv 32) (- 511))))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure1_bf.load2_23)
+                              ((_ int2bv 32) (- 511)))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load2_23)
+                               ((_ int2bv 32) (- 511)))))))
+  (= returnsStructure1_bf.clear3_24 a!2)))
+(= returnsStructure1_bf.load5_28 returnsStructure1_bf.clear3_24)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load5_28)
+                             ((_ int2bv 32) 511)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) returnsStructure1_bf.load5_28)
+                              ((_ int2bv 32) 511))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) returnsStructure1_bf.load5_28)
+                               ((_ int2bv 32) 511))))))
+  (= returnsStructure1_bf.clear6_29 a!2)))
+(= returnsStructure1_%6_35 returnsStructure1_retval_0_0_0)
+e4:
+(= testOne_call2 returnsStructure1_%6_35)
+s5:
+(= testOne_bf.load_7 testOne_call)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) testOne_bf.load_7)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) testOne_bf.load_7)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) testOne_bf.load_7)
+                               ((_ int2bv 32) 1))))))
+  (= testOne_bf.clear_8 a!2)))
+(= testOne_bf.load7_11 returnsStructure_c_0_0_0)
+(let ((a!1 (- (bv2int (bvand ((_ int2bv 32) testOne_bf.load7_11)
+                             ((_ int2bv 32) 1)))
+              4294967296)))
+(let ((a!2 (ite (bvslt (bvand ((_ int2bv 32) testOne_bf.load7_11)
+                              ((_ int2bv 32) 1))
+                       #x00000000)
+                a!1
+                (bv2int (bvand ((_ int2bv 32) testOne_bf.load7_11)
+                               ((_ int2bv 32) 1))))))
+  (= testOne_bf.clear8_12 a!2)))
+(= testOne_cmp_13 (ite (distinct testOne_bf.clear_8 testOne_bf.clear8_12) 1 0))
+e5:
+(= testOne_bf.clear_8 testOne_bf.clear8_12)
+s6:
+e7:
+q0:
+make: *** Deleting file `float22_true-unreach-callbuildCFG.bc'
+make: *** [float22_true-unreach-callbuildCFG.bc] Interrupt

@@ -1,0 +1,564 @@
+clang -c -emit-llvm -g 6.c -o 6.bc
+llvm-dis 6.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK-tool/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling LinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling UnlinearVerify.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling main.cpp for Release+Asserts build (PIC)
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:98:33: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system(exec.c_str());
+                                 ^
+main.cpp: In function ‘void compile(std::string)’:
+main.cpp:121:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+main.cpp: In function ‘void opt(std::string, int, double, int, char*, char*, int)’:
+main.cpp:163:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK-tool'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -load /usr/local/lib/libcapd.so -load /usr/local/lib/libibex.so -load /usr/local/lib/libdreal.so -load /usr/lib/libz3.so -load /usr/local/lib/libminisat.so -buildCFG -func="main" -name=6 -bound=25 -pre=0.01 -line=9 -mode=0 -output=1 -expression="" <6.bc>   6buildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 0	Check assertions, div-0 and domain error
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Unlinear
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_x, 2  PTR 
+variable:main_x_0, 3  FP 
+variable:main_nu, 4  PTR 
+variable:main_nu_0, 5  FP 
+variable:main_result, 6  PTR 
+variable:main_result_0, 7  PTR 
+variable:main_result_1, 8  PTR 
+variable:main_result_0_0, 9  FP 
+variable:main_result_1_0, 10  FP 
+variable:main_retval/0, 11  INT 
+variable:main_%0, 12  FP 
+variable:main_%1, 13  FP 
+variable:main_call, 14  INT 
+variable:gsl_sf_bessel_Jnu_asympx_e_nu, 15  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_x, 16  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_result, 17  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_nu.addr, 18  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_nu.addr_0, 19  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_x.addr, 20  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_x.addr_0, 21  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_result.addr, 22  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_result.addr_0, 23  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_mu, 24  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_mu_0, 25  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum1, 26  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum1_0, 27  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum9, 28  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum9_0, 29  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum25, 30  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_mum25_0, 31  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_chi, 32  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_chi_0, 33  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_P, 34  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_P_0, 35  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_Q, 36  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_Q_0, 37  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_pre, 38  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_pre_0, 39  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_c, 40  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_c_0, 41  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_s, 42  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_s_0, 43  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_r, 44  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_r_0, 45  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%0, 46  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul, 47  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%1, 48  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul1, 49  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%2, 50  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub, 51  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%3, 52  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub2, 53  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%4, 54  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub3, 55  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%5, 56  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%6, 57  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul4, 58  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_add, 59  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul5, 60  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub6, 61  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%7, 62  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%8, 63  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul7, 64  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%9, 65  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul8, 66  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%10, 67  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul9, 68  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul9_t, 69  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_div, 70  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub10, 71  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%11, 72  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%12, 73  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul11, 74  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul11_t, 75  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_div12, 76  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%13, 77  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%14, 78  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul13, 79  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%15, 80  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul14, 81  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%16, 82  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul15, 83  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul15_t, 84  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_div16, 85  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub17, 86  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul18, 87  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%17, 88  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul19, 89  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul19_t, 90  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_div20, 91  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call, 92  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%18, 93  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call21, 94  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%19, 95  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call22, 96  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%20, 97  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%21, 98  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%21_t, 99  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_div23, 100  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%22, 101  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%23, 102  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%24, 103  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul24, 104  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%25, 105  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%26, 106  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul25, 107  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_sub26, 108  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul27, 109  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%27, 110  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_val, 111  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_%28, 112  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul28, 113  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%29, 114  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call29, 115  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_add30, 116  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul31, 117  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%30, 118  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%31, 119  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul32, 120  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call33, 121  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%32, 122  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%33, 123  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul34, 124  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call35, 125  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_add36, 126  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul37, 127  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%34, 128  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_err, 129  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_%35, 130  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%36, 131  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul38, 132  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%37, 133  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul39, 134  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%38, 135  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul40, 136  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%39, 137  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul41, 138  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_call42, 139  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_mul43, 140  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_%40, 141  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_err44, 142  PTR 
+variable:gsl_sf_bessel_Jnu_asympx_e_%41, 143  FP 
+variable:gsl_sf_bessel_Jnu_asympx_e_add45, 144  FP 
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_x =  alloca  constraint: main_x =  store main_x_0 constraint: main_nu =  alloca  constraint: main_nu =  store main_nu_0 constraint: main_result_0 =  alloca  constraint: main_result_0 =  store main_result_0_0 constraint: main_result_1 =  alloca  constraint: main_result_1 =  store main_result_1_0 constraint: main_result =  addr main_result_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_%0 =  load main_nu constraint: main_%1 =  load main_x 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:36	LineNum:37	LineNum:39
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_nu =  main_%0 constraint: gsl_sf_bessel_Jnu_asympx_e_x =  main_%1 constraint: gsl_sf_bessel_Jnu_asympx_e_result =  main_result constraint: gsl_sf_bessel_Jnu_asympx_e_nu.addr =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_nu.addr =  store gsl_sf_bessel_Jnu_asympx_e_nu.addr_0 constraint: gsl_sf_bessel_Jnu_asympx_e_x.addr =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_x.addr =  store gsl_sf_bessel_Jnu_asympx_e_x.addr_0 constraint: gsl_sf_bessel_Jnu_asympx_e_result.addr =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_result.addr =  store gsl_sf_bessel_Jnu_asympx_e_result.addr_0 constraint: gsl_sf_bessel_Jnu_asympx_e_mu =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_mu =  store gsl_sf_bessel_Jnu_asympx_e_mu_0 constraint: gsl_sf_bessel_Jnu_asympx_e_mum1 =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_mum1 =  store gsl_sf_bessel_Jnu_asympx_e_mum1_0 constraint: gsl_sf_bessel_Jnu_asympx_e_mum9 =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_mum9 =  store gsl_sf_bessel_Jnu_asympx_e_mum9_0 constraint: gsl_sf_bessel_Jnu_asympx_e_mum25 =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_mum25 =  store gsl_sf_bessel_Jnu_asympx_e_mum25_0 constraint: gsl_sf_bessel_Jnu_asympx_e_chi =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_chi =  store gsl_sf_bessel_Jnu_asympx_e_chi_0 constraint: gsl_sf_bessel_Jnu_asympx_e_P =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_P =  store gsl_sf_bessel_Jnu_asympx_e_P_0 constraint: gsl_sf_bessel_Jnu_asympx_e_Q =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_Q =  store gsl_sf_bessel_Jnu_asympx_e_Q_0 constraint: gsl_sf_bessel_Jnu_asympx_e_pre =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_pre =  store gsl_sf_bessel_Jnu_asympx_e_pre_0 constraint: gsl_sf_bessel_Jnu_asympx_e_c =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_c =  store gsl_sf_bessel_Jnu_asympx_e_c_0 constraint: gsl_sf_bessel_Jnu_asympx_e_s =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_s =  store gsl_sf_bessel_Jnu_asympx_e_s_0 constraint: gsl_sf_bessel_Jnu_asympx_e_r =  alloca  constraint: gsl_sf_bessel_Jnu_asympx_e_r =  store gsl_sf_bessel_Jnu_asympx_e_r_0 constraint: gsl_sf_bessel_Jnu_asympx_e_nu.addr =  store gsl_sf_bessel_Jnu_asympx_e_nu constraint: gsl_sf_bessel_Jnu_asympx_e_x.addr =  store gsl_sf_bessel_Jnu_asympx_e_x constraint: gsl_sf_bessel_Jnu_asympx_e_result.addr =  store gsl_sf_bessel_Jnu_asympx_e_result constraint: gsl_sf_bessel_Jnu_asympx_e_%0 =  load gsl_sf_bessel_Jnu_asympx_e_nu.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul = 4 * gsl_sf_bessel_Jnu_asympx_e_%0 constraint: gsl_sf_bessel_Jnu_asympx_e_%1 =  load gsl_sf_bessel_Jnu_asympx_e_nu.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul1 = gsl_sf_bessel_Jnu_asympx_e_mul * gsl_sf_bessel_Jnu_asympx_e_%1 constraint: gsl_sf_bessel_Jnu_asympx_e_mu =  store gsl_sf_bessel_Jnu_asympx_e_mul1 constraint: gsl_sf_bessel_Jnu_asympx_e_%2 =  load gsl_sf_bessel_Jnu_asympx_e_mu constraint: gsl_sf_bessel_Jnu_asympx_e_sub = gsl_sf_bessel_Jnu_asympx_e_%2 - 1 constraint: gsl_sf_bessel_Jnu_asympx_e_mum1 =  store gsl_sf_bessel_Jnu_asympx_e_sub constraint: gsl_sf_bessel_Jnu_asympx_e_%3 =  load gsl_sf_bessel_Jnu_asympx_e_mu constraint: gsl_sf_bessel_Jnu_asympx_e_sub2 = gsl_sf_bessel_Jnu_asympx_e_%3 - 9 constraint: gsl_sf_bessel_Jnu_asympx_e_mum9 =  store gsl_sf_bessel_Jnu_asympx_e_sub2 constraint: gsl_sf_bessel_Jnu_asympx_e_%4 =  load gsl_sf_bessel_Jnu_asympx_e_mu constraint: gsl_sf_bessel_Jnu_asympx_e_sub3 = gsl_sf_bessel_Jnu_asympx_e_%4 - 25 constraint: gsl_sf_bessel_Jnu_asympx_e_mum25 =  store gsl_sf_bessel_Jnu_asympx_e_sub3 constraint: gsl_sf_bessel_Jnu_asympx_e_%5 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_%6 =  load gsl_sf_bessel_Jnu_asympx_e_nu.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul4 = 0.5 * gsl_sf_bessel_Jnu_asympx_e_%6 constraint: gsl_sf_bessel_Jnu_asympx_e_add = gsl_sf_bessel_Jnu_asympx_e_mul4 + 0.25 constraint: gsl_sf_bessel_Jnu_asympx_e_mul5 = gsl_sf_bessel_Jnu_asympx_e_add * 3.14159 constraint: gsl_sf_bessel_Jnu_asympx_e_sub6 = gsl_sf_bessel_Jnu_asympx_e_%5 - gsl_sf_bessel_Jnu_asympx_e_mul5 constraint: gsl_sf_bessel_Jnu_asympx_e_chi =  store gsl_sf_bessel_Jnu_asympx_e_sub6 constraint: gsl_sf_bessel_Jnu_asympx_e_%7 =  load gsl_sf_bessel_Jnu_asympx_e_mum1 constraint: gsl_sf_bessel_Jnu_asympx_e_%8 =  load gsl_sf_bessel_Jnu_asympx_e_mum9 constraint: gsl_sf_bessel_Jnu_asympx_e_mul7 = gsl_sf_bessel_Jnu_asympx_e_%7 * gsl_sf_bessel_Jnu_asympx_e_%8 constraint: gsl_sf_bessel_Jnu_asympx_e_%9 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul8 = 128 * gsl_sf_bessel_Jnu_asympx_e_%9 constraint: gsl_sf_bessel_Jnu_asympx_e_%10 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul9 = gsl_sf_bessel_Jnu_asympx_e_mul8 * gsl_sf_bessel_Jnu_asympx_e_%10 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:45	LineNum:47	LineNum:48	LineNum:49	LineNum:50	LineNum:51	LineNum:52
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q0 ID:2 nextS:-1
+Level:2
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s2 ID:3 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_div = gsl_sf_bessel_Jnu_asympx_e_mul7 / gsl_sf_bessel_Jnu_asympx_e_mul9 constraint: gsl_sf_bessel_Jnu_asympx_e_sub10 = 1 - gsl_sf_bessel_Jnu_asympx_e_div constraint: gsl_sf_bessel_Jnu_asympx_e_P =  store gsl_sf_bessel_Jnu_asympx_e_sub10 constraint: gsl_sf_bessel_Jnu_asympx_e_%11 =  load gsl_sf_bessel_Jnu_asympx_e_mum1 constraint: gsl_sf_bessel_Jnu_asympx_e_%12 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul11 = 8 * gsl_sf_bessel_Jnu_asympx_e_%12 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:52	LineNum:53
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q1 ID:4 nextS:-1
+Level:3
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s3 ID:5 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_div12 = gsl_sf_bessel_Jnu_asympx_e_%11 / gsl_sf_bessel_Jnu_asympx_e_mul11 constraint: gsl_sf_bessel_Jnu_asympx_e_%13 =  load gsl_sf_bessel_Jnu_asympx_e_mum9 constraint: gsl_sf_bessel_Jnu_asympx_e_%14 =  load gsl_sf_bessel_Jnu_asympx_e_mum25 constraint: gsl_sf_bessel_Jnu_asympx_e_mul13 = gsl_sf_bessel_Jnu_asympx_e_%13 * gsl_sf_bessel_Jnu_asympx_e_%14 constraint: gsl_sf_bessel_Jnu_asympx_e_%15 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul14 = 384 * gsl_sf_bessel_Jnu_asympx_e_%15 constraint: gsl_sf_bessel_Jnu_asympx_e_%16 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul15 = gsl_sf_bessel_Jnu_asympx_e_mul14 * gsl_sf_bessel_Jnu_asympx_e_%16 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:53
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q2 ID:6 nextS:-1
+Level:4
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s4 ID:7 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_div16 = gsl_sf_bessel_Jnu_asympx_e_mul13 / gsl_sf_bessel_Jnu_asympx_e_mul15 constraint: gsl_sf_bessel_Jnu_asympx_e_sub17 = 1 - gsl_sf_bessel_Jnu_asympx_e_div16 constraint: gsl_sf_bessel_Jnu_asympx_e_mul18 = gsl_sf_bessel_Jnu_asympx_e_div12 * gsl_sf_bessel_Jnu_asympx_e_sub17 constraint: gsl_sf_bessel_Jnu_asympx_e_Q =  store gsl_sf_bessel_Jnu_asympx_e_mul18 constraint: gsl_sf_bessel_Jnu_asympx_e_%17 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_mul19 = 3.14159 * gsl_sf_bessel_Jnu_asympx_e_%17 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:53	LineNum:54
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q3 ID:8 nextS:-1
+Level:5
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s5 ID:9 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_div20 = 2 / gsl_sf_bessel_Jnu_asympx_e_mul19 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:54
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q4 ID:10 nextS:-1
+Level:6
+ErrorType: DomainSqrt Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s6 ID:11 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_call =  sqrt gsl_sf_bessel_Jnu_asympx_e_div20 constraint: gsl_sf_bessel_Jnu_asympx_e_pre =  store gsl_sf_bessel_Jnu_asympx_e_call constraint: gsl_sf_bessel_Jnu_asympx_e_%18 =  load gsl_sf_bessel_Jnu_asympx_e_chi constraint: gsl_sf_bessel_Jnu_asympx_e_call21 =  cos gsl_sf_bessel_Jnu_asympx_e_%18 constraint: gsl_sf_bessel_Jnu_asympx_e_c =  store gsl_sf_bessel_Jnu_asympx_e_call21 constraint: gsl_sf_bessel_Jnu_asympx_e_%19 =  load gsl_sf_bessel_Jnu_asympx_e_chi constraint: gsl_sf_bessel_Jnu_asympx_e_call22 =  sin gsl_sf_bessel_Jnu_asympx_e_%19 constraint: gsl_sf_bessel_Jnu_asympx_e_s =  store gsl_sf_bessel_Jnu_asympx_e_call22 constraint: gsl_sf_bessel_Jnu_asympx_e_%20 =  load gsl_sf_bessel_Jnu_asympx_e_mu constraint: gsl_sf_bessel_Jnu_asympx_e_%21 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:54	LineNum:55	LineNum:56	LineNum:57
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e q5 ID:12 nextS:-1
+Level:7
+ErrorType: Div0 Error 
+null
+Content:
+
+Location Name:gsl_sf_bessel_Jnu_asympx_e s7 ID:13 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: gsl_sf_bessel_Jnu_asympx_e_div23 = gsl_sf_bessel_Jnu_asympx_e_%20 / gsl_sf_bessel_Jnu_asympx_e_%21 constraint: gsl_sf_bessel_Jnu_asympx_e_r =  store gsl_sf_bessel_Jnu_asympx_e_div23 constraint: gsl_sf_bessel_Jnu_asympx_e_%22 =  load gsl_sf_bessel_Jnu_asympx_e_pre constraint: gsl_sf_bessel_Jnu_asympx_e_%23 =  load gsl_sf_bessel_Jnu_asympx_e_c constraint: gsl_sf_bessel_Jnu_asympx_e_%24 =  load gsl_sf_bessel_Jnu_asympx_e_P constraint: gsl_sf_bessel_Jnu_asympx_e_mul24 = gsl_sf_bessel_Jnu_asympx_e_%23 * gsl_sf_bessel_Jnu_asympx_e_%24 constraint: gsl_sf_bessel_Jnu_asympx_e_%25 =  load gsl_sf_bessel_Jnu_asympx_e_s constraint: gsl_sf_bessel_Jnu_asympx_e_%26 =  load gsl_sf_bessel_Jnu_asympx_e_Q constraint: gsl_sf_bessel_Jnu_asympx_e_mul25 = gsl_sf_bessel_Jnu_asympx_e_%25 * gsl_sf_bessel_Jnu_asympx_e_%26 constraint: gsl_sf_bessel_Jnu_asympx_e_sub26 = gsl_sf_bessel_Jnu_asympx_e_mul24 - gsl_sf_bessel_Jnu_asympx_e_mul25 constraint: gsl_sf_bessel_Jnu_asympx_e_mul27 = gsl_sf_bessel_Jnu_asympx_e_%22 * gsl_sf_bessel_Jnu_asympx_e_sub26 constraint: gsl_sf_bessel_Jnu_asympx_e_%27 =  load gsl_sf_bessel_Jnu_asympx_e_result.addr constraint: gsl_sf_bessel_Jnu_asympx_e_val =  getptr gsl_sf_bessel_Jnu_asympx_e_%27 0 0  constraint: gsl_sf_bessel_Jnu_asympx_e_val =  store gsl_sf_bessel_Jnu_asympx_e_mul27 constraint: gsl_sf_bessel_Jnu_asympx_e_%28 =  load gsl_sf_bessel_Jnu_asympx_e_pre constraint: gsl_sf_bessel_Jnu_asympx_e_mul28 = gsl_sf_bessel_Jnu_asympx_e_%28 * 2.22045e-16 constraint: gsl_sf_bessel_Jnu_asympx_e_%29 =  load gsl_sf_bessel_Jnu_asympx_e_x.addr constraint: gsl_sf_bessel_Jnu_asympx_e_call29 =  abs gsl_sf_bessel_Jnu_asympx_e_%29 constraint: gsl_sf_bessel_Jnu_asympx_e_add30 = 1 + gsl_sf_bessel_Jnu_asympx_e_call29 constraint: gsl_sf_bessel_Jnu_asympx_e_mul31 = gsl_sf_bessel_Jnu_asympx_e_mul28 * gsl_sf_bessel_Jnu_asympx_e_add30 constraint: gsl_sf_bessel_Jnu_asympx_e_%30 =  load gsl_sf_bessel_Jnu_asympx_e_c constraint: gsl_sf_bessel_Jnu_asympx_e_%31 =  load gsl_sf_bessel_Jnu_asympx_e_P constraint: gsl_sf_bessel_Jnu_asympx_e_mul32 = gsl_sf_bessel_Jnu_asympx_e_%30 * gsl_sf_bessel_Jnu_asympx_e_%31 constraint: gsl_sf_bessel_Jnu_asympx_e_call33 =  abs gsl_sf_bessel_Jnu_asympx_e_mul32 constraint: gsl_sf_bessel_Jnu_asympx_e_%32 =  load gsl_sf_bessel_Jnu_asympx_e_s constraint: gsl_sf_bessel_Jnu_asympx_e_%33 =  load gsl_sf_bessel_Jnu_asympx_e_Q constraint: gsl_sf_bessel_Jnu_asympx_e_mul34 = gsl_sf_bessel_Jnu_asympx_e_%32 * gsl_sf_bessel_Jnu_asympx_e_%33 constraint: gsl_sf_bessel_Jnu_asympx_e_call35 =  abs gsl_sf_bessel_Jnu_asympx_e_mul34 constraint: gsl_sf_bessel_Jnu_asympx_e_add36 = gsl_sf_bessel_Jnu_asympx_e_call33 + gsl_sf_bessel_Jnu_asympx_e_call35 constraint: gsl_sf_bessel_Jnu_asympx_e_mul37 = gsl_sf_bessel_Jnu_asympx_e_mul31 * gsl_sf_bessel_Jnu_asympx_e_add36 constraint: gsl_sf_bessel_Jnu_asympx_e_%34 =  load gsl_sf_bessel_Jnu_asympx_e_result.addr constraint: gsl_sf_bessel_Jnu_asympx_e_err =  getptr gsl_sf_bessel_Jnu_asympx_e_%34 0 1  constraint: gsl_sf_bessel_Jnu_asympx_e_err =  store gsl_sf_bessel_Jnu_asympx_e_mul37 constraint: gsl_sf_bessel_Jnu_asympx_e_%35 =  load gsl_sf_bessel_Jnu_asympx_e_pre constraint: gsl_sf_bessel_Jnu_asympx_e_%36 =  load gsl_sf_bessel_Jnu_asympx_e_r constraint: gsl_sf_bessel_Jnu_asympx_e_mul38 = 0.1 * gsl_sf_bessel_Jnu_asympx_e_%36 constraint: gsl_sf_bessel_Jnu_asympx_e_%37 =  load gsl_sf_bessel_Jnu_asympx_e_r constraint: gsl_sf_bessel_Jnu_asympx_e_mul39 = gsl_sf_bessel_Jnu_asympx_e_mul38 * gsl_sf_bessel_Jnu_asympx_e_%37 constraint: gsl_sf_bessel_Jnu_asympx_e_%38 =  load gsl_sf_bessel_Jnu_asympx_e_r constraint: gsl_sf_bessel_Jnu_asympx_e_mul40 = gsl_sf_bessel_Jnu_asympx_e_mul39 * gsl_sf_bessel_Jnu_asympx_e_%38 constraint: gsl_sf_bessel_Jnu_asympx_e_%39 =  load gsl_sf_bessel_Jnu_asympx_e_r constraint: gsl_sf_bessel_Jnu_asympx_e_mul41 = gsl_sf_bessel_Jnu_asympx_e_mul40 * gsl_sf_bessel_Jnu_asympx_e_%39 constraint: gsl_sf_bessel_Jnu_asympx_e_call42 =  abs gsl_sf_bessel_Jnu_asympx_e_mul41 constraint: gsl_sf_bessel_Jnu_asympx_e_mul43 = gsl_sf_bessel_Jnu_asympx_e_%35 * gsl_sf_bessel_Jnu_asympx_e_call42 constraint: gsl_sf_bessel_Jnu_asympx_e_%40 =  load gsl_sf_bessel_Jnu_asympx_e_result.addr constraint: gsl_sf_bessel_Jnu_asympx_e_err44 =  getptr gsl_sf_bessel_Jnu_asympx_e_%40 0 1  constraint: gsl_sf_bessel_Jnu_asympx_e_%41 =  load gsl_sf_bessel_Jnu_asympx_e_err44 constraint: gsl_sf_bessel_Jnu_asympx_e_add45 = gsl_sf_bessel_Jnu_asympx_e_%41 + gsl_sf_bessel_Jnu_asympx_e_mul43 constraint: gsl_sf_bessel_Jnu_asympx_e_err44 =  store gsl_sf_bessel_Jnu_asympx_e_add45 
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:57	LineNum:58	LineNum:59	LineNum:60	LineNum:61
+
+Location Name:main s8 ID:14 nextS:-1
+Level:8
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/6.c	LineNum:41
+
+Transition Name:e0 ID:15
+Level:1
+ToLabel:gsl_sf_bessel_Jnu_asympx_e_entry
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e1 ID:16
+Level:2
+ToLabel:
+from:s1 to:q0
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_mul9_t =  abs gsl_sf_bessel_Jnu_asympx_e_mul9 constraint: gsl_sf_bessel_Jnu_asympx_e_mul9_t <  abs 0.01 
+
+Transition Name:e2 ID:17
+Level:2
+ToLabel:
+from:s1 to:s2
+Guard:
+null
+
+Transition Name:e3 ID:18
+Level:3
+ToLabel:
+from:s2 to:q1
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_mul11_t =  abs gsl_sf_bessel_Jnu_asympx_e_mul11 constraint: gsl_sf_bessel_Jnu_asympx_e_mul11_t <  abs 0.01 
+
+Transition Name:e4 ID:19
+Level:3
+ToLabel:
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e5 ID:20
+Level:4
+ToLabel:
+from:s3 to:q2
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_mul15_t =  abs gsl_sf_bessel_Jnu_asympx_e_mul15 constraint: gsl_sf_bessel_Jnu_asympx_e_mul15_t <  abs 0.01 
+
+Transition Name:e6 ID:21
+Level:4
+ToLabel:
+from:s3 to:s4
+Guard:
+null
+
+Transition Name:e7 ID:22
+Level:5
+ToLabel:
+from:s4 to:q3
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_mul19_t =  abs gsl_sf_bessel_Jnu_asympx_e_mul19 constraint: gsl_sf_bessel_Jnu_asympx_e_mul19_t <  abs 0.01 
+
+Transition Name:e8 ID:23
+Level:5
+ToLabel:
+from:s4 to:s5
+Guard:
+null
+
+Transition Name:e9 ID:24
+Level:6
+ToLabel:
+from:s5 to:q4
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_div20 <  0 
+
+Transition Name:e10 ID:25
+Level:6
+ToLabel:
+from:s5 to:s6
+Guard:
+null
+
+Transition Name:e11 ID:26
+Level:7
+ToLabel:
+from:s6 to:q5
+Guard:
+constraint: gsl_sf_bessel_Jnu_asympx_e_%21_t =  abs gsl_sf_bessel_Jnu_asympx_e_%21 constraint: gsl_sf_bessel_Jnu_asympx_e_%21_t <  abs 0.01 
+
+Transition Name:e12 ID:27
+Level:7
+ToLabel:
+from:s6 to:s7
+Guard:
+null
+
+Transition Name:e13 ID:28
+Level:8
+ToLabel:gsl_sf_bessel_Jnu_asympx_e_ret
+from:s7 to:s8
+Guard:
+constraint: main_call =  0 
+
+#BUILDCFG Time: 	8.625ms
+MainFunc: main
+#CallDepth: 1
+#Loc: 23
+#targetsize:	6
+target[0]:q0( Div0 Error )
+target[1]:q1( Div0 Error )
+target[2]:q2( Div0 Error )
+target[3]:q3( Div0 Error )
+target[4]:q4( DomainSqrt Error )
+target[5]:q5( Div0 Error )
+
+target[0]:q0(2)
+Path route: s0->e0->s1->e1->q0(2)
+s0:
+(= main_retval/0 0)
+(= main_nu_0 main_%0)
+(= main_x_0 main_%1)
+e0:
+s1:
+(= main_%0 gsl_sf_bessel_Jnu_asympx_e_nu)
+(= main_%1 gsl_sf_bessel_Jnu_asympx_e_x)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%0)
+(= gsl_sf_bessel_Jnu_asympx_e_mul (* gsl_sf_bessel_Jnu_asympx_e_%0 4))
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%1)
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 (* gsl_sf_bessel_Jnu_asympx_e_%1 gsl_sf_bessel_Jnu_asympx_e_mul))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%2)
+(= gsl_sf_bessel_Jnu_asympx_e_sub (+ gsl_sf_bessel_Jnu_asympx_e_%2 -1))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%3)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 (+ gsl_sf_bessel_Jnu_asympx_e_%3 -9))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%4)
+(= gsl_sf_bessel_Jnu_asympx_e_sub3 (+ gsl_sf_bessel_Jnu_asympx_e_%4 -25))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%5)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%6)
+(= gsl_sf_bessel_Jnu_asympx_e_mul4 (* gsl_sf_bessel_Jnu_asympx_e_%6 0.5))
+(= gsl_sf_bessel_Jnu_asympx_e_add (+ 0.25 gsl_sf_bessel_Jnu_asympx_e_mul4))
+(= gsl_sf_bessel_Jnu_asympx_e_mul5 (* 3.14159 gsl_sf_bessel_Jnu_asympx_e_add))
+(= gsl_sf_bessel_Jnu_asympx_e_sub6 (+ gsl_sf_bessel_Jnu_asympx_e_%5 (* -1 gsl_sf_bessel_Jnu_asympx_e_mul5)))
+(= gsl_sf_bessel_Jnu_asympx_e_sub gsl_sf_bessel_Jnu_asympx_e_%7)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 gsl_sf_bessel_Jnu_asympx_e_%8)
+(= gsl_sf_bessel_Jnu_asympx_e_mul7 (* gsl_sf_bessel_Jnu_asympx_e_%8 gsl_sf_bessel_Jnu_asympx_e_%7))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%9)
+(= gsl_sf_bessel_Jnu_asympx_e_mul8 (* gsl_sf_bessel_Jnu_asympx_e_%9 128))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%10)
+(= gsl_sf_bessel_Jnu_asympx_e_mul9 (* gsl_sf_bessel_Jnu_asympx_e_%10 gsl_sf_bessel_Jnu_asympx_e_mul8))
+e1:
+(= gsl_sf_bessel_Jnu_asympx_e_mul9_t (abs gsl_sf_bessel_Jnu_asympx_e_mul9))
+(not (<= 0.01 gsl_sf_bessel_Jnu_asympx_e_mul9_t))
+q0:
+dreal_result is sat
+
+
+target[0]:from s0(0) to q0(2)
+ Div0 Error at line 52 in state  is reachable, When
+main_retval_0 = [-1.000000e+02, 1.000000e+02]
+main_x_0 = [-8.904348e-03, -8.773804e-03]
+main_nu_0 = [-3.051758e-03, 0.000000e+00]
+main_result_0_0 = [-1.000000e+02, 1.000000e+02]
+main_result_1_0 = [-1.000000e+02, 1.000000e+02]
+Number of path checked:1
+Witness:
+#Avg_var: 1.900000e+01
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	10800.3ms
+
+target[1]:q1(4)
+Path route: s0->e0->s1->e2->s2->e3->q1(4)
+s0:
+(= main_retval/0 0)
+(= main_nu_0 main_%0)
+(= main_x_0 main_%1)
+e0:
+s1:
+(= main_%0 gsl_sf_bessel_Jnu_asympx_e_nu)
+(= main_%1 gsl_sf_bessel_Jnu_asympx_e_x)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%0)
+(= gsl_sf_bessel_Jnu_asympx_e_mul (* gsl_sf_bessel_Jnu_asympx_e_%0 4))
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%1)
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 (* gsl_sf_bessel_Jnu_asympx_e_%1 gsl_sf_bessel_Jnu_asympx_e_mul))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%2)
+(= gsl_sf_bessel_Jnu_asympx_e_sub (+ gsl_sf_bessel_Jnu_asympx_e_%2 -1))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%3)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 (+ gsl_sf_bessel_Jnu_asympx_e_%3 -9))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%4)
+(= gsl_sf_bessel_Jnu_asympx_e_sub3 (+ gsl_sf_bessel_Jnu_asympx_e_%4 -25))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%5)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%6)
+(= gsl_sf_bessel_Jnu_asympx_e_mul4 (* gsl_sf_bessel_Jnu_asympx_e_%6 0.5))
+(= gsl_sf_bessel_Jnu_asympx_e_add (+ 0.25 gsl_sf_bessel_Jnu_asympx_e_mul4))
+(= gsl_sf_bessel_Jnu_asympx_e_mul5 (* 3.14159 gsl_sf_bessel_Jnu_asympx_e_add))
+(= gsl_sf_bessel_Jnu_asympx_e_sub6 (+ gsl_sf_bessel_Jnu_asympx_e_%5 (* -1 gsl_sf_bessel_Jnu_asympx_e_mul5)))
+(= gsl_sf_bessel_Jnu_asympx_e_sub gsl_sf_bessel_Jnu_asympx_e_%7)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 gsl_sf_bessel_Jnu_asympx_e_%8)
+(= gsl_sf_bessel_Jnu_asympx_e_mul7 (* gsl_sf_bessel_Jnu_asympx_e_%8 gsl_sf_bessel_Jnu_asympx_e_%7))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%9)
+(= gsl_sf_bessel_Jnu_asympx_e_mul8 (* gsl_sf_bessel_Jnu_asympx_e_%9 128))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%10)
+(= gsl_sf_bessel_Jnu_asympx_e_mul9 (* gsl_sf_bessel_Jnu_asympx_e_%10 gsl_sf_bessel_Jnu_asympx_e_mul8))
+e2:
+s2:
+(= gsl_sf_bessel_Jnu_asympx_e_div (/ gsl_sf_bessel_Jnu_asympx_e_mul7 gsl_sf_bessel_Jnu_asympx_e_mul9))
+(= gsl_sf_bessel_Jnu_asympx_e_sub10 (+ 1 (* -1 gsl_sf_bessel_Jnu_asympx_e_div)))
+(= gsl_sf_bessel_Jnu_asympx_e_sub gsl_sf_bessel_Jnu_asympx_e_%11)
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%12)
+(= gsl_sf_bessel_Jnu_asympx_e_mul11 (* gsl_sf_bessel_Jnu_asympx_e_%12 8))
+e3:
+(= gsl_sf_bessel_Jnu_asympx_e_mul11_t (abs gsl_sf_bessel_Jnu_asympx_e_mul11))
+(not (<= 0.01 gsl_sf_bessel_Jnu_asympx_e_mul11_t))
+q1:
+dreal_result is sat
+
+
+target[1]:from s0(0) to q1(4)
+ Div0 Error at line 53 in state  is reachable, When
+main_retval_0 = [-1.000000e+02, 1.000000e+02]
+main_x_0 = [-1.562500e-04, 0.000000e+00]
+main_nu_0 = [-1.046263e+00, -1.042157e+00]
+main_result_0_0 = [-1.000000e+02, 1.000000e+02]
+main_result_1_0 = [-1.000000e+02, 1.000000e+02]
+Number of path checked:2
+Witness:
+#Avg_var: 1.900000e+01
+#Avg_nolinearop: 2.000000e+00
+Solver Time: 	28399.9ms
+
+target[2]:q2(6)
+Path route: s0->e0->s1->e2->s2->e4->s3->e5->q2(6)
+s0:
+(= main_retval/0 0)
+(= main_nu_0 main_%0)
+(= main_x_0 main_%1)
+e0:
+s1:
+(= main_%0 gsl_sf_bessel_Jnu_asympx_e_nu)
+(= main_%1 gsl_sf_bessel_Jnu_asympx_e_x)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%0)
+(= gsl_sf_bessel_Jnu_asympx_e_mul (* gsl_sf_bessel_Jnu_asympx_e_%0 4))
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%1)
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 (* gsl_sf_bessel_Jnu_asympx_e_%1 gsl_sf_bessel_Jnu_asympx_e_mul))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%2)
+(= gsl_sf_bessel_Jnu_asympx_e_sub (+ gsl_sf_bessel_Jnu_asympx_e_%2 -1))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%3)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 (+ gsl_sf_bessel_Jnu_asympx_e_%3 -9))
+(= gsl_sf_bessel_Jnu_asympx_e_mul1 gsl_sf_bessel_Jnu_asympx_e_%4)
+(= gsl_sf_bessel_Jnu_asympx_e_sub3 (+ gsl_sf_bessel_Jnu_asympx_e_%4 -25))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%5)
+(= gsl_sf_bessel_Jnu_asympx_e_nu gsl_sf_bessel_Jnu_asympx_e_%6)
+(= gsl_sf_bessel_Jnu_asympx_e_mul4 (* gsl_sf_bessel_Jnu_asympx_e_%6 0.5))
+(= gsl_sf_bessel_Jnu_asympx_e_add (+ 0.25 gsl_sf_bessel_Jnu_asympx_e_mul4))
+(= gsl_sf_bessel_Jnu_asympx_e_mul5 (* 3.14159 gsl_sf_bessel_Jnu_asympx_e_add))
+(= gsl_sf_bessel_Jnu_asympx_e_sub6 (+ gsl_sf_bessel_Jnu_asympx_e_%5 (* -1 gsl_sf_bessel_Jnu_asympx_e_mul5)))
+(= gsl_sf_bessel_Jnu_asympx_e_sub gsl_sf_bessel_Jnu_asympx_e_%7)
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 gsl_sf_bessel_Jnu_asympx_e_%8)
+(= gsl_sf_bessel_Jnu_asympx_e_mul7 (* gsl_sf_bessel_Jnu_asympx_e_%8 gsl_sf_bessel_Jnu_asympx_e_%7))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%9)
+(= gsl_sf_bessel_Jnu_asympx_e_mul8 (* gsl_sf_bessel_Jnu_asympx_e_%9 128))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%10)
+(= gsl_sf_bessel_Jnu_asympx_e_mul9 (* gsl_sf_bessel_Jnu_asympx_e_%10 gsl_sf_bessel_Jnu_asympx_e_mul8))
+e2:
+s2:
+(= gsl_sf_bessel_Jnu_asympx_e_div (/ gsl_sf_bessel_Jnu_asympx_e_mul7 gsl_sf_bessel_Jnu_asympx_e_mul9))
+(= gsl_sf_bessel_Jnu_asympx_e_sub10 (+ 1 (* -1 gsl_sf_bessel_Jnu_asympx_e_div)))
+(= gsl_sf_bessel_Jnu_asympx_e_sub gsl_sf_bessel_Jnu_asympx_e_%11)
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%12)
+(= gsl_sf_bessel_Jnu_asympx_e_mul11 (* gsl_sf_bessel_Jnu_asympx_e_%12 8))
+e4:
+s3:
+(= gsl_sf_bessel_Jnu_asympx_e_div12 (/ gsl_sf_bessel_Jnu_asympx_e_%11 gsl_sf_bessel_Jnu_asympx_e_mul11))
+(= gsl_sf_bessel_Jnu_asympx_e_sub2 gsl_sf_bessel_Jnu_asympx_e_%13)
+(= gsl_sf_bessel_Jnu_asympx_e_sub3 gsl_sf_bessel_Jnu_asympx_e_%14)
+(= gsl_sf_bessel_Jnu_asympx_e_mul13 (* gsl_sf_bessel_Jnu_asympx_e_%14 gsl_sf_bessel_Jnu_asympx_e_%13))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%15)
+(= gsl_sf_bessel_Jnu_asympx_e_mul14 (* gsl_sf_bessel_Jnu_asympx_e_%15 384))
+(= gsl_sf_bessel_Jnu_asympx_e_x gsl_sf_bessel_Jnu_asympx_e_%16)
+(= gsl_sf_bessel_Jnu_asympx_e_mul15 (* gsl_sf_bessel_Jnu_asympx_e_%16 gsl_sf_bessel_Jnu_asympx_e_mul14))
+e5:
+(= gsl_sf_bessel_Jnu_asympx_e_mul15_t (abs gsl_sf_bessel_Jnu_asympx_e_mul15))
+(not (<= 0.01 gsl_sf_bessel_Jnu_asympx_e_mul15_t))
+q2:
+make: *** Deleting file `6buildCFG.bc'
+make: *** [6buildCFG.bc] Interrupt

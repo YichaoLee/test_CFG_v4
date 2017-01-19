@@ -1,0 +1,9075 @@
+ bench1/benchmark1.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%41
+1.CallInst:printf
+BUILDCFG Time: 	1.74ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_v, 2
+variable:main_T, 3
+variable:main_t1, 4
+variable:main_res, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%5, 8
+variable:main_%6, 9
+variable:main_%8, 10
+variable:main_%9, 11
+variable:main_%11, 12
+variable:main_%12, 13
+variable:main_%14, 14
+variable:main_%15, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%20, 18
+variable:main_%21, 19
+variable:main_%22, 20
+variable:main_%23, 21
+variable:main_%24, 22
+variable:main_%25, 23
+variable:main_%26, 24
+variable:main_%27, 25
+variable:main_%28, 26
+variable:main_%29, 27
+variable:main_%30, 28
+variable:main_%31, 29
+variable:main_%32, 30
+variable:main_%33, 31
+variable:main_%34, 32
+variable:main_%35, 33
+variable:main_%36, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%41, 37
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_T constraint: main_%21 = 0.6 * main_%20 constraint: main_%22 = 331.4 + main_%21 constraint: main_t1 =  main_%22 constraint: main_%23 =  main_t1 constraint: main_%24 = -0 - main_%23 constraint: main_%25 =  main_v constraint: main_%26 = main_%24 * main_%25 constraint: main_%27 =  main_t1 constraint: main_%28 =  main_u constraint: main_%29 = main_%27 + main_%28 constraint: main_%30 =  main_t1 constraint: main_%31 =  main_u constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 = main_%29 * main_%32 constraint: main_%34 = main_%26 / main_%33 constraint: main_res =  main_%34 constraint: main_%35 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:9	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%38 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark1.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -100 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -100 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  100 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  100 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: 20 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: 20 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  20000 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  20000 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -30 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -30 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  50 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  50 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -137.639 <  main_%35 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -137.639 >=  main_%35 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%38 <  -0.03394 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%38 >=  -0.03394 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -100 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(not (<= x_1 100))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 20 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(not (<= x_2 20000))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(not (<= -30 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(not (<= x_3 50))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -137.639))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -137.639))
+true
+(not (<= -0.03394 x_32))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -137.639))
+true
+(not (<= -0.03394 x_32))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -137.639))
+true
+(<= -0.03394 x_32)
+dreal_result is unsat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -100 x_1)
+true
+(<= x_1 100)
+true
+(<= 20 x_2)
+true
+(<= x_2 20000)
+true
+(<= -30 x_3)
+true
+(<= x_3 50)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(<= x_32 -137.639)
+dreal_result is unsat
+
+Number of path checked:18
+line 12 is not reachable under bound 50 when check=
+bound:	50	lineNo:	12	check:	
+Time: 	293.127ms 
+<bench1/benchmark1.c> 
+ bench1/benchmark10.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%48
+1.CallInst:printf
+BUILDCFG Time: 	1.795ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%23, 22
+variable:main_%24, 23
+variable:main_%25, 24
+variable:main_%26, 25
+variable:main_%27, 26
+variable:main_%28, 27
+variable:main_%29, 28
+variable:main_%30, 29
+variable:main_%31, 30
+variable:main_%32, 31
+variable:main_%33, 32
+variable:main_%34, 33
+variable:main_%35, 34
+variable:main_%36, 35
+variable:main_%37, 36
+variable:main_%38, 37
+variable:main_%39, 38
+variable:main_%40, 39
+variable:main_%41, 40
+variable:main_%42, 41
+variable:main_%43, 42
+variable:main_%45, 43
+variable:main_%46, 44
+variable:main_%48, 45
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:5	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 =  main_x constraint: main_%10 =  main_x constraint: main_%11 = main_%9 * main_%10 constraint: main_%12 =  main_x constraint: main_%13 = main_%11 * main_%12 constraint: main_%14 = main_%13 / 6 constraint: main_%15 = main_%8 - main_%14 constraint: main_%16 =  main_x constraint: main_%17 =  main_x constraint: main_%18 = main_%16 * main_%17 constraint: main_%19 =  main_x constraint: main_%20 = main_%18 * main_%19 constraint: main_%21 =  main_x constraint: main_%22 = main_%20 * main_%21 constraint: main_%23 =  main_x constraint: main_%24 = main_%22 * main_%23 constraint: main_%25 = main_%24 / 120 constraint: main_%26 = main_%15 + main_%25 constraint: main_%27 =  main_x constraint: main_%28 =  main_x constraint: main_%29 = main_%27 * main_%28 constraint: main_%30 =  main_x constraint: main_%31 = main_%29 * main_%30 constraint: main_%32 =  main_x constraint: main_%33 = main_%31 * main_%32 constraint: main_%34 =  main_x constraint: main_%35 = main_%33 * main_%34 constraint: main_%36 =  main_x constraint: main_%37 = main_%35 * main_%36 constraint: main_%38 =  main_x constraint: main_%39 = main_%37 * main_%38 constraint: main_%40 = main_%39 / 5040 constraint: main_%41 = main_%26 - main_%40 constraint: main_res =  main_%41 constraint: main_%42 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:10	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%45 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:12
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:13
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark10.c	LineNum:15
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%2 <=  -1.5708 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%2 >  -1.5708 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >=  1.5708 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  1.5708 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: -0.999843 <  main_%42 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: -0.999843 >=  main_%42 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%45 <  0.999843 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%45 >=  0.999843 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= x_1 -1.5708)
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(<= 1.5708 x_1)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_25 (* -1 x_39)))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_25 (* -1 x_39)))
+true
+true
+(not (<= x_40 -0.999843))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_25 (* -1 x_39)))
+true
+true
+(not (<= x_40 -0.999843))
+true
+(not (<= 0.999843 x_40))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;16;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_25 (* -1 x_39)))
+true
+true
+(not (<= x_40 -0.999843))
+true
+(not (<= 0.999843 x_40))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_25 (* -1 x_39)))
+true
+true
+(not (<= x_40 -0.999843))
+true
+(<= 0.999843 x_40)
+dreal_result is sat
+
+Number of path checked:8
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	23764.3ms 
+<bench1/benchmark10.c> 
+ bench1/benchmark11.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%38
+1.CallInst:printf
+BUILDCFG Time: 	1.398ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%23, 22
+variable:main_%24, 23
+variable:main_%25, 24
+variable:main_%26, 25
+variable:main_%27, 26
+variable:main_%28, 27
+variable:main_%29, 28
+variable:main_%30, 29
+variable:main_%31, 30
+variable:main_%32, 31
+variable:main_%33, 32
+variable:main_%35, 33
+variable:main_%36, 34
+variable:main_%38, 35
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:5	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 = 0.5 * main_%8 constraint: main_%10 = 1 + main_%9 constraint: main_%11 =  main_x constraint: main_%12 = 0.125 * main_%11 constraint: main_%13 =  main_x constraint: main_%14 = main_%12 * main_%13 constraint: main_%15 = main_%10 - main_%14 constraint: main_%16 =  main_x constraint: main_%17 = 0.0625 * main_%16 constraint: main_%18 =  main_x constraint: main_%19 = main_%17 * main_%18 constraint: main_%20 =  main_x constraint: main_%21 = main_%19 * main_%20 constraint: main_%22 = main_%15 + main_%21 constraint: main_%23 =  main_x constraint: main_%24 = 0.0390625 * main_%23 constraint: main_%25 =  main_x constraint: main_%26 = main_%24 * main_%25 constraint: main_%27 =  main_x constraint: main_%28 = main_%26 * main_%27 constraint: main_%29 =  main_x constraint: main_%30 = main_%28 * main_%29 constraint: main_%31 = main_%22 - main_%30 constraint: main_res =  main_%31 constraint: main_%32 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:10	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%35 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:12
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:13
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark11.c	LineNum:15
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%2 <  0 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%2 >=  0 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >=  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: 1 <  main_%32 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: 1 >=  main_%32 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%35 <  1.39844 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%35 >=  1.39844 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= 1 x_1)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(not (<= x_30 1))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(not (<= x_30 1))
+true
+(not (<= 1.39844 x_30))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;16;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(not (<= x_30 1))
+true
+(not (<= 1.39844 x_30))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(not (<= x_30 1))
+true
+(<= 1.39844 x_30)
+dreal_result is unsat
+ret	0:
+0;8;1;10;2;12;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(<= x_30 1)
+dreal_result is sat
+
+Number of path checked:10
+line 12 is reachable
+Witness:s0^s1^s2^s4
+bound:	50	lineNo:	12	check:	
+Time: 	60.07ms 
+<bench1/benchmark11.c> 
+ bench1/benchmark12.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%23
+1.CallInst:printf
+BUILDCFG Time: 	0.968ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%20, 18
+variable:main_%21, 19
+variable:main_%23, 20
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:5	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 = 0.95493 * main_%8 constraint: main_%10 =  main_x constraint: main_%11 =  main_x constraint: main_%12 = main_%10 * main_%11 constraint: main_%13 =  main_x constraint: main_%14 = main_%12 * main_%13 constraint: main_%15 = 0.129006 * main_%14 constraint: main_%16 = main_%9 - main_%15 constraint: main_res =  main_%16 constraint: main_%17 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:10	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%20 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:12
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:13
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark12.c	LineNum:15
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: -2 >=  main_%2 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: -2 <  main_%2 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >=  2 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  2 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: -1 <  main_%17 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: -1 >=  main_%17 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%20 <  1 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%20 >=  1 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= x_1 -2)
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(<= 2 x_1)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(not (<= 2 x_1))
+true
+(= x_8 (* x_1 0.95493))
+true
+true
+(= x_11 (^ x_1 2))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (* x_13 0.129006))
+(= x_15 (+ x_8 (* -1 x_14)))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(not (<= 2 x_1))
+true
+(= x_8 (* x_1 0.95493))
+true
+true
+(= x_11 (^ x_1 2))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (* x_13 0.129006))
+(= x_15 (+ x_8 (* -1 x_14)))
+true
+true
+(not (<= x_15 -1))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(not (<= 2 x_1))
+true
+(= x_8 (* x_1 0.95493))
+true
+true
+(= x_11 (^ x_1 2))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (* x_13 0.129006))
+(= x_15 (+ x_8 (* -1 x_14)))
+true
+true
+(not (<= x_15 -1))
+true
+(not (<= 1 x_15))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;16;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(not (<= 2 x_1))
+true
+(= x_8 (* x_1 0.95493))
+true
+true
+(= x_11 (^ x_1 2))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (* x_13 0.129006))
+(= x_15 (+ x_8 (* -1 x_14)))
+true
+true
+(not (<= x_15 -1))
+true
+(not (<= 1 x_15))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -2))
+true
+(not (<= 2 x_1))
+true
+(= x_8 (* x_1 0.95493))
+true
+true
+(= x_11 (^ x_1 2))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (* x_13 0.129006))
+(= x_15 (+ x_8 (* -1 x_14)))
+true
+true
+(not (<= x_15 -1))
+true
+(<= 1 x_15)
+dreal_result is sat
+
+Number of path checked:8
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	87.44ms 
+<bench1/benchmark12.c> 
+ bench1/benchmark13.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%39
+1.CallInst:printf
+BUILDCFG Time: 	1.559ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x1, 1
+variable:main_x2, 2
+variable:main_x3, 3
+variable:main_res, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%5, 7
+variable:main_%6, 8
+variable:main_%8, 9
+variable:main_%9, 10
+variable:main_%11, 11
+variable:main_%12, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%17, 15
+variable:main_%18, 16
+variable:main_%20, 17
+variable:main_%21, 18
+variable:main_%22, 19
+variable:main_%23, 20
+variable:main_%24, 21
+variable:main_%25, 22
+variable:main_%26, 23
+variable:main_%27, 24
+variable:main_%28, 25
+variable:main_%29, 26
+variable:main_%30, 27
+variable:main_%31, 28
+variable:main_%32, 29
+variable:main_%33, 30
+variable:main_%34, 31
+variable:main_%36, 32
+variable:main_%37, 33
+variable:main_%39, 34
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_x1 constraint: main_%21 = -0 - main_%20 constraint: main_%22 =  main_x2 constraint: main_%23 = main_%21 * main_%22 constraint: main_%24 =  main_x2 constraint: main_%25 = 2 * main_%24 constraint: main_%26 =  main_x3 constraint: main_%27 = main_%25 * main_%26 constraint: main_%28 = main_%23 - main_%27 constraint: main_%29 =  main_x1 constraint: main_%30 = main_%28 - main_%29 constraint: main_%31 =  main_x3 constraint: main_%32 = main_%30 - main_%31 constraint: main_res =  main_%32 constraint: main_%33 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%36 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark13.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -15 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -15 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  15 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  15 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: -15 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: -15 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  15 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  15 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -15 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -15 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  15 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  15 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -705 <  main_%33 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -705 >=  main_%33 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%36 <  705 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%36 >=  705 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -15 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(not (<= x_1 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(not (<= -15 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(not (<= x_2 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(not (<= -15 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(not (<= x_3 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (+ -0 (* -1 x_1)))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_2 2))
+true
+(= x_24 (* x_3 x_22))
+(= x_25 (+ x_20 (* -1 x_24)))
+true
+(= x_27 (+ x_25 (* -1 x_1)))
+true
+(= x_29 (+ x_27 (* -1 x_3)))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (+ -0 (* -1 x_1)))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_2 2))
+true
+(= x_24 (* x_3 x_22))
+(= x_25 (+ x_20 (* -1 x_24)))
+true
+(= x_27 (+ x_25 (* -1 x_1)))
+true
+(= x_29 (+ x_27 (* -1 x_3)))
+true
+true
+(not (<= x_29 -705))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (+ -0 (* -1 x_1)))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_2 2))
+true
+(= x_24 (* x_3 x_22))
+(= x_25 (+ x_20 (* -1 x_24)))
+true
+(= x_27 (+ x_25 (* -1 x_1)))
+true
+(= x_29 (+ x_27 (* -1 x_3)))
+true
+true
+(not (<= x_29 -705))
+true
+(not (<= 705 x_29))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (+ -0 (* -1 x_1)))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_2 2))
+true
+(= x_24 (* x_3 x_22))
+(= x_25 (+ x_20 (* -1 x_24)))
+true
+(= x_27 (+ x_25 (* -1 x_1)))
+true
+(= x_29 (+ x_27 (* -1 x_3)))
+true
+true
+(not (<= x_29 -705))
+true
+(not (<= 705 x_29))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (+ -0 (* -1 x_1)))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_2 2))
+true
+(= x_24 (* x_3 x_22))
+(= x_25 (+ x_20 (* -1 x_24)))
+true
+(= x_27 (+ x_25 (* -1 x_1)))
+true
+(= x_29 (+ x_27 (* -1 x_3)))
+true
+true
+(not (<= x_29 -705))
+true
+(<= 705 x_29)
+dreal_result is sat
+
+Number of path checked:16
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	206.144ms 
+<bench1/benchmark13.c> 
+ bench1/benchmark14.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%52
+1.CallInst:printf
+BUILDCFG Time: 	2.069ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x1, 1
+variable:main_x2, 2
+variable:main_x3, 3
+variable:main_res, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%5, 7
+variable:main_%6, 8
+variable:main_%8, 9
+variable:main_%9, 10
+variable:main_%11, 11
+variable:main_%12, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%17, 15
+variable:main_%18, 16
+variable:main_%20, 17
+variable:main_%21, 18
+variable:main_%22, 19
+variable:main_%23, 20
+variable:main_%24, 21
+variable:main_%25, 22
+variable:main_%26, 23
+variable:main_%27, 24
+variable:main_%28, 25
+variable:main_%29, 26
+variable:main_%30, 27
+variable:main_%31, 28
+variable:main_%32, 29
+variable:main_%33, 30
+variable:main_%34, 31
+variable:main_%35, 32
+variable:main_%36, 33
+variable:main_%37, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%40, 37
+variable:main_%41, 38
+variable:main_%42, 39
+variable:main_%43, 40
+variable:main_%44, 41
+variable:main_%45, 42
+variable:main_%46, 43
+variable:main_%47, 44
+variable:main_%49, 45
+variable:main_%50, 46
+variable:main_%52, 47
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_x1 constraint: main_%21 = 2 * main_%20 constraint: main_%22 =  main_x2 constraint: main_%23 = main_%21 * main_%22 constraint: main_%24 =  main_x3 constraint: main_%25 = main_%23 * main_%24 constraint: main_%26 =  main_x3 constraint: main_%27 = 3 * main_%26 constraint: main_%28 =  main_x3 constraint: main_%29 = main_%27 * main_%28 constraint: main_%30 = main_%25 + main_%29 constraint: main_%31 =  main_x2 constraint: main_%32 =  main_x1 constraint: main_%33 = main_%31 * main_%32 constraint: main_%34 =  main_x2 constraint: main_%35 = main_%33 * main_%34 constraint: main_%36 =  main_x3 constraint: main_%37 = main_%35 * main_%36 constraint: main_%38 = main_%30 - main_%37 constraint: main_%39 =  main_x3 constraint: main_%40 = 3 * main_%39 constraint: main_%41 =  main_x3 constraint: main_%42 = main_%40 * main_%41 constraint: main_%43 = main_%38 + main_%42 constraint: main_%44 =  main_x2 constraint: main_%45 = main_%43 - main_%44 constraint: main_res =  main_%45 constraint: main_%46 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%49 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -15 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -15 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  15 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  15 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: -15 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: -15 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  15 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  15 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -15 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -15 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  15 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  15 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -56010 <  main_%46 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -56010 >=  main_%46 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%49 <  58740 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%49 >=  58740 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -15 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(not (<= x_1 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(not (<= -15 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(not (<= x_2 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(not (<= -15 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(not (<= x_3 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+ bench1/benchmark15.c 
+bench1/benchmark15.c:8:55: error: use of undeclared identifier 'c'
+        if(1.0 < a && a < 9.0 && 1.0 < b && b < 9.0 && 1.0 < c && c < 9.0 && a + b > c + 0.1 && a + c > b + 0.1 && b + c > a + 0.1) {
+                                                             ^
+bench1/benchmark15.c:8:60: error: use of undeclared identifier 'c'
+        if(1.0 < a && a < 9.0 && 1.0 < b && b < 9.0 && 1.0 < c && c < 9.0 && a + b > c + 0.1 && a + c > b + 0.1 && b + c > a + 0.1) {
+                                                                  ^
+bench1/benchmark15.c:8:79: error: use of undeclared identifier 'c'
+        if(1.0 < a && a < 9.0 && 1.0 < b && b < 9.0 && 1.0 < c && c < 9.0 && a + b > c + 0.1 && a + c > b + 0.1 && b + c > a + 0.1) {
+                                                                                     ^
+bench1/benchmark15.c:8:94: error: use of undeclared identifier 'c'
+        if(1.0 < a && a < 9.0 && 1.0 < b && b < 9.0 && 1.0 < c && c < 9.0 && a + b > c + 0.1 && a + c > b + 0.1 && b + c > a + 0.1) {
+                                                                                                    ^
+bench1/benchmark15.c:8:113: error: use of undeclared identifier 'c'
+        if(1.0 < a && a < 9.0 && 1.0 < b && b < 9.0 && 1.0 < c && c < 9.0 && a + b > c + 0.1 && a + c > b + 0.1 && b + c > a + 0.1) {
+                                                                                                                       ^
+bench1/benchmark15.c:9:23: error: use of undeclared identifier 'c'
+                double s = (a + b + c)/2.0;
+                                    ^
+bench1/benchmark15.c:10:48: error: use of undeclared identifier 'c'
+                double res=sqrt(s * (s - a) * (s - b) * (s - c));
+                                                             ^
+7 errors generated.
+sh: 1: cannot open bench1/benchmark15.bc: No such file
+<bench1/benchmark15.c> 
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+ bench1/benchmark16.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%29
+1.CallInst:printf
+BUILDCFG Time: 	1.176ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%15, 13
+variable:main_%16, 14
+variable:main_%18, 15
+variable:main_%19, 16
+variable:main_%20, 17
+variable:main_%21, 18
+variable:main_%23, 19
+variable:main_%24, 20
+variable:main_%26, 21
+variable:main_%27, 22
+variable:main_%29, 23
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:5	LineNum:6	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 =  main_x constraint: main_%10 = main_%8 * main_%9 constraint: main_%11 =  main_x constraint: main_%12 = main_%10 - main_%11 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:9
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%15 =  main_x constraint: main_%16 = main_%15 / 10 constraint: main_res =  main_%16 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:9
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%18 =  main_x constraint: main_%19 =  main_x constraint: main_%20 = main_%18 * main_%19 constraint: main_%21 = main_%20 + 2 constraint: main_res =  main_%21 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:10
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%23 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%26 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:12
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:13
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark16.c	LineNum:15
+
+Transition Name:e0 ID:10
+from:s0 to:s9
+Guard:
+constraint: 0 >=  main_%2 
+
+Transition Name:e1 ID:11
+from:s0 to:s1
+Guard:
+constraint: 0 <  main_%2 
+
+Transition Name:e2 ID:12
+from:s1 to:s9
+Guard:
+constraint: main_%5 >=  10 
+
+Transition Name:e3 ID:13
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  10 
+
+Transition Name:e4 ID:14
+from:s2 to:s4
+Guard:
+constraint: main_%12 <  0 
+
+Transition Name:e5 ID:15
+from:s2 to:s3
+Guard:
+constraint: main_%12 >=  0 
+
+Transition Name:e6 ID:16
+from:s3 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:17
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e8 ID:18
+from:s5 to:s6
+Guard:
+constraint: 0 <  main_%23 
+
+Transition Name:e9 ID:19
+from:s5 to:s7
+Guard:
+constraint: 0 >=  main_%23 
+
+Transition Name:e10 ID:20
+from:s6 to:s8
+Guard:
+constraint: main_%26 <  3 
+
+Transition Name:e11 ID:21
+from:s6 to:s7
+Guard:
+constraint: main_%26 >=  3 
+
+Transition Name:e12 ID:22
+from:s7 to:s8
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e13 ID:23
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;10;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= x_1 0)
+dreal_result is sat
+ret	0:
+0;11;1;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+dreal_result is sat
+ret	0:
+0;11;1;12;9;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(<= 10 x_1)
+dreal_result is sat
+ret	0:
+0;11;1;13;2;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+true
+true
+(not (<= x_18 0))
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;20;8;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+true
+true
+(not (<= x_18 0))
+true
+(not (<= 3 x_18))
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;20;8;23;9;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+true
+true
+(not (<= x_18 0))
+true
+(not (<= 3 x_18))
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;21;7;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 0))
+true
+(not (<= 10 x_1))
+true
+true
+(= x_9 (^ x_1 2))
+true
+(= x_11 (+ x_9 (* -1 x_1)))
+(not (<= 0 x_11))
+true
+true
+(= x_17 (^ x_1 2))
+(= x_18 (+ 2 x_17))
+true
+true
+true
+(not (<= x_18 0))
+true
+(<= 3 x_18)
+dreal_result is sat
+
+Number of path checked:9
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5^s6^s7
+bound:	50	lineNo:	12	check:	
+Time: 	24.01ms 
+<bench1/benchmark16.c> 
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(not (<= 58740 x_42))
+ bench1/benchmark17.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%35
+1.CallInst:sqrt
+num:2
+-1.CallInst:main_%61
+1.CallInst:sqrt
+num:2
+-1.CallInst:main_%67
+1.CallInst:printf
+BUILDCFG Time: 	2.947ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_a, 1
+variable:main_res, 2
+variable:main_b, 3
+variable:main_c, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%5, 7
+variable:main_%6, 8
+variable:main_%8, 9
+variable:main_%9, 10
+variable:main_%10, 11
+variable:main_%12, 12
+variable:main_%13, 13
+variable:main_%14, 14
+variable:main_%15, 15
+variable:main_%16, 16
+variable:main_%17, 17
+variable:main_%18, 18
+variable:main_%19, 19
+variable:main_%20, 20
+variable:main_%21, 21
+variable:main_%22, 22
+variable:main_%23, 23
+variable:main_%24, 24
+variable:main_%25, 25
+variable:main_%26, 26
+variable:main_%27, 27
+variable:main_%28, 28
+variable:main_%29, 29
+variable:main_%30, 30
+variable:main_%31, 31
+variable:main_%32, 32
+variable:main_%33, 33
+variable:main_%34, 34
+variable:main_%35, 35
+variable:main_%36, 36
+variable:main_%38, 37
+variable:main_%39, 38
+variable:main_%40, 39
+variable:main_%41, 40
+variable:main_%42, 41
+variable:main_%43, 42
+variable:main_%44, 43
+variable:main_%45, 44
+variable:main_%46, 45
+variable:main_%47, 46
+variable:main_%48, 47
+variable:main_%49, 48
+variable:main_%50, 49
+variable:main_%51, 50
+variable:main_%52, 51
+variable:main_%53, 52
+variable:main_%54, 53
+variable:main_%55, 54
+variable:main_%56, 55
+variable:main_%57, 56
+variable:main_%58, 57
+variable:main_%59, 58
+variable:main_%60, 59
+variable:main_%61, 60
+variable:main_%62, 61
+variable:main_%64, 62
+variable:main_%65, 63
+variable:main_%67, 64
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_a 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:5	LineNum:6	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_a 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_b =  4 constraint: main_c =  8.5 constraint: main_%8 =  main_a constraint: main_%9 =  main_b 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:8	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%12 =  main_c constraint: main_%13 =  main_b constraint: main_%14 =  main_a constraint: main_%15 = main_%13 + main_%14 constraint: main_%16 = main_%12 + main_%15 constraint: main_%17 =  main_a constraint: main_%18 =  main_c constraint: main_%19 =  main_b constraint: main_%20 = main_%18 - main_%19 constraint: main_%21 = main_%17 - main_%20 constraint: main_%22 = main_%16 * main_%21 constraint: main_%23 =  main_a constraint: main_%24 =  main_c constraint: main_%25 =  main_b constraint: main_%26 = main_%24 - main_%25 constraint: main_%27 = main_%23 + main_%26 constraint: main_%28 = main_%22 * main_%27 constraint: main_%29 =  main_c constraint: main_%30 =  main_b constraint: main_%31 =  main_a constraint: main_%32 = main_%30 - main_%31 constraint: main_%33 = main_%29 + main_%32 constraint: main_%34 = main_%28 * main_%33 constraint: main_%35 ==  sqrt main_%34 constraint: main_%36 = main_%35 / 4 constraint: main_res =  main_%36 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%38 =  main_c constraint: main_%39 =  main_a constraint: main_%40 =  main_b constraint: main_%41 = main_%39 + main_%40 constraint: main_%42 = main_%38 + main_%41 constraint: main_%43 =  main_b constraint: main_%44 =  main_c constraint: main_%45 =  main_a constraint: main_%46 = main_%44 - main_%45 constraint: main_%47 = main_%43 - main_%46 constraint: main_%48 = main_%42 * main_%47 constraint: main_%49 =  main_b constraint: main_%50 =  main_c constraint: main_%51 =  main_a constraint: main_%52 = main_%50 - main_%51 constraint: main_%53 = main_%49 + main_%52 constraint: main_%54 = main_%48 * main_%53 constraint: main_%55 =  main_c constraint: main_%56 =  main_a constraint: main_%57 =  main_b constraint: main_%58 = main_%56 - main_%57 constraint: main_%59 = main_%55 + main_%58 constraint: main_%60 = main_%54 * main_%59 constraint: main_%61 ==  sqrt main_%60 constraint: main_%62 = main_%61 / 4 constraint: main_res =  main_%62 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%64 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:13
+
+Location Name:s7 ID:7 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:14
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark17.c	LineNum:16
+
+Transition Name:e0 ID:9
+from:s0 to:s8
+Guard:
+constraint: 4.5 >  main_%2 
+
+Transition Name:e1 ID:10
+from:s0 to:s1
+Guard:
+constraint: 4.5 <=  main_%2 
+
+Transition Name:e2 ID:11
+from:s1 to:s8
+Guard:
+constraint: main_%5 >  6.5 
+
+Transition Name:e3 ID:12
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  6.5 
+
+Transition Name:e4 ID:13
+from:s2 to:s4
+Guard:
+constraint: main_%8 >=  main_%9 
+
+Transition Name:e5 ID:14
+from:s2 to:s3
+Guard:
+constraint: main_%8 <  main_%9 
+
+Transition Name:e6 ID:15
+from:s3 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:16
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e8 ID:17
+from:s5 to:s7
+Guard:
+constraint: main_%64 >=  0 
+
+Transition Name:e9 ID:18
+from:s5 to:s6
+Guard:
+constraint: main_%64 <  0 
+
+Transition Name:e10 ID:19
+from:s6 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e11 ID:20
+from:s7 to:s8
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;9;8;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 4.5 x_1))
+dreal_result is sat
+ret	0:
+0;10;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 4.5 x_1)
+true
+dreal_result is sat
+ret	0:
+0;10;1;11;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 4.5 x_1)
+true
+(not (<= x_1 6.5))
+dreal_result is sat
+ret	0:
+0;10;1;12;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 4.5 x_1)
+true
+(<= x_1 6.5)
+(= x_3 4)
+(= x_4 8.5)
+true
+true
+dreal_result is sat
+ret	0:
+0;10;1;12;2;13;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 4.5 x_1)
+true
+(<= x_1 6.5)
+(= x_3 4)
+(= x_4 8.5)
+true
+true
+(<= x_3 x_1)
+true
+true
+true
+(= x_40 (+ x_3 x_1))
+(= x_41 (+ x_40 x_4))
+true
+true
+true
+(= x_45 (+ x_4 (* -1 x_1)))
+(= x_46 (+ x_3 (* -1 x_45)))
+(= x_47 (* x_46 x_41))
+true
+true
+true
+(= x_51 (+ x_4 (* -1 x_1)))
+(= x_52 (+ x_51 x_3))
+(= x_53 (* x_52 x_47))
+true
+true
+true
+(= x_57 (+ x_1 (* -1 x_3)))
+(= x_58 (+ x_57 x_4))
+(= x_59 (* x_58 x_53))
+(= x_60 (^ x_59 0.5))
+(= x_61 (/ x_60 4))
+true
+dreal_result is sat
+ret	0:
+0;10;1;12;2;13;4;16;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 4.5 x_1)
+true
+(<= x_1 6.5)
+(= x_3 4)
+(= x_4 8.5)
+true
+true
+(<= x_3 x_1)
+true
+true
+true
+(= x_40 (+ x_3 x_1))
+(= x_41 (+ x_40 x_4))
+true
+true
+true
+(= x_45 (+ x_4 (* -1 x_1)))
+(= x_46 (+ x_3 (* -1 x_45)))
+(= x_47 (* x_46 x_41))
+true
+true
+true
+(= x_51 (+ x_4 (* -1 x_1)))
+(= x_52 (+ x_51 x_3))
+(= x_53 (* x_52 x_47))
+true
+true
+true
+(= x_57 (+ x_1 (* -1 x_3)))
+(= x_58 (+ x_57 x_4))
+(= x_59 (* x_58 x_53))
+(= x_60 (^ x_59 0.5))
+(= x_61 (/ x_60 4))
+true
+true
+true
+dreal_result is sat
+
+Number of path checked:6
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5
+bound:	50	lineNo:	12	check:	
+Time: 	84.649ms 
+<bench1/benchmark17.c> 
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(not (<= 58740 x_42))
+true
+ bench1/benchmark18.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%23
+1.CallInst:printf
+BUILDCFG Time: 	0.904ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%20, 18
+variable:main_%21, 19
+variable:main_%23, 20
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_u constraint: main_%9 = 1 - main_%8 constraint: main_%10 =  main_u constraint: main_%11 = 1 - main_%10 constraint: main_%12 = main_%9 * main_%11 constraint: main_%13 =  main_u constraint: main_%14 = 1 - main_%13 constraint: main_%15 = main_%12 * main_%14 constraint: main_%16 = main_%15 / 6 constraint: main_res =  main_%16 constraint: main_%17 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%20 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark18.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: 0 >  main_%2 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: 0 <=  main_%2 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: 0 <  main_%17 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: 0 >=  main_%17 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%20 <  0.17 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%20 >=  0.17 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= x_1 1))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ 1 (* -1 x_1)))
+true
+(= x_10 (+ 1 (* -1 x_1)))
+(= x_11 (* x_10 x_8))
+true
+(= x_13 (+ 1 (* -1 x_1)))
+(= x_14 (* x_13 x_11))
+(= x_15 (/ x_14 6))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ 1 (* -1 x_1)))
+true
+(= x_10 (+ 1 (* -1 x_1)))
+(= x_11 (* x_10 x_8))
+true
+(= x_13 (+ 1 (* -1 x_1)))
+(= x_14 (* x_13 x_11))
+(= x_15 (/ x_14 6))
+true
+true
+(not (<= x_15 0))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ 1 (* -1 x_1)))
+true
+(= x_10 (+ 1 (* -1 x_1)))
+(= x_11 (* x_10 x_8))
+true
+(= x_13 (+ 1 (* -1 x_1)))
+(= x_14 (* x_13 x_11))
+(= x_15 (/ x_14 6))
+true
+true
+(not (<= x_15 0))
+true
+(not (<= 0.17 x_15))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	19.252ms 
+<bench1/benchmark18.c> 
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(<= 58740 x_42)
+dreal_result is sat
+
+Number of path checked:16
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	208347ms 
+ bench1/benchmark19.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%27
+1.CallInst:printf
+BUILDCFG Time: 	1.112ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%24, 22
+variable:main_%25, 23
+variable:main_%27, 24
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_u constraint: main_%9 = 3 * main_%8 constraint: main_%10 =  main_u constraint: main_%11 = main_%9 * main_%10 constraint: main_%12 =  main_u constraint: main_%13 = main_%11 * main_%12 constraint: main_%14 =  main_u constraint: main_%15 = 6 * main_%14 constraint: main_%16 =  main_u constraint: main_%17 = main_%15 * main_%16 constraint: main_%18 = main_%13 - main_%17 constraint: main_%19 = main_%18 + 4 constraint: main_%20 = main_%19 / 6 constraint: main_res =  main_%20 constraint: main_%21 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%24 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark19.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: 0 >  main_%2 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: 0 <=  main_%2 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: 0.16 <  main_%21 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: 0.16 >=  main_%21 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%24 <  0.7 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%24 >=  0.7 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= x_1 1))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 6))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_12 (* -1 x_16)))
+(= x_18 (+ 4 x_17))
+(= x_19 (/ x_18 6))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 6))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_12 (* -1 x_16)))
+(= x_18 (+ 4 x_17))
+(= x_19 (/ x_18 6))
+true
+true
+(not (<= x_19 0.16))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 6))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_12 (* -1 x_16)))
+(= x_18 (+ 4 x_17))
+(= x_19 (/ x_18 6))
+true
+true
+(not (<= x_19 0.16))
+true
+(not (<= 0.7 x_19))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	23.336ms 
+<bench1/benchmark19.c> 
+ bench1/benchmark2.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%41
+1.CallInst:printf
+BUILDCFG Time: 	1.722ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_v, 2
+variable:main_T, 3
+variable:main_t1, 4
+variable:main_res, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%5, 8
+variable:main_%6, 9
+variable:main_%8, 10
+variable:main_%9, 11
+variable:main_%11, 12
+variable:main_%12, 13
+variable:main_%14, 14
+variable:main_%15, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%20, 18
+variable:main_%21, 19
+variable:main_%22, 20
+variable:main_%23, 21
+variable:main_%24, 22
+variable:main_%25, 23
+variable:main_%26, 24
+variable:main_%27, 25
+variable:main_%28, 26
+variable:main_%29, 27
+variable:main_%30, 28
+variable:main_%31, 29
+variable:main_%32, 30
+variable:main_%33, 31
+variable:main_%34, 32
+variable:main_%35, 33
+variable:main_%36, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%41, 37
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_T constraint: main_%21 = 0.6 * main_%20 constraint: main_%22 = 331.4 + main_%21 constraint: main_t1 =  main_%22 constraint: main_%23 =  main_t1 constraint: main_%24 = -0 - main_%23 constraint: main_%25 =  main_v constraint: main_%26 = main_%24 * main_%25 constraint: main_%27 =  main_t1 constraint: main_%28 =  main_u constraint: main_%29 = main_%27 + main_%28 constraint: main_%30 =  main_t1 constraint: main_%31 =  main_u constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 = main_%29 * main_%32 constraint: main_%34 = main_%26 / main_%33 constraint: main_res =  main_%34 constraint: main_%35 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:9	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%38 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark2.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -125 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -125 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  125 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  125 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: 15 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: 15 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  25000 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  25000 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -40 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -40 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  60 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  60 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -230.991 <  main_%35 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -230.991 >=  main_%35 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%38 <  -0.0227296 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%38 >=  -0.0227296 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -125 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(not (<= x_1 125))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(not (<= 15 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(not (<= x_2 25000))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(not (<= -40 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(not (<= x_3 60))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -230.991))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -230.991))
+true
+(not (<= -0.0227296 x_32))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -230.991))
+true
+(not (<= -0.0227296 x_32))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -230.991))
+true
+(<= -0.0227296 x_32)
+dreal_result is unsat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -125 x_1)
+true
+(<= x_1 125)
+true
+(<= 15 x_2)
+true
+(<= x_2 25000)
+true
+(<= -40 x_3)
+true
+(<= x_3 60)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(<= x_32 -230.991)
+dreal_result is unsat
+
+Number of path checked:18
+line 12 is not reachable under bound 50 when check=
+bound:	50	lineNo:	12	check:	
+Time: 	279.127ms 
+<bench1/benchmark2.c> 
+ bench1/benchmark20.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%30
+1.CallInst:printf
+BUILDCFG Time: 	1.184ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%23, 22
+variable:main_%24, 23
+variable:main_%25, 24
+variable:main_%27, 25
+variable:main_%28, 26
+variable:main_%30, 27
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_u constraint: main_%9 = -3 * main_%8 constraint: main_%10 =  main_u constraint: main_%11 = main_%9 * main_%10 constraint: main_%12 =  main_u constraint: main_%13 = main_%11 * main_%12 constraint: main_%14 =  main_u constraint: main_%15 = 3 * main_%14 constraint: main_%16 =  main_u constraint: main_%17 = main_%15 * main_%16 constraint: main_%18 = main_%13 + main_%17 constraint: main_%19 =  main_u constraint: main_%20 = 3 * main_%19 constraint: main_%21 = main_%18 + main_%20 constraint: main_%22 = main_%21 + 1 constraint: main_%23 = main_%22 / 6 constraint: main_res =  main_%23 constraint: main_%24 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%27 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark20.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: 0 >  main_%2 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: 0 <=  main_%2 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: 0.16 <  main_%24 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: 0.16 >=  main_%24 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%27 <  0.7 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%27 >=  0.7 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= x_1 1))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 -3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 3))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_16 x_12))
+true
+(= x_19 (* x_1 3))
+(= x_20 (+ x_19 x_17))
+(= x_21 (+ 1 x_20))
+(= x_22 (/ x_21 6))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 -3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 3))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_16 x_12))
+true
+(= x_19 (* x_1 3))
+(= x_20 (+ x_19 x_17))
+(= x_21 (+ 1 x_20))
+(= x_22 (/ x_21 6))
+true
+true
+(not (<= x_22 0.16))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (* x_1 -3))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+true
+(= x_14 (* x_1 3))
+true
+(= x_16 (* x_1 x_14))
+(= x_17 (+ x_16 x_12))
+true
+(= x_19 (* x_1 3))
+(= x_20 (+ x_19 x_17))
+(= x_21 (+ 1 x_20))
+(= x_22 (/ x_21 6))
+true
+true
+(not (<= x_22 0.16))
+true
+(not (<= 0.7 x_22))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	91.96ms 
+<bench1/benchmark20.c> 
+ bench1/benchmark21.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%21
+1.CallInst:printf
+BUILDCFG Time: 	0.866ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%18, 16
+variable:main_%19, 17
+variable:main_%21, 18
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_u constraint: main_%9 = -0 - main_%8 constraint: main_%10 =  main_u constraint: main_%11 = main_%9 * main_%10 constraint: main_%12 =  main_u constraint: main_%13 = main_%11 * main_%12 constraint: main_%14 = main_%13 / 6 constraint: main_res =  main_%14 constraint: main_%15 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%18 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark21.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: 0 >  main_%2 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: 0 <=  main_%2 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: -0.17 <  main_%15 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: -0.17 >=  main_%15 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%18 <  0 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%18 >=  0 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= x_1 1))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ -0 (* -1 x_1)))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ -0 (* -1 x_1)))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+true
+true
+(not (<= x_13 -0.17))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= x_1 1)
+true
+(= x_8 (+ -0 (* -1 x_1)))
+true
+(= x_10 (* x_1 x_8))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+true
+true
+(not (<= x_13 -0.17))
+true
+(not (<= 0 x_13))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	9.939ms 
+<bench1/benchmark21.c> 
+ bench1/benchmark22.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%48
+1.CallInst:printf
+BUILDCFG Time: 	1.761ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%23, 22
+variable:main_%24, 23
+variable:main_%25, 24
+variable:main_%26, 25
+variable:main_%27, 26
+variable:main_%28, 27
+variable:main_%29, 28
+variable:main_%30, 29
+variable:main_%31, 30
+variable:main_%32, 31
+variable:main_%33, 32
+variable:main_%34, 33
+variable:main_%35, 34
+variable:main_%36, 35
+variable:main_%37, 36
+variable:main_%38, 37
+variable:main_%39, 38
+variable:main_%40, 39
+variable:main_%41, 40
+variable:main_%42, 41
+variable:main_%43, 42
+variable:main_%45, 43
+variable:main_%46, 44
+variable:main_%48, 45
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 =  main_x constraint: main_%10 =  main_x constraint: main_%11 = main_%9 * main_%10 constraint: main_%12 =  main_x constraint: main_%13 = main_%11 * main_%12 constraint: main_%14 = main_%13 / 6 constraint: main_%15 = main_%8 - main_%14 constraint: main_%16 =  main_x constraint: main_%17 =  main_x constraint: main_%18 = main_%16 * main_%17 constraint: main_%19 =  main_x constraint: main_%20 = main_%18 * main_%19 constraint: main_%21 =  main_x constraint: main_%22 = main_%20 * main_%21 constraint: main_%23 =  main_x constraint: main_%24 = main_%22 * main_%23 constraint: main_%25 = main_%24 / 120 constraint: main_%26 = main_%15 + main_%25 constraint: main_%27 =  main_x constraint: main_%28 =  main_x constraint: main_%29 = main_%27 * main_%28 constraint: main_%30 =  main_x constraint: main_%31 = main_%29 * main_%30 constraint: main_%32 =  main_x constraint: main_%33 = main_%31 * main_%32 constraint: main_%34 =  main_x constraint: main_%35 = main_%33 * main_%34 constraint: main_%36 =  main_x constraint: main_%37 = main_%35 * main_%36 constraint: main_%38 =  main_x constraint: main_%39 = main_%37 * main_%38 constraint: main_%40 = main_%39 / 5040 constraint: main_%41 = main_%26 + main_%40 constraint: main_res =  main_%41 constraint: main_%42 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%45 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark22.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%2 <=  -1.5708 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%2 >  -1.5708 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >=  1.5708 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  1.5708 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: -1.01 <  main_%42 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: -1.01 >=  main_%42 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%45 <  1.01 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%45 >=  1.01 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= x_1 -1.5708)
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(<= 1.5708 x_1)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_39 x_25))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_39 x_25))
+true
+true
+(not (<= x_40 -1.01))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= x_1 -1.5708))
+true
+(not (<= 1.5708 x_1))
+true
+true
+true
+(= x_10 (^ x_1 2))
+true
+(= x_12 (* x_1 x_10))
+(= x_13 (/ x_12 6))
+(= x_14 (+ x_1 (* -1 x_13)))
+true
+true
+(= x_17 (^ x_1 2))
+true
+(= x_19 (* x_1 x_17))
+true
+(= x_21 (* x_1 x_19))
+true
+(= x_23 (* x_1 x_21))
+(= x_24 (/ x_23 120))
+(= x_25 (+ x_24 x_14))
+true
+true
+(= x_28 (^ x_1 2))
+true
+(= x_30 (* x_1 x_28))
+true
+(= x_32 (* x_1 x_30))
+true
+(= x_34 (* x_1 x_32))
+true
+(= x_36 (* x_1 x_34))
+true
+(= x_38 (* x_1 x_36))
+(= x_39 (/ x_38 5040))
+(= x_40 (+ x_39 x_25))
+true
+true
+(not (<= x_40 -1.01))
+true
+(not (<= 1.01 x_40))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	93.119ms 
+<bench1/benchmark22.c> 
+ bench1/benchmark23.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%38
+1.CallInst:printf
+BUILDCFG Time: 	1.398ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_res, 2
+variable:main_%2, 3
+variable:main_%3, 4
+variable:main_%5, 5
+variable:main_%6, 6
+variable:main_%8, 7
+variable:main_%9, 8
+variable:main_%10, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%23, 22
+variable:main_%24, 23
+variable:main_%25, 24
+variable:main_%26, 25
+variable:main_%27, 26
+variable:main_%28, 27
+variable:main_%29, 28
+variable:main_%30, 29
+variable:main_%31, 30
+variable:main_%32, 31
+variable:main_%33, 32
+variable:main_%35, 33
+variable:main_%36, 34
+variable:main_%38, 35
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:5	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x constraint: main_%9 = 0.5 * main_%8 constraint: main_%10 = 1 + main_%9 constraint: main_%11 =  main_x constraint: main_%12 = 0.125 * main_%11 constraint: main_%13 =  main_x constraint: main_%14 = main_%12 * main_%13 constraint: main_%15 = main_%10 - main_%14 constraint: main_%16 =  main_x constraint: main_%17 = 0.0625 * main_%16 constraint: main_%18 =  main_x constraint: main_%19 = main_%17 * main_%18 constraint: main_%20 =  main_x constraint: main_%21 = main_%19 * main_%20 constraint: main_%22 = main_%15 + main_%21 constraint: main_%23 =  main_x constraint: main_%24 = 0.0390625 * main_%23 constraint: main_%25 =  main_x constraint: main_%26 = main_%24 * main_%25 constraint: main_%27 =  main_x constraint: main_%28 = main_%26 * main_%27 constraint: main_%29 =  main_x constraint: main_%30 = main_%28 * main_%29 constraint: main_%31 = main_%22 - main_%30 constraint: main_res =  main_%31 constraint: main_%32 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:9	LineNum:10
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%35 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:10
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:12
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark23.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%2 <  0 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%2 >=  0 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%5 >=  1 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%5 <  1 
+
+Transition Name:e4 ID:11
+from:s2 to:s3
+Guard:
+constraint: 0 <=  main_%32 
+
+Transition Name:e5 ID:12
+from:s2 to:s4
+Guard:
+constraint: 0 >  main_%32 
+
+Transition Name:e6 ID:13
+from:s3 to:s5
+Guard:
+constraint: main_%35 <  1.39844 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%35 >=  1.39844 
+
+Transition Name:e8 ID:15
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e9 ID:16
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(<= 1 x_1)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(<= 0 x_30)
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;3;13;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= 0 x_1)
+true
+(not (<= 1 x_1))
+true
+(= x_8 (* x_1 0.5))
+(= x_9 (+ x_8 1))
+true
+(= x_11 (* x_1 0.125))
+true
+(= x_13 (* x_1 x_11))
+(= x_14 (+ x_9 (* -1 x_13)))
+true
+(= x_16 (* x_1 0.0625))
+true
+(= x_18 (* x_1 x_16))
+true
+(= x_20 (* x_1 x_18))
+(= x_21 (+ x_20 x_14))
+true
+(= x_23 (* x_1 0.0390625))
+true
+(= x_25 (* x_1 x_23))
+true
+(= x_27 (* x_1 x_25))
+true
+(= x_29 (* x_1 x_27))
+(= x_30 (+ x_21 (* -1 x_29)))
+true
+true
+(<= 0 x_30)
+true
+(not (<= 1.39844 x_30))
+dreal_result is sat
+
+Number of path checked:5
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	23.896ms 
+<bench1/benchmark23.c> 
+ bench1/benchmark24.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%40
+1.CallInst:printf
+BUILDCFG Time: 	1.965ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_e, 1
+variable:main_res, 2
+variable:main_r1, 3
+variable:main_const1, 4
+variable:main_r2, 5
+variable:main_const2, 6
+variable:main_r3, 7
+variable:main_%2, 8
+variable:main_%3, 9
+variable:main_%4, 10
+variable:main_%5, 11
+variable:main_%6, 12
+variable:main_%7, 13
+variable:main_%8, 14
+variable:main_%9, 15
+variable:main_%11, 16
+variable:main_%12, 17
+variable:main_%14, 18
+variable:main_%15, 19
+variable:main_%17, 20
+variable:main_%18, 21
+variable:main_%19, 22
+variable:main_%20, 23
+variable:main_%22, 24
+variable:main_%23, 25
+variable:main_%25, 26
+variable:main_%26, 27
+variable:main_%27, 28
+variable:main_%28, 29
+variable:main_%29, 30
+variable:main_%31, 31
+variable:main_%34, 32
+variable:main_%35, 33
+variable:main_%37, 34
+variable:main_%38, 35
+variable:main_%40, 36
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_r1 =  0 constraint: main_const1 =  2.25 constraint: main_%2 =  main_const1 constraint: main_%3 = 5 * main_%2 constraint: main_r2 =  main_%3 constraint: main_const2 =  1.1 constraint: main_%4 =  main_r2 constraint: main_%5 =  main_const2 constraint: main_%6 = 20 * main_%5 constraint: main_%7 = main_%4 + main_%6 constraint: main_r3 =  main_%7 constraint: main_%8 =  main_e 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:5	LineNum:6	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%11 =  main_e 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%14 =  main_e 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%17 =  main_e constraint: main_%18 = main_%17 * 2.25 constraint: main_%19 =  main_r1 constraint: main_%20 = main_%18 + main_%19 constraint: main_res =  main_%20 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%22 =  main_e 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:9
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%25 =  main_e constraint: main_%26 = main_%25 - 5 constraint: main_%27 = main_%26 * 1.1 constraint: main_%28 =  main_r2 constraint: main_%29 = main_%27 + main_%28 constraint: main_res =  main_%29 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:9
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%31 =  main_r3 constraint: main_res =  main_%31 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:10
+
+Location Name:s7 ID:7 nextS:-1
+null
+
+
+Location Name:s8 ID:8 nextS:-1
+constraint: main_%34 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:11
+
+Location Name:s9 ID:9 nextS:-1
+constraint: main_%37 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:11
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:12
+
+Location Name:s11 ID:11 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:13
+
+Location Name:s12 ID:12 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark24.c	LineNum:15
+
+Transition Name:e0 ID:13
+from:s0 to:s12
+Guard:
+constraint: 0 >  main_%8 
+
+Transition Name:e1 ID:14
+from:s0 to:s1
+Guard:
+constraint: 0 <=  main_%8 
+
+Transition Name:e2 ID:15
+from:s1 to:s12
+Guard:
+constraint: main_%11 >  100 
+
+Transition Name:e3 ID:16
+from:s1 to:s2
+Guard:
+constraint: main_%11 <=  100 
+
+Transition Name:e4 ID:17
+from:s2 to:s4
+Guard:
+constraint: main_%14 >=  5 
+
+Transition Name:e5 ID:18
+from:s2 to:s3
+Guard:
+constraint: main_%14 <  5 
+
+Transition Name:e6 ID:19
+from:s3 to:s8
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:20
+from:s4 to:s6
+Guard:
+constraint: main_%22 >=  25 
+
+Transition Name:e8 ID:21
+from:s4 to:s5
+Guard:
+constraint: main_%22 <  25 
+
+Transition Name:e9 ID:22
+from:s5 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e10 ID:23
+from:s6 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e11 ID:24
+from:s7 to:s8
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e12 ID:25
+from:s8 to:s9
+Guard:
+constraint: -2.25e-05 <=  main_%34 
+
+Transition Name:e13 ID:26
+from:s8 to:s10
+Guard:
+constraint: -2.25e-05 >  main_%34 
+
+Transition Name:e14 ID:27
+from:s9 to:s11
+Guard:
+constraint: main_%37 <=  33.26 
+
+Transition Name:e15 ID:28
+from:s9 to:s10
+Guard:
+constraint: main_%37 >  33.26 
+
+Transition Name:e16 ID:29
+from:s10 to:s11
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:30
+from:s11 to:s12
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+dreal_result is sat
+ret	0:
+0;13;12;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(not (<= 0 x_1))
+dreal_result is sat
+ret	0:
+0;14;1;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+dreal_result is sat
+ret	0:
+0;14;1;15;12;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(not (<= x_1 100))
+dreal_result is sat
+ret	0:
+0;14;1;16;2;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;25;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+(<= -2.25e-05 x_13)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;25;9;27;11;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+(<= -2.25e-05 x_13)
+true
+(<= x_13 33.26)
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;25;9;27;11;30;12;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+(<= -2.25e-05 x_13)
+true
+(<= x_13 33.26)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+(<= -2.25e-05 x_13)
+true
+(not (<= x_13 33.26))
+dreal_result is unsat
+ret	0:
+0;14;1;16;2;17;4;20;6;23;7;24;8;26;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(<= 25 x_1)
+true
+true
+true
+true
+true
+(not (<= -2.25e-05 x_13))
+dreal_result is unsat
+ret	0:
+0;14;1;16;2;17;4;21;5;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;25;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+(<= -2.25e-05 x_30)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;25;9;27;11;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+(<= -2.25e-05 x_30)
+true
+(<= x_30 33.26)
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;25;9;27;11;30;12;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+(<= -2.25e-05 x_30)
+true
+(<= x_30 33.26)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+(<= -2.25e-05 x_30)
+true
+(not (<= x_30 33.26))
+dreal_result is unsat
+ret	0:
+0;14;1;16;2;17;4;21;5;22;7;24;8;26;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(<= 5 x_1)
+true
+(not (<= 25 x_1))
+true
+(= x_27 (+ x_1 -5))
+(= x_28 (* 1.1 x_27))
+true
+(= x_30 (+ x_9 x_28))
+true
+true
+true
+true
+(not (<= -2.25e-05 x_30))
+dreal_result is unsat
+ret	0:
+0;14;1;16;2;18;3;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;18;3;19;8;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;18;3;19;8;25;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+(<= -2.25e-05 x_23)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;18;3;19;8;25;9;27;11;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+(<= -2.25e-05 x_23)
+true
+(<= x_23 33.26)
+dreal_result is sat
+ret	0:
+0;14;1;16;2;18;3;19;8;25;9;27;11;30;12;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+(<= -2.25e-05 x_23)
+true
+(<= x_23 33.26)
+true
+dreal_result is sat
+ret	0:
+0;14;1;16;2;18;3;19;8;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+(<= -2.25e-05 x_23)
+true
+(not (<= x_23 33.26))
+dreal_result is unsat
+ret	0:
+0;14;1;16;2;18;3;19;8;26;10;
+Precision is 0.001
+(= x_0 0)
+(= x_3 0)
+(= x_4 2.25)
+true
+(= x_9 (* x_4 5))
+true
+(= x_6 1.1)
+true
+true
+(= x_12 (* x_6 20))
+(= x_13 (+ x_12 x_9))
+true
+true
+(<= 0 x_1)
+true
+(<= x_1 100)
+true
+(not (<= 5 x_1))
+true
+(= x_21 (* 2.25 x_1))
+true
+(= x_23 (+ x_3 x_21))
+true
+true
+true
+(not (<= -2.25e-05 x_23))
+dreal_result is unsat
+
+Number of path checked:29
+line 12 is not reachable under bound 50 when check=
+bound:	50	lineNo:	12	check:	
+Time: 	103.041ms 
+<bench1/benchmark24.c> 
+ bench1/benchmark25.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%43
+1.CallInst:printf
+BUILDCFG Time: 	1.635ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_i, 1
+variable:main_res, 2
+variable:main_sqrt2, 3
+variable:main_%2, 4
+variable:main_%3, 5
+variable:main_%5, 6
+variable:main_%6, 7
+variable:main_%8, 8
+variable:main_%9, 9
+variable:main_%11, 10
+variable:main_%12, 11
+variable:main_%13, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%16, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%19, 18
+variable:main_%20, 19
+variable:main_%21, 20
+variable:main_%22, 21
+variable:main_%24, 22
+variable:main_%25, 23
+variable:main_%26, 24
+variable:main_%27, 25
+variable:main_%28, 26
+variable:main_%29, 27
+variable:main_%30, 28
+variable:main_%31, 29
+variable:main_%32, 30
+variable:main_%33, 31
+variable:main_%34, 32
+variable:main_%35, 33
+variable:main_%37, 34
+variable:main_%38, 35
+variable:main_%40, 36
+variable:main_%41, 37
+variable:main_%43, 38
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_sqrt2 =  1.41421 constraint: main_%2 =  main_i 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:5	LineNum:6	LineNum:7
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_i 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:7
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_i 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_sqrt2 constraint: main_%12 =  main_i constraint: main_%13 = main_%12 / 2 constraint: main_%14 = main_%13 - 1 constraint: main_%15 =  main_i constraint: main_%16 = main_%15 / 2 constraint: main_%17 = main_%16 - 1 constraint: main_%18 = 0.125 * main_%17 constraint: main_%19 = 0.5 - main_%18 constraint: main_%20 = main_%14 * main_%19 constraint: main_%21 = 1 + main_%20 constraint: main_%22 = main_%11 * main_%21 constraint: main_res =  main_%22 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%24 =  main_i constraint: main_%25 = main_%24 - 1 constraint: main_%26 =  main_i constraint: main_%27 = main_%26 - 1 constraint: main_%28 =  main_i constraint: main_%29 = main_%28 - 1 constraint: main_%30 = main_%29 * 0.0625 constraint: main_%31 = -0.125 + main_%30 constraint: main_%32 = main_%27 * main_%31 constraint: main_%33 = 0.5 + main_%32 constraint: main_%34 = main_%25 * main_%33 constraint: main_%35 = 1 + main_%34 constraint: main_res =  main_%35 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:9
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%37 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%40 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:12
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:13
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark25.c	LineNum:15
+
+Transition Name:e0 ID:10
+from:s0 to:s9
+Guard:
+constraint: 1 >  main_%2 
+
+Transition Name:e1 ID:11
+from:s0 to:s1
+Guard:
+constraint: 1 <=  main_%2 
+
+Transition Name:e2 ID:12
+from:s1 to:s9
+Guard:
+constraint: main_%5 >  2 
+
+Transition Name:e3 ID:13
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  2 
+
+Transition Name:e4 ID:14
+from:s2 to:s4
+Guard:
+constraint: main_%8 <  2 
+
+Transition Name:e5 ID:15
+from:s2 to:s3
+Guard:
+constraint: main_%8 >=  2 
+
+Transition Name:e6 ID:16
+from:s3 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:17
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e8 ID:18
+from:s5 to:s6
+Guard:
+constraint: 1 <=  main_%37 
+
+Transition Name:e9 ID:19
+from:s5 to:s7
+Guard:
+constraint: 1 >  main_%37 
+
+Transition Name:e10 ID:20
+from:s6 to:s8
+Guard:
+constraint: main_%40 <=  1.4531 
+
+Transition Name:e11 ID:21
+from:s6 to:s7
+Guard:
+constraint: main_%40 >  1.4531 
+
+Transition Name:e12 ID:22
+from:s7 to:s8
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e13 ID:23
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+dreal_result is sat
+ret	0:
+0;10;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(not (<= 1 x_1))
+dreal_result is sat
+ret	0:
+0;11;1;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+dreal_result is sat
+ret	0:
+0;11;1;12;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(not (<= x_1 2))
+dreal_result is sat
+ret	0:
+0;11;1;13;2;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+(<= 1 x_33)
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;20;8;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+(<= 1 x_33)
+true
+(<= x_33 1.4531)
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;20;8;23;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+(<= 1 x_33)
+true
+(<= x_33 1.4531)
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;14;4;17;5;18;6;21;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+(<= 1 x_33)
+true
+(not (<= x_33 1.4531))
+dreal_result is unsat
+ret	0:
+0;11;1;13;2;14;4;17;5;19;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(not (<= 2 x_1))
+true
+(= x_23 (+ x_1 -1))
+true
+(= x_25 (+ x_1 -1))
+true
+(= x_27 (+ x_1 -1))
+(= x_28 (* 0.0625 x_27))
+(= x_29 (+ x_28 -0.125))
+(= x_30 (* x_29 x_25))
+(= x_31 (+ x_30 0.5))
+(= x_32 (* x_31 x_23))
+(= x_33 (+ x_32 1))
+true
+true
+true
+(not (<= 1 x_33))
+dreal_result is unsat
+ret	0:
+0;11;1;13;2;15;3;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;15;3;16;5;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;15;3;16;5;18;6;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+(<= 1 x_21)
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;15;3;16;5;18;6;20;8;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+(<= 1 x_21)
+true
+(<= x_21 1.4531)
+dreal_result is sat
+ret	0:
+0;11;1;13;2;15;3;16;5;18;6;20;8;23;9;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+(<= 1 x_21)
+true
+(<= x_21 1.4531)
+true
+dreal_result is sat
+ret	0:
+0;11;1;13;2;15;3;16;5;18;6;21;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+(<= 1 x_21)
+true
+(not (<= x_21 1.4531))
+dreal_result is unsat
+ret	0:
+0;11;1;13;2;15;3;16;5;19;7;
+Precision is 0.001
+(= x_0 0)
+(= x_3 1.41421)
+true
+(<= 1 x_1)
+true
+(<= x_1 2)
+true
+(<= 2 x_1)
+true
+true
+(= x_12 (/ x_1 2))
+(= x_13 (+ x_12 -1))
+true
+(= x_15 (/ x_1 2))
+(= x_16 (+ x_15 -1))
+(= x_17 (* x_16 0.125))
+(= x_18 (+ 0.5 (* -1 x_17)))
+(= x_19 (* x_18 x_13))
+(= x_20 (+ x_19 1))
+(= x_21 (* x_20 x_3))
+true
+true
+true
+(not (<= 1 x_21))
+dreal_result is unsat
+
+Number of path checked:19
+line 12 is not reachable under bound 50 when check=
+bound:	50	lineNo:	12	check:	
+Time: 	44.522ms 
+<bench1/benchmark25.c> 
+ bench1/benchmark3.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%41
+1.CallInst:printf
+BUILDCFG Time: 	1.814ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_u, 1
+variable:main_v, 2
+variable:main_T, 3
+variable:main_t1, 4
+variable:main_res, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%5, 8
+variable:main_%6, 9
+variable:main_%8, 10
+variable:main_%9, 11
+variable:main_%11, 12
+variable:main_%12, 13
+variable:main_%14, 14
+variable:main_%15, 15
+variable:main_%17, 16
+variable:main_%18, 17
+variable:main_%20, 18
+variable:main_%21, 19
+variable:main_%22, 20
+variable:main_%23, 21
+variable:main_%24, 22
+variable:main_%25, 23
+variable:main_%26, 24
+variable:main_%27, 25
+variable:main_%28, 26
+variable:main_%29, 27
+variable:main_%30, 28
+variable:main_%31, 29
+variable:main_%32, 30
+variable:main_%33, 31
+variable:main_%34, 32
+variable:main_%35, 33
+variable:main_%36, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%41, 37
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_u 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_T 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_T constraint: main_%21 = 0.6 * main_%20 constraint: main_%22 = 331.4 + main_%21 constraint: main_t1 =  main_%22 constraint: main_%23 =  main_t1 constraint: main_%24 = -0 - main_%23 constraint: main_%25 =  main_v constraint: main_%26 = main_%24 * main_%25 constraint: main_%27 =  main_t1 constraint: main_%28 =  main_u constraint: main_%29 = main_%27 + main_%28 constraint: main_%30 =  main_t1 constraint: main_%31 =  main_u constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 = main_%29 * main_%32 constraint: main_%34 = main_%26 / main_%33 constraint: main_res =  main_%34 constraint: main_%35 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:9	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%38 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark3.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -30 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -30 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  120 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  120 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: 320 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: 320 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  20300 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  20300 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -50 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -50 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  30 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  30 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -83.0653 <  main_%35 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -83.0653 >=  main_%35 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%38 <  -0.507441 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%38 >=  -0.507441 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -30 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(not (<= x_1 120))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(not (<= 320 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(not (<= x_2 20300))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(not (<= -50 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(not (<= x_3 30))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -83.0653))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -83.0653))
+true
+(not (<= -0.507441 x_32))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -83.0653))
+true
+(not (<= -0.507441 x_32))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(not (<= x_32 -83.0653))
+true
+(<= -0.507441 x_32)
+dreal_result is unsat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -30 x_1)
+true
+(<= x_1 120)
+true
+(<= 320 x_2)
+true
+(<= x_2 20300)
+true
+(<= -50 x_3)
+true
+(<= x_3 30)
+true
+(= x_19 (* x_3 0.6))
+(= x_20 (+ x_19 331.4))
+true
+true
+(= x_22 (+ -0 (* -1 x_20)))
+true
+(= x_24 (* x_2 x_22))
+true
+true
+(= x_27 (+ x_1 x_20))
+true
+true
+(= x_30 (+ x_1 x_20))
+(= x_31 (* x_30 x_27))
+(= x_32 (/ x_24 x_31))
+true
+true
+(<= x_32 -83.0653)
+dreal_result is unsat
+
+Number of path checked:18
+line 12 is not reachable under bound 50 when check=
+bound:	50	lineNo:	12	check:	
+Time: 	276.121ms 
+<bench1/benchmark3.c> 
+ bench1/benchmark4.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%48
+1.CallInst:printf
+BUILDCFG Time: 	1.998ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_v, 1
+variable:main_w, 2
+variable:main_r, 3
+variable:main_res, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%5, 7
+variable:main_%6, 8
+variable:main_%8, 9
+variable:main_%9, 10
+variable:main_%11, 11
+variable:main_%12, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%17, 15
+variable:main_%18, 16
+variable:main_%20, 17
+variable:main_%21, 18
+variable:main_%22, 19
+variable:main_%23, 20
+variable:main_%24, 21
+variable:main_%25, 22
+variable:main_%26, 23
+variable:main_%27, 24
+variable:main_%28, 25
+variable:main_%29, 26
+variable:main_%30, 27
+variable:main_%31, 28
+variable:main_%32, 29
+variable:main_%33, 30
+variable:main_%34, 31
+variable:main_%35, 32
+variable:main_%36, 33
+variable:main_%37, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%40, 37
+variable:main_%41, 38
+variable:main_%42, 39
+variable:main_%43, 40
+variable:main_%45, 41
+variable:main_%46, 42
+variable:main_%48, 43
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_v 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_w 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_w 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_r 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_r 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_r constraint: main_%21 =  main_r constraint: main_%22 = main_%20 * main_%21 constraint: main_%23 = 2 / main_%22 constraint: main_%24 = 3 + main_%23 constraint: main_%25 =  main_v constraint: main_%26 = 2 * main_%25 constraint: main_%27 = 3 - main_%26 constraint: main_%28 = 0.125 * main_%27 constraint: main_%29 =  main_w constraint: main_%30 =  main_w constraint: main_%31 = main_%29 * main_%30 constraint: main_%32 =  main_r constraint: main_%33 = main_%31 * main_%32 constraint: main_%34 =  main_r constraint: main_%35 = main_%33 * main_%34 constraint: main_%36 = main_%28 * main_%35 constraint: main_%37 =  main_v constraint: main_%38 = 1 - main_%37 constraint: main_%39 = main_%36 / main_%38 constraint: main_%40 = main_%24 - main_%39 constraint: main_%41 = main_%40 - 4.5 constraint: main_res =  main_%41 constraint: main_%42 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%45 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark4.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -4.5 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -4.5 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  -0.3 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  -0.3 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: 0.4 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: 0.4 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  0.9 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  0.9 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: 3.8 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: 3.8 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  7.8 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  7.8 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -18.5257 <  main_%42 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -18.5257 >=  main_%42 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%45 <  -1.9916 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%45 >=  -1.9916 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -4.5 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(not (<= x_1 -0.3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(not (<= 0.4 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(not (<= x_2 0.9))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(not (<= 3.8 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(not (<= x_3 7.8))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+(not (<= x_38 -18.5257))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+(not (<= x_38 -18.5257))
+true
+(not (<= -1.9916 x_38))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+(not (<= x_38 -18.5257))
+true
+(not (<= -1.9916 x_38))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+(not (<= x_38 -18.5257))
+true
+(<= -1.9916 x_38)
+dreal_result is unsat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -4.5 x_1)
+true
+(<= x_1 -0.3)
+true
+(<= 0.4 x_2)
+true
+(<= x_2 0.9)
+true
+(<= 3.8 x_3)
+true
+(<= x_3 7.8)
+true
+true
+(= x_19 (^ x_3 2))
+(= x_20 (/ 2 x_19))
+(= x_21 (+ x_20 3))
+true
+(= x_23 (* x_1 2))
+(= x_24 (+ 3 (* -1 x_23)))
+(= x_25 (* x_24 0.125))
+true
+true
+(= x_28 (^ x_2 2))
+true
+(= x_30 (* x_3 x_28))
+true
+(= x_32 (* x_3 x_30))
+(= x_33 (* x_32 x_25))
+true
+(= x_35 (+ 1 (* -1 x_1)))
+(= x_36 (/ x_33 x_35))
+(= x_37 (+ x_21 (* -1 x_36)))
+(= x_38 (+ x_37 -4.5))
+true
+true
+(<= x_38 -18.5257)
+dreal_result is sat
+
+Number of path checked:18
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s8
+bound:	50	lineNo:	12	check:	
+Time: 	351.977ms 
+<bench1/benchmark4.c> 
+ bench1/benchmark14.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:3
+-1.CallInst:main_
+0.CallInst:10085
+Error!!!
+1.CallInst:llvm.dbg.declare
+num:2
+-1.CallInst:main_%52
+1.CallInst:printf
+BUILDCFG Time: 	2.169ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x1, 1
+variable:main_x2, 2
+variable:main_x3, 3
+variable:main_res, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%5, 7
+variable:main_%6, 8
+variable:main_%8, 9
+variable:main_%9, 10
+variable:main_%11, 11
+variable:main_%12, 12
+variable:main_%14, 13
+variable:main_%15, 14
+variable:main_%17, 15
+variable:main_%18, 16
+variable:main_%20, 17
+variable:main_%21, 18
+variable:main_%22, 19
+variable:main_%23, 20
+variable:main_%24, 21
+variable:main_%25, 22
+variable:main_%26, 23
+variable:main_%27, 24
+variable:main_%28, 25
+variable:main_%29, 26
+variable:main_%30, 27
+variable:main_%31, 28
+variable:main_%32, 29
+variable:main_%33, 30
+variable:main_%34, 31
+variable:main_%35, 32
+variable:main_%36, 33
+variable:main_%37, 34
+variable:main_%38, 35
+variable:main_%39, 36
+variable:main_%40, 37
+variable:main_%41, 38
+variable:main_%42, 39
+variable:main_%43, 40
+variable:main_%44, 41
+variable:main_%45, 42
+variable:main_%46, 43
+variable:main_%47, 44
+variable:main_%49, 45
+variable:main_%50, 46
+variable:main_%52, 47
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%5 =  main_x1 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%8 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%11 =  main_x2 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%14 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%17 =  main_x3 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:8
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%20 =  main_x1 constraint: main_%21 = 2 * main_%20 constraint: main_%22 =  main_x2 constraint: main_%23 = main_%21 * main_%22 constraint: main_%24 =  main_x3 constraint: main_%25 = main_%23 * main_%24 constraint: main_%26 =  main_x3 constraint: main_%27 = 3 * main_%26 constraint: main_%28 =  main_x3 constraint: main_%29 = main_%27 * main_%28 constraint: main_%30 = main_%25 + main_%29 constraint: main_%31 =  main_x2 constraint: main_%32 =  main_x1 constraint: main_%33 = main_%31 * main_%32 constraint: main_%34 =  main_x2 constraint: main_%35 = main_%33 * main_%34 constraint: main_%36 =  main_x3 constraint: main_%37 = main_%35 * main_%36 constraint: main_%38 = main_%30 - main_%37 constraint: main_%39 =  main_x3 constraint: main_%40 = 3 * main_%39 constraint: main_%41 =  main_x3 constraint: main_%42 = main_%40 * main_%41 constraint: main_%43 = main_%38 + main_%42 constraint: main_%44 =  main_x2 constraint: main_%45 = main_%43 - main_%44 constraint: main_res =  main_%45 constraint: main_%46 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:10	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%49 =  main_res 
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:12
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/bench1/benchmark14.c	LineNum:15
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: -15 >  main_%2 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: -15 <=  main_%2 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%5 >  15 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%5 <=  15 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: -15 >  main_%8 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: -15 <=  main_%8 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%11 >  15 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%11 <=  15 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: -15 >  main_%14 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: -15 <=  main_%14 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%17 >  15 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%17 <=  15 
+
+Transition Name:e12 ID:23
+from:s6 to:s7
+Guard:
+constraint: -56010 <  main_%46 
+
+Transition Name:e13 ID:24
+from:s6 to:s8
+Guard:
+constraint: -56010 >=  main_%46 
+
+Transition Name:e14 ID:25
+from:s7 to:s9
+Guard:
+constraint: main_%49 <  58740 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%49 >=  58740 
+
+Transition Name:e16 ID:27
+from:s8 to:s9
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e17 ID:28
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+(not (<= -15 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(not (<= x_1 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(not (<= -15 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(not (<= x_2 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(not (<= -15 x_3))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(not (<= x_3 15))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(not (<= 58740 x_42))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;25;9;28;10;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(not (<= 58740 x_42))
+true
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;7;26;8;
+Precision is 0.001
+(= x_0 0)
+true
+(<= -15 x_1)
+true
+(<= x_1 15)
+true
+(<= -15 x_2)
+true
+(<= x_2 15)
+true
+(<= -15 x_3)
+true
+(<= x_3 15)
+true
+(= x_18 (* x_1 2))
+true
+(= x_20 (* x_2 x_18))
+true
+(= x_22 (* x_3 x_20))
+true
+(= x_24 (* x_3 3))
+true
+(= x_26 (* x_3 x_24))
+(= x_27 (+ x_26 x_22))
+true
+true
+(= x_30 (* x_1 x_2))
+true
+(= x_32 (* x_2 x_30))
+true
+(= x_34 (* x_3 x_32))
+(= x_35 (+ x_27 (* -1 x_34)))
+true
+(= x_37 (* x_3 3))
+true
+(= x_39 (* x_3 x_37))
+(= x_40 (+ x_39 x_35))
+true
+(= x_42 (+ x_40 (* -1 x_2)))
+true
+true
+(not (<= x_42 -56010))
+true
+(<= 58740 x_42)
+dreal_result is sat
+
+Number of path checked:16
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	208161ms 
+<bench1/benchmark14.c> 
+ bench1/benchmark14.c 
+Error opening 'buildCFG.so': buildCFG.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+opt: Unknown command line argument '-buildCFG'.  Try: 'opt -help'
+opt: Did you mean '-quiet'?
+opt: Unknown command line argument '-bound=50'.  Try: 'opt -help'
+opt: Did you mean '-load=50'?
+opt: Unknown command line argument '-line=12'.  Try: 'opt -help'
+opt: Did you mean '-load=12'?
+Error opening 'libz3.so': libz3.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+Error opening 'libminisat.so.2.1.0': libminisat.so.2.1.0: cannot open shared object file: No such file or directory
+  -load request ignored.
+<bench1/benchmark14.c> 
+ bench1/benchmark14.c 
+Error opening 'buildCFG.so': buildCFG.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+opt: Unknown command line argument '-buildCFG'.  Try: 'opt -help'
+opt: Did you mean '-quiet'?
+opt: Unknown command line argument '-bound=50'.  Try: 'opt -help'
+opt: Did you mean '-load=50'?
+opt: Unknown command line argument '-line=12'.  Try: 'opt -help'
+opt: Did you mean '-load=12'?
+Error opening 'libz3.so': libz3.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+Error opening 'libminisat.so.2.1.0': libminisat.so.2.1.0: cannot open shared object file: No such file or directory
+  -load request ignored.
+<bench1/benchmark14.c> 
+ bench1/benchmark15.c 
+Error opening 'buildCFG.so': buildCFG.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+opt: Unknown command line argument '-buildCFG'.  Try: 'opt -help'
+opt: Did you mean '-quiet'?
+opt: Unknown command line argument '-bound=50'.  Try: 'opt -help'
+opt: Did you mean '-load=50'?
+opt: Unknown command line argument '-line=12'.  Try: 'opt -help'
+opt: Did you mean '-load=12'?
+Error opening 'libz3.so': libz3.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+Error opening 'libminisat.so.2.1.0': libminisat.so.2.1.0: cannot open shared object file: No such file or directory
+  -load request ignored.
+<bench1/benchmark15.c> 
+ bench1/benchmark15.c 
+Error opening 'buildCFG.so': buildCFG.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+opt: Unknown command line argument '-buildCFG'.  Try: 'opt -help'
+opt: Did you mean '-quiet'?
+opt: Unknown command line argument '-bound=50'.  Try: 'opt -help'
+opt: Did you mean '-load=50'?
+opt: Unknown command line argument '-line=12'.  Try: 'opt -help'
+opt: Did you mean '-load=12'?
+Error opening 'libz3.so': libz3.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+Error opening 'libminisat.so.2.1.0': libminisat.so.2.1.0: cannot open shared object file: No such file or directory
+  -load request ignored.
+<bench1/benchmark15.c> 

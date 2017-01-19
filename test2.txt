@@ -1,0 +1,475 @@
+[runlim] version:		1.7
+[runlim] time limit:		3000 seconds
+[runlim] real time limit:	311040000 seconds
+[runlim] space limit:		2000 MB
+[runlim] argv[0]:		make
+[runlim] start:			Wed May 25 08:02:35 2016
+[runlim] main pid:		6054
+clang -c -emit-llvm -g 2.c -o 2.bc
+llvm-dis 2.bc
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="main" -name=2 -bound=50 -pre=0.01 -mode=2 -expression="" <2.bc>   2buildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckMode: 2
+Check div-0 and domain error only
+#BUILDCFG Time: 	1.943ms
+MainFunc: main
+#Num_input: 0
+#Num_var: 6
+#Loc: 11
+#Calllevel: 0
+#nonlinearOp: 0 
+	# tan : 0
+	# atan : 0
+	# atan2 : 0
+	# sin : 0
+	# asin : 0
+	# cos : 0
+	# acos : 0
+	# sqrt : 1
+	# pow : 1
+	# log : 1
+	# log10 : 0
+	# abs : 0
+	# exp : 0
+	# sinh : 0
+	# cosh : 0
+	# tanh : 0
+#targetsize:	3
+target[0]:q0(1)
+target[1]:q1(3)
+target[2]:q2(12)
+
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.01
+s0:
+e1:
+s1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->q1(3)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+q1:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2(4)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e4->s4(6)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e4:
+s4:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3(5)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5(7)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6(8)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e8->s9(11)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e8:
+s9:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e9->s7(9)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e9:
+s7:
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(1)
+at line 8 is unreachable under bound 50 when check=
+Number of path checked:6
+Dreal Time: 	9.917ms
+
+target[1]:q1(3)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.01
+s0:
+e1:
+s1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->q1(3)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+q1:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2(4)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e4->s4(6)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e4:
+s4:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3(5)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5(7)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6(8)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e8->s9(11)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e8:
+s9:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e9->s7(9)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e9:
+s7:
+dreal_result is unsat
+
+
+target[1]:from s0(0) to q1(3)
+at line 9 is unreachable under bound 50 when check=
+Number of path checked:12
+Dreal Time: 	18.714ms
+
+target[2]:q2(12)
+Path route: s0(0)
+Precision is 0.01
+s0:
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.01
+s0:
+e0:
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.01
+s0:
+e1:
+s1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->q1(3)
+Precision is 0.01
+s0:
+e1:
+s1:
+e2:
+q1:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2(4)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e4->s4(6)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e4:
+s4:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3(5)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5(7)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6(8)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e8->s9(11)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e8:
+s9:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1->e3->s2->e5->s3->e6->s5->e7->s6->e9->s7(9)
+Precision is 0.01
+s0:
+e1:
+s1:
+e3:
+s2:
+e5:
+s3:
+e6:
+s5:
+e7:
+s6:
+e9:
+s7:
+dreal_result is unsat
+
+
+target[2]:from s0(0) to q2(12)
+at line 14 is unreachable under bound 50 when check=
+Number of path checked:18
+Dreal Time: 	26.912ms
+
+bound:	50	precision:	1.000000e-02	functionName:	main	check:	
+#Dreal Time: 	0.026912s
+#CPU Time: 0.068 s
+#Memory used: 126.00 MB
+llvm-dis 2buildCFG.bc
+clang 2buildCFG.bc   -o 2_final
+/tmp/2buildCFG-3812bc.o: In function `main':
+/home/lich/Documents/test_CFG_v4/2.c:8: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/2.c:13: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/2.c:14: undefined reference to `log'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [2_final.bc] Error 1
+[runlim] end:			Wed May 25 08:02:35 2016
+[runlim] status:		ok
+[runlim] result:		2
+[runlim] children:		2
+[runlim] real:			0.96 seconds
+[runlim] time:			0.05 seconds
+[runlim] space:			61.8 MB
+[runlim] samples:		1

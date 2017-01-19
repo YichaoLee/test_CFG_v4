@@ -1,0 +1,6990 @@
+ benchmark/benchmark55.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	4.574ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_%2, 5
+variable:main_%3, 6
+variable:main_%4, 7
+variable:main_%5, 8
+variable:main_%6, 9
+variable:main_%7, 10
+variable:main_%8, 11
+variable:main_%9, 12
+variable:main_%10, 13
+variable:main_%11, 14
+variable:main_%12, 15
+variable:main_%14, 16
+variable:main_%15, 17
+variable:main_%16, 18
+variable:main_%17, 19
+variable:main_%18, 20
+variable:main_%19, 21
+variable:main_%20, 22
+variable:main_%21, 23
+variable:main_%22, 24
+variable:main_%23, 25
+variable:main_%24, 26
+variable:main_%25, 27
+variable:main_%27, 28
+variable:main_%28, 29
+variable:main_%29, 30
+variable:main_%30, 31
+variable:main_%31, 32
+variable:main_%32, 33
+variable:main_%33, 34
+variable:main_%35, 35
+variable:main_%36, 36
+variable:main_%37, 37
+variable:main_%38, 38
+variable:main_%39, 39
+variable:main_%40, 40
+variable:main_%41, 41
+variable:main_%42, 42
+variable:main_%44, 43
+variable:main_%45, 44
+variable:main_%46, 45
+variable:main_%47, 46
+variable:main_%48, 47
+variable:main_%49, 48
+variable:main_%50, 49
+variable:main_%51, 50
+variable:main_%52, 51
+variable:main_%53, 52
+variable:main_%54, 53
+variable:main_%56, 54
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 ==  tan main_%3 constraint: main_%5 == main_%2 pow main_%4 constraint: main_%6 =  main_z constraint: main_%7 = main_%5 + main_%6 constraint: main_%8 =  main_x constraint: main_%9 =  main_z constraint: main_%10 ==  atan main_%9 constraint: main_%11 = main_%8 * main_%10 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%14 =  main_y constraint: main_%15 ==  sin main_%14 constraint: main_%16 =  main_y constraint: main_%17 ==  cos main_%16 constraint: main_%18 = main_%15 + main_%17 constraint: main_%19 =  main_y constraint: main_%20 ==  tan main_%19 constraint: main_%21 = main_%18 + main_%20 constraint: main_%22 =  main_x constraint: main_%23 =  main_z constraint: main_%24 = main_%22 - main_%23 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%27 =  main_x constraint: main_%28 ==  atan main_%27 constraint: main_%29 =  main_y constraint: main_%30 ==  atan main_%29 constraint: main_%31 = main_%28 + main_%30 constraint: main_%32 =  main_y 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%35 =  main_x constraint: main_%36 =  main_y constraint: main_%37 ==  tan main_%36 constraint: main_%38 == main_%35 pow main_%37 constraint: main_%39 ==  log main_%38 constraint: main_%40 =  main_z constraint: main_%41 ==  log main_%40 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%44 =  main_y constraint: main_%45 =  main_z constraint: main_%46 = main_%44 + main_%45 constraint: main_%47 ==  sqrt main_%46 constraint: main_%48 =  main_x constraint: main_%49 =  main_x constraint: main_%50 =  main_y constraint: main_%51 = main_%49 - main_%50 constraint: main_%52 == main_%48 pow main_%51 constraint: main_%53 ==  sqrt main_%52 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:12	LineNum:13
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark55.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%7 >=  main_%11 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%7 <  main_%11 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%21 <  main_%24 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%21 >=  main_%24 
+
+Transition Name:e4 ID:11
+from:s2 to:s6
+Guard:
+constraint: main_%31 <=  main_%32 
+
+Transition Name:e5 ID:12
+from:s2 to:s3
+Guard:
+constraint: main_%31 >  main_%32 
+
+Transition Name:e6 ID:13
+from:s3 to:s6
+Guard:
+constraint: main_%39 >=  main_%41 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%39 <  main_%41 
+
+Transition Name:e8 ID:15
+from:s4 to:s6
+Guard:
+constraint: main_%47 <=  main_%53 
+
+Transition Name:e9 ID:16
+from:s4 to:s5
+Guard:
+constraint: main_%47 >  main_%53 
+
+Transition Name:e10 ID:17
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(<= x_14 x_10)
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(not (<= x_26 x_23))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(<= x_32 x_2)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(not (<= x_32 x_2))
+true
+true
+(= x_37 (tan x_2))
+(= x_38 (^ x_1 x_37))
+(= x_39 (log x_38))
+true
+(= x_41 (log x_3))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;13;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(not (<= x_32 x_2))
+true
+true
+(= x_37 (tan x_2))
+(= x_38 (^ x_1 x_37))
+(= x_39 (log x_38))
+true
+(= x_41 (log x_3))
+(<= x_41 x_39)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(not (<= x_32 x_2))
+true
+true
+(= x_37 (tan x_2))
+(= x_38 (^ x_1 x_37))
+(= x_39 (log x_38))
+true
+(= x_41 (log x_3))
+(not (<= x_41 x_39))
+true
+true
+(= x_45 (+ x_3 x_2))
+(= x_46 (^ x_45 0.5))
+true
+true
+true
+(= x_50 (+ x_1 (* -1 x_2)))
+(= x_51 (^ x_1 x_50))
+(= x_52 (^ x_51 0.5))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;14;4;15;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(not (<= x_32 x_2))
+true
+true
+(= x_37 (tan x_2))
+(= x_38 (^ x_1 x_37))
+(= x_39 (log x_38))
+true
+(= x_41 (log x_3))
+(not (<= x_41 x_39))
+true
+true
+(= x_45 (+ x_3 x_2))
+(= x_46 (^ x_45 0.5))
+true
+true
+true
+(= x_50 (+ x_1 (* -1 x_2)))
+(= x_51 (^ x_1 x_50))
+(= x_52 (^ x_51 0.5))
+(<= x_46 x_52)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;14;4;16;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_7 (tan x_2))
+(= x_8 (^ x_1 x_7))
+true
+(= x_10 (+ x_3 x_8))
+true
+true
+(= x_13 (atan x_3))
+(= x_14 (* x_13 x_1))
+(not (<= x_14 x_10))
+true
+(= x_17 (sin x_2))
+true
+(= x_19 (cos x_2))
+(= x_20 (+ x_19 x_17))
+true
+(= x_22 (tan x_2))
+(= x_23 (+ x_22 x_20))
+true
+true
+(= x_26 (+ x_1 (* -1 x_3)))
+(<= x_26 x_23)
+true
+(= x_29 (atan x_1))
+true
+(= x_31 (atan x_2))
+(= x_32 (+ x_31 x_29))
+true
+(not (<= x_32 x_2))
+true
+true
+(= x_37 (tan x_2))
+(= x_38 (^ x_1 x_37))
+(= x_39 (log x_38))
+true
+(= x_41 (log x_3))
+(not (<= x_41 x_39))
+true
+true
+(= x_45 (+ x_3 x_2))
+(= x_46 (^ x_45 0.5))
+true
+true
+true
+(= x_50 (+ x_1 (* -1 x_2)))
+(= x_51 (^ x_1 x_50))
+(= x_52 (^ x_51 0.5))
+(not (<= x_46 x_52))
+ benchmark/benchmark59.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	14.671ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%4, 8
+variable:main_%5, 9
+variable:main_%6, 10
+variable:main_%7, 11
+variable:main_%8, 12
+variable:main_%9, 13
+variable:main_%10, 14
+variable:main_%11, 15
+variable:main_%12, 16
+variable:main_%13, 17
+variable:main_%14, 18
+variable:main_%15, 19
+variable:main_%16, 20
+variable:main_%17, 21
+variable:main_%18, 22
+variable:main_%19, 23
+variable:main_%20, 24
+variable:main_%21, 25
+variable:main_%22, 26
+variable:main_%23, 27
+variable:main_%25, 28
+variable:main_%26, 29
+variable:main_%27, 30
+variable:main_%28, 31
+variable:main_%29, 32
+variable:main_%30, 33
+variable:main_%31, 34
+variable:main_%32, 35
+variable:main_%33, 36
+variable:main_%34, 37
+variable:main_%35, 38
+variable:main_%36, 39
+variable:main_%37, 40
+variable:main_%38, 41
+variable:main_%39, 42
+variable:main_%40, 43
+variable:main_%41, 44
+variable:main_%43, 45
+variable:main_%44, 46
+variable:main_%45, 47
+variable:main_%46, 48
+variable:main_%47, 49
+variable:main_%48, 50
+variable:main_%49, 51
+variable:main_%50, 52
+variable:main_%51, 53
+variable:main_%52, 54
+variable:main_%53, 55
+variable:main_%54, 56
+variable:main_%55, 57
+variable:main_%56, 58
+variable:main_%57, 59
+variable:main_%58, 60
+variable:main_%59, 61
+variable:main_%60, 62
+variable:main_%61, 63
+variable:main_%62, 64
+variable:main_%63, 65
+variable:main_%64, 66
+variable:main_%65, 67
+variable:main_%66, 68
+variable:main_%67, 69
+variable:main_%68, 70
+variable:main_%69, 71
+variable:main_%70, 72
+variable:main_%71, 73
+variable:main_%72, 74
+variable:main_%73, 75
+variable:main_%74, 76
+variable:main_%75, 77
+variable:main_%76, 78
+variable:main_%78, 79
+variable:main_%79, 80
+variable:main_%80, 81
+variable:main_%81, 82
+variable:main_%82, 83
+variable:main_%84, 84
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 * main_%3 constraint: main_%5 =  main_z constraint: main_%6 ==  atan main_%5 constraint: main_%7 =  main_w constraint: main_%8 =  main_t constraint: main_%9 = main_%7 * main_%8 constraint: main_%10 ==  sin main_%9 constraint: main_%11 = main_%6 * main_%10 constraint: main_%12 = main_%4 + main_%11 constraint: main_%13 =  main_x constraint: main_%14 =  main_y constraint: main_%15 = main_%13 / main_%14 constraint: main_%16 =  main_z constraint: main_%17 = main_%15 + main_%16 constraint: main_%18 =  main_w constraint: main_%19 =  main_t constraint: main_%20 = main_%18 + main_%19 constraint: main_%21 ==  tan main_%20 constraint: main_%22 = main_%17 + main_%21 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%25 =  main_x constraint: main_%26 ==  log10 main_%25 constraint: main_%27 =  main_y constraint: main_%28 ==  log10 main_%27 constraint: main_%29 == main_%26 pow main_%28 constraint: main_%30 =  main_z constraint: main_%31 =  main_w constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 =  main_t constraint: main_%34 = main_%32 + main_%33 constraint: main_%35 ==  log10 main_%34 constraint: main_%36 =  main_w constraint: main_%37 =  main_t constraint: main_%38 = main_%36 * main_%37 constraint: main_%39 ==  tan main_%38 constraint: main_%40 == main_%35 pow main_%39 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%43 =  main_w constraint: main_%44 =  main_x constraint: main_%45 =  main_y constraint: main_%46 = main_%44 + main_%45 constraint: main_%47 = main_%43 * main_%46 constraint: main_%48 ==  tan main_%47 constraint: main_%49 =  main_t constraint: main_%50 =  main_y constraint: main_%51 =  main_z constraint: main_%52 = main_%50 + main_%51 constraint: main_%53 = main_%49 * main_%52 constraint: main_%54 ==  sin main_%53 constraint: main_%55 = main_%48 + main_%54 constraint: main_%56 =  main_x constraint: main_%57 =  main_y constraint: main_%58 = main_%56 + main_%57 constraint: main_%59 =  main_z constraint: main_%60 = main_%58 + main_%59 constraint: main_%61 ==  asin main_%60 constraint: main_%62 =  main_x constraint: main_%63 =  main_y constraint: main_%64 = main_%62 + main_%63 constraint: main_%65 =  main_z constraint: main_%66 = main_%64 + main_%65 constraint: main_%67 ==  acos main_%66 constraint: main_%68 = main_%61 + main_%67 constraint: main_%69 =  main_x constraint: main_%70 =  main_y constraint: main_%71 = main_%69 + main_%70 constraint: main_%72 =  main_z constraint: main_%73 = main_%71 + main_%72 constraint: main_%74 ==  atan main_%73 constraint: main_%75 = main_%68 + main_%74 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%78 =  main_w constraint: main_%79 =  main_t constraint: main_%80 = main_%79 * 3 constraint: main_%81 = main_%80 / 4 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:12	LineNum:13
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark59.c	LineNum:14
+
+Transition Name:e0 ID:6
+from:s0 to:s5
+Guard:
+constraint: main_%12 <=  main_%22 
+
+Transition Name:e1 ID:7
+from:s0 to:s1
+Guard:
+constraint: main_%12 >  main_%22 
+
+Transition Name:e2 ID:8
+from:s1 to:s5
+Guard:
+constraint: main_%29 >  main_%40 
+
+Transition Name:e3 ID:9
+from:s1 to:s2
+Guard:
+constraint: main_%29 <=  main_%40 
+
+Transition Name:e4 ID:10
+from:s2 to:s5
+Guard:
+constraint: main_%55 <=  main_%75 
+
+Transition Name:e5 ID:11
+from:s2 to:s3
+Guard:
+constraint: main_%55 >  main_%75 
+
+Transition Name:e6 ID:12
+from:s3 to:s5
+Guard:
+constraint: main_%78 !=  main_%81 
+
+Transition Name:e7 ID:13
+from:s3 to:s4
+Guard:
+constraint: main_%78 ==  main_%81 
+
+Transition Name:e8 ID:14
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+dreal_result is sat
+ret	0:
+0;6;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(<= x_16 x_26)
+dreal_result is sat
+ret	0:
+0;7;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+dreal_result is sat
+ret	0:
+0;7;1;8;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(not (<= x_32 x_43))
+dreal_result is sat
+ret	0:
+0;7;1;9;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+dreal_result is sat
+ret	0:
+0;7;1;9;2;10;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(<= x_57 x_77)
+dreal_result is sat
+ret	0:
+0;7;1;9;2;11;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+dreal_result is sat
+ret	0:
+0;7;1;9;2;11;3;12;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+(not (= x_4 x_82))
+dreal_result is sat
+ret	0:
+0;7;1;9;2;11;3;13;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+(= x_4 x_82)
+ benchmark/benchmark60.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	4.097ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%4, 8
+variable:main_%5, 9
+variable:main_%6, 10
+variable:main_%7, 11
+variable:main_%8, 12
+variable:main_%9, 13
+variable:main_%10, 14
+variable:main_%11, 15
+variable:main_%12, 16
+variable:main_%13, 17
+variable:main_%14, 18
+variable:main_%15, 19
+variable:main_%16, 20
+variable:main_%17, 21
+variable:main_%18, 22
+variable:main_%19, 23
+variable:main_%20, 24
+variable:main_%21, 25
+variable:main_%22, 26
+variable:main_%23, 27
+variable:main_%25, 28
+variable:main_%26, 29
+variable:main_%27, 30
+variable:main_%28, 31
+variable:main_%29, 32
+variable:main_%30, 33
+variable:main_%31, 34
+variable:main_%32, 35
+variable:main_%33, 36
+variable:main_%34, 37
+variable:main_%35, 38
+variable:main_%36, 39
+variable:main_%37, 40
+variable:main_%38, 41
+variable:main_%39, 42
+variable:main_%40, 43
+variable:main_%41, 44
+variable:main_%43, 45
+variable:main_%44, 46
+variable:main_%45, 47
+variable:main_%46, 48
+variable:main_%47, 49
+variable:main_%48, 50
+variable:main_%49, 51
+variable:main_%50, 52
+variable:main_%51, 53
+variable:main_%52, 54
+variable:main_%53, 55
+variable:main_%54, 56
+variable:main_%55, 57
+variable:main_%56, 58
+variable:main_%57, 59
+variable:main_%58, 60
+variable:main_%59, 61
+variable:main_%60, 62
+variable:main_%61, 63
+variable:main_%62, 64
+variable:main_%63, 65
+variable:main_%64, 66
+variable:main_%65, 67
+variable:main_%66, 68
+variable:main_%67, 69
+variable:main_%68, 70
+variable:main_%69, 71
+variable:main_%70, 72
+variable:main_%71, 73
+variable:main_%72, 74
+variable:main_%73, 75
+variable:main_%74, 76
+variable:main_%75, 77
+variable:main_%76, 78
+variable:main_%78, 79
+variable:main_%79, 80
+variable:main_%80, 81
+variable:main_%81, 82
+variable:main_%82, 83
+variable:main_%84, 84
+variable:main_%85, 85
+variable:main_%86, 86
+variable:main_%87, 87
+variable:main_%88, 88
+variable:main_%89, 89
+variable:main_%90, 90
+variable:main_%92, 91
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 * main_%3 constraint: main_%5 =  main_z constraint: main_%6 ==  atan main_%5 constraint: main_%7 =  main_w constraint: main_%8 =  main_t constraint: main_%9 = main_%7 * main_%8 constraint: main_%10 ==  sin main_%9 constraint: main_%11 = main_%6 * main_%10 constraint: main_%12 = main_%4 + main_%11 constraint: main_%13 =  main_x constraint: main_%14 =  main_y constraint: main_%15 = main_%13 / main_%14 constraint: main_%16 =  main_z constraint: main_%17 = main_%15 + main_%16 constraint: main_%18 =  main_w constraint: main_%19 =  main_t constraint: main_%20 = main_%18 + main_%19 constraint: main_%21 ==  tan main_%20 constraint: main_%22 = main_%17 + main_%21 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%25 =  main_x constraint: main_%26 ==  log10 main_%25 constraint: main_%27 =  main_y constraint: main_%28 ==  log10 main_%27 constraint: main_%29 == main_%26 pow main_%28 constraint: main_%30 =  main_z constraint: main_%31 =  main_w constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 =  main_t constraint: main_%34 = main_%32 + main_%33 constraint: main_%35 ==  log10 main_%34 constraint: main_%36 =  main_w constraint: main_%37 =  main_t constraint: main_%38 = main_%36 * main_%37 constraint: main_%39 ==  tan main_%38 constraint: main_%40 == main_%35 pow main_%39 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%43 =  main_w constraint: main_%44 =  main_x constraint: main_%45 =  main_y constraint: main_%46 = main_%44 + main_%45 constraint: main_%47 = main_%43 * main_%46 constraint: main_%48 ==  tan main_%47 constraint: main_%49 =  main_t constraint: main_%50 =  main_y constraint: main_%51 =  main_z constraint: main_%52 = main_%50 + main_%51 constraint: main_%53 = main_%49 * main_%52 constraint: main_%54 ==  sin main_%53 constraint: main_%55 = main_%48 + main_%54 constraint: main_%56 =  main_x constraint: main_%57 =  main_y constraint: main_%58 = main_%56 + main_%57 constraint: main_%59 =  main_z constraint: main_%60 = main_%58 + main_%59 constraint: main_%61 ==  asin main_%60 constraint: main_%62 =  main_x constraint: main_%63 =  main_y constraint: main_%64 = main_%62 + main_%63 constraint: main_%65 =  main_z constraint: main_%66 = main_%64 + main_%65 constraint: main_%67 ==  acos main_%66 constraint: main_%68 = main_%61 + main_%67 constraint: main_%69 =  main_x constraint: main_%70 =  main_y constraint: main_%71 = main_%69 + main_%70 constraint: main_%72 =  main_z constraint: main_%73 = main_%71 + main_%72 constraint: main_%74 ==  atan main_%73 constraint: main_%75 = main_%68 + main_%74 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%78 =  main_w constraint: main_%79 =  main_t constraint: main_%80 = main_%79 * 3 constraint: main_%81 = main_%80 / 4 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%84 =  main_x constraint: main_%85 =  main_y constraint: main_%86 = 2 * main_%85 constraint: main_%87 =  main_z constraint: main_%88 = 3 * main_%87 constraint: main_%89 = main_%86 - main_%88 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:12	LineNum:13
+
+Location Name:s6 ID:6 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark60.c	LineNum:14
+
+Transition Name:e0 ID:7
+from:s0 to:s6
+Guard:
+constraint: main_%12 <=  main_%22 
+
+Transition Name:e1 ID:8
+from:s0 to:s1
+Guard:
+constraint: main_%12 >  main_%22 
+
+Transition Name:e2 ID:9
+from:s1 to:s6
+Guard:
+constraint: main_%29 >  main_%40 
+
+Transition Name:e3 ID:10
+from:s1 to:s2
+Guard:
+constraint: main_%29 <=  main_%40 
+
+Transition Name:e4 ID:11
+from:s2 to:s6
+Guard:
+constraint: main_%55 <=  main_%75 
+
+Transition Name:e5 ID:12
+from:s2 to:s3
+Guard:
+constraint: main_%55 >  main_%75 
+
+Transition Name:e6 ID:13
+from:s3 to:s6
+Guard:
+constraint: main_%78 !=  main_%81 
+
+Transition Name:e7 ID:14
+from:s3 to:s4
+Guard:
+constraint: main_%78 ==  main_%81 
+
+Transition Name:e8 ID:15
+from:s4 to:s6
+Guard:
+constraint: main_%84 >=  main_%89 
+
+Transition Name:e9 ID:16
+from:s4 to:s5
+Guard:
+constraint: main_%84 <  main_%89 
+
+Transition Name:e10 ID:17
+from:s5 to:s6
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+dreal_result is sat
+ret	0:
+0;7;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(<= x_16 x_26)
+dreal_result is sat
+ret	0:
+0;8;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+dreal_result is sat
+ret	0:
+0;8;1;9;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(not (<= x_32 x_43))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;11;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(<= x_57 x_77)
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;13;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+(not (= x_4 x_82))
+dreal_result is sat
+ret	0:
+0;8;1;10;2;12;3;14;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (* x_2 x_1))
+true
+(= x_10 (atan x_3))
+true
+true
+(= x_13 (* x_5 x_4))
+(= x_14 (sin x_13))
+(= x_15 (* x_14 x_10))
+(= x_16 (+ x_15 x_8))
+true
+true
+(= x_19 (/ x_1 x_2))
+true
+(= x_21 (+ x_3 x_19))
+true
+true
+(= x_24 (+ x_5 x_4))
+(= x_25 (tan x_24))
+(= x_26 (+ x_25 x_21))
+(not (<= x_16 x_26))
+true
+(= x_29 (/ (log x_1) (log 10)))
+true
+(= x_31 (/ (log x_2) (log 10)))
+(= x_32 (^ x_29 x_31))
+true
+true
+(= x_35 (+ x_4 x_3))
+true
+(= x_37 (+ x_5 x_35))
+(= x_38 (/ (log x_37) (log 10)))
+true
+true
+(= x_41 (* x_5 x_4))
+(= x_42 (tan x_41))
+(= x_43 (^ x_38 x_42))
+(<= x_32 x_43)
+true
+true
+true
+(= x_48 (+ x_2 x_1))
+(= x_49 (* x_48 x_4))
+(= x_50 (tan x_49))
+true
+true
+true
+(= x_54 (+ x_3 x_2))
+(= x_55 (* x_54 x_5))
+(= x_56 (sin x_55))
+(= x_57 (+ x_56 x_50))
+true
+true
+(= x_60 (+ x_2 x_1))
+true
+(= x_62 (+ x_3 x_60))
+(= x_63 (asin x_62))
+true
+true
+(= x_66 (+ x_2 x_1))
+true
+(= x_68 (+ x_3 x_66))
+(= x_69 (acos x_68))
+(= x_70 (+ x_69 x_63))
+true
+true
+(= x_73 (+ x_2 x_1))
+true
+(= x_75 (+ x_3 x_73))
+(= x_76 (atan x_75))
+(= x_77 (+ x_76 x_70))
+(not (<= x_57 x_77))
+true
+true
+(= x_81 (* 3 x_5))
+(= x_82 (/ x_81 4))
+(= x_4 x_82)
+true
+true
+(= x_86 (* x_2 2))
+true
+(= x_88 (* x_3 3))
+(= x_89 (+ x_86 (* -1 x_88)))
+ benchmark/benchmark64.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	3.767ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%4, 8
+variable:main_%5, 9
+variable:main_%6, 10
+variable:main_%7, 11
+variable:main_%8, 12
+variable:main_%9, 13
+variable:main_%10, 14
+variable:main_%12, 15
+variable:main_%13, 16
+variable:main_%14, 17
+variable:main_%15, 18
+variable:main_%16, 19
+variable:main_%17, 20
+variable:main_%19, 21
+variable:main_%20, 22
+variable:main_%21, 23
+variable:main_%22, 24
+variable:main_%23, 25
+variable:main_%24, 26
+variable:main_%25, 27
+variable:main_%26, 28
+variable:main_%27, 29
+variable:main_%28, 30
+variable:main_%29, 31
+variable:main_%31, 32
+variable:main_%32, 33
+variable:main_%33, 34
+variable:main_%34, 35
+variable:main_%35, 36
+variable:main_%36, 37
+variable:main_%37, 38
+variable:main_%38, 39
+variable:main_%39, 40
+variable:main_%40, 41
+variable:main_%41, 42
+variable:main_%42, 43
+variable:main_%44, 44
+variable:main_%45, 45
+variable:main_%46, 46
+variable:main_%47, 47
+variable:main_%48, 48
+variable:main_%49, 49
+variable:main_%50, 50
+variable:main_%52, 51
+variable:main_%53, 52
+variable:main_%54, 53
+variable:main_%55, 54
+variable:main_%56, 55
+variable:main_%58, 56
+variable:main_%59, 57
+variable:main_%60, 58
+variable:main_%61, 59
+variable:main_%62, 60
+variable:main_%63, 61
+variable:main_%64, 62
+variable:main_%66, 63
+variable:main_%67, 64
+variable:main_%68, 65
+variable:main_%69, 66
+variable:main_%70, 67
+variable:main_%71, 68
+variable:main_%72, 69
+variable:main_%73, 70
+variable:main_%74, 71
+variable:main_%75, 72
+variable:main_%76, 73
+variable:main_%78, 74
+variable:main_%79, 75
+variable:main_%80, 76
+variable:main_%81, 77
+variable:main_%82, 78
+variable:main_%83, 79
+variable:main_%84, 80
+variable:main_%85, 81
+variable:main_%86, 82
+variable:main_%87, 83
+variable:main_%88, 84
+variable:main_%90, 85
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 + main_%3 constraint: main_%5 =  main_z constraint: main_%6 =  main_w constraint: main_%7 =  main_t constraint: main_%8 = main_%6 + main_%7 constraint: main_%9 = main_%5 / main_%8 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%12 =  main_x constraint: main_%13 ==  sqrt main_%12 constraint: main_%14 =  main_z constraint: main_%15 =  main_y constraint: main_%16 = main_%14 / main_%15 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%19 =  main_x constraint: main_%20 =  main_y constraint: main_%21 = main_%19 * main_%20 constraint: main_%22 ==  log main_%21 constraint: main_%23 =  main_t constraint: main_%24 =  main_w constraint: main_%25 = main_%23 + main_%24 constraint: main_%26 =  main_z constraint: main_%27 = main_%25 + main_%26 constraint: main_%28 ==  log main_%27 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%31 =  main_z constraint: main_%32 = main_%31 * 2 constraint: main_%33 =  main_w constraint: main_%34 = main_%33 * 3 constraint: main_%35 = main_%32 + main_%34 constraint: main_%36 =  main_x constraint: main_%37 = main_%36 * 7 constraint: main_%38 = main_%35 + main_%37 constraint: main_%39 =  main_y constraint: main_%40 =  main_t constraint: main_%41 == main_%39 pow main_%40 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%44 =  main_z constraint: main_%45 =  main_w constraint: main_%46 = main_%44 + main_%45 constraint: main_%47 =  main_x constraint: main_%48 =  main_y constraint: main_%49 = main_%47 + main_%48 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%52 =  main_w constraint: main_%53 =  main_x constraint: main_%54 =  main_y constraint: main_%55 = main_%53 / main_%54 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%58 =  main_x constraint: main_%59 =  main_w constraint: main_%60 =  main_y constraint: main_%61 = main_%59 + main_%60 constraint: main_%62 =  main_z constraint: main_%63 = main_%61 - main_%62 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%66 =  main_t constraint: main_%67 =  main_x constraint: main_%68 = main_%66 * main_%67 constraint: main_%69 ==  log10 main_%68 constraint: main_%70 =  main_w constraint: main_%71 =  main_y constraint: main_%72 = main_%70 * main_%71 constraint: main_%73 =  main_z constraint: main_%74 = main_%72 * main_%73 constraint: main_%75 ==  sqrt main_%74 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+constraint: main_%78 =  main_x constraint: main_%79 =  main_t constraint: main_%80 =  main_y constraint: main_%81 = main_%79 + main_%80 constraint: main_%82 = main_%78 * main_%81 constraint: main_%83 =  main_w constraint: main_%84 =  main_z constraint: main_%85 = main_%83 * main_%84 constraint: main_%86 = main_%85 * 3 constraint: main_%87 ==  log main_%86 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:11
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:12	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark64.c	LineNum:14
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: main_%4 <=  main_%9 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: main_%4 >  main_%9 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%13 <=  main_%16 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%13 >  main_%16 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: main_%22 <=  main_%28 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: main_%22 >  main_%28 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%38 >=  main_%41 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%38 <  main_%41 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: main_%46 <=  main_%49 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: main_%46 >  main_%49 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%52 >=  main_%55 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%52 <  main_%55 
+
+Transition Name:e12 ID:23
+from:s6 to:s10
+Guard:
+constraint: main_%58 <=  main_%63 
+
+Transition Name:e13 ID:24
+from:s6 to:s7
+Guard:
+constraint: main_%58 >  main_%63 
+
+Transition Name:e14 ID:25
+from:s7 to:s10
+Guard:
+constraint: main_%69 >=  main_%75 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%69 <  main_%75 
+
+Transition Name:e16 ID:27
+from:s8 to:s10
+Guard:
+constraint: main_%82 <=  main_%87 
+
+Transition Name:e17 ID:28
+from:s8 to:s9
+Guard:
+constraint: main_%82 >  main_%87 
+
+Transition Name:e18 ID:29
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(<= x_8 x_13)
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(<= x_16 x_19)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(<= x_24 x_30)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(<= x_42 x_39)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(<= x_46 x_49)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(<= x_54 x_4)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(<= x_1 x_61)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;7;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(not (<= x_1 x_61))
+true
+true
+(= x_65 (* x_1 x_5))
+(= x_66 (/ (log x_65) (log 10)))
+true
+true
+(= x_69 (* x_2 x_4))
+true
+(= x_71 (* x_3 x_69))
+(= x_72 (^ x_71 0.5))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;7;25;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(not (<= x_1 x_61))
+true
+true
+(= x_65 (* x_1 x_5))
+(= x_66 (/ (log x_65) (log 10)))
+true
+true
+(= x_69 (* x_2 x_4))
+true
+(= x_71 (* x_3 x_69))
+(= x_72 (^ x_71 0.5))
+(<= x_72 x_66)
+ benchmark/benchmark65.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	3.99ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%4, 8
+variable:main_%5, 9
+variable:main_%6, 10
+variable:main_%7, 11
+variable:main_%8, 12
+variable:main_%9, 13
+variable:main_%10, 14
+variable:main_%12, 15
+variable:main_%13, 16
+variable:main_%14, 17
+variable:main_%15, 18
+variable:main_%16, 19
+variable:main_%17, 20
+variable:main_%19, 21
+variable:main_%20, 22
+variable:main_%21, 23
+variable:main_%22, 24
+variable:main_%23, 25
+variable:main_%24, 26
+variable:main_%25, 27
+variable:main_%26, 28
+variable:main_%27, 29
+variable:main_%28, 30
+variable:main_%29, 31
+variable:main_%31, 32
+variable:main_%32, 33
+variable:main_%33, 34
+variable:main_%34, 35
+variable:main_%35, 36
+variable:main_%36, 37
+variable:main_%37, 38
+variable:main_%38, 39
+variable:main_%39, 40
+variable:main_%40, 41
+variable:main_%41, 42
+variable:main_%42, 43
+variable:main_%44, 44
+variable:main_%45, 45
+variable:main_%46, 46
+variable:main_%47, 47
+variable:main_%48, 48
+variable:main_%49, 49
+variable:main_%50, 50
+variable:main_%52, 51
+variable:main_%53, 52
+variable:main_%54, 53
+variable:main_%55, 54
+variable:main_%56, 55
+variable:main_%58, 56
+variable:main_%59, 57
+variable:main_%60, 58
+variable:main_%61, 59
+variable:main_%62, 60
+variable:main_%63, 61
+variable:main_%64, 62
+variable:main_%66, 63
+variable:main_%67, 64
+variable:main_%68, 65
+variable:main_%69, 66
+variable:main_%70, 67
+variable:main_%71, 68
+variable:main_%72, 69
+variable:main_%73, 70
+variable:main_%74, 71
+variable:main_%75, 72
+variable:main_%76, 73
+variable:main_%78, 74
+variable:main_%79, 75
+variable:main_%80, 76
+variable:main_%81, 77
+variable:main_%82, 78
+variable:main_%83, 79
+variable:main_%84, 80
+variable:main_%85, 81
+variable:main_%86, 82
+variable:main_%87, 83
+variable:main_%88, 84
+variable:main_%89, 85
+variable:main_%91, 86
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 + main_%3 constraint: main_%5 =  main_z constraint: main_%6 =  main_w constraint: main_%7 =  main_t constraint: main_%8 = main_%6 + main_%7 constraint: main_%9 = main_%5 / main_%8 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%12 =  main_x constraint: main_%13 ==  sqrt main_%12 constraint: main_%14 =  main_z constraint: main_%15 =  main_y constraint: main_%16 = main_%14 / main_%15 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%19 =  main_x constraint: main_%20 =  main_y constraint: main_%21 = main_%19 * main_%20 constraint: main_%22 ==  log main_%21 constraint: main_%23 =  main_t constraint: main_%24 =  main_w constraint: main_%25 = main_%23 + main_%24 constraint: main_%26 =  main_z constraint: main_%27 = main_%25 + main_%26 constraint: main_%28 ==  log main_%27 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%31 =  main_z constraint: main_%32 = main_%31 * 2 constraint: main_%33 =  main_w constraint: main_%34 = main_%33 * 3 constraint: main_%35 = main_%32 + main_%34 constraint: main_%36 =  main_x constraint: main_%37 = main_%36 * 7 constraint: main_%38 = main_%35 + main_%37 constraint: main_%39 =  main_y constraint: main_%40 =  main_t constraint: main_%41 == main_%39 pow main_%40 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%44 =  main_z constraint: main_%45 =  main_w constraint: main_%46 = main_%44 + main_%45 constraint: main_%47 =  main_x constraint: main_%48 =  main_y constraint: main_%49 = main_%47 + main_%48 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%52 =  main_w constraint: main_%53 =  main_x constraint: main_%54 =  main_y constraint: main_%55 = main_%53 / main_%54 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%58 =  main_x constraint: main_%59 =  main_w constraint: main_%60 =  main_y constraint: main_%61 = main_%59 + main_%60 constraint: main_%62 =  main_z constraint: main_%63 = main_%61 - main_%62 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%66 =  main_t constraint: main_%67 =  main_x constraint: main_%68 = main_%66 * main_%67 constraint: main_%69 ==  log10 main_%68 constraint: main_%70 =  main_w constraint: main_%71 =  main_y constraint: main_%72 = main_%70 * main_%71 constraint: main_%73 =  main_z constraint: main_%74 = main_%72 * main_%73 constraint: main_%75 ==  sqrt main_%74 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+constraint: main_%78 =  main_x constraint: main_%79 =  main_t constraint: main_%80 =  main_y constraint: main_%81 = main_%79 + main_%80 constraint: main_%82 ==  cos main_%81 constraint: main_%83 = main_%78 * main_%82 constraint: main_%84 =  main_w constraint: main_%85 =  main_z constraint: main_%86 = main_%84 * main_%85 constraint: main_%87 = main_%86 * 3 constraint: main_%88 ==  log main_%87 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:11
+
+Location Name:s9 ID:9 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:12	LineNum:13
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark65.c	LineNum:14
+
+Transition Name:e0 ID:11
+from:s0 to:s10
+Guard:
+constraint: main_%4 <=  main_%9 
+
+Transition Name:e1 ID:12
+from:s0 to:s1
+Guard:
+constraint: main_%4 >  main_%9 
+
+Transition Name:e2 ID:13
+from:s1 to:s10
+Guard:
+constraint: main_%13 <=  main_%16 
+
+Transition Name:e3 ID:14
+from:s1 to:s2
+Guard:
+constraint: main_%13 >  main_%16 
+
+Transition Name:e4 ID:15
+from:s2 to:s10
+Guard:
+constraint: main_%22 <=  main_%28 
+
+Transition Name:e5 ID:16
+from:s2 to:s3
+Guard:
+constraint: main_%22 >  main_%28 
+
+Transition Name:e6 ID:17
+from:s3 to:s10
+Guard:
+constraint: main_%38 >=  main_%41 
+
+Transition Name:e7 ID:18
+from:s3 to:s4
+Guard:
+constraint: main_%38 <  main_%41 
+
+Transition Name:e8 ID:19
+from:s4 to:s10
+Guard:
+constraint: main_%46 <=  main_%49 
+
+Transition Name:e9 ID:20
+from:s4 to:s5
+Guard:
+constraint: main_%46 >  main_%49 
+
+Transition Name:e10 ID:21
+from:s5 to:s10
+Guard:
+constraint: main_%52 >=  main_%55 
+
+Transition Name:e11 ID:22
+from:s5 to:s6
+Guard:
+constraint: main_%52 <  main_%55 
+
+Transition Name:e12 ID:23
+from:s6 to:s10
+Guard:
+constraint: main_%58 <=  main_%63 
+
+Transition Name:e13 ID:24
+from:s6 to:s7
+Guard:
+constraint: main_%58 >  main_%63 
+
+Transition Name:e14 ID:25
+from:s7 to:s10
+Guard:
+constraint: main_%69 >=  main_%75 
+
+Transition Name:e15 ID:26
+from:s7 to:s8
+Guard:
+constraint: main_%69 <  main_%75 
+
+Transition Name:e16 ID:27
+from:s8 to:s10
+Guard:
+constraint: main_%83 <=  main_%88 
+
+Transition Name:e17 ID:28
+from:s8 to:s9
+Guard:
+constraint: main_%83 >  main_%88 
+
+Transition Name:e18 ID:29
+from:s9 to:s10
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+dreal_result is sat
+ret	0:
+0;11;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(<= x_8 x_13)
+dreal_result is sat
+ret	0:
+0;12;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;13;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(<= x_16 x_19)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;15;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(<= x_24 x_30)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;17;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(<= x_42 x_39)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;19;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(<= x_46 x_49)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;21;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(<= x_54 x_4)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;23;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(<= x_1 x_61)
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;7;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(not (<= x_1 x_61))
+true
+true
+(= x_65 (* x_1 x_5))
+(= x_66 (/ (log x_65) (log 10)))
+true
+true
+(= x_69 (* x_2 x_4))
+true
+(= x_71 (* x_3 x_69))
+(= x_72 (^ x_71 0.5))
+dreal_result is sat
+ret	0:
+0;12;1;14;2;16;3;18;4;20;5;22;6;24;7;25;10;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+true
+(= x_12 (+ x_5 x_4))
+(= x_13 (/ x_3 x_12))
+(not (<= x_8 x_13))
+true
+(= x_16 (^ x_1 0.5))
+true
+true
+(= x_19 (/ x_3 x_2))
+(not (<= x_16 x_19))
+true
+true
+(= x_23 (* x_2 x_1))
+(= x_24 (log x_23))
+true
+true
+(= x_27 (+ x_4 x_5))
+true
+(= x_29 (+ x_3 x_27))
+(= x_30 (log x_29))
+(not (<= x_24 x_30))
+true
+(= x_33 (* 2 x_3))
+true
+(= x_35 (* 3 x_4))
+(= x_36 (+ x_35 x_33))
+true
+(= x_38 (* 7 x_1))
+(= x_39 (+ x_38 x_36))
+true
+true
+(= x_42 (^ x_2 x_5))
+(not (<= x_42 x_39))
+true
+true
+(= x_46 (+ x_4 x_3))
+true
+true
+(= x_49 (+ x_2 x_1))
+(not (<= x_46 x_49))
+true
+true
+true
+(= x_54 (/ x_1 x_2))
+(not (<= x_54 x_4))
+true
+true
+true
+(= x_59 (+ x_2 x_4))
+true
+(= x_61 (+ x_59 (* -1 x_3)))
+(not (<= x_1 x_61))
+true
+true
+(= x_65 (* x_1 x_5))
+(= x_66 (/ (log x_65) (log 10)))
+true
+true
+(= x_69 (* x_2 x_4))
+true
+(= x_71 (* x_3 x_69))
+(= x_72 (^ x_71 0.5))
+(<= x_72 x_66)
+ benchmark/benchmark66.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	4.661ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_%2, 6
+variable:main_%3, 7
+variable:main_%4, 8
+variable:main_%5, 9
+variable:main_%6, 10
+variable:main_%7, 11
+variable:main_%8, 12
+variable:main_%9, 13
+variable:main_%10, 14
+variable:main_%11, 15
+variable:main_%12, 16
+variable:main_%14, 17
+variable:main_%15, 18
+variable:main_%16, 19
+variable:main_%17, 20
+variable:main_%18, 21
+variable:main_%19, 22
+variable:main_%21, 23
+variable:main_%22, 24
+variable:main_%23, 25
+variable:main_%24, 26
+variable:main_%25, 27
+variable:main_%26, 28
+variable:main_%27, 29
+variable:main_%28, 30
+variable:main_%29, 31
+variable:main_%30, 32
+variable:main_%31, 33
+variable:main_%33, 34
+variable:main_%34, 35
+variable:main_%35, 36
+variable:main_%36, 37
+variable:main_%37, 38
+variable:main_%38, 39
+variable:main_%39, 40
+variable:main_%40, 41
+variable:main_%41, 42
+variable:main_%42, 43
+variable:main_%43, 44
+variable:main_%44, 45
+variable:main_%46, 46
+variable:main_%47, 47
+variable:main_%48, 48
+variable:main_%49, 49
+variable:main_%50, 50
+variable:main_%51, 51
+variable:main_%52, 52
+variable:main_%54, 53
+variable:main_%55, 54
+variable:main_%56, 55
+variable:main_%57, 56
+variable:main_%58, 57
+variable:main_%60, 58
+variable:main_%61, 59
+variable:main_%62, 60
+variable:main_%63, 61
+variable:main_%64, 62
+variable:main_%65, 63
+variable:main_%66, 64
+variable:main_%68, 65
+variable:main_%69, 66
+variable:main_%70, 67
+variable:main_%71, 68
+variable:main_%72, 69
+variable:main_%73, 70
+variable:main_%74, 71
+variable:main_%75, 72
+variable:main_%76, 73
+variable:main_%77, 74
+variable:main_%78, 75
+variable:main_%80, 76
+variable:main_%81, 77
+variable:main_%82, 78
+variable:main_%83, 79
+variable:main_%84, 80
+variable:main_%85, 81
+variable:main_%86, 82
+variable:main_%87, 83
+variable:main_%88, 84
+variable:main_%89, 85
+variable:main_%90, 86
+variable:main_%91, 87
+variable:main_%93, 88
+variable:main_%94, 89
+variable:main_%95, 90
+variable:main_%96, 91
+variable:main_%97, 92
+variable:main_%99, 93
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 + main_%3 constraint: main_%5 =  main_z constraint: main_%6 =  main_t constraint: main_%7 = main_%5 + main_%6 constraint: main_%8 =  main_w constraint: main_%9 =  main_t constraint: main_%10 = main_%8 + main_%9 constraint: main_%11 = main_%7 / main_%10 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%14 =  main_x constraint: main_%15 ==  sqrt main_%14 constraint: main_%16 =  main_z constraint: main_%17 =  main_y constraint: main_%18 = main_%16 / main_%17 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%21 =  main_x constraint: main_%22 =  main_y constraint: main_%23 = main_%21 * main_%22 constraint: main_%24 ==  log main_%23 constraint: main_%25 =  main_t constraint: main_%26 =  main_w constraint: main_%27 = main_%25 + main_%26 constraint: main_%28 =  main_z constraint: main_%29 = main_%27 + main_%28 constraint: main_%30 ==  log main_%29 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%33 =  main_z constraint: main_%34 = main_%33 * 2 constraint: main_%35 =  main_w constraint: main_%36 = main_%35 * 3 constraint: main_%37 = main_%34 + main_%36 constraint: main_%38 =  main_x constraint: main_%39 = main_%38 * 7 constraint: main_%40 = main_%37 + main_%39 constraint: main_%41 =  main_y constraint: main_%42 =  main_t constraint: main_%43 == main_%41 pow main_%42 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%46 =  main_z constraint: main_%47 =  main_w constraint: main_%48 = main_%46 + main_%47 constraint: main_%49 =  main_x constraint: main_%50 =  main_y constraint: main_%51 = main_%49 + main_%50 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%54 =  main_w constraint: main_%55 =  main_x constraint: main_%56 =  main_y constraint: main_%57 = main_%55 / main_%56 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%60 =  main_x constraint: main_%61 =  main_w constraint: main_%62 =  main_y constraint: main_%63 = main_%61 + main_%62 constraint: main_%64 =  main_z constraint: main_%65 = main_%63 - main_%64 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%68 =  main_t constraint: main_%69 =  main_x constraint: main_%70 = main_%68 * main_%69 constraint: main_%71 ==  log10 main_%70 constraint: main_%72 =  main_w constraint: main_%73 =  main_y constraint: main_%74 = main_%72 * main_%73 constraint: main_%75 =  main_z constraint: main_%76 = main_%74 * main_%75 constraint: main_%77 ==  sqrt main_%76 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+constraint: main_%80 =  main_x constraint: main_%81 =  main_t constraint: main_%82 =  main_y constraint: main_%83 = main_%81 + main_%82 constraint: main_%84 ==  cos main_%83 constraint: main_%85 = main_%80 * main_%84 constraint: main_%86 =  main_w constraint: main_%87 =  main_z constraint: main_%88 = main_%86 * main_%87 constraint: main_%89 = main_%88 * 3 constraint: main_%90 ==  log main_%89 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s9 ID:9 nextS:-1
+constraint: main_%93 =  main_t constraint: main_%94 ==  cos main_%93 constraint: main_%95 =  main_y constraint: main_%96 ==  cos main_%95 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:11
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:12	LineNum:13
+
+Location Name:s11 ID:11 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark66.c	LineNum:14
+
+Transition Name:e0 ID:12
+from:s0 to:s11
+Guard:
+constraint: main_%4 <=  main_%11 
+
+Transition Name:e1 ID:13
+from:s0 to:s1
+Guard:
+constraint: main_%4 >  main_%11 
+
+Transition Name:e2 ID:14
+from:s1 to:s11
+Guard:
+constraint: main_%15 <=  main_%18 
+
+Transition Name:e3 ID:15
+from:s1 to:s2
+Guard:
+constraint: main_%15 >  main_%18 
+
+Transition Name:e4 ID:16
+from:s2 to:s11
+Guard:
+constraint: main_%24 <=  main_%30 
+
+Transition Name:e5 ID:17
+from:s2 to:s3
+Guard:
+constraint: main_%24 >  main_%30 
+
+Transition Name:e6 ID:18
+from:s3 to:s11
+Guard:
+constraint: main_%40 >=  main_%43 
+
+Transition Name:e7 ID:19
+from:s3 to:s4
+Guard:
+constraint: main_%40 <  main_%43 
+
+Transition Name:e8 ID:20
+from:s4 to:s11
+Guard:
+constraint: main_%48 <=  main_%51 
+
+Transition Name:e9 ID:21
+from:s4 to:s5
+Guard:
+constraint: main_%48 >  main_%51 
+
+Transition Name:e10 ID:22
+from:s5 to:s11
+Guard:
+constraint: main_%54 >=  main_%57 
+
+Transition Name:e11 ID:23
+from:s5 to:s6
+Guard:
+constraint: main_%54 <  main_%57 
+
+Transition Name:e12 ID:24
+from:s6 to:s11
+Guard:
+constraint: main_%60 <=  main_%65 
+
+Transition Name:e13 ID:25
+from:s6 to:s7
+Guard:
+constraint: main_%60 >  main_%65 
+
+Transition Name:e14 ID:26
+from:s7 to:s11
+Guard:
+constraint: main_%71 >=  main_%77 
+
+Transition Name:e15 ID:27
+from:s7 to:s8
+Guard:
+constraint: main_%71 <  main_%77 
+
+Transition Name:e16 ID:28
+from:s8 to:s11
+Guard:
+constraint: main_%85 <=  main_%90 
+
+Transition Name:e17 ID:29
+from:s8 to:s9
+Guard:
+constraint: main_%85 >  main_%90 
+
+Transition Name:e18 ID:30
+from:s9 to:s11
+Guard:
+constraint: main_%94 <=  main_%96 
+
+Transition Name:e19 ID:31
+from:s9 to:s10
+Guard:
+constraint: main_%94 >  main_%96 
+
+Transition Name:e20 ID:32
+from:s10 to:s11
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+dreal_result is sat
+ret	0:
+0;12;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(<= x_8 x_15)
+dreal_result is sat
+ret	0:
+0;13;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+dreal_result is sat
+ret	0:
+0;13;1;14;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(<= x_18 x_21)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;16;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(<= x_26 x_32)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;18;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(<= x_44 x_41)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;20;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(<= x_48 x_51)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;22;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+(<= x_56 x_4)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+(not (<= x_56 x_4))
+true
+true
+true
+(= x_61 (+ x_2 x_4))
+true
+(= x_63 (+ x_61 (* -1 x_3)))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;24;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+(not (<= x_56 x_4))
+true
+true
+true
+(= x_61 (+ x_2 x_4))
+true
+(= x_63 (+ x_61 (* -1 x_3)))
+(<= x_1 x_63)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+(not (<= x_56 x_4))
+true
+true
+true
+(= x_61 (+ x_2 x_4))
+true
+(= x_63 (+ x_61 (* -1 x_3)))
+(not (<= x_1 x_63))
+true
+true
+(= x_67 (* x_1 x_5))
+(= x_68 (/ (log x_67) (log 10)))
+true
+true
+(= x_71 (* x_2 x_4))
+true
+(= x_73 (* x_3 x_71))
+(= x_74 (^ x_73 0.5))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;26;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_8 (+ x_2 x_1))
+true
+true
+(= x_11 (+ x_5 x_3))
+true
+true
+(= x_14 (+ x_5 x_4))
+(= x_15 (/ x_11 x_14))
+(not (<= x_8 x_15))
+true
+(= x_18 (^ x_1 0.5))
+true
+true
+(= x_21 (/ x_3 x_2))
+(not (<= x_18 x_21))
+true
+true
+(= x_25 (* x_2 x_1))
+(= x_26 (log x_25))
+true
+true
+(= x_29 (+ x_4 x_5))
+true
+(= x_31 (+ x_3 x_29))
+(= x_32 (log x_31))
+(not (<= x_26 x_32))
+true
+(= x_35 (* 2 x_3))
+true
+(= x_37 (* 3 x_4))
+(= x_38 (+ x_37 x_35))
+true
+(= x_40 (* 7 x_1))
+(= x_41 (+ x_40 x_38))
+true
+true
+(= x_44 (^ x_2 x_5))
+(not (<= x_44 x_41))
+true
+true
+(= x_48 (+ x_4 x_3))
+true
+true
+(= x_51 (+ x_2 x_1))
+(not (<= x_48 x_51))
+true
+true
+true
+(= x_56 (/ x_1 x_2))
+(not (<= x_56 x_4))
+true
+true
+true
+(= x_61 (+ x_2 x_4))
+true
+(= x_63 (+ x_61 (* -1 x_3)))
+(not (<= x_1 x_63))
+true
+true
+(= x_67 (* x_1 x_5))
+(= x_68 (/ (log x_67) (log 10)))
+true
+true
+(= x_71 (* x_2 x_4))
+true
+(= x_73 (* x_3 x_71))
+(= x_74 (^ x_73 0.5))
+(<= x_74 x_68)
+ benchmark/benchmark67.c 
+START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BUILDCFG Time: 	5.342ms*******************CFG Information*********************
+CFG:
+variable:main_%1, 0
+variable:main_x, 1
+variable:main_y, 2
+variable:main_z, 3
+variable:main_w, 4
+variable:main_t, 5
+variable:main_v, 6
+variable:main_%2, 7
+variable:main_%3, 8
+variable:main_%4, 9
+variable:main_%5, 10
+variable:main_%6, 11
+variable:main_%7, 12
+variable:main_%8, 13
+variable:main_%9, 14
+variable:main_%10, 15
+variable:main_%11, 16
+variable:main_%12, 17
+variable:main_%13, 18
+variable:main_%14, 19
+variable:main_%15, 20
+variable:main_%17, 21
+variable:main_%18, 22
+variable:main_%19, 23
+variable:main_%20, 24
+variable:main_%21, 25
+variable:main_%22, 26
+variable:main_%23, 27
+variable:main_%24, 28
+variable:main_%26, 29
+variable:main_%27, 30
+variable:main_%28, 31
+variable:main_%29, 32
+variable:main_%30, 33
+variable:main_%31, 34
+variable:main_%32, 35
+variable:main_%33, 36
+variable:main_%34, 37
+variable:main_%35, 38
+variable:main_%36, 39
+variable:main_%38, 40
+variable:main_%39, 41
+variable:main_%40, 42
+variable:main_%41, 43
+variable:main_%42, 44
+variable:main_%43, 45
+variable:main_%44, 46
+variable:main_%45, 47
+variable:main_%46, 48
+variable:main_%47, 49
+variable:main_%48, 50
+variable:main_%49, 51
+variable:main_%50, 52
+variable:main_%51, 53
+variable:main_%52, 54
+variable:main_%54, 55
+variable:main_%55, 56
+variable:main_%56, 57
+variable:main_%57, 58
+variable:main_%58, 59
+variable:main_%59, 60
+variable:main_%60, 61
+variable:main_%62, 62
+variable:main_%63, 63
+variable:main_%64, 64
+variable:main_%65, 65
+variable:main_%66, 66
+variable:main_%68, 67
+variable:main_%69, 68
+variable:main_%70, 69
+variable:main_%71, 70
+variable:main_%72, 71
+variable:main_%73, 72
+variable:main_%74, 73
+variable:main_%76, 74
+variable:main_%77, 75
+variable:main_%78, 76
+variable:main_%79, 77
+variable:main_%80, 78
+variable:main_%81, 79
+variable:main_%82, 80
+variable:main_%83, 81
+variable:main_%84, 82
+variable:main_%85, 83
+variable:main_%86, 84
+variable:main_%88, 85
+variable:main_%89, 86
+variable:main_%90, 87
+variable:main_%91, 88
+variable:main_%92, 89
+variable:main_%93, 90
+variable:main_%94, 91
+variable:main_%95, 92
+variable:main_%96, 93
+variable:main_%97, 94
+variable:main_%98, 95
+variable:main_%99, 96
+variable:main_%101, 97
+variable:main_%102, 98
+variable:main_%103, 99
+variable:main_%104, 100
+variable:main_%105, 101
+variable:main_%106, 102
+variable:main_%107, 103
+variable:main_%108, 104
+variable:main_%110, 105
+Location Name:s0 ID:0 nextS:-1
+
+Initial location
+constraint: main_%1 =  0 constraint: main_%2 =  main_x constraint: main_%3 =  main_y constraint: main_%4 = main_%2 - main_%3 constraint: main_%5 =  main_v constraint: main_%6 ==  tan main_%5 constraint: main_%7 = main_%4 + main_%6 constraint: main_%8 =  main_z constraint: main_%9 =  main_t constraint: main_%10 = main_%8 + main_%9 constraint: main_%11 =  main_w constraint: main_%12 =  main_t constraint: main_%13 = main_%11 + main_%12 constraint: main_%14 = main_%10 / main_%13 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:5	LineNum:6	LineNum:7	LineNum:8	LineNum:9	LineNum:10	LineNum:11
+
+Location Name:s1 ID:1 nextS:-1
+constraint: main_%17 =  main_x constraint: main_%18 =  main_t constraint: main_%19 = main_%17 - main_%18 constraint: main_%20 ==  sqrt main_%19 constraint: main_%21 =  main_z constraint: main_%22 =  main_y constraint: main_%23 = main_%21 / main_%22 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s2 ID:2 nextS:-1
+constraint: main_%26 =  main_x constraint: main_%27 =  main_y constraint: main_%28 = main_%26 * main_%27 constraint: main_%29 ==  log main_%28 constraint: main_%30 =  main_t constraint: main_%31 =  main_w constraint: main_%32 = main_%30 + main_%31 constraint: main_%33 =  main_z constraint: main_%34 = main_%32 + main_%33 constraint: main_%35 ==  log main_%34 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s3 ID:3 nextS:-1
+constraint: main_%38 =  main_z constraint: main_%39 = main_%38 * 2 constraint: main_%40 =  main_w constraint: main_%41 = main_%40 * 3 constraint: main_%42 = main_%39 + main_%41 constraint: main_%43 =  main_x constraint: main_%44 = main_%43 * 7 constraint: main_%45 = main_%42 + main_%44 constraint: main_%46 =  main_y constraint: main_%47 =  main_t constraint: main_%48 == main_%46 pow main_%47 constraint: main_%49 =  main_v constraint: main_%50 ==  cos main_%49 constraint: main_%51 = main_%48 * main_%50 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s4 ID:4 nextS:-1
+constraint: main_%54 =  main_z constraint: main_%55 =  main_w constraint: main_%56 = main_%54 + main_%55 constraint: main_%57 =  main_x constraint: main_%58 =  main_y constraint: main_%59 = main_%57 + main_%58 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s5 ID:5 nextS:-1
+constraint: main_%62 =  main_w constraint: main_%63 =  main_x constraint: main_%64 =  main_y constraint: main_%65 = main_%63 / main_%64 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s6 ID:6 nextS:-1
+constraint: main_%68 =  main_x constraint: main_%69 =  main_w constraint: main_%70 =  main_y constraint: main_%71 = main_%69 + main_%70 constraint: main_%72 =  main_z constraint: main_%73 = main_%71 - main_%72 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s7 ID:7 nextS:-1
+constraint: main_%76 =  main_t constraint: main_%77 =  main_x constraint: main_%78 = main_%76 * main_%77 constraint: main_%79 ==  log10 main_%78 constraint: main_%80 =  main_w constraint: main_%81 =  main_y constraint: main_%82 = main_%80 * main_%81 constraint: main_%83 =  main_z constraint: main_%84 = main_%82 * main_%83 constraint: main_%85 ==  sqrt main_%84 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s8 ID:8 nextS:-1
+constraint: main_%88 =  main_x constraint: main_%89 =  main_t constraint: main_%90 =  main_y constraint: main_%91 = main_%89 + main_%90 constraint: main_%92 ==  cos main_%91 constraint: main_%93 = main_%88 * main_%92 constraint: main_%94 =  main_w constraint: main_%95 =  main_z constraint: main_%96 = main_%94 * main_%95 constraint: main_%97 = main_%96 * 3 constraint: main_%98 ==  log main_%97 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s9 ID:9 nextS:-1
+constraint: main_%101 =  main_t constraint: main_%102 ==  cos main_%101 constraint: main_%103 =  main_v constraint: main_%104 ==  sin main_%103 constraint: main_%105 = main_%102 * main_%104 constraint: main_%106 =  main_y constraint: main_%107 ==  cos main_%106 
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:11
+
+Location Name:s10 ID:10 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:12	LineNum:13
+
+Location Name:s11 ID:11 nextS:-1
+null
+/home/cfg/Documents/test_CFG_v3/benchmark/benchmark67.c	LineNum:14
+
+Transition Name:e0 ID:12
+from:s0 to:s11
+Guard:
+constraint: main_%7 <=  main_%14 
+
+Transition Name:e1 ID:13
+from:s0 to:s1
+Guard:
+constraint: main_%7 >  main_%14 
+
+Transition Name:e2 ID:14
+from:s1 to:s11
+Guard:
+constraint: main_%20 <=  main_%23 
+
+Transition Name:e3 ID:15
+from:s1 to:s2
+Guard:
+constraint: main_%20 >  main_%23 
+
+Transition Name:e4 ID:16
+from:s2 to:s11
+Guard:
+constraint: main_%29 <=  main_%35 
+
+Transition Name:e5 ID:17
+from:s2 to:s3
+Guard:
+constraint: main_%29 >  main_%35 
+
+Transition Name:e6 ID:18
+from:s3 to:s11
+Guard:
+constraint: main_%45 >=  main_%51 
+
+Transition Name:e7 ID:19
+from:s3 to:s4
+Guard:
+constraint: main_%45 <  main_%51 
+
+Transition Name:e8 ID:20
+from:s4 to:s11
+Guard:
+constraint: main_%56 <=  main_%59 
+
+Transition Name:e9 ID:21
+from:s4 to:s5
+Guard:
+constraint: main_%56 >  main_%59 
+
+Transition Name:e10 ID:22
+from:s5 to:s11
+Guard:
+constraint: main_%62 >=  main_%65 
+
+Transition Name:e11 ID:23
+from:s5 to:s6
+Guard:
+constraint: main_%62 <  main_%65 
+
+Transition Name:e12 ID:24
+from:s6 to:s11
+Guard:
+constraint: main_%68 <=  main_%73 
+
+Transition Name:e13 ID:25
+from:s6 to:s7
+Guard:
+constraint: main_%68 >  main_%73 
+
+Transition Name:e14 ID:26
+from:s7 to:s11
+Guard:
+constraint: main_%79 >=  main_%85 
+
+Transition Name:e15 ID:27
+from:s7 to:s8
+Guard:
+constraint: main_%79 <  main_%85 
+
+Transition Name:e16 ID:28
+from:s8 to:s11
+Guard:
+constraint: main_%93 <=  main_%98 
+
+Transition Name:e17 ID:29
+from:s8 to:s9
+Guard:
+constraint: main_%93 >  main_%98 
+
+Transition Name:e18 ID:30
+from:s9 to:s11
+Guard:
+constraint: main_%105 <=  main_%107 
+
+Transition Name:e19 ID:31
+from:s9 to:s10
+Guard:
+constraint: main_%105 >  main_%107 
+
+Transition Name:e20 ID:32
+from:s10 to:s11
+Guard:
+constraint: 1 ==  1 
+
+ret	0:
+0;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+dreal_result is sat
+ret	0:
+0;12;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(<= x_12 x_19)
+dreal_result is sat
+ret	0:
+0;13;1;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+dreal_result is sat
+ret	0:
+0;13;1;14;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(<= x_24 x_27)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;16;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(<= x_32 x_38)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;18;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(<= x_53 x_47)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;20;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(<= x_57 x_60)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;22;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(<= x_65 x_4)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;24;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+(<= x_1 x_72)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+(not (<= x_1 x_72))
+true
+true
+(= x_76 (* x_1 x_5))
+(= x_77 (/ (log x_76) (log 10)))
+true
+true
+(= x_80 (* x_2 x_4))
+true
+(= x_82 (* x_3 x_80))
+(= x_83 (^ x_82 0.5))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;26;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+(not (<= x_1 x_72))
+true
+true
+(= x_76 (* x_1 x_5))
+(= x_77 (/ (log x_76) (log 10)))
+true
+true
+(= x_80 (* x_2 x_4))
+true
+(= x_82 (* x_3 x_80))
+(= x_83 (^ x_82 0.5))
+(<= x_83 x_77)
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;27;8;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+(not (<= x_1 x_72))
+true
+true
+(= x_76 (* x_1 x_5))
+(= x_77 (/ (log x_76) (log 10)))
+true
+true
+(= x_80 (* x_2 x_4))
+true
+(= x_82 (* x_3 x_80))
+(= x_83 (^ x_82 0.5))
+(not (<= x_83 x_77))
+true
+true
+true
+(= x_88 (+ x_2 x_5))
+(= x_89 (cos x_88))
+(= x_90 (* x_89 x_1))
+true
+true
+(= x_93 (* x_3 x_4))
+(= x_94 (* 3 x_93))
+(= x_95 (log x_94))
+dreal_result is sat
+ret	0:
+0;13;1;15;2;17;3;19;4;21;5;23;6;25;7;27;8;28;11;
+Precision is 0.001
+(= x_0 0)
+true
+true
+(= x_9 (+ x_1 (* -1 x_2)))
+true
+(= x_11 (tan x_6))
+(= x_12 (+ x_11 x_9))
+true
+true
+(= x_15 (+ x_5 x_3))
+true
+true
+(= x_18 (+ x_5 x_4))
+(= x_19 (/ x_15 x_18))
+(not (<= x_12 x_19))
+true
+true
+(= x_23 (+ x_1 (* -1 x_5)))
+(= x_24 (^ x_23 0.5))
+true
+true
+(= x_27 (/ x_3 x_2))
+(not (<= x_24 x_27))
+true
+true
+(= x_31 (* x_2 x_1))
+(= x_32 (log x_31))
+true
+true
+(= x_35 (+ x_4 x_5))
+true
+(= x_37 (+ x_3 x_35))
+(= x_38 (log x_37))
+(not (<= x_32 x_38))
+true
+(= x_41 (* 2 x_3))
+true
+(= x_43 (* 3 x_4))
+(= x_44 (+ x_43 x_41))
+true
+(= x_46 (* 7 x_1))
+(= x_47 (+ x_46 x_44))
+true
+true
+(= x_50 (^ x_2 x_5))
+true
+(= x_52 (cos x_6))
+(= x_53 (* x_52 x_50))
+(not (<= x_53 x_47))
+true
+true
+(= x_57 (+ x_4 x_3))
+true
+true
+(= x_60 (+ x_2 x_1))
+(not (<= x_57 x_60))
+true
+true
+true
+(= x_65 (/ x_1 x_2))
+(not (<= x_65 x_4))
+true
+true
+true
+(= x_70 (+ x_2 x_4))
+true
+(= x_72 (+ x_70 (* -1 x_3)))
+(not (<= x_1 x_72))
+true
+true
+(= x_76 (* x_1 x_5))
+(= x_77 (/ (log x_76) (log 10)))
+true
+true
+(= x_80 (* x_2 x_4))
+true
+(= x_82 (* x_3 x_80))
+(= x_83 (^ x_82 0.5))
+(not (<= x_83 x_77))
+true
+true
+true
+(= x_88 (+ x_2 x_5))
+(= x_89 (cos x_88))
+(= x_90 (* x_89 x_1))
+true
+true
+(= x_93 (* x_3 x_4))
+(= x_94 (* 3 x_93))
+(= x_95 (log x_94))
+(<= x_90 x_95)
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13^s14^s15^s16^s17^s18^s19^s20^s21^s22^s23
+bound:	50	lineNo:	12	check:	
+Time: 	18645.4ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11
+bound:	50	lineNo:	12	check:	
+Time: 	1448.15ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6
+bound:	50	lineNo:	12	check:	
+Time: 	243.542ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9
+bound:	50	lineNo:	12	check:	
+Time: 	705.21ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7
+bound:	50	lineNo:	12	check:	
+Time: 	324.762ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	503.363ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	19.621ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9
+bound:	50	lineNo:	12	check:	
+Time: 	23.946ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3
+bound:	50	lineNo:	12	check:	
+Time: 	44150.5ms 
+
+line 12 is reachable
+Witness:s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	41.963ms 
+
+line 12 is reachable
+Witness:s0^s1
+bound:	50	lineNo:	12	check:	
+Time: 	3.981ms 
+
+line 12 is reachable
+Witness:s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	16.134ms 
+
+line 12 is reachable
+Witness:s0^s1
+bound:	50	lineNo:	12	check:	
+Time: 	6.604ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6
+bound:	50	lineNo:	12	check:	
+Time: 	940.565ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	2.058ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	2.662ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	295.749ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	23280.2ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4
+bound:	50	lineNo:	12	check:	
+Time: 	82.688ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	87.09ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	205.757ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5^s6^s7
+bound:	50	lineNo:	12	check:	
+Time: 	23.774ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	205060ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5
+bound:	50	lineNo:	12	check:	
+Time: 	84.344ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	18.868ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	24.423ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	277.208ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	92.164ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	10.028ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	90.71ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	23.453ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	102.877ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	44.436ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	277.676ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s8
+bound:	50	lineNo:	12	check:	
+Time: 	351.441ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	1827.02ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	188.555ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	25.76ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	32.397ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13^s14
+bound:	50	lineNo:	12	check:	
+Time: 	525.943ms 
+
+line 12 is reachable
+Witness:s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	17.333ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	1.966ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	2.95ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	6.169ms 
+
+line 12 is reachable
+Witness:s4^s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	10.831ms 
+
+line 12 is reachable
+Witness:s4^s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	12.752ms 
+
+line 12 is reachable
+Witness:s4^s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	14.01ms 
+
+line 12 is reachable
+Witness:s4^s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	10.987ms 
+
+line 25 is reachable
+Witness:s5^s0^s3^s6^s7^s0^s3^s8
+bound:	50	lineNo:	25	check:	
+Time: 	1592.79ms 
+
+bound:	50	lineNo:	25	check:	
+Time: 	22287.7ms 
+
+bound:	50	lineNo:	25	check:	
+Time: 	21619.4ms 
+
+line 25 is reachable
+Witness:s5^s0^s3^s6^s7^s0^s3^s8
+bound:	50	lineNo:	25	check:	
+Time: 	1683.54ms 
+
+bound:	5	lineNo:	25	check:	
+Time: 	189.837ms 
+
+bound:	5	lineNo:	25	check:	
+Time: 	205.449ms 
+
+bound:	5	lineNo:	25	check:	
+Time: 	188.039ms 
+
+line 25 is reachable
+Witness:s5^s0^s3^s6^s4^s7^s8^s0^s3^s9
+bound:	15	lineNo:	25	check:	
+Time: 	1701.9ms 
+
+line 25 is reachable
+Witness:s5^s0^s3^s6^s4^s7^s8^s0^s3^s9
+bound:	15	lineNo:	25	check:	
+Time: 	890.568ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	281.848ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	293.127ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	23764.3ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4
+bound:	50	lineNo:	12	check:	
+Time: 	60.07ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4
+bound:	50	lineNo:	12	check:	
+Time: 	87.44ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	206.144ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5^s6^s7
+bound:	50	lineNo:	12	check:	
+Time: 	24.01ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s4^s5
+bound:	50	lineNo:	12	check:	
+Time: 	84.649ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	19.252ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	208347ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	23.336ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	279.127ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	91.96ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	9.939ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	93.119ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s5
+bound:	50	lineNo:	12	check:	
+Time: 	23.896ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	103.041ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	44.522ms 
+
+bound:	50	lineNo:	12	check:	
+Time: 	276.121ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s8
+bound:	50	lineNo:	12	check:	
+Time: 	351.977ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8
+bound:	50	lineNo:	12	check:	
+Time: 	208161ms 
+
+line 12 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11
+bound:	100	lineNo:	12	check:	
+Time: 	551808ms 
+
+line 12 is reachable
+Witness:s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	15.086ms 
+
+line 12 is reachable
+Witness:s4^s0^s1^s2
+bound:	50	lineNo:	12	check:	
+Time: 	6.153ms 
+
+line 12 is reachable
+Witness:s13^s1^s2^s3^s4^s0
+bound:	50	lineNo:	12	check:	
+Time: 	16.376ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7^s8^s10^s11^s12^s13
+bound:	50	lineNo:	31	check:	
+Time: 	1972.78ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s10^s11^s12^s13
+bound:	50	lineNo:	31	check:	
+Time: 	600.466ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s10^s11^s12^s13
+bound:	50	lineNo:	31	check:	
+Time: 	759.503ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13
+bound:	50	lineNo:	31	check:	
+Time: 	51138.3ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13
+bound:	50	lineNo:	31	check:	
+Time: 	49725.5ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13
+bound:	20	lineNo:	31	check:	
+Time: 	4489.38ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s9^s10^s11^s12^s13
+bound:	20	lineNo:	31	check:	
+Time: 	4464.92ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s10^s11^s12^s13
+bound:	20	lineNo:	31	check:	
+Time: 	764.707ms 
+
+bound:	10	lineNo:	31	check:	
+Time: 	160.158ms 
+
+bound:	5	lineNo:	31	check:	
+Time: 	18.249ms 
+
+bound:	5	lineNo:	31	check:	
+Time: 	13.982ms 
+
+bound:	5	lineNo:	31	check:	
+Time: 	18.525ms 
+
+bound:	5	lineNo:	31	check:	
+Time: 	19.356ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s5^s6^s7^s8^s10^s11^s12^s7^s8^s10^s11^s12^s13
+bound:	20	lineNo:	31	check:	
+Time: 	35.802ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s4^s1^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	47.679ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s4^s1^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	42.466ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s4^s1^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	47.811ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	229.49ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	231.315ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	237.778ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	237.799ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	225.042ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	230.311ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	236.5ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	230.414ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	227.307ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	247.301ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	242.626ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	236.05ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	254.482ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	234ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	271.344ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	238.405ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	249.832ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	50	lineNo:	31	check:	
+Time: 	247.747ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	228.831ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	230.511ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	237.683ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	224.291ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	221.528ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	236.94ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	245.793ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	15.368ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	19.75ms 
+
+bound:	20	lineNo:	31	check:	
+Time: 	7.332ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	27.022ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	26.096ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	17.225ms 
+
+line 31 is reachable
+Witness:s0^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	17.733ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	34.509ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	30.771ms 
+
+line 31 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	31	check:	
+Time: 	32.256ms 
+
+line 37 is reachable
+Witness:s0^s1^s2^s3^s4^s1^s3^s5
+bound:	20	lineNo:	37	check:	
+Time: 	28.583ms 
+
+bound:	100	lineNo:	37	check:	
+Time: 	3578.43ms 
+
+bound:	100	lineNo:	37	check:	
+Time: 	3625.23ms 
+
+bound:	20	lineNo:	37	check:	
+Time: 	206.848ms 
+
+bound:	20	lineNo:	38	check:	
+Time: 	12.058ms 
+
+line 37 is reachable
+Witness:s0^s1^s2
+bound:	100	lineNo:	37	check:	
+Time: 	21.409ms 
+
+bound:	20	lineNo:	38	check:	
+Time: 	11.651ms 
+
+bound:	50	lineNo:	38	check:	
+Time: 	685.041ms 
+
+bound:	100	lineNo:	38	check:	
+Time: 	3553.03ms 
+
+bound:	100	lineNo:	38	check:	
+Time: 	3656.95ms 
+
+bound:	50	lineNo:	38	check:	
+Time: 	711.073ms 
+
+bound:	100	lineNo:	37	check:	
+Time: 	3655.53ms 
+
+line 37 is reachable
+Witness:s0^s1^s3
+bound:	100	lineNo:	37	check:	
+Time: 	18.332ms 
+
+line 37 is reachable
+Witness:s0^s1^s3
+bound:	100	lineNo:	37	check:	
+Time: 	15.944ms 
+
+line 37 is reachable
+Witness:s0^s1^s3
+bound:	100	lineNo:	37	check:	
+Time: 	15.955ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	22.086ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	21.343ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	22.499ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	22.555ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	23.852ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	26.407ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	16.671ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	21.792ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	30.772ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	10.259ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	21.165ms 
+
+bound:	100	lineNo:	38	check:	
+Time: 	13.673ms 
+
+bound:	100	lineNo:	38	check:	
+Time: 	14.353ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	14.499ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	13.744ms 
+
+bound:	100	lineNo:	38	check:	
+Time: 	12.819ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	13.548ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	17.083ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	14.168ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	19.164ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	18.065ms 
+
+line 33 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	33	check:	
+Time: 	18.972ms 
+
+bound:	100	lineNo:	33	check:	
+Time: 	7.776ms 
+
+line 33 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	33	check:	
+Time: 	20.349ms 
+
+bound:	100	lineNo:	33	check:	
+Time: 	20.975ms 
+
+line 33 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	33	check:	
+Time: 	20.193ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	11.05ms 
+
+line 38 is reachable
+Witness:s0^s1
+bound:	100	lineNo:	38	check:	
+Time: 	12.707ms 
+
+line 39 is reachable
+Witness:s0^s1^s2
+bound:	100	lineNo:	39	check:	
+Time: 	11.248ms 
+
+line 39 is reachable
+Witness:s0^s1^s3^s4^s5^s6
+bound:	100	lineNo:	39	check:	
+Time: 	25.768ms 
+
+bound:	100	lineNo:	41	check:	
+Time: 	29.202ms 
+
+bound:	100	lineNo:	41	check:	
+Time: 	34.86ms 
+
+bound:	100	lineNo:	41	check:	
+Time: 	34.479ms 
+
+line 39 is reachable
+Witness:s0^s1^s3^s5^s6^s7^s8^s9
+bound:	100	lineNo:	39	check:	
+Time: 	25.542ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	23.53ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	29.162ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	30.306ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	26.613ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	20.899ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	29.501ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	50	lineNo:	38	check:	
+Time: 	21.913ms 
+
+line 40 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s8
+bound:	50	lineNo:	40	check:	
+Time: 	11.743ms 
+
+bound:	50	lineNo:	40	check:	
+Time: 	35.328ms 
+
+line 40 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s8
+bound:	50	lineNo:	40	check:	
+Time: 	10.816ms 
+
+line 40 is reachable
+Witness:s0^s1^s3
+bound:	50	lineNo:	40	check:	
+Time: 	6.524ms 
+
+line 40 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s8
+bound:	50	lineNo:	40	check:	
+Time: 	9.997ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	50	lineNo:	38	check:	
+Time: 	16.608ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	20.277ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	25.902ms 
+
+line 38 is reachable
+Witness:s0^s1^s3^s4^s5^s6^s7
+bound:	100	lineNo:	38	check:	
+Time: 	27.426ms 
+
+line 40 is reachable
+Witness:s0^s1^s3
+bound:	50	lineNo:	40	check:	
+Time: 	5.089ms 
+
+line 40 is reachable
+Witness:s0^s1^s3
+bound:	50	lineNo:	40	check:	
+Time: 	11.332ms 
+
+line 38 is reachable
+Witness:s0^s1^s2
+bound:	100	lineNo:	38	check:	
+Time: 	11.694ms 
+
+line 38 is reachable
+Witness:s0^s1^s2
+bound:	100	lineNo:	38	check:	
+Time: 	19.637ms 
+
+line 38 is reachable
+Witness:s0^s1^s2
+
+bound:	100	lineNo:	38	check:	
+Time: 	18.303ms 
+
+line 38 is reachable
+Witness:s0^s1^s2
+line 38 is reachable
+Witness:s0^s1^s2

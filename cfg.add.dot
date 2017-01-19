@@ -1,0 +1,10 @@
+digraph "CFG for 'add' function" {
+	label="CFG for 'add' function";
+
+	Node0x33a5db0 [shape=record,label="{%0:\l  %1 = alloca i32, align 4\l  %z = alloca i32, align 4\l  store i32 %x, i32* %1, align 4\l  call void @llvm.dbg.declare(metadata !\{i32* %1\}, metadata !18), !dbg !19\l  call void @llvm.dbg.declare(metadata !\{i32* %z\}, metadata !20), !dbg !21\l  %2 = load i32* %1, align 4, !dbg !21\l  store i32 %2, i32* %z, align 4, !dbg !21\l  %3 = load i32* %z, align 4, !dbg !22\l  %4 = icmp slt i32 %3, 0, !dbg !22\l  br i1 %4, label %5, label %8, !dbg !22\l|{<s0>T|<s1>F}}"];
+	Node0x33a5db0:s0 -> Node0x33a5e10;
+	Node0x33a5db0:s1 -> Node0x33a5e70;
+	Node0x33a5e10 [shape=record,label="{%5:\l\l  %6 = load i32* %z, align 4, !dbg !24\l  %7 = add nsw i32 %6, 1, !dbg !24\l  store i32 %7, i32* %z, align 4, !dbg !24\l  br label %8, !dbg !24\l}"];
+	Node0x33a5e10 -> Node0x33a5e70;
+	Node0x33a5e70 [shape=record,label="{%8:\l\l  %9 = load i32* %z, align 4, !dbg !25\l  %10 = add nsw i32 %9, 1, !dbg !25\l  ret i32 %10, !dbg !25\l}"];
+}

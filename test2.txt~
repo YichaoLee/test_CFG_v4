@@ -1,0 +1,872 @@
+[runlim] version:		1.7
+[runlim] time limit:		300 seconds
+[runlim] real time limit:	311040000 seconds
+[runlim] space limit:		3893 MB
+[runlim] argv[0]:		make
+[runlim] start:			Mon May 23 19:23:33 2016
+[runlim] main pid:		16714
+clang -c -emit-llvm -g 2.c -o 2.bc
+2.c:5:14: warning: implicitly declaring library function 'malloc' with type 'void *(unsigned long)'
+        double *p = malloc(sizeof(double)*5);
+                    ^
+2.c:5:14: note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+1 warning generated.
+llvm-dis 2.bc
+make -C ~/Documents/llvm/lib/Transforms/BRICK/
+make[1]: Entering directory `/home/lich/Documents/llvm/lib/Transforms/BRICK'
+llvm[1]: Compiling CFG.cpp for Release+Asserts build (PIC)
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from CFG.cpp:1:0:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+CFG.cpp: In function ‘std::string get_m_Operator_str(Op_m)’:
+CFG.cpp:245:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+CFG.cpp: In function ‘Operator getEnumOperator(std::string)’:
+CFG.cpp:356:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+llvm[1]: Compiling DebugInfo.cpp for Release+Asserts build (PIC)
+In file included from DebugInfo.h:7:0,
+                 from DebugInfo.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from DebugInfo.h:7:0,
+                 from DebugInfo.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+llvm[1]: Compiling InstParser.cpp for Release+Asserts build (PIC)
+[runlim] sample:		1.1 seconds, 151.7 MB
+In file included from DebugInfo.h:7:0,
+                 from InstParser.h:25,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from DebugInfo.h:7:0,
+                 from InstParser.h:25,
+                 from InstParser.cpp:17:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+InstParser.cpp: In function ‘std::string llvm::getVariableName(llvm::raw_ostream&, const llvm::Value*, llvm::TypePrinting*, llvm::SlotTracker*, const llvm::Module*)’:
+InstParser.cpp:1245:23: warning: unused variable ‘ignored’ [-Wunused-variable]
+                  bool ignored;
+                       ^
+InstParser.cpp: In member function ‘void llvm::InstParser::setConstraint(CFG*, State*&, llvm::BasicBlock::iterator&, std::string, int, DebugInfo*)’:
+InstParser.cpp:3117:19: warning: unused variable ‘CI’ [-Wunused-variable]
+   const LoadInst *CI = dyn_cast<LoadInst>(I);
+                   ^
+[runlim] sample:		11.1 seconds, 430.6 MB
+llvm[1]: Compiling MUSSAnalyzer.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling System.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling Verification.cpp for Release+Asserts build (PIC)
+[runlim] sample:		1.6 seconds, 187.4 MB
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from Verification.h:3:0,
+                 from Verification.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+In file included from Verification.cpp:1:0:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                 ^
+Verification.h:51:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+              ^
+Verification.cpp: In member function ‘void Verification::get_constraint(std::vector<Constraint>, VarTable*, int, bool)’:
+Verification.cpp:988:7: warning: unused variable ‘isOR’ [-Wunused-variable]
+  bool isOR = (isTransition && size>1);
+       ^
+Verification.cpp:989:14: warning: unused variable ‘cons’ [-Wunused-variable]
+  dreal_expr *cons=NULL;
+              ^
+llvm[1]: Compiling buildCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from buildCFG.cpp:4:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+In file included from programCFG.h:17:0,
+                 from buildCFG.cpp:4:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                 ^
+Verification.h:51:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+              ^
+In file included from buildCFG.cpp:4:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+llvm[1]: Compiling convinent.cpp for Release+Asserts build (PIC)
+[runlim] sample:		0.8 seconds, 127.3 MB
+llvm[1]: Compiling general.cpp for Release+Asserts build (PIC)
+llvm[1]: Compiling programCFG.cpp for Release+Asserts build (PIC)
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘Variable::Variable(std::string, int, VarType)’:
+CFG.h:55:13: warning: ‘Variable::ID’ will be initialized after [-Wreorder]
+         int ID;
+             ^
+CFG.h:52:17: warning:   ‘VarType Variable::type’ [-Wreorder]
+         VarType type;
+                 ^
+CFG.h:57:9: warning:   when initialized here [-Wreorder]
+         Variable(string name1,int id,VarType ty):name(name1),ID(id),type(ty),num(0){};
+         ^
+CFG.h: In constructor ‘ParaVariable::ParaVariable(bool, Variable*, Variable*, std::string, Op_m)’:
+CFG.h:87:9: warning: ‘ParaVariable::parameter’ will be initialized after [-Wreorder]
+  string parameter;
+         ^
+CFG.h:84:7: warning:   ‘Op_m ParaVariable::op’ [-Wreorder]
+  Op_m op;
+       ^
+CFG.h:89:9: warning:   when initialized here [-Wreorder]
+         ParaVariable(bool iE,Variable *lv,Variable *rv,string pm,Op_m opr ):isExp(iE),lvar(lv),rvar(rv),parameter(pm),op(opr){};
+         ^
+In file included from programCFG.h:11:0,
+                 from programCFG.cpp:1:
+CFG.h: In constructor ‘State::State(bool, int, std::string, std::string)’:
+CFG.h:148:16: warning: ‘State::name’ will be initialized after [-Wreorder]
+         string name;
+                ^
+CFG.h:146:13: warning:   ‘std::string State::funcName’ [-Wreorder]
+      string funcName;
+             ^
+CFG.h:171:9: warning:   when initialized here [-Wreorder]
+         State(bool bo,int id,string name1,string funcName1):isInitial(bo),ID(id),name(name1),funcName(funcName1),nextS(-1){level = -1;};
+         ^
+In file included from programCFG.h:17:0,
+                 from programCFG.cpp:1:
+Verification.h: In constructor ‘VarTable::VarTable(void*&, CFG*)’:
+Verification.h:44:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i=0; i<cfg->mainInput.size();i++)
+                 ^
+Verification.h:51:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(inputID<cfg->mainInput.size()&&cfg->mainInput[inputID]==(int)i){
+              ^
+In file included from programCFG.cpp:1:0:
+programCFG.h: In constructor ‘CFGNode::CFGNode(llvm::BasicBlock*, CFG*)’:
+programCFG.h:80:36: warning: unused variable ‘I’ [-Wunused-variable]
+                 const Instruction* I = dyn_cast<Instruction>(it);
+                                    ^
+programCFG.cpp: In function ‘CFG* Add_target(CFG*, int, std::string)’:
+programCFG.cpp:240:15: warning: ISO C++ forbids variable length array ‘x’ [-Wvla]
+     char x[len];
+               ^
+programCFG.cpp:260:21: warning: ISO C++ forbids variable length array ‘a’ [-Wvla]
+     int a[numCheck+1];
+                     ^
+programCFG.cpp:267:22: warning: ISO C++ forbids variable length array ‘b’ [-Wvla]
+     string b[numCheck];
+                      ^
+programCFG.cpp: In constructor ‘ProgramCFG::ProgramCFG(llvm::Module&)’:
+programCFG.cpp:310:17: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+         clock_t start,finish;
+                 ^
+programCFG.cpp:310:23: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+         clock_t start,finish;
+                       ^
+programCFG.cpp:324:17: warning: variable ‘start’ set but not used [-Wunused-but-set-variable]
+         clock_t start,finish;
+                 ^
+programCFG.cpp:324:23: warning: variable ‘finish’ set but not used [-Wunused-but-set-variable]
+         clock_t start,finish;
+                       ^
+programCFG.cpp: In member function ‘void ProgramCFG::readBasicblock(llvm::BasicBlock*, CFG*, int)’:
+programCFG.cpp:523:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if(cfg->stateList.size()<id)
+                                             ^
+programCFG.cpp:574:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                         if(cfg->stateList.size()<id)
+                                                 ^
+[runlim] sample:		7.7 seconds, 381.1 MB
+llvm[1]: Compiling verify.cpp for Release+Asserts build (PIC)
+verify.cpp: In function ‘std::string split(std::string)’:
+verify.cpp:74:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(i = 0; i < filename.length(); i ++){
+                  ^
+verify.cpp: In function ‘void compile(std::string)’:
+verify.cpp:56:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+verify.cpp: In function ‘void opt(std::string, int, char*, char*)’:
+verify.cpp:70:28: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+     system(command.c_str());
+                            ^
+llvm[1]: Linking Release+Asserts Loadable Module buildCFG.so
+make[1]: Leaving directory `/home/lich/Documents/llvm/lib/Transforms/BRICK'
+opt -load ~/Documents/llvm/Release+Asserts/lib/buildCFG.so -buildCFG -func="main" -name=2 -bound=50 -check="" <2.bc>   2buildCFG.bc
+START CHECK FUNCTION <main>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  %retval = alloca i32, align 4
+1.Transform: warning 10086: main_callis PTR
+BUILDCFG Time: 	2.794ms
+*******************CFG Information*********************
+CFG:
+variable:main_retval, 0  PTR 
+variable:main_retval_0, 1  INT 
+variable:main_p, 2  PTR 
+variable:main_p_0, 3  PTR 
+variable:main_q, 4  PTR 
+variable:main_q_0, 5  PTR 
+variable:main_t, 6  PTR 
+variable:main_t_0, 7  FP 
+variable:main_i, 8  PTR 
+variable:main_i_0, 9  INT 
+variable:main_retval/0, 10  INT 
+variable:main_call, 11  PTR 
+variable:main_%0, 12  PTR 
+variable:main_%1, 13  PTR 
+variable:main_arrayidx, 14  PTR 
+variable:main_%2, 15  PTR 
+variable:main_%2/7, 16  FP 
+variable:main_%3, 17  PTR 
+variable:main_arrayidx1, 18  PTR 
+variable:main_%4, 19  FP 
+variable:main_call2, 20  FP 
+variable:main_%5, 21  FP 
+variable:main_cmp, 22  INT 
+variable:main_i/11, 23  INT 
+variable:main_%7, 24  INT 
+variable:main_cmp3, 25  INT 
+variable:main_%8, 26  INT 
+variable:main_conv, 27  FP 
+variable:main_call4, 28  FP 
+variable:main_%9, 29  INT 
+variable:main_sub, 30  INT 
+variable:main_idxprom, 31  INT 
+variable:main_%10, 32  PTR 
+variable:main_arrayidx5, 33  PTR 
+variable:main_%11, 34  FP 
+variable:main_mul, 35  FP 
+variable:main_%12, 36  INT 
+variable:main_idxprom6, 37  INT 
+variable:main_%13, 38  PTR 
+variable:main_arrayidx7, 39  PTR 
+variable:main_%14, 40  INT 
+variable:main_inc, 41  INT 
+variable:main_%15, 42  PTR 
+variable:main_arrayidx8, 43  PTR 
+variable:main_%16, 44  FP 
+variable:main_call9, 45  FP 
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+
+Initial location
+constraint: main_retval =  alloca  constraint: main_retval =  store main_retval_0 constraint: main_p =  alloca  constraint: main_p =  store main_p_0 constraint: main_q =  alloca  constraint: main_q =  store main_q_0 constraint: main_t =  alloca  constraint: main_t =  store main_t_0 constraint: main_i =  alloca  constraint: main_i =  store main_i_0 constraint: main_retval/0 =  0 constraint: main_retval =  store main_retval/0 constraint: main_%0 =  main_call constraint: main_p =  store main_%0 constraint: main_%1 =  load main_p constraint: main_arrayidx = main_%1 + 0 constraint: main_q =  store main_arrayidx constraint: main_%2 =  load main_q constraint: main_%2/7 =  0.1 constraint: main_%2 =  store main_%2/7 constraint: main_%3 =  load main_p constraint: main_arrayidx1 = main_%3 + 0 constraint: main_%4 =  load main_arrayidx1 
+
+
+Location Name:main q0 ID:1 nextS:-1
+Level:1
+null
+
+
+Location Name:main s1 ID:2 nextS:-1
+Level:0
+constraint: main_call2 =  sqrt main_%4 constraint: main_t =  store main_call2 constraint: main_%5 =  load main_t constraint: main_cmp = main_%5 == 1 
+
+
+Location Name:main s2 ID:3 nextS:-1
+Level:1
+null
+
+
+Location Name:main s3 ID:4 nextS:-1
+Level:1
+null
+
+
+Location Name:main q1 ID:5 nextS:-1
+Level:2
+null
+
+
+Location Name:main s4 ID:6 nextS:-1
+Level:2
+constraint: main_i/11 =  1 constraint: main_i =  store main_i/11 
+
+
+Location Name:main s5 ID:7 nextS:-1
+Level:3
+constraint: main_%7 =  load main_i 
+
+
+Location Name:main s6 ID:8 nextS:-1
+Level:4
+constraint: main_%8 =  load main_i constraint: main_conv =  main_%8 constraint: main_call4 = -1 pow main_conv constraint: main_%9 =  load main_i constraint: main_sub = main_%9 - 1 constraint: main_idxprom =  main_sub constraint: main_%10 =  load main_p constraint: main_arrayidx5 = main_%10 + main_idxprom constraint: main_%11 =  load main_arrayidx5 constraint: main_mul = main_call4 * main_%11 constraint: main_%12 =  load main_i constraint: main_idxprom6 =  main_%12 constraint: main_%13 =  load main_p constraint: main_arrayidx7 = main_%13 + main_idxprom6 constraint: main_arrayidx7 =  store main_mul 
+
+
+Location Name:main s7 ID:9 nextS:-1
+Level:5
+constraint: main_%14 =  load main_i constraint: main_inc = main_%14 + 1 constraint: main_i =  store main_inc 
+
+
+Location Name:main s8 ID:10 nextS:-1
+Level:4
+constraint: main_%15 =  load main_p constraint: main_arrayidx8 = main_%15 + 4 constraint: main_%16 =  load main_arrayidx8 
+
+
+Location Name:main q2 ID:11 nextS:-1
+Level:5
+null
+
+
+Location Name:main s9 ID:12 nextS:-1
+Level:0
+constraint: main_call9 =  log main_%16 constraint: main_t =  store main_call9 
+
+
+Transition Name:e0 ID:13
+Level:1
+ToLabel:
+from:s0 to:q0
+Guard:
+constraint: main_%4 <  0 
+
+Transition Name:e1 ID:14
+Level:0
+ToLabel:
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e2 ID:15
+Level:1
+ToLabel:main_cond.false
+from:s1 to:s3
+Guard:
+constraint: main_%5 !=  1 
+
+Transition Name:e3 ID:16
+Level:1
+ToLabel:main_cond.true
+from:s1 to:s2
+Guard:
+constraint: main_%5 ==  1 
+
+Transition Name:e4 ID:17
+Level:2
+ToLabel:main_cond.end
+from:s2 to:s4
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e5 ID:18
+Level:2
+ToLabel:
+from:s3 to:q1
+Guard:
+null
+
+Transition Name:e6 ID:19
+Level:3
+ToLabel:main_for.cond
+from:s4 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e7 ID:20
+Level:4
+ToLabel:main_for.end
+from:s5 to:s8
+Guard:
+constraint: main_%7 >=  5 
+
+Transition Name:e8 ID:21
+Level:4
+ToLabel:main_for.body
+from:s5 to:s6
+Guard:
+constraint: main_%7 <  5 
+
+Transition Name:e9 ID:22
+Level:5
+ToLabel:main_for.inc
+from:s6 to:s7
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e10 ID:23
+Level:6
+ToLabel:main_for.cond
+from:s7 to:s5
+Guard:
+constraint: 1 ==  1 
+
+Transition Name:e11 ID:24
+Level:5
+ToLabel:
+from:s8 to:q2
+Guard:
+constraint: main_%16 <=  0 
+
+Transition Name:e12 ID:25
+Level:0
+ToLabel:
+from:s8 to:s9
+Guard:
+null
+
+target[0]:q0(1)
+target[1]:q1(5)
+target[2]:q2(11)
+target[0]:q0(1)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e0:
+(not (<= 0 main_%4))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2(3)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e3:
+(= main_%5 1)
+s2:
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(1)
+Number of path checked:4
+line 8 is not reachable under bound 50 when check=
+Dreal Time: 	16.046ms
+target[1]:q1(5)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e0:
+(not (<= 0 main_%4))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+target[1]:from s0(0) to q1(5)
+
+Number of path checked:8
+line 9 in state q1 is reachable
+Witness:
+	s0:	LocLine:5;6;7;8;
+	e1
+	s1:	LocLine:8;9;
+	e2
+	s3:	LocLine:9;
+	e5
+	q1:	LocLine:9;
+Dreal Time: 	27.474ms
+target[2]:q2(11)
+Path route: s0(0)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+dreal_result is sat
+
+
+Path route: s0->e0->q0(1)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e0:
+(not (<= 0 main_%4))
+q0:
+dreal_result is unsat
+
+
+Path route: s0->e1->s1(2)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3(4)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e2->s3->e5->q1(5)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e2:
+(not (= main_%5 1))
+s3:
+e5:
+q1:
+dreal_result is sat
+
+
+Path route: s0->e1->s1->e3->s2(3)
+Precision is 0.001
+s0:
+(= main_retval/0 0)
+0.GetVal error 11	main_call	-1.000000e+00
+(= main_%2/7 0.1)
+(= main_%2/7 main_%4)
+e1:
+s1:
+(= main_call2 (^ main_%4 0.5))
+(= main_call2 main_%5)
+(= main_cmp (ite (= main_%5 1) 1 0))
+e3:
+(= main_%5 1)
+s2:
+dreal_result is unsat
+
+
+target[2]:from s0(0) to q2(11)
+Number of path checked:12
+line 13 is not reachable under bound 50 when check=
+Dreal Time: 	41.324ms
+bound:	50	functionName:	main	check:	
+Time: 	2.794ms 
+BUILDCFG Time: 	2.794ms
+Dreal Time: 	0.041324s
+Memory used: 103.00 MB
+CPU Time: 0.06 s
+MainFunc: main
+Num_input: 0
+Num_invar: 5
+Num_line: 14
+Calllevel: 0
+nonlinearOp: 
+	 sqrt : 1
+	 pow : 1
+	 log : 1
+llvm-dis 2buildCFG.bc
+clang 2buildCFG.bc   -o 2_final
+/tmp/2buildCFG-9546f7.o: In function `main':
+/home/lich/Documents/test_CFG_v4/2.c:8: undefined reference to `sqrt'
+/home/lich/Documents/test_CFG_v4/2.c:12: undefined reference to `pow'
+/home/lich/Documents/test_CFG_v4/2.c:13: undefined reference to `log'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [2_final.bc] Error 1
+[runlim] end:			Mon May 23 19:24:26 2016
+[runlim] status:		ok
+[runlim] result:		2
+[runlim] children:		2644
+[runlim] real:			53.15 seconds
+[runlim] time:			17.12 seconds
+[runlim] space:			533.5 MB
+[runlim] samples:		531
