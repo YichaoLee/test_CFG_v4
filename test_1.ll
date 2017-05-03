@@ -6,8 +6,9 @@ target triple = "x86_64-unknown-linux-gnu"
 @.str1 = private unnamed_addr constant [7 x i8] c"xx=%f\0A\00", align 1
 @.str2 = private unnamed_addr constant [15 x i8] c"xx1=%f\0Axx2=%f\0A\00", align 1
 @.str3 = private unnamed_addr constant [6 x i8] c"y=%d\0A\00", align 1
-@.str4 = private unnamed_addr constant [8 x i8] c"y = %u\0A\00", align 1
-@.str5 = private unnamed_addr constant [5 x i8] c"qqq\0A\00", align 1
+@.str4 = private unnamed_addr constant [20 x i8] c"fptoui xx1=%f x=%u\0A\00", align 1
+@.str5 = private unnamed_addr constant [8 x i8] c"y = %u\0A\00", align 1
+@.str6 = private unnamed_addr constant [5 x i8] c"qqq\0A\00", align 1
 
 ; Function Attrs: nounwind uwtable
 define i32 @main() #0 {
@@ -55,59 +56,65 @@ entry:
   store i32 %conv, i32* %y, align 4, !dbg !46
   %6 = load i32* %y, align 4, !dbg !47
   %call3 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([6 x i8]* @.str3, i32 0, i32 0), i32 %6), !dbg !47
-  call void @llvm.dbg.declare(metadata !{i32* %z}, metadata !48), !dbg !49
-  store i32 -1806942208, i32* %z, align 4, !dbg !50
-  %7 = load double* %xx1, align 8, !dbg !51
-  %conv4 = fptosi double %7 to i32, !dbg !51
-  store i32 %conv4, i32* %z, align 4, !dbg !51
-  %8 = load i32* %z, align 4, !dbg !52
-  %rem = urem i32 %8, 2, !dbg !52
-  store i32 %rem, i32* %z, align 4, !dbg !52
-  %9 = load i32* %y, align 4, !dbg !53
-  %neg = xor i32 %9, -1, !dbg !53
-  store i32 %neg, i32* %x, align 4, !dbg !53
-  %10 = load i32* %x, align 4, !dbg !54
-  %sub = sub i32 %10, 2, !dbg !54
-  store i32 %sub, i32* %y, align 4, !dbg !54
-  %11 = load i32* %y, align 4, !dbg !55
-  %call5 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([8 x i8]* @.str4, i32 0, i32 0), i32 %11), !dbg !55
-  %12 = load i32* %y, align 4, !dbg !56
-  %cmp = icmp eq i32 %12, -3, !dbg !56
-  %conv6 = zext i1 %cmp to i32, !dbg !56
+  %7 = load double* %xx1, align 8, !dbg !48
+  %conv4 = fptoui double %7 to i32, !dbg !48
+  store i32 %conv4, i32* %x, align 4, !dbg !48
+  %8 = load double* %xx1, align 8, !dbg !49
+  %9 = load i32* %x, align 4, !dbg !49
+  %call5 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([20 x i8]* @.str4, i32 0, i32 0), double %8, i32 %9), !dbg !49
+  call void @llvm.dbg.declare(metadata !{i32* %z}, metadata !50), !dbg !51
+  store i32 -1806942208, i32* %z, align 4, !dbg !52
+  %10 = load double* %xx1, align 8, !dbg !53
+  %conv6 = fptosi double %10 to i32, !dbg !53
+  store i32 %conv6, i32* %z, align 4, !dbg !53
+  %11 = load i32* %z, align 4, !dbg !54
+  %rem = urem i32 %11, 2, !dbg !54
+  store i32 %rem, i32* %z, align 4, !dbg !54
+  %12 = load i32* %y, align 4, !dbg !55
+  %neg = xor i32 %12, -1, !dbg !55
+  store i32 %neg, i32* %x, align 4, !dbg !55
   %13 = load i32* %x, align 4, !dbg !56
-  %cmp7 = icmp eq i32 %13, -1, !dbg !56
-  %conv8 = zext i1 %cmp7 to i32, !dbg !56
-  %cmp9 = icmp eq i32 %conv6, %conv8, !dbg !56
-  br i1 %cmp9, label %if.then, label %if.else, !dbg !56
+  %sub = sub i32 %13, 2, !dbg !56
+  store i32 %sub, i32* %y, align 4, !dbg !56
+  %14 = load i32* %y, align 4, !dbg !57
+  %call7 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([8 x i8]* @.str5, i32 0, i32 0), i32 %14), !dbg !57
+  %15 = load i32* %y, align 4, !dbg !58
+  %cmp = icmp eq i32 %15, -3, !dbg !58
+  %conv8 = zext i1 %cmp to i32, !dbg !58
+  %16 = load i32* %x, align 4, !dbg !58
+  %cmp9 = icmp eq i32 %16, -1, !dbg !58
+  %conv10 = zext i1 %cmp9 to i32, !dbg !58
+  %cmp11 = icmp eq i32 %conv8, %conv10, !dbg !58
+  br i1 %cmp11, label %if.then, label %if.else, !dbg !58
 
 if.then:                                          ; preds = %entry
-  %call11 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([5 x i8]* @.str5, i32 0, i32 0)), !dbg !58
-  br label %if.end16, !dbg !58
+  %call13 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([5 x i8]* @.str6, i32 0, i32 0)), !dbg !60
+  br label %if.end18, !dbg !60
 
 if.else:                                          ; preds = %entry
-  %14 = load i32* %y, align 4, !dbg !59
-  %cmp12 = icmp uge i32 %14, -2147483647, !dbg !59
-  br i1 %cmp12, label %if.then14, label %if.else15, !dbg !59
+  %17 = load i32* %y, align 4, !dbg !61
+  %cmp14 = icmp uge i32 %17, -2147483647, !dbg !61
+  br i1 %cmp14, label %if.then16, label %if.else17, !dbg !61
 
-if.then14:                                        ; preds = %if.else
-  %15 = load i32* %y, align 4, !dbg !61
-  %16 = load i32* %x, align 4, !dbg !61
-  %mul = mul i32 %15, %16, !dbg !61
-  store i32 %mul, i32* %z, align 4, !dbg !61
-  br label %if.end, !dbg !61
+if.then16:                                        ; preds = %if.else
+  %18 = load i32* %y, align 4, !dbg !63
+  %19 = load i32* %x, align 4, !dbg !63
+  %mul = mul i32 %18, %19, !dbg !63
+  store i32 %mul, i32* %z, align 4, !dbg !63
+  br label %if.end, !dbg !63
 
-if.else15:                                        ; preds = %if.else
-  %17 = load i32* %y, align 4, !dbg !62
-  %18 = load i32* %x, align 4, !dbg !62
-  %div = udiv i32 %17, %18, !dbg !62
-  store i32 %div, i32* %z, align 4, !dbg !62
+if.else17:                                        ; preds = %if.else
+  %20 = load i32* %y, align 4, !dbg !64
+  %21 = load i32* %x, align 4, !dbg !64
+  %div = udiv i32 %20, %21, !dbg !64
+  store i32 %div, i32* %z, align 4, !dbg !64
   br label %if.end
 
-if.end:                                           ; preds = %if.else15, %if.then14
-  br label %if.end16
+if.end:                                           ; preds = %if.else17, %if.then16
+  br label %if.end18
 
-if.end16:                                         ; preds = %if.end, %if.then
-  ret i32 0, !dbg !63
+if.end18:                                         ; preds = %if.end, %if.then
+  ret i32 0, !dbg !65
 }
 
 ; Function Attrs: nounwind readnone
@@ -171,19 +178,21 @@ attributes #2 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "n
 !45 = metadata !{i32 8, i32 20, metadata !4, null} ; [ DW_TAG_imported_declaration ]
 !46 = metadata !{i32 8, i32 34, metadata !4, null} ; [ DW_TAG_imported_declaration ]
 !47 = metadata !{i32 8, i32 43, metadata !4, null} ; [ DW_TAG_imported_declaration ]
-!48 = metadata !{i32 786688, metadata !4, metadata !"z", metadata !5, i32 9, metadata !13, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [z] [line 9]
-!49 = metadata !{i32 9, i32 11, metadata !4, null}
-!50 = metadata !{i32 9, i32 2, metadata !4, null}
-!51 = metadata !{i32 9, i32 29, metadata !4, null}
-!52 = metadata !{i32 9, i32 40, metadata !4, null}
-!53 = metadata !{i32 9, i32 46, metadata !4, null}
-!54 = metadata !{i32 12, i32 2, metadata !4, null}
-!55 = metadata !{i32 13, i32 2, metadata !4, null}
-!56 = metadata !{i32 14, i32 5, metadata !57, null}
-!57 = metadata !{i32 786443, metadata !1, metadata !4, i32 14, i32 5, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/home/lich/Documents/test_CFG_v4/test_1.c]
-!58 = metadata !{i32 16, i32 3, metadata !57, null}
-!59 = metadata !{i32 17, i32 10, metadata !60, null}
-!60 = metadata !{i32 786443, metadata !1, metadata !57, i32 17, i32 10, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/home/lich/Documents/test_CFG_v4/test_1.c]
-!61 = metadata !{i32 18, i32 3, metadata !60, null}
-!62 = metadata !{i32 20, i32 3, metadata !60, null}
-!63 = metadata !{i32 21, i32 2, metadata !4, null}
+!48 = metadata !{i32 8, i32 62, metadata !4, null} ; [ DW_TAG_imported_declaration ]
+!49 = metadata !{i32 8, i32 78, metadata !4, null} ; [ DW_TAG_imported_declaration ]
+!50 = metadata !{i32 786688, metadata !4, metadata !"z", metadata !5, i32 9, metadata !13, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [z] [line 9]
+!51 = metadata !{i32 9, i32 11, metadata !4, null}
+!52 = metadata !{i32 9, i32 2, metadata !4, null}
+!53 = metadata !{i32 9, i32 29, metadata !4, null}
+!54 = metadata !{i32 9, i32 40, metadata !4, null}
+!55 = metadata !{i32 9, i32 46, metadata !4, null}
+!56 = metadata !{i32 12, i32 2, metadata !4, null}
+!57 = metadata !{i32 13, i32 2, metadata !4, null}
+!58 = metadata !{i32 14, i32 5, metadata !59, null}
+!59 = metadata !{i32 786443, metadata !1, metadata !4, i32 14, i32 5, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/home/lich/Documents/test_CFG_v4/test_1.c]
+!60 = metadata !{i32 16, i32 3, metadata !59, null}
+!61 = metadata !{i32 17, i32 10, metadata !62, null}
+!62 = metadata !{i32 786443, metadata !1, metadata !59, i32 17, i32 10, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/home/lich/Documents/test_CFG_v4/test_1.c]
+!63 = metadata !{i32 18, i32 3, metadata !62, null}
+!64 = metadata !{i32 20, i32 3, metadata !62, null}
+!65 = metadata !{i32 21, i32 2, metadata !4, null}

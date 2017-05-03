@@ -1,0 +1,6 @@
+Error opening 'LLVMSlicer.so': LLVMSlicer.so: cannot open shared object file: No such file or directory
+  -load request ignored.
+opt: Unknown command line argument '-create-hammock-cfg'.  Try: 'opt -help'
+opt: Did you mean '-print-no-modref'?
+opt: Unknown command line argument '-slice-inter'.  Try: 'opt -help'
+opt: Did you mean '-print-after'?

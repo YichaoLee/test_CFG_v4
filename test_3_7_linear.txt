@@ -1,0 +1,1034 @@
+<newton_3_7_false-unreach-call.c> 
+clang -c -emit-llvm -g newton_3_7_false-unreach-call.c -o newton_3_7_false-unreach-call.bc
+opt -load buildCFG.so -load libz3.so -load libminisat.so -load libcapd.so -load libibex.so -load libdreal.so -buildCFG -bound=50 -pre=0.01 -mode=1 -func=main -output=1 <newton_3_7_false-unreach-call.bc> newton_3_7_false-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-02
+CheckMode: 1	Check assertions only
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Linear
+(declare-fun main.retval.0 () Int)
+(declare-fun main.IN.0 () Real)
+(declare-fun main.x.0 () Real)
+(declare-fun main.retval/0 () Int)
+(declare-fun main.%0 () Real)
+(declare-fun main.cmp () Int)
+(declare-fun main.%1 () Real)
+(declare-fun main.cmp1 () Int)
+(declare-fun main.%2 () Int)
+(declare-fun main.land.ext () Int)
+(declare-fun main.%3 () Real)
+(declare-fun main.%4 () Real)
+(declare-fun main.call () Real)
+(declare-fun f.x () Real)
+(declare-fun f.x.addr.0 () Real)
+(declare-fun f.%0 () Real)
+(declare-fun f.%1 () Real)
+(declare-fun f.%2 () Real)
+(declare-fun f.mul () Real)
+(declare-fun f.%3 () Real)
+(declare-fun f.mul1 () Real)
+(declare-fun f.div () Real)
+(declare-fun f.sub () Real)
+(declare-fun f.%4 () Real)
+(declare-fun f.%5 () Real)
+(declare-fun f.mul2 () Real)
+(declare-fun f.%6 () Real)
+(declare-fun f.mul3 () Real)
+(declare-fun f.%7 () Real)
+(declare-fun f.mul4 () Real)
+(declare-fun f.%8 () Real)
+(declare-fun f.mul5 () Real)
+(declare-fun f.div6 () Real)
+(declare-fun f.add () Real)
+(declare-fun f.%9 () Real)
+(declare-fun f.%10 () Real)
+(declare-fun f.mul7 () Real)
+(declare-fun f.%11 () Real)
+(declare-fun f.mul8 () Real)
+(declare-fun f.%12 () Real)
+(declare-fun f.mul9 () Real)
+(declare-fun f.%13 () Real)
+(declare-fun f.mul10 () Real)
+(declare-fun f.%14 () Real)
+(declare-fun f.mul11 () Real)
+(declare-fun f.%15 () Real)
+(declare-fun f.mul12 () Real)
+(declare-fun f.div13 () Real)
+(declare-fun f.add14 () Real)
+(declare-fun main.%5 () Real)
+(declare-fun main.call2 () Real)
+(declare-fun fp.x () Real)
+(declare-fun fp.x.addr.0 () Real)
+(declare-fun fp.%0 () Real)
+(declare-fun fp.%1 () Real)
+(declare-fun fp.mul () Real)
+(declare-fun fp.div () Real)
+(declare-fun fp.sub () Real)
+(declare-fun fp.%2 () Real)
+(declare-fun fp.%3 () Real)
+(declare-fun fp.mul1 () Real)
+(declare-fun fp.%4 () Real)
+(declare-fun fp.mul2 () Real)
+(declare-fun fp.%5 () Real)
+(declare-fun fp.mul3 () Real)
+(declare-fun fp.div4 () Real)
+(declare-fun fp.add () Real)
+(declare-fun fp.%6 () Real)
+(declare-fun fp.%7 () Real)
+(declare-fun fp.mul5 () Real)
+(declare-fun fp.%8 () Real)
+(declare-fun fp.mul6 () Real)
+(declare-fun fp.%9 () Real)
+(declare-fun fp.mul7 () Real)
+(declare-fun fp.%10 () Real)
+(declare-fun fp.mul8 () Real)
+(declare-fun fp.%11 () Real)
+(declare-fun fp.mul9 () Real)
+(declare-fun fp.div10 () Real)
+(declare-fun fp.add11 () Real)
+(declare-fun main.div () Real)
+(declare-fun main.sub () Real)
+(declare-fun main.%6 () Real)
+(declare-fun main.%7 () Real)
+(declare-fun main.call3 () Real)
+(declare-fun f.t1.x () Real)
+(declare-fun f.t1.x.addr.0 () Real)
+(declare-fun f.t1.%0 () Real)
+(declare-fun f.t1.%1 () Real)
+(declare-fun f.t1.%2 () Real)
+(declare-fun f.t1.mul () Real)
+(declare-fun f.t1.%3 () Real)
+(declare-fun f.t1.mul1 () Real)
+(declare-fun f.t1.div () Real)
+(declare-fun f.t1.sub () Real)
+(declare-fun f.t1.%4 () Real)
+(declare-fun f.t1.%5 () Real)
+(declare-fun f.t1.mul2 () Real)
+(declare-fun f.t1.%6 () Real)
+(declare-fun f.t1.mul3 () Real)
+(declare-fun f.t1.%7 () Real)
+(declare-fun f.t1.mul4 () Real)
+(declare-fun f.t1.%8 () Real)
+(declare-fun f.t1.mul5 () Real)
+(declare-fun f.t1.div6 () Real)
+(declare-fun f.t1.add () Real)
+(declare-fun f.t1.%9 () Real)
+(declare-fun f.t1.%10 () Real)
+(declare-fun f.t1.mul7 () Real)
+(declare-fun f.t1.%11 () Real)
+(declare-fun f.t1.mul8 () Real)
+(declare-fun f.t1.%12 () Real)
+(declare-fun f.t1.mul9 () Real)
+(declare-fun f.t1.%13 () Real)
+(declare-fun f.t1.mul10 () Real)
+(declare-fun f.t1.%14 () Real)
+(declare-fun f.t1.mul11 () Real)
+(declare-fun f.t1.%15 () Real)
+(declare-fun f.t1.mul12 () Real)
+(declare-fun f.t1.div13 () Real)
+(declare-fun f.t1.add14 () Real)
+(declare-fun main.%8 () Real)
+(declare-fun main.call4 () Real)
+(declare-fun fp.t1.x () Real)
+(declare-fun fp.t1.x.addr.0 () Real)
+(declare-fun fp.t1.%0 () Real)
+(declare-fun fp.t1.%1 () Real)
+(declare-fun fp.t1.mul () Real)
+(declare-fun fp.t1.div () Real)
+(declare-fun fp.t1.sub () Real)
+(declare-fun fp.t1.%2 () Real)
+(declare-fun fp.t1.%3 () Real)
+(declare-fun fp.t1.mul1 () Real)
+(declare-fun fp.t1.%4 () Real)
+(declare-fun fp.t1.mul2 () Real)
+(declare-fun fp.t1.%5 () Real)
+(declare-fun fp.t1.mul3 () Real)
+(declare-fun fp.t1.div4 () Real)
+(declare-fun fp.t1.add () Real)
+(declare-fun fp.t1.%6 () Real)
+(declare-fun fp.t1.%7 () Real)
+(declare-fun fp.t1.mul5 () Real)
+(declare-fun fp.t1.%8 () Real)
+(declare-fun fp.t1.mul6 () Real)
+(declare-fun fp.t1.%9 () Real)
+(declare-fun fp.t1.mul7 () Real)
+(declare-fun fp.t1.%10 () Real)
+(declare-fun fp.t1.mul8 () Real)
+(declare-fun fp.t1.%11 () Real)
+(declare-fun fp.t1.mul9 () Real)
+(declare-fun fp.t1.div10 () Real)
+(declare-fun fp.t1.add11 () Real)
+(declare-fun main.div5 () Real)
+(declare-fun main.sub6 () Real)
+(declare-fun main.%9 () Real)
+(declare-fun main.%10 () Real)
+(declare-fun main.call7 () Real)
+(declare-fun f.t2.x () Real)
+(declare-fun f.t2.x.addr.0 () Real)
+(declare-fun f.t2.%0 () Real)
+(declare-fun f.t2.%1 () Real)
+(declare-fun f.t2.%2 () Real)
+(declare-fun f.t2.mul () Real)
+(declare-fun f.t2.%3 () Real)
+(declare-fun f.t2.mul1 () Real)
+(declare-fun f.t2.div () Real)
+(declare-fun f.t2.sub () Real)
+(declare-fun f.t2.%4 () Real)
+(declare-fun f.t2.%5 () Real)
+(declare-fun f.t2.mul2 () Real)
+(declare-fun f.t2.%6 () Real)
+(declare-fun f.t2.mul3 () Real)
+(declare-fun f.t2.%7 () Real)
+(declare-fun f.t2.mul4 () Real)
+(declare-fun f.t2.%8 () Real)
+(declare-fun f.t2.mul5 () Real)
+(declare-fun f.t2.div6 () Real)
+(declare-fun f.t2.add () Real)
+(declare-fun f.t2.%9 () Real)
+(declare-fun f.t2.%10 () Real)
+(declare-fun f.t2.mul7 () Real)
+(declare-fun f.t2.%11 () Real)
+(declare-fun f.t2.mul8 () Real)
+(declare-fun f.t2.%12 () Real)
+(declare-fun f.t2.mul9 () Real)
+(declare-fun f.t2.%13 () Real)
+(declare-fun f.t2.mul10 () Real)
+(declare-fun f.t2.%14 () Real)
+(declare-fun f.t2.mul11 () Real)
+(declare-fun f.t2.%15 () Real)
+(declare-fun f.t2.mul12 () Real)
+(declare-fun f.t2.div13 () Real)
+(declare-fun f.t2.add14 () Real)
+(declare-fun main.%11 () Real)
+(declare-fun main.call8 () Real)
+(declare-fun fp.t2.x () Real)
+(declare-fun fp.t2.x.addr.0 () Real)
+(declare-fun fp.t2.%0 () Real)
+(declare-fun fp.t2.%1 () Real)
+(declare-fun fp.t2.mul () Real)
+(declare-fun fp.t2.div () Real)
+(declare-fun fp.t2.sub () Real)
+(declare-fun fp.t2.%2 () Real)
+(declare-fun fp.t2.%3 () Real)
+(declare-fun fp.t2.mul1 () Real)
+(declare-fun fp.t2.%4 () Real)
+(declare-fun fp.t2.mul2 () Real)
+(declare-fun fp.t2.%5 () Real)
+(declare-fun fp.t2.mul3 () Real)
+(declare-fun fp.t2.div4 () Real)
+(declare-fun fp.t2.add () Real)
+(declare-fun fp.t2.%6 () Real)
+(declare-fun fp.t2.%7 () Real)
+(declare-fun fp.t2.mul5 () Real)
+(declare-fun fp.t2.%8 () Real)
+(declare-fun fp.t2.mul6 () Real)
+(declare-fun fp.t2.%9 () Real)
+(declare-fun fp.t2.mul7 () Real)
+(declare-fun fp.t2.%10 () Real)
+(declare-fun fp.t2.mul8 () Real)
+(declare-fun fp.t2.%11 () Real)
+(declare-fun fp.t2.mul9 () Real)
+(declare-fun fp.t2.div10 () Real)
+(declare-fun fp.t2.add11 () Real)
+(declare-fun main.div9 () Real)
+(declare-fun main.sub10 () Real)
+(declare-fun main.%12 () Real)
+(declare-fun main.conv () Real)
+(declare-fun main.cmp11 () Int)
+name:main.retval id:0 type: PTR  bits:0
+name:main.retval.0 id:1 type: INT  bits:32
+name:main.IN id:2 type: PTR  bits:0
+name:main.IN.0 id:3 type: FP  bits:32
+name:main.x id:4 type: PTR  bits:0
+name:main.x.0 id:5 type: FP  bits:32
+name:main.retval/0 id:6 type: INT  bits:32
+name:main.%0 id:7 type: FP  bits:32
+name:main.cmp id:8 type: INT  bits:1
+name:main.%1 id:9 type: FP  bits:32
+name:main.cmp1 id:10 type: INT  bits:1
+name:main.%2 id:11 type: INT  bits:1
+name:main.land.ext id:12 type: INT  bits:32
+name:main.%3 id:13 type: FP  bits:32
+name:main.%4 id:14 type: FP  bits:32
+name:main.call id:15 type: FP  bits:32
+name:f.x id:16 type: FP  bits:32
+name:f.x.addr id:17 type: PTR  bits:0
+name:f.x.addr.0 id:18 type: FP  bits:32
+name:f.%0 id:19 type: FP  bits:32
+name:f.%1 id:20 type: FP  bits:32
+name:f.%2 id:21 type: FP  bits:32
+name:f.mul id:22 type: FP  bits:32
+name:f.%3 id:23 type: FP  bits:32
+name:f.mul1 id:24 type: FP  bits:32
+name:f.div id:25 type: FP  bits:32
+name:f.sub id:26 type: FP  bits:32
+name:f.%4 id:27 type: FP  bits:32
+name:f.%5 id:28 type: FP  bits:32
+name:f.mul2 id:29 type: FP  bits:32
+name:f.%6 id:30 type: FP  bits:32
+name:f.mul3 id:31 type: FP  bits:32
+name:f.%7 id:32 type: FP  bits:32
+name:f.mul4 id:33 type: FP  bits:32
+name:f.%8 id:34 type: FP  bits:32
+name:f.mul5 id:35 type: FP  bits:32
+name:f.div6 id:36 type: FP  bits:32
+name:f.add id:37 type: FP  bits:32
+name:f.%9 id:38 type: FP  bits:32
+name:f.%10 id:39 type: FP  bits:32
+name:f.mul7 id:40 type: FP  bits:32
+name:f.%11 id:41 type: FP  bits:32
+name:f.mul8 id:42 type: FP  bits:32
+name:f.%12 id:43 type: FP  bits:32
+name:f.mul9 id:44 type: FP  bits:32
+name:f.%13 id:45 type: FP  bits:32
+name:f.mul10 id:46 type: FP  bits:32
+name:f.%14 id:47 type: FP  bits:32
+name:f.mul11 id:48 type: FP  bits:32
+name:f.%15 id:49 type: FP  bits:32
+name:f.mul12 id:50 type: FP  bits:32
+name:f.div13 id:51 type: FP  bits:32
+name:f.add14 id:52 type: FP  bits:32
+name:main.%5 id:53 type: FP  bits:32
+name:main.call2 id:54 type: FP  bits:32
+name:fp.x id:55 type: FP  bits:32
+name:fp.x.addr id:56 type: PTR  bits:0
+name:fp.x.addr.0 id:57 type: FP  bits:32
+name:fp.%0 id:58 type: FP  bits:32
+name:fp.%1 id:59 type: FP  bits:32
+name:fp.mul id:60 type: FP  bits:32
+name:fp.div id:61 type: FP  bits:32
+name:fp.sub id:62 type: FP  bits:32
+name:fp.%2 id:63 type: FP  bits:32
+name:fp.%3 id:64 type: FP  bits:32
+name:fp.mul1 id:65 type: FP  bits:32
+name:fp.%4 id:66 type: FP  bits:32
+name:fp.mul2 id:67 type: FP  bits:32
+name:fp.%5 id:68 type: FP  bits:32
+name:fp.mul3 id:69 type: FP  bits:32
+name:fp.div4 id:70 type: FP  bits:32
+name:fp.add id:71 type: FP  bits:32
+name:fp.%6 id:72 type: FP  bits:32
+name:fp.%7 id:73 type: FP  bits:32
+name:fp.mul5 id:74 type: FP  bits:32
+name:fp.%8 id:75 type: FP  bits:32
+name:fp.mul6 id:76 type: FP  bits:32
+name:fp.%9 id:77 type: FP  bits:32
+name:fp.mul7 id:78 type: FP  bits:32
+name:fp.%10 id:79 type: FP  bits:32
+name:fp.mul8 id:80 type: FP  bits:32
+name:fp.%11 id:81 type: FP  bits:32
+name:fp.mul9 id:82 type: FP  bits:32
+name:fp.div10 id:83 type: FP  bits:32
+name:fp.add11 id:84 type: FP  bits:32
+name:main.div id:85 type: FP  bits:32
+name:main.sub id:86 type: FP  bits:32
+name:main.%6 id:87 type: FP  bits:32
+name:main.%7 id:88 type: FP  bits:32
+name:main.call3 id:89 type: FP  bits:32
+name:f.t1.x id:90 type: FP  bits:32
+name:f.t1.x.addr id:91 type: PTR  bits:0
+name:f.t1.x.addr.0 id:92 type: FP  bits:32
+name:f.t1.%0 id:93 type: FP  bits:32
+name:f.t1.%1 id:94 type: FP  bits:32
+name:f.t1.%2 id:95 type: FP  bits:32
+name:f.t1.mul id:96 type: FP  bits:32
+name:f.t1.%3 id:97 type: FP  bits:32
+name:f.t1.mul1 id:98 type: FP  bits:32
+name:f.t1.div id:99 type: FP  bits:32
+name:f.t1.sub id:100 type: FP  bits:32
+name:f.t1.%4 id:101 type: FP  bits:32
+name:f.t1.%5 id:102 type: FP  bits:32
+name:f.t1.mul2 id:103 type: FP  bits:32
+name:f.t1.%6 id:104 type: FP  bits:32
+name:f.t1.mul3 id:105 type: FP  bits:32
+name:f.t1.%7 id:106 type: FP  bits:32
+name:f.t1.mul4 id:107 type: FP  bits:32
+name:f.t1.%8 id:108 type: FP  bits:32
+name:f.t1.mul5 id:109 type: FP  bits:32
+name:f.t1.div6 id:110 type: FP  bits:32
+name:f.t1.add id:111 type: FP  bits:32
+name:f.t1.%9 id:112 type: FP  bits:32
+name:f.t1.%10 id:113 type: FP  bits:32
+name:f.t1.mul7 id:114 type: FP  bits:32
+name:f.t1.%11 id:115 type: FP  bits:32
+name:f.t1.mul8 id:116 type: FP  bits:32
+name:f.t1.%12 id:117 type: FP  bits:32
+name:f.t1.mul9 id:118 type: FP  bits:32
+name:f.t1.%13 id:119 type: FP  bits:32
+name:f.t1.mul10 id:120 type: FP  bits:32
+name:f.t1.%14 id:121 type: FP  bits:32
+name:f.t1.mul11 id:122 type: FP  bits:32
+name:f.t1.%15 id:123 type: FP  bits:32
+name:f.t1.mul12 id:124 type: FP  bits:32
+name:f.t1.div13 id:125 type: FP  bits:32
+name:f.t1.add14 id:126 type: FP  bits:32
+name:main.%8 id:127 type: FP  bits:32
+name:main.call4 id:128 type: FP  bits:32
+name:fp.t1.x id:129 type: FP  bits:32
+name:fp.t1.x.addr id:130 type: PTR  bits:0
+name:fp.t1.x.addr.0 id:131 type: FP  bits:32
+name:fp.t1.%0 id:132 type: FP  bits:32
+name:fp.t1.%1 id:133 type: FP  bits:32
+name:fp.t1.mul id:134 type: FP  bits:32
+name:fp.t1.div id:135 type: FP  bits:32
+name:fp.t1.sub id:136 type: FP  bits:32
+name:fp.t1.%2 id:137 type: FP  bits:32
+name:fp.t1.%3 id:138 type: FP  bits:32
+name:fp.t1.mul1 id:139 type: FP  bits:32
+name:fp.t1.%4 id:140 type: FP  bits:32
+name:fp.t1.mul2 id:141 type: FP  bits:32
+name:fp.t1.%5 id:142 type: FP  bits:32
+name:fp.t1.mul3 id:143 type: FP  bits:32
+name:fp.t1.div4 id:144 type: FP  bits:32
+name:fp.t1.add id:145 type: FP  bits:32
+name:fp.t1.%6 id:146 type: FP  bits:32
+name:fp.t1.%7 id:147 type: FP  bits:32
+name:fp.t1.mul5 id:148 type: FP  bits:32
+name:fp.t1.%8 id:149 type: FP  bits:32
+name:fp.t1.mul6 id:150 type: FP  bits:32
+name:fp.t1.%9 id:151 type: FP  bits:32
+name:fp.t1.mul7 id:152 type: FP  bits:32
+name:fp.t1.%10 id:153 type: FP  bits:32
+name:fp.t1.mul8 id:154 type: FP  bits:32
+name:fp.t1.%11 id:155 type: FP  bits:32
+name:fp.t1.mul9 id:156 type: FP  bits:32
+name:fp.t1.div10 id:157 type: FP  bits:32
+name:fp.t1.add11 id:158 type: FP  bits:32
+name:main.div5 id:159 type: FP  bits:32
+name:main.sub6 id:160 type: FP  bits:32
+name:main.%9 id:161 type: FP  bits:32
+name:main.%10 id:162 type: FP  bits:32
+name:main.call7 id:163 type: FP  bits:32
+name:f.t2.x id:164 type: FP  bits:32
+name:f.t2.x.addr id:165 type: PTR  bits:0
+name:f.t2.x.addr.0 id:166 type: FP  bits:32
+name:f.t2.%0 id:167 type: FP  bits:32
+name:f.t2.%1 id:168 type: FP  bits:32
+name:f.t2.%2 id:169 type: FP  bits:32
+name:f.t2.mul id:170 type: FP  bits:32
+name:f.t2.%3 id:171 type: FP  bits:32
+name:f.t2.mul1 id:172 type: FP  bits:32
+name:f.t2.div id:173 type: FP  bits:32
+name:f.t2.sub id:174 type: FP  bits:32
+name:f.t2.%4 id:175 type: FP  bits:32
+name:f.t2.%5 id:176 type: FP  bits:32
+name:f.t2.mul2 id:177 type: FP  bits:32
+name:f.t2.%6 id:178 type: FP  bits:32
+name:f.t2.mul3 id:179 type: FP  bits:32
+name:f.t2.%7 id:180 type: FP  bits:32
+name:f.t2.mul4 id:181 type: FP  bits:32
+name:f.t2.%8 id:182 type: FP  bits:32
+name:f.t2.mul5 id:183 type: FP  bits:32
+name:f.t2.div6 id:184 type: FP  bits:32
+name:f.t2.add id:185 type: FP  bits:32
+name:f.t2.%9 id:186 type: FP  bits:32
+name:f.t2.%10 id:187 type: FP  bits:32
+name:f.t2.mul7 id:188 type: FP  bits:32
+name:f.t2.%11 id:189 type: FP  bits:32
+name:f.t2.mul8 id:190 type: FP  bits:32
+name:f.t2.%12 id:191 type: FP  bits:32
+name:f.t2.mul9 id:192 type: FP  bits:32
+name:f.t2.%13 id:193 type: FP  bits:32
+name:f.t2.mul10 id:194 type: FP  bits:32
+name:f.t2.%14 id:195 type: FP  bits:32
+name:f.t2.mul11 id:196 type: FP  bits:32
+name:f.t2.%15 id:197 type: FP  bits:32
+name:f.t2.mul12 id:198 type: FP  bits:32
+name:f.t2.div13 id:199 type: FP  bits:32
+name:f.t2.add14 id:200 type: FP  bits:32
+name:main.%11 id:201 type: FP  bits:32
+name:main.call8 id:202 type: FP  bits:32
+name:fp.t2.x id:203 type: FP  bits:32
+name:fp.t2.x.addr id:204 type: PTR  bits:0
+name:fp.t2.x.addr.0 id:205 type: FP  bits:32
+name:fp.t2.%0 id:206 type: FP  bits:32
+name:fp.t2.%1 id:207 type: FP  bits:32
+name:fp.t2.mul id:208 type: FP  bits:32
+name:fp.t2.div id:209 type: FP  bits:32
+name:fp.t2.sub id:210 type: FP  bits:32
+name:fp.t2.%2 id:211 type: FP  bits:32
+name:fp.t2.%3 id:212 type: FP  bits:32
+name:fp.t2.mul1 id:213 type: FP  bits:32
+name:fp.t2.%4 id:214 type: FP  bits:32
+name:fp.t2.mul2 id:215 type: FP  bits:32
+name:fp.t2.%5 id:216 type: FP  bits:32
+name:fp.t2.mul3 id:217 type: FP  bits:32
+name:fp.t2.div4 id:218 type: FP  bits:32
+name:fp.t2.add id:219 type: FP  bits:32
+name:fp.t2.%6 id:220 type: FP  bits:32
+name:fp.t2.%7 id:221 type: FP  bits:32
+name:fp.t2.mul5 id:222 type: FP  bits:32
+name:fp.t2.%8 id:223 type: FP  bits:32
+name:fp.t2.mul6 id:224 type: FP  bits:32
+name:fp.t2.%9 id:225 type: FP  bits:32
+name:fp.t2.mul7 id:226 type: FP  bits:32
+name:fp.t2.%10 id:227 type: FP  bits:32
+name:fp.t2.mul8 id:228 type: FP  bits:32
+name:fp.t2.%11 id:229 type: FP  bits:32
+name:fp.t2.mul9 id:230 type: FP  bits:32
+name:fp.t2.div10 id:231 type: FP  bits:32
+name:fp.t2.add11 id:232 type: FP  bits:32
+name:main.div9 id:233 type: FP  bits:32
+name:main.sub10 id:234 type: FP  bits:32
+name:main.%12 id:235 type: FP  bits:32
+name:main.conv id:236 type: FP  bits:64
+name:main.cmp11 id:237 type: INT  bits:1
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main.retval =  alloca  constraint: main.retval =  store main.retval.0 constraint: main.IN =  alloca  constraint: main.IN =  store main.IN.0 constraint: main.x =  alloca  constraint: main.x =  store main.x.0 constraint: main.retval/0 =  0 constraint: main.retval =  store main.retval/0 constraint: main.%0 =  load main.IN constraint: main.cmp = main.%0 > -1.400000e+00 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:42	LineNum:43
+
+Location Name:main s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: main.%1 =  load main.IN constraint: main.cmp1 = main.%1 < 1.400000e+00 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:43
+
+Location Name:main s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+constraint: main.land.ext =  zext main.%2 constraint: 0 !=  main.land.ext constraint: main.%3 =  load main.IN constraint: main.%4 =  load main.IN 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:43	LineNum:45
+
+Location Name:f s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: f.x =  main.%4 constraint: f.x.addr =  alloca  constraint: f.x.addr =  store f.x.addr.0 constraint: f.x.addr =  store f.x constraint: f.%0 =  load f.x.addr constraint: f.%1 =  load f.x.addr constraint: f.%2 =  load f.x.addr constraint: f.mul = f.%1 * f.%2 constraint: f.%3 =  load f.x.addr constraint: f.mul1 = f.mul * f.%3 constraint: f.div = f.mul1 / 6.000000e+00 constraint: f.sub = f.%0 - f.div constraint: f.%4 =  load f.x.addr constraint: f.%5 =  load f.x.addr constraint: f.mul2 = f.%4 * f.%5 constraint: f.%6 =  load f.x.addr constraint: f.mul3 = f.mul2 * f.%6 constraint: f.%7 =  load f.x.addr constraint: f.mul4 = f.mul3 * f.%7 constraint: f.%8 =  load f.x.addr constraint: f.mul5 = f.mul4 * f.%8 constraint: f.div6 = f.mul5 / 1.200000e+02 constraint: f.add = f.sub + f.div6 constraint: f.%9 =  load f.x.addr constraint: f.%10 =  load f.x.addr constraint: f.mul7 = f.%9 * f.%10 constraint: f.%11 =  load f.x.addr constraint: f.mul8 = f.mul7 * f.%11 constraint: f.%12 =  load f.x.addr constraint: f.mul9 = f.mul8 * f.%12 constraint: f.%13 =  load f.x.addr constraint: f.mul10 = f.mul9 * f.%13 constraint: f.%14 =  load f.x.addr constraint: f.mul11 = f.mul10 * f.%14 constraint: f.%15 =  load f.x.addr constraint: f.mul12 = f.mul11 * f.%15 constraint: f.div13 = f.mul12 / 5.040000e+03 constraint: f.add14 = f.add + f.div13 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:30	LineNum:32
+
+Location Name:main s4 ID:4 nextS:-1
+Level:4
+ErrorType: No Error 
+constraint: main.%5 =  load main.IN 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:45
+
+Location Name:fp s5 ID:5 nextS:-1
+Level:5
+ErrorType: No Error 
+constraint: fp.x =  main.%5 constraint: fp.x.addr =  alloca  constraint: fp.x.addr =  store fp.x.addr.0 constraint: fp.x.addr =  store fp.x constraint: fp.%0 =  load fp.x.addr constraint: fp.%1 =  load fp.x.addr constraint: fp.mul = fp.%0 * fp.%1 constraint: fp.div = fp.mul / 2.000000e+00 constraint: fp.sub = 1.000000e+00 - fp.div constraint: fp.%2 =  load fp.x.addr constraint: fp.%3 =  load fp.x.addr constraint: fp.mul1 = fp.%2 * fp.%3 constraint: fp.%4 =  load fp.x.addr constraint: fp.mul2 = fp.mul1 * fp.%4 constraint: fp.%5 =  load fp.x.addr constraint: fp.mul3 = fp.mul2 * fp.%5 constraint: fp.div4 = fp.mul3 / 2.400000e+01 constraint: fp.add = fp.sub + fp.div4 constraint: fp.%6 =  load fp.x.addr constraint: fp.%7 =  load fp.x.addr constraint: fp.mul5 = fp.%6 * fp.%7 constraint: fp.%8 =  load fp.x.addr constraint: fp.mul6 = fp.mul5 * fp.%8 constraint: fp.%9 =  load fp.x.addr constraint: fp.mul7 = fp.mul6 * fp.%9 constraint: fp.%10 =  load fp.x.addr constraint: fp.mul8 = fp.mul7 * fp.%10 constraint: fp.%11 =  load fp.x.addr constraint: fp.mul9 = fp.mul8 * fp.%11 constraint: fp.div10 = fp.mul9 / 7.200000e+02 constraint: fp.add11 = fp.add + fp.div10 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:35	LineNum:37
+
+Location Name:main s6 ID:6 nextS:-1
+Level:6
+ErrorType: No Error 
+constraint: main.div = main.call / main.call2 constraint: main.sub = main.%3 - main.div constraint: main.x =  store main.sub constraint: main.%6 =  load main.x constraint: main.%7 =  load main.x 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:45	LineNum:47
+
+Location Name:f.t1 s7 ID:7 nextS:-1
+Level:7
+ErrorType: No Error 
+constraint: f.t1.x =  main.%7 constraint: f.t1.x.addr =  alloca  constraint: f.t1.x.addr =  store f.t1.x.addr.0 constraint: f.t1.x.addr =  store f.t1.x constraint: f.t1.%0 =  load f.t1.x.addr constraint: f.t1.%1 =  load f.t1.x.addr constraint: f.t1.%2 =  load f.t1.x.addr constraint: f.t1.mul = f.t1.%1 * f.t1.%2 constraint: f.t1.%3 =  load f.t1.x.addr constraint: f.t1.mul1 = f.t1.mul * f.t1.%3 constraint: f.t1.div = f.t1.mul1 / 6.000000e+00 constraint: f.t1.sub = f.t1.%0 - f.t1.div constraint: f.t1.%4 =  load f.t1.x.addr constraint: f.t1.%5 =  load f.t1.x.addr constraint: f.t1.mul2 = f.t1.%4 * f.t1.%5 constraint: f.t1.%6 =  load f.t1.x.addr constraint: f.t1.mul3 = f.t1.mul2 * f.t1.%6 constraint: f.t1.%7 =  load f.t1.x.addr constraint: f.t1.mul4 = f.t1.mul3 * f.t1.%7 constraint: f.t1.%8 =  load f.t1.x.addr constraint: f.t1.mul5 = f.t1.mul4 * f.t1.%8 constraint: f.t1.div6 = f.t1.mul5 / 1.200000e+02 constraint: f.t1.add = f.t1.sub + f.t1.div6 constraint: f.t1.%9 =  load f.t1.x.addr constraint: f.t1.%10 =  load f.t1.x.addr constraint: f.t1.mul7 = f.t1.%9 * f.t1.%10 constraint: f.t1.%11 =  load f.t1.x.addr constraint: f.t1.mul8 = f.t1.mul7 * f.t1.%11 constraint: f.t1.%12 =  load f.t1.x.addr constraint: f.t1.mul9 = f.t1.mul8 * f.t1.%12 constraint: f.t1.%13 =  load f.t1.x.addr constraint: f.t1.mul10 = f.t1.mul9 * f.t1.%13 constraint: f.t1.%14 =  load f.t1.x.addr constraint: f.t1.mul11 = f.t1.mul10 * f.t1.%14 constraint: f.t1.%15 =  load f.t1.x.addr constraint: f.t1.mul12 = f.t1.mul11 * f.t1.%15 constraint: f.t1.div13 = f.t1.mul12 / 5.040000e+03 constraint: f.t1.add14 = f.t1.add + f.t1.div13 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:30	LineNum:32
+
+Location Name:main s8 ID:8 nextS:-1
+Level:8
+ErrorType: No Error 
+constraint: main.%8 =  load main.x 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:47
+
+Location Name:fp.t1 s9 ID:9 nextS:-1
+Level:9
+ErrorType: No Error 
+constraint: fp.t1.x =  main.%8 constraint: fp.t1.x.addr =  alloca  constraint: fp.t1.x.addr =  store fp.t1.x.addr.0 constraint: fp.t1.x.addr =  store fp.t1.x constraint: fp.t1.%0 =  load fp.t1.x.addr constraint: fp.t1.%1 =  load fp.t1.x.addr constraint: fp.t1.mul = fp.t1.%0 * fp.t1.%1 constraint: fp.t1.div = fp.t1.mul / 2.000000e+00 constraint: fp.t1.sub = 1.000000e+00 - fp.t1.div constraint: fp.t1.%2 =  load fp.t1.x.addr constraint: fp.t1.%3 =  load fp.t1.x.addr constraint: fp.t1.mul1 = fp.t1.%2 * fp.t1.%3 constraint: fp.t1.%4 =  load fp.t1.x.addr constraint: fp.t1.mul2 = fp.t1.mul1 * fp.t1.%4 constraint: fp.t1.%5 =  load fp.t1.x.addr constraint: fp.t1.mul3 = fp.t1.mul2 * fp.t1.%5 constraint: fp.t1.div4 = fp.t1.mul3 / 2.400000e+01 constraint: fp.t1.add = fp.t1.sub + fp.t1.div4 constraint: fp.t1.%6 =  load fp.t1.x.addr constraint: fp.t1.%7 =  load fp.t1.x.addr constraint: fp.t1.mul5 = fp.t1.%6 * fp.t1.%7 constraint: fp.t1.%8 =  load fp.t1.x.addr constraint: fp.t1.mul6 = fp.t1.mul5 * fp.t1.%8 constraint: fp.t1.%9 =  load fp.t1.x.addr constraint: fp.t1.mul7 = fp.t1.mul6 * fp.t1.%9 constraint: fp.t1.%10 =  load fp.t1.x.addr constraint: fp.t1.mul8 = fp.t1.mul7 * fp.t1.%10 constraint: fp.t1.%11 =  load fp.t1.x.addr constraint: fp.t1.mul9 = fp.t1.mul8 * fp.t1.%11 constraint: fp.t1.div10 = fp.t1.mul9 / 7.200000e+02 constraint: fp.t1.add11 = fp.t1.add + fp.t1.div10 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:35	LineNum:37
+
+Location Name:main s10 ID:10 nextS:-1
+Level:10
+ErrorType: No Error 
+constraint: main.div5 = main.call3 / main.call4 constraint: main.sub6 = main.%6 - main.div5 constraint: main.x =  store main.sub6 constraint: main.%9 =  load main.x constraint: main.%10 =  load main.x 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:47	LineNum:49
+
+Location Name:f.t2 s11 ID:11 nextS:-1
+Level:11
+ErrorType: No Error 
+constraint: f.t2.x =  main.%10 constraint: f.t2.x.addr =  alloca  constraint: f.t2.x.addr =  store f.t2.x.addr.0 constraint: f.t2.x.addr =  store f.t2.x constraint: f.t2.%0 =  load f.t2.x.addr constraint: f.t2.%1 =  load f.t2.x.addr constraint: f.t2.%2 =  load f.t2.x.addr constraint: f.t2.mul = f.t2.%1 * f.t2.%2 constraint: f.t2.%3 =  load f.t2.x.addr constraint: f.t2.mul1 = f.t2.mul * f.t2.%3 constraint: f.t2.div = f.t2.mul1 / 6.000000e+00 constraint: f.t2.sub = f.t2.%0 - f.t2.div constraint: f.t2.%4 =  load f.t2.x.addr constraint: f.t2.%5 =  load f.t2.x.addr constraint: f.t2.mul2 = f.t2.%4 * f.t2.%5 constraint: f.t2.%6 =  load f.t2.x.addr constraint: f.t2.mul3 = f.t2.mul2 * f.t2.%6 constraint: f.t2.%7 =  load f.t2.x.addr constraint: f.t2.mul4 = f.t2.mul3 * f.t2.%7 constraint: f.t2.%8 =  load f.t2.x.addr constraint: f.t2.mul5 = f.t2.mul4 * f.t2.%8 constraint: f.t2.div6 = f.t2.mul5 / 1.200000e+02 constraint: f.t2.add = f.t2.sub + f.t2.div6 constraint: f.t2.%9 =  load f.t2.x.addr constraint: f.t2.%10 =  load f.t2.x.addr constraint: f.t2.mul7 = f.t2.%9 * f.t2.%10 constraint: f.t2.%11 =  load f.t2.x.addr constraint: f.t2.mul8 = f.t2.mul7 * f.t2.%11 constraint: f.t2.%12 =  load f.t2.x.addr constraint: f.t2.mul9 = f.t2.mul8 * f.t2.%12 constraint: f.t2.%13 =  load f.t2.x.addr constraint: f.t2.mul10 = f.t2.mul9 * f.t2.%13 constraint: f.t2.%14 =  load f.t2.x.addr constraint: f.t2.mul11 = f.t2.mul10 * f.t2.%14 constraint: f.t2.%15 =  load f.t2.x.addr constraint: f.t2.mul12 = f.t2.mul11 * f.t2.%15 constraint: f.t2.div13 = f.t2.mul12 / 5.040000e+03 constraint: f.t2.add14 = f.t2.add + f.t2.div13 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:30	LineNum:32
+
+Location Name:main s12 ID:12 nextS:-1
+Level:12
+ErrorType: No Error 
+constraint: main.%11 =  load main.x 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:49
+
+Location Name:fp.t2 s13 ID:13 nextS:-1
+Level:13
+ErrorType: No Error 
+constraint: fp.t2.x =  main.%11 constraint: fp.t2.x.addr =  alloca  constraint: fp.t2.x.addr =  store fp.t2.x.addr.0 constraint: fp.t2.x.addr =  store fp.t2.x constraint: fp.t2.%0 =  load fp.t2.x.addr constraint: fp.t2.%1 =  load fp.t2.x.addr constraint: fp.t2.mul = fp.t2.%0 * fp.t2.%1 constraint: fp.t2.div = fp.t2.mul / 2.000000e+00 constraint: fp.t2.sub = 1.000000e+00 - fp.t2.div constraint: fp.t2.%2 =  load fp.t2.x.addr constraint: fp.t2.%3 =  load fp.t2.x.addr constraint: fp.t2.mul1 = fp.t2.%2 * fp.t2.%3 constraint: fp.t2.%4 =  load fp.t2.x.addr constraint: fp.t2.mul2 = fp.t2.mul1 * fp.t2.%4 constraint: fp.t2.%5 =  load fp.t2.x.addr constraint: fp.t2.mul3 = fp.t2.mul2 * fp.t2.%5 constraint: fp.t2.div4 = fp.t2.mul3 / 2.400000e+01 constraint: fp.t2.add = fp.t2.sub + fp.t2.div4 constraint: fp.t2.%6 =  load fp.t2.x.addr constraint: fp.t2.%7 =  load fp.t2.x.addr constraint: fp.t2.mul5 = fp.t2.%6 * fp.t2.%7 constraint: fp.t2.%8 =  load fp.t2.x.addr constraint: fp.t2.mul6 = fp.t2.mul5 * fp.t2.%8 constraint: fp.t2.%9 =  load fp.t2.x.addr constraint: fp.t2.mul7 = fp.t2.mul6 * fp.t2.%9 constraint: fp.t2.%10 =  load fp.t2.x.addr constraint: fp.t2.mul8 = fp.t2.mul7 * fp.t2.%10 constraint: fp.t2.%11 =  load fp.t2.x.addr constraint: fp.t2.mul9 = fp.t2.mul8 * fp.t2.%11 constraint: fp.t2.div10 = fp.t2.mul9 / 7.200000e+02 constraint: fp.t2.add11 = fp.t2.add + fp.t2.div10 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:35	LineNum:37
+
+Location Name:main s14 ID:14 nextS:-1
+Level:14
+ErrorType: No Error 
+constraint: main.div9 = main.call7 / main.call8 constraint: main.sub10 = main.%9 - main.div9 constraint: main.x =  store main.sub10 constraint: main.%12 =  load main.x constraint: main.conv =  fpext main.%12 constraint: main.cmp11 = main.conv < 1.000000e-01 
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:49	LineNum:53
+
+Location Name:main s15 ID:15 nextS:-1
+Level:15
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:54
+
+Location Name:main q0 ID:16 nextS:-1
+Level:16
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:main s16 ID:17 nextS:-1
+Level:16
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/newton_3_7_false-unreach-call.c	LineNum:56
+
+Transition Name:e0 ID:18
+Level:1
+ToLabel:main.land.end
+from:s0 to:s2
+Guard:
+constraint: main.cmp !=  1 constraint: main.%2 =  0 
+
+Transition Name:e1 ID:19
+Level:1
+ToLabel:main.land.rhs
+from:s0 to:s1
+Guard:
+constraint: main.cmp ==  1 
+
+Transition Name:e2 ID:20
+Level:2
+ToLabel:main.land.end
+from:s1 to:s2
+Guard:
+constraint: main.%2 =  main.cmp1 
+
+Transition Name:e3 ID:21
+Level:3
+ToLabel:f.entry
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e4 ID:22
+Level:4
+ToLabel:f.ret
+from:s3 to:s4
+Guard:
+constraint: main.call =  f.add14 
+
+Transition Name:e5 ID:23
+Level:5
+ToLabel:fp.entry
+from:s4 to:s5
+Guard:
+null
+
+Transition Name:e6 ID:24
+Level:6
+ToLabel:fp.ret
+from:s5 to:s6
+Guard:
+constraint: main.call2 =  fp.add11 
+
+Transition Name:e7 ID:25
+Level:7
+ToLabel:f.t1.entry
+from:s6 to:s7
+Guard:
+null
+
+Transition Name:e8 ID:26
+Level:8
+ToLabel:f.t1.ret
+from:s7 to:s8
+Guard:
+constraint: main.call3 =  f.t1.add14 
+
+Transition Name:e9 ID:27
+Level:9
+ToLabel:fp.t1.entry
+from:s8 to:s9
+Guard:
+null
+
+Transition Name:e10 ID:28
+Level:10
+ToLabel:fp.t1.ret
+from:s9 to:s10
+Guard:
+constraint: main.call4 =  fp.t1.add11 
+
+Transition Name:e11 ID:29
+Level:11
+ToLabel:f.t2.entry
+from:s10 to:s11
+Guard:
+null
+
+Transition Name:e12 ID:30
+Level:12
+ToLabel:f.t2.ret
+from:s11 to:s12
+Guard:
+constraint: main.call7 =  f.t2.add14 
+
+Transition Name:e13 ID:31
+Level:13
+ToLabel:fp.t2.entry
+from:s12 to:s13
+Guard:
+null
+
+Transition Name:e14 ID:32
+Level:14
+ToLabel:fp.t2.ret
+from:s13 to:s14
+Guard:
+constraint: main.call8 =  fp.t2.add11 
+
+Transition Name:e15 ID:33
+Level:15
+ToLabel:main.if.then
+from:s14 to:s15
+Guard:
+constraint: main.cmp11 !=  1 
+
+Transition Name:e16 ID:34
+Level:15
+ToLabel:main.if.end
+from:s14 to:s16
+Guard:
+constraint: main.cmp11 ==  1 
+
+Transition Name:e17 ID:35
+Level:16
+ToLabel:
+from:s15 to:q0
+Guard:
+null
+
+Transition Name:e18 ID:36
+Level:16
+ToLabel:main.if.end
+from:s15 to:s16
+Guard:
+null
+
+#BUILDCFG Time: 	22.83ms
+MainFunc: main
+#CallDepth: 6
+#Loc: 21
+#targetsize:	1
+target[0]:q0( Assert Error )
+
+target[0]:q0(16)
+Path route: s0->e0->s2->e3->s3->e4->s4->e5->s5->e6->s6->e7->s7->e8->s8->e9->s9->e10->s10->e11->s11->e12->s12->e13->s13->e14->s14->e15->s15->e17->q0(16)
+s0:
+......
+......
+......
+......
+......
+......
+(= main.retval/0 #x00000000)
+......
+(fp.eq main.%0 main.IN.0)
+(ite (fp.gt main.%0 ((_ to_fp 8 24) #xbfb33333))
+     (= main.cmp #b1)
+     (= main.cmp #b0))
+e0:
+(not (= main.cmp #b1))
+(= main.%2 #b0)
+s2:
+(= main.land.ext ((_ zero_extend 31) main.%2))
+(not (= #x00000000 main.land.ext))
+(fp.eq main.%3 main.IN.0)
+(fp.eq main.%4 main.IN.0)
+e3:
+s3:
+(fp.eq f.x main.%4)
+......
+......
+......
+(fp.eq f.%0 f.x)
+(fp.eq f.%1 f.x)
+(fp.eq f.%2 f.x)
+(fp.eq f.mul (fp.mul roundNearestTiesToEven f.%1 f.%2))
+(fp.eq f.%3 f.x)
+(fp.eq f.mul1 (fp.mul roundNearestTiesToEven f.mul f.%3))
+(fp.eq f.div (fp.div roundNearestTiesToEven f.mul1 ((_ to_fp 8 24) #x40c00000)))
+(fp.eq f.sub (fp.sub roundNearestTiesToEven f.%0 f.div))
+(fp.eq f.%4 f.x)
+(fp.eq f.%5 f.x)
+(fp.eq f.mul2 (fp.mul roundNearestTiesToEven f.%4 f.%5))
+(fp.eq f.%6 f.x)
+(fp.eq f.mul3 (fp.mul roundNearestTiesToEven f.mul2 f.%6))
+(fp.eq f.%7 f.x)
+(fp.eq f.mul4 (fp.mul roundNearestTiesToEven f.mul3 f.%7))
+(fp.eq f.%8 f.x)
+(fp.eq f.mul5 (fp.mul roundNearestTiesToEven f.mul4 f.%8))
+(fp.eq f.div6
+       (fp.div roundNearestTiesToEven f.mul5 ((_ to_fp 8 24) #x42f00000)))
+(fp.eq f.add (fp.add roundNearestTiesToEven f.sub f.div6))
+(fp.eq f.%9 f.x)
+(fp.eq f.%10 f.x)
+(fp.eq f.mul7 (fp.mul roundNearestTiesToEven f.%9 f.%10))
+(fp.eq f.%11 f.x)
+(fp.eq f.mul8 (fp.mul roundNearestTiesToEven f.mul7 f.%11))
+(fp.eq f.%12 f.x)
+(fp.eq f.mul9 (fp.mul roundNearestTiesToEven f.mul8 f.%12))
+(fp.eq f.%13 f.x)
+(fp.eq f.mul10 (fp.mul roundNearestTiesToEven f.mul9 f.%13))
+(fp.eq f.%14 f.x)
+(fp.eq f.mul11 (fp.mul roundNearestTiesToEven f.mul10 f.%14))
+(fp.eq f.%15 f.x)
+(fp.eq f.mul12 (fp.mul roundNearestTiesToEven f.mul11 f.%15))
+(fp.eq f.div13
+       (fp.div roundNearestTiesToEven f.mul12 ((_ to_fp 8 24) #x459d8000)))
+(fp.eq f.add14 (fp.add roundNearestTiesToEven f.add f.div13))
+e4:
+(fp.eq main.call f.add14)
+s4:
+(fp.eq main.%5 main.IN.0)
+e5:
+s5:
+(fp.eq fp.x main.%5)
+......
+......
+......
+(fp.eq fp.%0 fp.x)
+(fp.eq fp.%1 fp.x)
+(fp.eq fp.mul (fp.mul roundNearestTiesToEven fp.%0 fp.%1))
+(fp.eq fp.div
+       (fp.div roundNearestTiesToEven fp.mul ((_ to_fp 8 24) #x40000000)))
+(fp.eq fp.sub
+       (fp.sub roundNearestTiesToEven ((_ to_fp 8 24) #x3f800000) fp.div))
+(fp.eq fp.%2 fp.x)
+(fp.eq fp.%3 fp.x)
+(fp.eq fp.mul1 (fp.mul roundNearestTiesToEven fp.%2 fp.%3))
+(fp.eq fp.%4 fp.x)
+(fp.eq fp.mul2 (fp.mul roundNearestTiesToEven fp.mul1 fp.%4))
+(fp.eq fp.%5 fp.x)
+(fp.eq fp.mul3 (fp.mul roundNearestTiesToEven fp.mul2 fp.%5))
+(fp.eq fp.div4
+       (fp.div roundNearestTiesToEven fp.mul3 ((_ to_fp 8 24) #x41c00000)))
+(fp.eq fp.add (fp.add roundNearestTiesToEven fp.sub fp.div4))
+(fp.eq fp.%6 fp.x)
+(fp.eq fp.%7 fp.x)
+(fp.eq fp.mul5 (fp.mul roundNearestTiesToEven fp.%6 fp.%7))
+(fp.eq fp.%8 fp.x)
+(fp.eq fp.mul6 (fp.mul roundNearestTiesToEven fp.mul5 fp.%8))
+(fp.eq fp.%9 fp.x)
+(fp.eq fp.mul7 (fp.mul roundNearestTiesToEven fp.mul6 fp.%9))
+(fp.eq fp.%10 fp.x)
+(fp.eq fp.mul8 (fp.mul roundNearestTiesToEven fp.mul7 fp.%10))
+(fp.eq fp.%11 fp.x)
+(fp.eq fp.mul9 (fp.mul roundNearestTiesToEven fp.mul8 fp.%11))
+(fp.eq fp.div10
+       (fp.div roundNearestTiesToEven fp.mul9 ((_ to_fp 8 24) #x44340000)))
+(fp.eq fp.add11 (fp.add roundNearestTiesToEven fp.add fp.div10))
+e6:
+(fp.eq main.call2 fp.add11)
+s6:
+(fp.eq main.div (fp.div roundNearestTiesToEven main.call main.call2))
+(fp.eq main.sub (fp.sub roundNearestTiesToEven main.%3 main.div))
+......
+(fp.eq main.%6 main.sub)
+(fp.eq main.%7 main.sub)
+e7:
+s7:
+(fp.eq f.t1.x main.%7)
+......
+......
+......
+(fp.eq f.t1.%0 f.t1.x)
+(fp.eq f.t1.%1 f.t1.x)
+(fp.eq f.t1.%2 f.t1.x)
+(fp.eq f.t1.mul (fp.mul roundNearestTiesToEven f.t1.%1 f.t1.%2))
+(fp.eq f.t1.%3 f.t1.x)
+(fp.eq f.t1.mul1 (fp.mul roundNearestTiesToEven f.t1.mul f.t1.%3))
+(fp.eq f.t1.div
+       (fp.div roundNearestTiesToEven f.t1.mul1 ((_ to_fp 8 24) #x40c00000)))
+(fp.eq f.t1.sub (fp.sub roundNearestTiesToEven f.t1.%0 f.t1.div))
+(fp.eq f.t1.%4 f.t1.x)
+(fp.eq f.t1.%5 f.t1.x)
+(fp.eq f.t1.mul2 (fp.mul roundNearestTiesToEven f.t1.%4 f.t1.%5))
+(fp.eq f.t1.%6 f.t1.x)
+(fp.eq f.t1.mul3 (fp.mul roundNearestTiesToEven f.t1.mul2 f.t1.%6))
+(fp.eq f.t1.%7 f.t1.x)
+(fp.eq f.t1.mul4 (fp.mul roundNearestTiesToEven f.t1.mul3 f.t1.%7))
+(fp.eq f.t1.%8 f.t1.x)
+(fp.eq f.t1.mul5 (fp.mul roundNearestTiesToEven f.t1.mul4 f.t1.%8))
+(fp.eq f.t1.div6
+       (fp.div roundNearestTiesToEven f.t1.mul5 ((_ to_fp 8 24) #x42f00000)))
+(fp.eq f.t1.add (fp.add roundNearestTiesToEven f.t1.sub f.t1.div6))
+(fp.eq f.t1.%9 f.t1.x)
+(fp.eq f.t1.%10 f.t1.x)
+(fp.eq f.t1.mul7 (fp.mul roundNearestTiesToEven f.t1.%9 f.t1.%10))
+(fp.eq f.t1.%11 f.t1.x)
+(fp.eq f.t1.mul8 (fp.mul roundNearestTiesToEven f.t1.mul7 f.t1.%11))
+(fp.eq f.t1.%12 f.t1.x)
+(fp.eq f.t1.mul9 (fp.mul roundNearestTiesToEven f.t1.mul8 f.t1.%12))
+(fp.eq f.t1.%13 f.t1.x)
+(fp.eq f.t1.mul10 (fp.mul roundNearestTiesToEven f.t1.mul9 f.t1.%13))
+(fp.eq f.t1.%14 f.t1.x)
+(fp.eq f.t1.mul11 (fp.mul roundNearestTiesToEven f.t1.mul10 f.t1.%14))
+(fp.eq f.t1.%15 f.t1.x)
+(fp.eq f.t1.mul12 (fp.mul roundNearestTiesToEven f.t1.mul11 f.t1.%15))
+(fp.eq f.t1.div13
+       (fp.div roundNearestTiesToEven f.t1.mul12 ((_ to_fp 8 24) #x459d8000)))
+(fp.eq f.t1.add14 (fp.add roundNearestTiesToEven f.t1.add f.t1.div13))
+e8:
+(fp.eq main.call3 f.t1.add14)
+s8:
+(fp.eq main.%8 main.sub)
+e9:
+s9:
+(fp.eq fp.t1.x main.%8)
+......
+......
+......
+(fp.eq fp.t1.%0 fp.t1.x)
+(fp.eq fp.t1.%1 fp.t1.x)
+(fp.eq fp.t1.mul (fp.mul roundNearestTiesToEven fp.t1.%0 fp.t1.%1))
+(fp.eq fp.t1.div
+       (fp.div roundNearestTiesToEven fp.t1.mul ((_ to_fp 8 24) #x40000000)))
+(fp.eq fp.t1.sub
+       (fp.sub roundNearestTiesToEven ((_ to_fp 8 24) #x3f800000) fp.t1.div))
+(fp.eq fp.t1.%2 fp.t1.x)
+(fp.eq fp.t1.%3 fp.t1.x)
+(fp.eq fp.t1.mul1 (fp.mul roundNearestTiesToEven fp.t1.%2 fp.t1.%3))
+(fp.eq fp.t1.%4 fp.t1.x)
+(fp.eq fp.t1.mul2 (fp.mul roundNearestTiesToEven fp.t1.mul1 fp.t1.%4))
+(fp.eq fp.t1.%5 fp.t1.x)
+(fp.eq fp.t1.mul3 (fp.mul roundNearestTiesToEven fp.t1.mul2 fp.t1.%5))
+(fp.eq fp.t1.div4
+       (fp.div roundNearestTiesToEven fp.t1.mul3 ((_ to_fp 8 24) #x41c00000)))
+(fp.eq fp.t1.add (fp.add roundNearestTiesToEven fp.t1.sub fp.t1.div4))
+(fp.eq fp.t1.%6 fp.t1.x)
+(fp.eq fp.t1.%7 fp.t1.x)
+(fp.eq fp.t1.mul5 (fp.mul roundNearestTiesToEven fp.t1.%6 fp.t1.%7))
+(fp.eq fp.t1.%8 fp.t1.x)
+(fp.eq fp.t1.mul6 (fp.mul roundNearestTiesToEven fp.t1.mul5 fp.t1.%8))
+(fp.eq fp.t1.%9 fp.t1.x)
+(fp.eq fp.t1.mul7 (fp.mul roundNearestTiesToEven fp.t1.mul6 fp.t1.%9))
+(fp.eq fp.t1.%10 fp.t1.x)
+(fp.eq fp.t1.mul8 (fp.mul roundNearestTiesToEven fp.t1.mul7 fp.t1.%10))
+(fp.eq fp.t1.%11 fp.t1.x)
+(fp.eq fp.t1.mul9 (fp.mul roundNearestTiesToEven fp.t1.mul8 fp.t1.%11))
+(fp.eq fp.t1.div10
+       (fp.div roundNearestTiesToEven fp.t1.mul9 ((_ to_fp 8 24) #x44340000)))
+(fp.eq fp.t1.add11 (fp.add roundNearestTiesToEven fp.t1.add fp.t1.div10))
+e10:
+(fp.eq main.call4 fp.t1.add11)
+s10:
+(fp.eq main.div5 (fp.div roundNearestTiesToEven main.call3 main.call4))
+(fp.eq main.sub6 (fp.sub roundNearestTiesToEven main.%6 main.div5))
+......
+(fp.eq main.%9 main.sub6)
+(fp.eq main.%10 main.sub6)
+e11:
+s11:
+(fp.eq f.t2.x main.%10)
+......
+......
+......
+(fp.eq f.t2.%0 f.t2.x)
+(fp.eq f.t2.%1 f.t2.x)
+(fp.eq f.t2.%2 f.t2.x)
+(fp.eq f.t2.mul (fp.mul roundNearestTiesToEven f.t2.%1 f.t2.%2))
+(fp.eq f.t2.%3 f.t2.x)
+(fp.eq f.t2.mul1 (fp.mul roundNearestTiesToEven f.t2.mul f.t2.%3))
+(fp.eq f.t2.div
+       (fp.div roundNearestTiesToEven f.t2.mul1 ((_ to_fp 8 24) #x40c00000)))
+(fp.eq f.t2.sub (fp.sub roundNearestTiesToEven f.t2.%0 f.t2.div))
+(fp.eq f.t2.%4 f.t2.x)
+(fp.eq f.t2.%5 f.t2.x)
+(fp.eq f.t2.mul2 (fp.mul roundNearestTiesToEven f.t2.%4 f.t2.%5))
+(fp.eq f.t2.%6 f.t2.x)
+(fp.eq f.t2.mul3 (fp.mul roundNearestTiesToEven f.t2.mul2 f.t2.%6))
+(fp.eq f.t2.%7 f.t2.x)
+(fp.eq f.t2.mul4 (fp.mul roundNearestTiesToEven f.t2.mul3 f.t2.%7))
+(fp.eq f.t2.%8 f.t2.x)
+(fp.eq f.t2.mul5 (fp.mul roundNearestTiesToEven f.t2.mul4 f.t2.%8))
+(fp.eq f.t2.div6
+       (fp.div roundNearestTiesToEven f.t2.mul5 ((_ to_fp 8 24) #x42f00000)))
+(fp.eq f.t2.add (fp.add roundNearestTiesToEven f.t2.sub f.t2.div6))
+(fp.eq f.t2.%9 f.t2.x)
+(fp.eq f.t2.%10 f.t2.x)
+(fp.eq f.t2.mul7 (fp.mul roundNearestTiesToEven f.t2.%9 f.t2.%10))
+(fp.eq f.t2.%11 f.t2.x)
+(fp.eq f.t2.mul8 (fp.mul roundNearestTiesToEven f.t2.mul7 f.t2.%11))
+(fp.eq f.t2.%12 f.t2.x)
+(fp.eq f.t2.mul9 (fp.mul roundNearestTiesToEven f.t2.mul8 f.t2.%12))
+(fp.eq f.t2.%13 f.t2.x)
+(fp.eq f.t2.mul10 (fp.mul roundNearestTiesToEven f.t2.mul9 f.t2.%13))
+(fp.eq f.t2.%14 f.t2.x)
+(fp.eq f.t2.mul11 (fp.mul roundNearestTiesToEven f.t2.mul10 f.t2.%14))
+(fp.eq f.t2.%15 f.t2.x)
+(fp.eq f.t2.mul12 (fp.mul roundNearestTiesToEven f.t2.mul11 f.t2.%15))
+(fp.eq f.t2.div13
+       (fp.div roundNearestTiesToEven f.t2.mul12 ((_ to_fp 8 24) #x459d8000)))
+(fp.eq f.t2.add14 (fp.add roundNearestTiesToEven f.t2.add f.t2.div13))
+e12:
+(fp.eq main.call7 f.t2.add14)
+s12:
+(fp.eq main.%11 main.sub6)
+e13:
+s13:
+(fp.eq fp.t2.x main.%11)
+......
+......
+......
+(fp.eq fp.t2.%0 fp.t2.x)
+(fp.eq fp.t2.%1 fp.t2.x)
+(fp.eq fp.t2.mul (fp.mul roundNearestTiesToEven fp.t2.%0 fp.t2.%1))
+(fp.eq fp.t2.div
+       (fp.div roundNearestTiesToEven fp.t2.mul ((_ to_fp 8 24) #x40000000)))
+(fp.eq fp.t2.sub
+       (fp.sub roundNearestTiesToEven ((_ to_fp 8 24) #x3f800000) fp.t2.div))
+(fp.eq fp.t2.%2 fp.t2.x)
+(fp.eq fp.t2.%3 fp.t2.x)
+(fp.eq fp.t2.mul1 (fp.mul roundNearestTiesToEven fp.t2.%2 fp.t2.%3))
+(fp.eq fp.t2.%4 fp.t2.x)
+(fp.eq fp.t2.mul2 (fp.mul roundNearestTiesToEven fp.t2.mul1 fp.t2.%4))
+(fp.eq fp.t2.%5 fp.t2.x)
+(fp.eq fp.t2.mul3 (fp.mul roundNearestTiesToEven fp.t2.mul2 fp.t2.%5))
+(fp.eq fp.t2.div4
+       (fp.div roundNearestTiesToEven fp.t2.mul3 ((_ to_fp 8 24) #x41c00000)))
+(fp.eq fp.t2.add (fp.add roundNearestTiesToEven fp.t2.sub fp.t2.div4))
+(fp.eq fp.t2.%6 fp.t2.x)
+(fp.eq fp.t2.%7 fp.t2.x)
+(fp.eq fp.t2.mul5 (fp.mul roundNearestTiesToEven fp.t2.%6 fp.t2.%7))
+(fp.eq fp.t2.%8 fp.t2.x)
+(fp.eq fp.t2.mul6 (fp.mul roundNearestTiesToEven fp.t2.mul5 fp.t2.%8))
+(fp.eq fp.t2.%9 fp.t2.x)
+(fp.eq fp.t2.mul7 (fp.mul roundNearestTiesToEven fp.t2.mul6 fp.t2.%9))
+(fp.eq fp.t2.%10 fp.t2.x)
+(fp.eq fp.t2.mul8 (fp.mul roundNearestTiesToEven fp.t2.mul7 fp.t2.%10))
+(fp.eq fp.t2.%11 fp.t2.x)
+(fp.eq fp.t2.mul9 (fp.mul roundNearestTiesToEven fp.t2.mul8 fp.t2.%11))
+(fp.eq fp.t2.div10
+       (fp.div roundNearestTiesToEven fp.t2.mul9 ((_ to_fp 8 24) #x44340000)))
+(fp.eq fp.t2.add11 (fp.add roundNearestTiesToEven fp.t2.add fp.t2.div10))
+e14:
+(fp.eq main.call8 fp.t2.add11)
+s14:
+(fp.eq main.div9 (fp.div roundNearestTiesToEven main.call7 main.call8))
+(fp.eq main.sub10 (fp.sub roundNearestTiesToEven main.%9 main.div9))
+......
+(fp.eq main.%12 main.sub10)
+(fp.eq main.conv ((_ to_fp 11 53) roundNearestTiesToEven main.%12))
+(ite (fp.lt main.conv ((_ to_fp 11 53) #x3fb999999999999a))
+     (= main.cmp11 #b1)
+     (= main.cmp11 #b0))
+e15:
+(not (= main.cmp11 #b1))
+s15:
+e17:
+q0:
+Encode end
+Solving constraints~~~

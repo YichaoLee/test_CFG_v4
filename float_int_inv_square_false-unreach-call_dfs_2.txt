@@ -1,0 +1,255 @@
+<float_int_inv_square_false-unreach-call.c> 
+clang -c -emit-llvm -g float_int_inv_square_false-unreach-call.c -o float_int_inv_square_false-unreach-call.bc
+opt -load buildCFG.so -load libz3.so -load libminisat.so -load libcapd.so -load libibex.so -load libdreal.so -buildCFG -bound=50 -pre=1e-09 -mode=1 -func=main -output=1 <float_int_inv_square_false-unreach-call.bc> float_int_inv_square_false-unreach-callbuildCFG.bc
+START CHECK FUNCTION <main> in precision 1.000000e-09
+CheckMode: 1	Check assertions only
+OutMode: 1	Print Check result with CFG and Constraints
+*******************CFG Information*********************
+CFG:
+VerifierMode:	Unlinear
+(declare-fun main.retval.0 () Int)
+(declare-fun main.x.0 () Int)
+(declare-fun main.y.0 () Real)
+(declare-fun main.z.0 () Real)
+(declare-fun main.retval/0 () Int)
+(declare-fun main.call () Int)
+(declare-fun main.%0 () Int)
+(declare-fun main.cmp () Int)
+(declare-fun main.conv () Int)
+(declare-fun main.%1 () Int)
+(declare-fun main.cmp1 () Int)
+(declare-fun main.conv2 () Int)
+(declare-fun main.%2 () Real)
+(declare-fun main.cmp3 () Int)
+(declare-fun main.conv4 () Int)
+(declare-fun __VERIFIER_assert.cond () Int)
+(declare-fun __VERIFIER_assert.cond.addr.0 () Int)
+(declare-fun __VERIFIER_assert.%0 () Int)
+(declare-fun __VERIFIER_assert.tobool () Int)
+(declare-fun main.%3 () Real)
+(declare-fun main.div () Real)
+name:main.retval id:0 type: PTR  bits:0
+name:main.retval.0 id:1 type: INT  bits:32
+name:main.x id:2 type: PTR  bits:0
+name:main.x.0 id:3 type: INT  bits:32
+name:main.y id:4 type: PTR  bits:0
+name:main.y.0 id:5 type: FP  bits:32
+name:main.z id:6 type: PTR  bits:0
+name:main.z.0 id:7 type: FP  bits:32
+name:main.retval/0 id:8 type: INT  bits:32
+name:main.call id:9 type: INT  bits:32, mainInput
+name:main.%0 id:10 type: INT  bits:32
+name:main.cmp id:11 type: INT  bits:1
+name:main.conv id:12 type: INT  bits:32
+name:main.%1 id:13 type: INT  bits:32
+name:main.cmp1 id:14 type: INT  bits:1
+name:main.conv2 id:15 type: INT  bits:32
+name:main.%2 id:16 type: FP  bits:32
+name:main.cmp3 id:17 type: INT  bits:1
+name:main.conv4 id:18 type: INT  bits:32
+name:__VERIFIER_assert.cond id:19 type: INT  bits:32
+name:__VERIFIER_assert.cond.addr id:20 type: PTR  bits:0
+name:__VERIFIER_assert.cond.addr.0 id:21 type: INT  bits:32
+name:__VERIFIER_assert.%0 id:22 type: INT  bits:32
+name:__VERIFIER_assert.tobool id:23 type: INT  bits:1
+name:main.%3 id:24 type: FP  bits:32
+name:main.div id:25 type: FP  bits:32
+
+Location Name:main s0 ID:0 nextS:-1
+Level:0
+ErrorType: No Error 
+	Initial location
+constraint: main.retval =  alloca  constraint: main.retval =  store main.retval.0 constraint: main.x =  alloca  constraint: main.x =  store main.x.0 constraint: main.y =  alloca  constraint: main.y =  store main.y.0 constraint: main.z =  alloca  constraint: main.z =  store main.z.0 constraint: main.retval/0 =  0 constraint: main.retval =  store main.retval/0 constraint: main.x =  store main.call constraint: main.%0 =  load main.x constraint: main.cmp = main.%0 >= -10 constraint: main.conv =  zext main.cmp constraint: 0 !=  main.conv constraint: main.%1 =  load main.x constraint: main.cmp1 = main.%1 <= 10 constraint: main.conv2 =  zext main.cmp1 constraint: 0 !=  main.conv2 constraint: main.%2 =  load main.y constraint: main.cmp3 = main.%2 != 0.000000e+00 constraint: main.conv4 =  zext main.cmp3 
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:10	LineNum:11	LineNum:13	LineNum:15	LineNum:16	LineNum:19
+
+Location Name:__VERIFIER_assert s1 ID:1 nextS:-1
+Level:1
+ErrorType: No Error 
+constraint: __VERIFIER_assert.cond =  main.conv4 constraint: __VERIFIER_assert.cond.addr =  alloca  constraint: __VERIFIER_assert.cond.addr =  store __VERIFIER_assert.cond.addr.0 constraint: __VERIFIER_assert.cond.addr =  store __VERIFIER_assert.cond constraint: __VERIFIER_assert.%0 =  load __VERIFIER_assert.cond.addr constraint: __VERIFIER_assert.tobool = __VERIFIER_assert.%0 != 0 
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert s2 ID:2 nextS:-1
+Level:2
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert s3 ID:3 nextS:-1
+Level:3
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:6
+
+Location Name:__VERIFIER_assert q0 ID:4 nextS:-1
+Level:4
+ErrorType: Assert Error 
+null
+Content:
+
+Location Name:__VERIFIER_assert s4 ID:5 nextS:-1
+Level:2
+ErrorType: No Error 
+null
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:6
+
+Location Name:main s5 ID:6 nextS:-1
+Level:3
+ErrorType: No Error 
+constraint: main.%3 =  load main.y constraint: main.div = 1.000000e+00 / main.%3 constraint: main.z =  store main.div 
+Content:/home/lich/Documents/test_CFG_v4/float_int_inv_square_false-unreach-call.c	LineNum:20	LineNum:21
+
+Transition Name:e0 ID:7
+Level:1
+ToLabel:__VERIFIER_assert.entry
+from:s0 to:s1
+Guard:
+null
+
+Transition Name:e1 ID:8
+Level:2
+ToLabel:__VERIFIER_assert.if.then
+from:s1 to:s2
+Guard:
+constraint: __VERIFIER_assert.tobool !=  1 
+
+Transition Name:e2 ID:9
+Level:2
+ToLabel:__VERIFIER_assert.if.end
+from:s1 to:s4
+Guard:
+constraint: __VERIFIER_assert.tobool ==  1 
+
+Transition Name:e3 ID:10
+Level:3
+ToLabel:__VERIFIER_assert.ERROR
+from:s2 to:s3
+Guard:
+null
+
+Transition Name:e4 ID:11
+Level:4
+ToLabel:
+from:s3 to:q0
+Guard:
+null
+
+Transition Name:e5 ID:12
+Level:3
+ToLabel:__VERIFIER_assert.ret
+from:s4 to:s5
+Guard:
+null
+
+#BUILDCFG Time: 	3.603ms
+MainFunc: main
+#CallDepth: 1
+#Loc: 13
+#targetsize:	1
+target[0]:q0( Assert Error )
+
+target[0]:q0(4)
+Path route: s0(0)
+Reset dreal_context
+s0:
+(assert (= main.retval/0 0))
+(assert (= main.call main.%0))
+(assert (= main.cmp (ite (<= -10 main.%0) 1 0)))
+(assert (= main.cmp main.conv))
+(assert (not (= main.conv 0)))
+(assert (= main.call main.%1))
+(assert (= main.cmp1 (ite (<= main.%1 10) 1 0)))
+(assert (= main.cmp1 main.conv2))
+(assert (not (= main.conv2 0)))
+(assert (= main.y.0 main.%2))
+(assert (= main.cmp3 (ite (not (= main.%2 0)) 1 0)))
+(assert (= main.cmp3 main.conv4))
+dreal_result is sat
+
+
+Path route: s0->e0->s1(1)
+Reset dreal_context
+s0:
+(assert (= main.retval/0 0))
+(assert (= main.call main.%0))
+(assert (= main.cmp (ite (<= -10 main.%0) 1 0)))
+(assert (= main.cmp main.conv))
+(assert (not (= main.conv 0)))
+(assert (= main.call main.%1))
+(assert (= main.cmp1 (ite (<= main.%1 10) 1 0)))
+(assert (= main.cmp1 main.conv2))
+(assert (not (= main.conv2 0)))
+(assert (= main.y.0 main.%2))
+(assert (= main.cmp3 (ite (not (= main.%2 0)) 1 0)))
+(assert (= main.cmp3 main.conv4))
+e0:
+s1:
+(assert (= main.conv4 __VERIFIER_assert.cond))
+(assert (= __VERIFIER_assert.cond __VERIFIER_assert.%0))
+(assert (= __VERIFIER_assert.tobool (ite (not (= __VERIFIER_assert.%0 0)) 1 0)))
+dreal_result is sat
+
+
+Path route: s0->e0->s1->e1->s2(2)
+Reset dreal_context
+s0:
+(assert (= main.retval/0 0))
+(assert (= main.call main.%0))
+(assert (= main.cmp (ite (<= -10 main.%0) 1 0)))
+(assert (= main.cmp main.conv))
+(assert (not (= main.conv 0)))
+(assert (= main.call main.%1))
+(assert (= main.cmp1 (ite (<= main.%1 10) 1 0)))
+(assert (= main.cmp1 main.conv2))
+(assert (not (= main.conv2 0)))
+(assert (= main.y.0 main.%2))
+(assert (= main.cmp3 (ite (not (= main.%2 0)) 1 0)))
+(assert (= main.cmp3 main.conv4))
+e0:
+s1:
+(assert (= main.conv4 __VERIFIER_assert.cond))
+(assert (= __VERIFIER_assert.cond __VERIFIER_assert.%0))
+(assert (= __VERIFIER_assert.tobool (ite (not (= __VERIFIER_assert.%0 0)) 1 0)))
+e1:
+(assert (not (= __VERIFIER_assert.tobool 1)))
+s2:
+dreal_result is unsat
+
+
+Path route: s0->e0->s1->e2->s4(5)
+Reset dreal_context
+s0:
+(assert (= main.retval/0 0))
+(assert (= main.call main.%0))
+(assert (= main.cmp (ite (<= -10 main.%0) 1 0)))
+(assert (= main.cmp main.conv))
+(assert (not (= main.conv 0)))
+(assert (= main.call main.%1))
+(assert (= main.cmp1 (ite (<= main.%1 10) 1 0)))
+(assert (= main.cmp1 main.conv2))
+(assert (not (= main.conv2 0)))
+(assert (= main.y.0 main.%2))
+(assert (= main.cmp3 (ite (not (= main.%2 0)) 1 0)))
+(assert (= main.cmp3 main.conv4))
+e0:
+s1:
+(assert (= main.conv4 __VERIFIER_assert.cond))
+(assert (= __VERIFIER_assert.cond __VERIFIER_assert.%0))
+(assert (= __VERIFIER_assert.tobool (ite (not (= __VERIFIER_assert.%0 0)) 1 0)))
+e2:
+(assert (= __VERIFIER_assert.tobool 1))
+s4:
+dreal_result is unsat
+
+
+target[0]:from s0(0) to q0(4)
+ Assert Error at line 6 is unreachable under bound 50
+Number of path checked:2
+#Avg_var: 9.500000e+00
+#Avg_nolinearop: 0.000000e+00
+Solver Time: 	2.668ms
+
+bound:	50	precision:	1.000000e-09	functionName:	main	check:	
+#Solver Time: 	0.002668s
+#CPU Time: 0.028 s
+#Memory used: 125.00 MB
+opt: symbol lookup error: /home/lich/Documents/llvm/Release+Asserts/bin/../lib/buildCFG.so: undefined symbol: _ZN6VerifyD2Ev
